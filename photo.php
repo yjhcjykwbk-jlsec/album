@@ -8,7 +8,7 @@ $img="front.jpg";
 $id=0;
 ?>
 <div id="photo_view" style="overflow:overlay;box-shadow:0px 10px 120px 45px #555;background:#fff;padding-right:20px;padding-left:5px;z-index:100;display:none;position:fixed;width:80%;height:95%;margin-left:12%;margin-top:-5px;">
-<style> #comment_span{color:white;} body{background:#f8f8f8; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
+<style> #comment_span{color:white;} body{background:#f4f2f2; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <script type="text/javascript">
 var comEnabled=false;
