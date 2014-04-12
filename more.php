@@ -117,10 +117,11 @@ function listDir($dir,$from,$to){
 
 
 $dir=!isset($_REQUEST['dir'])?".":$_REQUEST['dir'];
-
 $from=isset($_GET['m'])?$_GET['m']:0;
-$to=isset($_GET['m'])?$from+8:999999;
-$files=listDir($dir,$from,$to);
+$num=isset($_GET['n'])?$_GET['n']:5;
+$to=isset($_GET['m'])?$from+$num:99999;
+if($from<99999)
+	$files=listDir($dir,$from,$to);
 // $items=array();
 // for ($i=$m; $i < count($files) && $i < $m+12; $i++) { 
 // $items[] =$files["$i"];

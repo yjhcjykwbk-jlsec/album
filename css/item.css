@@ -16,11 +16,11 @@ body{background:center top #fff;font-family:Arial;font-size:12px;}
 /* item_list */
 .item_list{position:relative;padding:0 0 50px;}
 .item{
-	width:220px;background:#fff;overflow:hidden;margin:15px 0 0 0;
-	//border-radius:4px 4px 4px 4px;
-	box-shadow:0px 1px 10px rgba(34, 25, 25, 0.2);	
+	width:230px;background:#fff;overflow:hidden;margin:15px 0 0 0;
+	border-radius:0px 0px 0px 0px;
+	box-shadow:0px 1px 5px rgba(233, 222, 255, 0.6);	
 }
-.item_t{padding:0;}
+.item_t{padding:0px;}
 .item_t .img{background-color:#FFFFFF;margin:0 0;position:relative;min-height:150px;}
 .item_t .img a{display:block;}
 .item_t .img a:hover{background:#000;}
@@ -33,9 +33,9 @@ body{background:center top #fff;font-family:Arial;font-size:12px;}
 .img_album_btn{top:0px;right:0px;position:absolute;background:#ff6fa6;color:#ffffff;height:20px;line-height:20px;width:56px;border-radius:3px;}
 .img_album_btn:hover{color:#fff;}
 .item_t .title{padding:8px 0;line-height:18px;}
-.item_b{padding:10px 8px;}
+.item_b{padding:5px 8px;}
 .item_b .items_likes .like_btn{background:url("images/fav_icon_word_new_1220.png") no-repeat;display:block;float:left;height:23px;width:59px;margin-right:5px;}
-.item_b .items_likes em{line-height:23px;display:block;float:left;padding:0px 6px;color:#FF6699;font-weight:800;border:1px solid #ff6fa6;border-radius:3px;}
+.item_b .items_likes em{line-height:13px;display:block;float:left;padding:0px 6px;color:#FF6699;font-weight:800;border:1px solid #ff6fa6;border-radius:3px;}
 
 /* more */
 #more{display:block;margin:10px auto 20px;}

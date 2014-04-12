@@ -1,21 +1,15 @@
 <?php
 //上传文件类型列表
 $uptypes=array(
-    'image/jpg',
-    'image/jpeg',
-    'image/png',
-    'image/pjpeg',
-    'image/gif',
-    'image/bmp',
-    'image/x-png'
-);
+		'image/jpg',
+		'image/jpeg',
+		'image/png',
+		'image/pjpeg',
+		'image/gif',
+		'image/bmp',
+		'image/x-png'
+	      );
 
-$class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
-$destination_folder="DATASET/".$class."/";
-
-$max_file_size=20000000;     //上传文件大小限制, 单位BYTE
-$imgpreview=1;      //是否生成预览图(1为生成,其他为不生成);
-$imgpreviewsize=1/4;    //缩略图比例
 ?>
 <html>
 <head>
@@ -24,12 +18,12 @@ $imgpreviewsize=1/4;    //缩略图比例
 <!--
 body
 {
-     font-size: 9pt;
+	font-size: 9pt;
 }
 input
 {
-     background-color: #66CCFF;
-     border: 1px inset #CCCCCC;
+	background-color: #66CCFF;
+	border: 1px inset #CCCCCC;
 }
 -->
 </style>
@@ -37,78 +31,70 @@ input
 
 <body>
 <?php
-print_r($_FILES);
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
+echo "<script> setTimeout(function(){window.location.href='uploadview.php?dir=$class';},3000);</script>";
+//print_r($_FILES);
+$class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
+$destination_folder="DATASET/".$class."/";
+if(!file_exists($destination_folder))
 {
-    if (!is_uploaded_file($_FILES["upfile"]['tmp_name']))
-    //是否存在文件
-    {
-         echo "图片不存在!";
-         exit;
-    }
-
-    $file = $_FILES["upfile"];
-    if($max_file_size < $file["size"])
-    //检查文件大小
-    {
-        echo "文件太大!"; exit;
-    }
-
-    // if(!in_array($file["type"], $uptypes))
-    // //检查文件类型
-    // {
-        // myLog( "文件类型不符!".$file["type"]);
-        // exit;
-    // }
-
-    if(!file_exists($destination_folder))
-    {
-        if(!mkdir($destination_folder,0777)){
- 	     echo "创建相册失败";
-	     return;
+	if(!mkdir($destination_folder,0777)){
+		echo "创建相册失败";
+		return;
 	}
 	chmod($destination_folder, 0777);
-    }
+}
 
-    $tmpFilename=$file["tmp_name"];
-    $image_size = getimagesize($tmpFilename);
-    $filename=$file["name"];
-    $destination = $destination_folder.$filename;
-    if (file_exists($destination))
-    {
+function upload($file){
+	$max_file_size=20000000;     //上传文件大小限制, 单位BYTE
+	global $destination_folder;
+	if($file['size']==""||$file['tmp_name']=="") return;
+	if($max_file_size < $file["size"])
+		//检查文件大小
+	{
+		echo "文件太大!"; exit;
+	}
+	$tmpFilename=$file["tmp_name"];
+	$image_size = getimagesize($tmpFilename);
+	$filename=$file["name"];
 	$pi=pathinfo($filename);
 	$ftype=$pi["extension"];
-	$time=time();
-	$destination = $destination_folder.$time.".".$ftype;
-	if (file_exists($destination)){
-		echo "同名文件已经存在了";
+	$destination = $destination_folder.$filename.".".$ftype;
+	if (file_exists($destination))
+	{
+		$time=time();
+		$destination = $destination_folder.$time.".".$ftype;
+		if (file_exists($destination)){
+			echo "同名文件已经存在了";
+			exit;
+		}
+	}
+
+	if(!move_uploaded_file ($tmpFilename, $destination))
+	{
+		echo "移动文件出错<br/>".$destination;
+		echo "请确定当前相册文件夹开启了写入权限<br/>如果没有请通过ftp修改，方法见上传教程相册";
 		exit;
 	}
-    }
 
-    if(!move_uploaded_file ($tmpFilename, $destination))
-    {
-        echo "移动文件出错<br/>".$destination;
-	echo "请确定当前相册文件夹开启了写入权限<br/>如果没有请通过ftp修改，方法见上传教程相册";
-        exit;
-    }
+	echo "上传成功:".$tmpFileName;
 
-    echo "上传成功:".$destination;
+	echo " <font color=red>已经成功上传</font><br>";
+	echo "<br> 大小:".$file["size"]." bytes";
 
-    echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
-    echo " 宽度:".$image_size[0];
-    echo " 长度:".$image_size[1];
-    echo "<br> 大小:".$file["size"]." bytes";
-		echo "<script> setTimeout(function(){window.location.href='uploadpage.html';},3000);</script>";
+	echo "<br>图片预览:<br>";
+	echo "<img src=\"".$destination."\" width=\"100px\"";
+	echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\"><hr>";
 
 
-
-    if($imgpreview==1)
-    {
-    echo "<br>图片预览:<br>";
-    echo "<img src=\"".$destination."\" width=".($image_size[0]*$imgpreviewsize)." height=".($image_size[1]*$imgpreviewsize);
-    echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\">";
-    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	for($i=0;$i<10;$i++){
+		if(isset($_FILES["upfile".$i])){//&&isset($_FILES["upfile".$i]['tmp_file'])){
+				$file=$_FILES["upfile".$i];
+				upload($file);
+		}
+	}
 }
 ?>
 </body>

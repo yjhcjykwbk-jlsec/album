@@ -38,11 +38,11 @@
         colWidth: 0,
         minCol: 1,
         maxCol: 10,
-        gapWidth: 7,
-        gapHeight: 25,//this is the height gap between items
+        gapWidth: 25,
+        gapHeight: 20,//this is the height gap between items
         resizeDelay: 0,
         loadDelay: 0,
-        preDistance: 100,
+        preDistance: 500,
         onbeforeLoad: null,
         load: null,
         resizeable: true,
@@ -275,8 +275,9 @@
                 $item = $(item),
                 inx = self.getMinHIndex();
                 pos = {
-                    left: inx * (op.colWidth + op.gapWidth),
+                    left: inx * (op.colWidth + op.gapWidth ),
                     top: self.colHeightArr[inx]
+//+Math.ceil(Math.random()*19)-10
                 };
 						//////////////////////////////
 						// console.log("$item:");console.log($item)
@@ -407,7 +408,7 @@
             // if no vertical scrollbar
             // or scroll to the bottom
             //  $window.height() >= $body.outerHeight() ||
-            if (self.state == 'ready' && ($window.height() + op.preDistance >= op.container.get(0).getBoundingClientRect().top + op.container.height())) {
+            if (self.state == 'ready' && ($window.height() + 500 >= op.container.get(0).getBoundingClientRect().top + op.container.height())) {
                 self.doLoad();
             }
         },

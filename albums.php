@@ -13,7 +13,7 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 <style>
 </style>
 </head>
-<body>
+<body style="background:#e5e0f0">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -40,7 +40,7 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:1000px;background:#fff;margin-left:auto;margin-right:auto;margin-top:15px;border-radius:7px;">
+<div class="folders" style="display:block;width:800px;height:800px;background:#fff;margin-left:auto;margin-right:auto;margin-top:15px;border-radius:7px;">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
