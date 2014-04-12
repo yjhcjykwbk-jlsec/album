@@ -12,10 +12,10 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
-::-webkit-scrollbar {width:5px;background-color:#fff;border-radius:3px;}
-::-webkit-scrollbar-thumb { background-color:#d9d0e0;border-radius:2px;}
-::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
-::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
+::-webkit-scrollbar {width:8px;background-color:#fff;border-radius:3px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #d9d0e0; background-color:#d9d0e0;border-radius:2px;}
+::-webkit-scrollbar-thumb:active {background-color:#fbb;border-radius:2px;}
+::-webkit-scrollbar-thumb:hover {background-color:#fbb;border-radius:2px;}
 </style>
 
 </head>
@@ -24,7 +24,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="src/index.js"></script>
 
 
 <!-- //header -->
@@ -67,7 +67,7 @@ display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
 <option value="100">关闭音乐</option>
 </select>
 <div align="center"><font color="white" style="font-family:'微软雅黑,宋体';font-size:8px;">信息安全实验室影集   请使用<font color="yellow"> google浏览器</font>查看</font>  <a href="albums.php" style="font-size:110%;font-weight:bold;color:#8af;text-decoration:underline;">相册首页从此进入</a></div>
-<?php include "music/music.php";?>
+<?php include "music.php";?>
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
@@ -75,7 +75,6 @@ display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
 var curDir="<?php echo $curDir;?>";
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
-		console.log("toggle photo view");
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		container.style.opacity="0.00";
@@ -147,8 +146,12 @@ togglePhotoView(-1);
 <!-- font-size: 14px;background-color:rgb(222,222,222,0.1);opacity:0.6;border:0;padding:10px;border-radius:2px; -->
 <!-- line-height: 1;"> -->
 <!-- </iframe> -->
-
-
-
+<script>
+togglePhotoView(-1);
+container.style.opacity="0.00";
+container.style.opacity="1";
+body.style.overflowY="hidden";
+body.style.overflowY="scroll";
+</script>
 </body>
 </html>

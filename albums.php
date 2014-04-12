@@ -18,7 +18,7 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
 <div style="background: center #f060f0;<!--#E8EDF1;--#303030;-->

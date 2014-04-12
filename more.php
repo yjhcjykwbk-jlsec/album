@@ -118,7 +118,7 @@ function listDir($dir,$from,$to){
 
 $dir=!isset($_REQUEST['dir'])?".":$_REQUEST['dir'];
 $from=isset($_GET['m'])?$_GET['m']:0;
-$num=isset($_GET['n'])?$_GET['n']:5;
+$num=isset($_GET['n'])?$_GET['n']:11;
 $to=isset($_GET['m'])?$from+$num:99999;
 if($from<99999)
 	$files=listDir($dir,$from,$to);

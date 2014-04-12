@@ -9,11 +9,16 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:5px solid #fff;border-right:2px;border-left:2px;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-28px;border-radius:0px 5px 5px 0px;">
-<button class="fButton" id="prev" onclick="prevFun();" style="position:fixed;opacity:0.5;color:#212;right:3%;margin-top:16%;width:40px;height:8%;border:1px solid #eee;background:#ddd;;z-index:99;border-radius:1px">上张</button>
-<button class="fButton" id="next" onclick="nextFun();" style="position:fixed;opacity:0.5;color:#212;margin-top:20%;right:3%;width:40px;height:8%;border:1px solid #eee; background:#ddd;z-index:99;border-radius:1px">下张</button>
-<button class="fButton" id="bigger" onclick="biggerFun();" style="position:fixed;opacity:0.5;color:#212;margin-top:24%;right:3%;width:40px;height:8%;border:1px solid #eee; background:#ddd;z-index:99;border-radius:1px">放大</button>
-<button class="fButton" id="smaller" onclick="smallerFun();" style="position:fixed;opacity:0.5;color:#212;margin-top:28%;right:3%;width:40px;height:8%;border:1px solid #eee; background:#ddd;z-index:99;border-radius:1px">缩小</button>
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:8px solid #fff;border-right:2px;border-left:2px;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-28px;border-radius:0px 10px 10px 0px;">
+
+<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.95%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
+<button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">下张</button>
+<button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">放大</button>
+<button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">缩小</button>
+<button class="fButton" id="darker" onclick="darkerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">灯光</button>
+</div>
+
 <style>
 .fButton:hover{ color:red; }
 #comment_span{color:white;} body{background:#f4f0f9; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
@@ -22,47 +27,73 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 var comEnabled=true;
 var biggerFun=function(){
 	cur=img.style.zoom;
-	if(cur=="") img.style.zoom="2";
+	if(cur=="") img.style.zoom="1.25";
 	else {
 		cur=parseFloat(cur);
-		if(cur>=2) return; 
-		img.style.zoom=cur*2+"";
+		if(cur>=1.75) return; 
+		if(cur<1) cur+=0.5;
+		else cur+=0.25;
+		img.style.zoom=cur+"";
 	}
-}
+};
+var darkFlag=false;
+var darkerFun=function(){
+	cur=photo_view.style.backgroundColor;
+	if(!darkFlag){
+		photo_view.style.backgroundColor="#080808";
+		photo_view.style.border="8px solid #0e0e0e";
+		photo_view.style.boxShadow="100px 10px 160px 245px #151020";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		right_panel.style.opacity="0.2";
+		darkFlag=true;
+	}else{
+		photo_view.style.backgroundColor="#f8f8f8";
+		photo_view.style.border="8px solid #eee";
+		photo_view.style.boxShadow="100px 10px 160px 145px #a5a0b0";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+		darkFlag=false;
+	}
+};
 var smallerFun=function(){
 	cur=img.style.zoom;
 	if(cur=="") img.style.zoom="0.5";
 	else {
 		cur=parseFloat(cur);
 		if(cur<=0.5) return;
-		img.style.zoom=cur*0.5+"";
+		if(cur>1) cur-=0.5;
+		else cur-=0.25;
+		img.style.zoom=cur+"";
 	}
-}
+};
 var toggleCom=function(){
 	if(right_panel.style.display=="none"){
 		comEnabled=true;
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
-	//	right_panel.style.width="20%";
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.height="85%";
 		photo_view.style.marginTop="0px";
 		right_panel.style.display="block";
-		prev.style.right=bigger.style.right=smaller.style.right=next.style.right="21.46%";
-		prev.style.opacity=bigger.style.opacity=smaller.style.opacity=next.style.opacity="0.3";
-		prev.style.width=bigger.style.width=smaller.style.width=next.style.width="30px";
+		fbuttons.style.opacity="0.3";
+		fbuttons.style.width="30px";
+		fbuttons.style.right="21.46%";
 		toggle_com.innerHTML="关闭吐槽";
 	}else{
 		comEnabled=false;
 		left_panel.style.width="100%";
-//		right_panel.style.width="0%";
 		right_panel.style.display="none";//width="20%";
 		photo_view.style.height="94%";
 		photo_view.style.marginTop="-28px";
 		right_panel.style.display="none";
-		prev.style.right=bigger.style.right=smaller.style.right=next.style.right="3%";
-		prev.style.opacity=bigger.style.opacity=smaller.style.opacity=next.style.opacity="0.5";
-		prev.style.width=bigger.style.width=smaller.style.width=next.style.width="40px";
+		fbuttons.style.right="3.95%";
+		fbuttons.style.opacity="0.7";
+		fbuttons.style.width="40px";
 	 	toggle_com.innerHTML="开启吐槽";
 	}
 };
@@ -174,7 +205,7 @@ var clearCom=function(){
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">关闭吐槽</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;width:91%;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:40%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:50%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
 
 </div>
