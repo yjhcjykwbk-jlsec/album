@@ -12,8 +12,8 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
-::-webkit-scrollbar {width:8px;background-color:#fff;border-radius:3px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #d9d0e0; background-color:#d9d0e0;border-radius:2px;}
+::-webkit-scrollbar {width:8px;background-color:#9990a0;border-radius:3px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#494050;border-radius:2px;}
 ::-webkit-scrollbar-thumb:active {background-color:#fbb;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#fbb;border-radius:2px;}
 </style>
@@ -95,7 +95,7 @@ var togglePhotoView=function(id){
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
-<div id="end" style="display:none; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">version 1.7<br/>
+<div id="end" style="display:none; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">version 2.0<br/>
 <hr>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>

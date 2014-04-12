@@ -9,9 +9,9 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:8px solid #fff;border-right:2px;border-left:2px;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-28px;border-radius:0px 10px 10px 0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:5px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-28px;border-radius:0px 10px 10px 0px;">
 
-<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.95%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.55%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">放大</button>
@@ -38,23 +38,26 @@ var biggerFun=function(){
 };
 var darkFlag=false;
 var darkerFun=function(){
-	cur=photo_view.style.backgroundColor;
 	if(!darkFlag){
+		body.style.backgroundColor="#141019";
 		photo_view.style.backgroundColor="#080808";
-		photo_view.style.border="8px solid #0e0e0e";
+		photo_view.style.border="5px solid #0e0e0e";
 		photo_view.style.boxShadow="100px 10px 160px 245px #151020";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#989";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.2";
 		darkFlag=true;
 	}else{
+		body.style.backgroundColor="#f4f0f9";
 		photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.border="8px solid #eee";
+		photo_view.style.border="5px solid #eee";
 		photo_view.style.boxShadow="100px 10px 160px 145px #a5a0b0";
+		fbuttons.style.color="#212";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 		darkFlag=false;
@@ -82,7 +85,7 @@ var toggleCom=function(){
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.3";
 		fbuttons.style.width="30px";
-		fbuttons.style.right="21.46%";
+		fbuttons.style.right="21.35%";
 		toggle_com.innerHTML="关闭吐槽";
 	}else{
 		comEnabled=false;
@@ -91,7 +94,7 @@ var toggleCom=function(){
 		photo_view.style.height="94%";
 		photo_view.style.marginTop="-28px";
 		right_panel.style.display="none";
-		fbuttons.style.right="3.95%";
+		fbuttons.style.right="3.55%";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
 	 	toggle_com.innerHTML="开启吐槽";
