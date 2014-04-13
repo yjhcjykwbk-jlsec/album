@@ -13,7 +13,7 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 <style>
 </style>
 </head>
-<body style="background:#e5e0f0">
+<body style="background:url(body_bg) no-repeat center top #245a70">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -30,7 +30,7 @@ display:block;width:100%;height:30px;margin-top:0px;">
 <style>
   .folders .li{
 	float:middle;
-	margin-left:auto;margin-right:auto;margin-top:20px;
+	margin-left:auto;margin-right:auto;margin-top:50px;
     border:17px;padding:5px;border-color:#0f0f0f;padding-color:#202020;
     box-shadow: 0 1px 4px rgba(0,0,0,.15)
 }
@@ -40,12 +40,12 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:800px;height:800px;background:#fff;margin-left:auto;margin-right:auto;margin-top:15px;border-radius:7px;">
+<div class="folders" style="display:block;width:840px;height:600px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:205px;border-radius:7px;">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
     if(is_dir("DATASET/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
-      <div class="li" style="display:block;float:left;margin:10px;">
+      <div class="li" style="display:block;float:left;margin:15px;margin-bottom:0;margin-top:25px;">
         <a href="index.php?dir=<?php echo $entry ?>"><?php echo $entry ?>/<br/>
         <img src="DATASET/<?php echo $entry?>/front.jpg" width="170" height="125" style="">
         </img></a>

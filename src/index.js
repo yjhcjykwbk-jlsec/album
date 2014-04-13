@@ -20,15 +20,15 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
 					// console.log("waterfall:");
 					if(inserted.hasOwnProperty(''+item.id)) return;
 					res.push(
-						'<div class="item masonry_brick masonry-brick" style="background:#f5f0fa;position: absolute; top: 0px; left: 0px;">'+
+						'<div class="item masonry_brick masonry-brick" style="background:#fff;position: absolute; top: 0px; left: 0px;">'+
 						'<div class="item_t">'+ 
 						// '<div class="img">'+// style="background:#000"> '+
 						'<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
 						'<img  width="'+230+'" height="'+item.height/item.width*230+'" src="'+item.src+'" data-pinit="registered">'+
 						'</a> '+
-						//    '<span class="class" color="#f0f0f0">'+item.href.substring(0,12)+'..</span> '+
+						    '<div class="class" style="color:#444;padding:5px;margin-top:1px;margin-left:5px;">'+item.href.split('.')[0].substring(0,30)+'</div> '+
 						'</div> '+
-						//						     '<div class="desp"><span>图片还没有添加描述</span></div> '+
+												     '<div class="desp" style="color:#aaa;padding:10px;border-top:1px solid #eee;"><span>219.223.195.113/'+item.src.substring(0,10)+'</span></div> '+
 						//   '</div> '+
 						//						'<div class="item_b clearfix"> '+
 						//						'<div class="items_likes fl" style="height:0px"> '+

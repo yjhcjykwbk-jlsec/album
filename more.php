@@ -72,6 +72,7 @@ function listDir($dir,$from,$to){
 	else if($size>1200*1200) {$n=5;$m=2;}
 	else if($size>700*700) $n=4;
 	else if($size>400*400) $n=2;
+	if($height>=2.5*$width||$width>=2.5*$height) $n=$n/3>1?$n/3:1;
 
         if($n>1) {
           $thumb=$thumbDir."/".$entry;

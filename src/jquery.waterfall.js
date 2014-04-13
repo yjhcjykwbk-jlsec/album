@@ -38,8 +38,8 @@
         colWidth: 0,
         minCol: 1,
         maxCol: 10,
-        gapWidth: 25,
-        gapHeight: 20,//this is the height gap between items
+        gapWidth: 15,
+        gapHeight: 15,//this is the height gap between items
         resizeDelay: 0,
         loadDelay: 0,
         preDistance: 500,

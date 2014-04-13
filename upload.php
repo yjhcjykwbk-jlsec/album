@@ -1,13 +1,10 @@
 <?php
 //上传文件类型列表
 $uptypes=array(
-		'image/jpg',
-		'image/jpeg',
-		'image/png',
-		'image/pjpeg',
-		'image/gif',
-		'image/bmp',
-		'image/x-png'
+		'jpg',
+		'jpeg',
+		'png',
+		'gif'
 	      );
 
 ?>
@@ -64,7 +61,12 @@ function upload($file){
 	$image_size = getimagesize($tmpFilename);
 	$pi=pathinfo($filename);
 	$ftype=$pi["extension"];
-	$destination = $destination_folder.$filename.".".$ftype;
+	global $uptypes;
+	if(!in_array($ftype,$uptypes)){
+		echo "图片类型无效:".$filename."<hr>";
+		exit;
+	}
+	$destination = $destination_folder.$filename;
 	if (file_exists($destination))
 	{
 		$time=time();

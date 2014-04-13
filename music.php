@@ -17,17 +17,17 @@ if ($handle = opendir("music")) {
 ?>
 var lastSong=0;
 var setMusic=function(music){
+	if(music==lastSong) return;
+	lastSong=music;
   music_div.innerHTML='<embed src="music/'+music+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
 };
 var setEmbed=function(i){
-  if(i==0||i==lastSong) return;
- lastSong=i;
   music_div.innerHTML='<embed src="music/'+musics[i]+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
 };
 var randomSong=function(){
   n=musics.length;
   setEmbed(Math.ceil(Math.random()*n));
 };
-randomSong();
+setMusic("太多.mp3");
 setInterval(randomSong,300*1000);
 </script>

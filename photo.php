@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:0px 110px 0px 0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:60px 0px 0px 0px;">
 
 <div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:21.05%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
@@ -27,21 +27,21 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 var comEnabled=true;
 var biggerFun=function(){
 	cur=img.style.zoom;
-	if(cur=="") img.style.zoom="1.25";
+	if(cur=="") cur=1;
 	else {
 		cur=parseFloat(cur);
-		if(cur>=1.75) return; 
-		if(cur<1) cur+=0.5;
-		else cur+=0.25;
-		img.style.zoom=cur+"";
 	}
+	if(cur>3) return; 
+	if(cur>1.5) cur+=2;
+	else cur+=1;
+	img.style.zoom=cur+"";
 };
 var darkFlag=false;
 var darkerFun=function(){
 	if(!darkFlag){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="rgba(8,8,8,0.98)";
+		photo_view.style.backgroundColor="rgba(8,8,8,0.99)";
 		photo_view.style.border="7px solid #0e0e0e";
 		photo_view.style.boxShadow="100px 10px 160px 245px #353040";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
@@ -71,7 +71,9 @@ var smallerFun=function(){
 	else {
 		cur=parseFloat(cur);
 		if(cur<=0.5) return;
-		if(cur>1) cur-=0.5;
+		if(cur>=4) cur-=2;
+		else if(cur>=2) cur-=1;
+		else if(cur>1) cur-=0.5;
 		else cur-=0.25;
 		img.style.zoom=cur+"";
 	}
@@ -88,19 +90,19 @@ var toggleCom=function(){
 		fbuttons.style.opacity="0.5";
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.05%";
-		img.style.minWidth="90%";
+		img.style.minWidth="70%";
 		toggle_com.innerHTML="关闭吐槽";
 	}else{
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.height="94%";
-		photo_view.style.marginTop="-21px";
+		photo_view.style.height="97%";
+		photo_view.style.marginTop="-38px";
 		right_panel.style.display="none";
 		fbuttons.style.right="3.40%";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
-		img.style.minWidth="70%";
+		img.style.minWidth="30%";
 	 	toggle_com.innerHTML="开启吐槽";
 	}
 };
