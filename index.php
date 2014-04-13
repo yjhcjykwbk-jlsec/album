@@ -38,36 +38,14 @@ display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
 <option value="6">每页六列</option>
 <option value="7">每页七列</option>
 </select>
-<select onclick="setEmbed(this.selectedIndex);"style="float:right;opacity:0.2">
+<select id="music_select" onclick="setMusic(this.value);"style="float:right;opacity:0.2">
 <option value="0">请选择背景音乐</option>
-<option value="1">英雄的黎明</option>
-<option value="2">回梦游仙</option>
-<option value="3">你那么美</option>
-<option value="4">御剑江湖</option>
-<option value="5">雨的印记</option>
-<option value="6">天地孤影任我行</option>
-<option value="7">乱红</option>
-<option value="8">tears</option>
-<option value="9">bustling-time</option>
-<option value="10">with-memories</option>
-<option value="11">醉瑶瑟</option>
-<option value="12">琵琶语</option>
-<option value="13">泡沫</option>
-<option value="14">可惜不是你</option>
-<option value="15">兰若词</option>
-<option value="16">故乡的原风景</option>
-<option value="17">依靠</option>
-<option value="18">感恩的心</option>
-<option value="19">同桌的你</option>
-<option value="20">睡在上铺的兄弟</option>
-<option value="21">最初的梦想</option>
-<option value="22">离开的时候</option>
-<option value="23">最爱</option>
-<option value="24">我是不是..</option>
 <option value="100">关闭音乐</option>
 </select>
 <div align="center"><font color="white" style="font-family:'微软雅黑,宋体';font-size:8px;">信息安全实验室影集   请使用<font color="yellow"> google浏览器</font>查看</font>  <a href="albums.php" style="font-size:110%;font-weight:bold;color:#8af;text-decoration:underline;">相册首页从此进入</a></div>
 <?php include "music.php";?>
+</p>
+</div>
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
@@ -127,7 +105,6 @@ selects.onclick=function(){
 	colNum=3+this.selectedIndex;
 	waterfall.refresh(3+this.selectedIndex);
 }
-togglePhotoView(-1);
 </script>
 </div>
 
@@ -147,11 +124,8 @@ togglePhotoView(-1);
 <!-- line-height: 1;"> -->
 <!-- </iframe> -->
 <script>
-togglePhotoView(-1);
-container.style.opacity="0.00";
-container.style.opacity="1";
-body.style.overflowY="hidden";
-body.style.overflowY="scroll";
+togglePhotoView(1);
+darkerFun();
 </script>
 </body>
 </html>

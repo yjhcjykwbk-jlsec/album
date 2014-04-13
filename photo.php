@@ -43,11 +43,11 @@ var darkerFun=function(){
 		photo_view.style.backgroundColor="#080808";
 		photo_view.style.border="5px solid #0e0e0e";
 		photo_view.style.boxShadow="100px 10px 160px 245px #151020";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#989";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
-		right_panel.style.opacity="0.2";
+		right_panel.style.opacity="0.1";
 		darkFlag=true;
 	}else{
 		body.style.backgroundColor="#f4f0f9";
@@ -83,7 +83,7 @@ var toggleCom=function(){
 		photo_view.style.height="85%";
 		photo_view.style.marginTop="0px";
 		right_panel.style.display="block";
-		fbuttons.style.opacity="0.3";
+		fbuttons.style.opacity="0.5";
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.35%";
 		toggle_com.innerHTML="关闭吐槽";
