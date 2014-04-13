@@ -53,7 +53,7 @@ var darkerFun=function(){
 	}else{
 		body.style.backgroundColor="#f4f0f9";
 		//photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.backgroundColor="rgba(248,248,248,0.98)";
+		photo_view.style.backgroundColor="rgba(248,248,248,0.999)";
 		photo_view.style.border="7px solid #eee";
 		photo_view.style.boxShadow="100px 10px 160px 145px #252030";
 		fbuttons.style.color="#212";
@@ -84,6 +84,8 @@ var toggleCom=function(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
+		photo_view.style.marginLeft="9%";
+		photo_view.style.width="88%";
 		photo_view.style.height="85%";
 		photo_view.style.marginTop="0px";
 		right_panel.style.display="block";
@@ -91,11 +93,13 @@ var toggleCom=function(){
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.05%";
 		img.style.minWidth="70%";
-		toggle_com.innerHTML="关闭吐槽";
+		toggle_com.innerHTML="切换大屏";
 	}else{
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
+		photo_view.style.marginLeft="3%";
+		photo_view.style.width="94%";
 		photo_view.style.height="97%";
 		photo_view.style.marginTop="-38px";
 		right_panel.style.display="none";
@@ -103,7 +107,7 @@ var toggleCom=function(){
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
 		img.style.minWidth="30%";
-	 	toggle_com.innerHTML="开启吐槽";
+	 	toggle_com.innerHTML="切换宽屏";
 	}
 };
 var allItems={};
@@ -212,7 +216,7 @@ var clearCom=function(){
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">关闭吐槽</button>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;width:91%;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:70%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
