@@ -41,7 +41,7 @@ var darkerFun=function(){
 	if(!darkFlag){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="rgba(8,8,8,0.99)";
+		photo_view.style.backgroundColor="rgba(8,8,8,1)";
 		photo_view.style.border="7px solid #0e0e0e";
 		photo_view.style.boxShadow="100px 10px 160px 245px #353040";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
