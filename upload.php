@@ -31,10 +31,10 @@ input
 
 <body>
 <?php
-echo "<script> setTimeout(function(){window.location.href='uploadview.php?dir=$class';},3000);</script>";
 //print_r($_FILES);
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
 $destination_folder="DATASET/".$class."/";
+echo "<script> setTimeout(function(){window.location.href='uploadview.php?dir=$class';},3000);</script>";
 if(!file_exists($destination_folder))
 {
 	if(!mkdir($destination_folder,0777)){
@@ -43,7 +43,7 @@ if(!file_exists($destination_folder))
 	}
 	chmod($destination_folder, 0777);
 }
-
+$uploadedFiles=array();
 function upload($file){
 	$max_file_size=20000000;     //上传文件大小限制, 单位BYTE
 	global $destination_folder;
@@ -53,9 +53,15 @@ function upload($file){
 	{
 		echo "文件太大!"; exit;
 	}
+	$filename=$file["name"];
+	global $uploadedFiles;
+	if(in_array($filename,$uploadedFiles)){
+		echo "重复上传的文件已经被过滤:".$filename."<hr>";
+		exit;
+	}
+	else $uploadedFiles[]=$filename;
 	$tmpFilename=$file["tmp_name"];
 	$image_size = getimagesize($tmpFilename);
-	$filename=$file["name"];
 	$pi=pathinfo($filename);
 	$ftype=$pi["extension"];
 	$destination = $destination_folder.$filename.".".$ftype;

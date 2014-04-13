@@ -15,7 +15,7 @@ $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
 	<input name="upfile7" type="file" style="width:150px"><br>
 	<input name="upfile8" type="file" style="width:150px"><br>
 	<input name="upfile9" type="file" style="width:150px"><br>
-	<span style="font-size:70%;">相册名(没有会新建,以front.jpg做封面):</span><input type="text" name="class" value="<?php echo $dir;?>"/><br/>
+	<span style="font-size:70%;">相册(默认当前相册，输入相册名可能会新建):</span><input type="text" name="class" value="<?php echo $dir;?>"/><br/>
 	<input type="submit" value="上传"><br>
 	</form>
 	<!-- <?=implode(', ',$uptypes)?> -->

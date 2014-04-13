@@ -9,9 +9,9 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-21px;border-radius:0px 110px 0px 0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:0px 110px 0px 0px;">
 
-<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.40%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:21.05%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">放大</button>
