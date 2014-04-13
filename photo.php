@@ -9,9 +9,9 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:5px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-28px;border-radius:0px 10px 10px 0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:95%;width:88%;margin-left:9%;margin-right:auto;margin-top:-21px;border-radius:0px 110px 0px 0px;">
 
-<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.55%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:3.40%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">放大</button>
@@ -40,9 +40,10 @@ var darkFlag=false;
 var darkerFun=function(){
 	if(!darkFlag){
 		body.style.backgroundColor="#141019";
-		photo_view.style.backgroundColor="#080808";
-		photo_view.style.border="5px solid #0e0e0e";
-		photo_view.style.boxShadow="100px 10px 160px 245px #151020";
+		//photo_view.style.backgroundColor="#080808";
+		photo_view.style.backgroundColor="rgba(8,8,8,0.98)";
+		photo_view.style.border="7px solid #0e0e0e";
+		photo_view.style.boxShadow="100px 10px 160px 245px #353040";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -51,9 +52,10 @@ var darkerFun=function(){
 		darkFlag=true;
 	}else{
 		body.style.backgroundColor="#f4f0f9";
-		photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.border="5px solid #eee";
-		photo_view.style.boxShadow="100px 10px 160px 145px #a5a0b0";
+		//photo_view.style.backgroundColor="#f8f8f8";
+		photo_view.style.backgroundColor="rgba(248,248,248,0.98)";
+		photo_view.style.border="7px solid #eee";
+		photo_view.style.boxShadow="100px 10px 160px 145px #252030";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
@@ -85,18 +87,20 @@ var toggleCom=function(){
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.5";
 		fbuttons.style.width="30px";
-		fbuttons.style.right="21.35%";
+		fbuttons.style.right="21.05%";
+		img.style.minWidth="90%";
 		toggle_com.innerHTML="关闭吐槽";
 	}else{
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
 		photo_view.style.height="94%";
-		photo_view.style.marginTop="-28px";
+		photo_view.style.marginTop="-21px";
 		right_panel.style.display="none";
-		fbuttons.style.right="3.55%";
+		fbuttons.style.right="3.40%";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
+		img.style.minWidth="70%";
 	 	toggle_com.innerHTML="开启吐槽";
 	}
 };
@@ -208,14 +212,14 @@ var clearCom=function(){
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">关闭吐槽</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;width:91%;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:50%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:70%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
 
 </div>
 
 
 <div id="right_panel" style="display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:69%;margin-top:1px;z-index:10;">
-<div style="border-bottom:2px solid #bab;opacity:0.6;color:#111;margin:4% 1% 10px 1%;display:block;">
+<div style="border-bottom:2px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
 
@@ -234,7 +238,6 @@ var clearCom=function(){
 </div>
 
 </div>
-<script> toggleCom();</script>
 <?php if(isset($_REQUEST['dir'])){?>
 	<script> 
 	curDir='<?php echo $curDir;?>';

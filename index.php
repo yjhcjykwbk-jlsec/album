@@ -12,8 +12,8 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
-::-webkit-scrollbar {width:8px;background-color:#9990a0;border-radius:3px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#494050;border-radius:2px;}
+::-webkit-scrollbar {width:8px;background-color:#494050;border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#9990a0;border-radius:2px;}
 ::-webkit-scrollbar-thumb:active {background-color:#fbb;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#fbb;border-radius:2px;}
 </style>
@@ -55,12 +55,12 @@ var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
-		container.style.opacity="0.00";
+		//container.style.opacity="0.1";
 		loadImg(id);
 	}else{
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
-		container.style.opacity="1";
+		//container.style.opacity="1";
 	}
 }
 </script>
@@ -125,7 +125,7 @@ selects.onclick=function(){
 <!-- </iframe> -->
 <script>
 togglePhotoView(1);
-darkerFun();
+//darkerFun();
 </script>
 </body>
 </html>
