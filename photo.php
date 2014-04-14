@@ -9,9 +9,9 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#fef8ff;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #454050;background:#fef8ff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
-<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.3;color:#212;right:21.05%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -27,6 +27,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <script type="text/javascript">
 var comEnabled=true;
 var biggerFun=function(){
+	img.style.width="";
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
 	else {
@@ -34,9 +35,9 @@ var biggerFun=function(){
 	}
 	if(cur>=8) return; 
 	if(cur>=4) cur=8;
-	else if(cur>=1.75) cur+=2;
-	else if(cur>1) cur+=0.5;
-	else cur+=0.25;
+	else if(cur>=1.75) cur=4;
+	else if(cur>=1) cur+=0.5;
+	else cur=1;
 //	console.log("zoom:"+cur);
 	zoomer.innerHTML=cur;
 	img.style.zoom=cur+"";
@@ -46,14 +47,14 @@ var darkerFun=function(){
 	if(!darkFlag){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="rgba(2,0,5,0.999)";
-		photo_view.style.border="2px solid #0e0e0e";
-		photo_view.style.boxShadow="110px 10px 160px 245px #020005";
+		photo_view.style.backgroundColor="#252030";//"rgba(2,0,5,0.999)";
+		photo_view.style.border="2px solid #828e9e";
+		photo_view.style.boxShadow="80px 10px 160px 185px #222035";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
-		right_panel.style.opacity="0.1";
+		right_panel.style.opacity="0.8";
 		darkFlag=true;
 	}else{
 		body.style.backgroundColor="#fef8ff";
@@ -71,17 +72,19 @@ var darkerFun=function(){
 	}
 };
 var smallerFun=function(){
+	img.style.width="";
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
 	else {
 		cur=parseFloat(cur);
 	}
-	if(cur<=0.5) return;
+	if(cur<=0.125) return;
 	if(cur>=6) cur-=4;
 	else if(cur>=4) cur-=2;
 	else if(cur>=2) cur-=1;
 	else if(cur>1) cur-=0.5;
-	else cur-=0.25;
+	else if(cur>0.25)cur-=0.25;
+	else cur-=0.125;
 	//console.log("zoom:"+cur);
 	zoomer.innerHTML=cur;
 	img.style.zoom=cur+"";
@@ -92,29 +95,34 @@ var toggleCom=function(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="9%";
-		photo_view.style.width="88%";
+		photo_view.style.marginLeft="7%";
+		photo_view.style.border="2px solid #888";
+		photo_view.style.width="90%";
 		photo_view.style.height="85%";
 		photo_view.style.marginTop="0px";
 		right_panel.style.display="block";
-		fbuttons.style.opacity="0.5";
+		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="30px";
-		fbuttons.style.right="21.05%";
+		fbuttons.style.right="21.65%";
 		img.style.minWidth="80%";
 		toggle_com.innerHTML="切换大屏";
 	}else{
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="3%";
-		photo_view.style.width="94%";
-		photo_view.style.height="97%";
-		photo_view.style.marginTop="-38px";
+		photo_view.style.marginLeft="1%";
+		photo_view.style.width="98%";
+		photo_view.style.height="96%";
+		photo_view.style.marginTop="-28px";
+		photo_view.style.border="1px solid #222";
+		//photo_view.style.borderLeft="4px solid #888";
 		right_panel.style.display="none";
-		fbuttons.style.right="3.40%";
+		fbuttons.style.right="2.05%";
+		photo_view.style.background="#252030";
+		photo_view.style.boxShadow="0px 10px 160px 645px #252030";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
-		img.style.minWidth="60%";
+		img.style.minWidth="30%";
 	 	toggle_com.innerHTML="切换宽屏";
 	}
 };
@@ -225,8 +233,8 @@ var clearCom=function(){
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
-<a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;width:91%;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;">
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
 
 </div>

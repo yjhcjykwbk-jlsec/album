@@ -20,7 +20,7 @@ var interval;
 var setMusic=function(music){
 	if(music==lastSong) return;
 	clearInterval(interval);
-	interval=setInterval(randomSong,300*1000);
+	if(music!="stop") interval=setInterval(randomSong,300*1000);
 	lastSong=music;
   music_div.innerHTML='<embed src="music/'+music+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
 };
@@ -31,6 +31,4 @@ var randomSong=function(){
   n=musics.length;
   setEmbed(Math.ceil(Math.random()*n));
 };
-setMusic("太多.mp3");
-interval=setInterval(randomSong,300*1000);
 </script>
