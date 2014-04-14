@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px rgb(240, 234, 250);background:#fef8ff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:88%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -37,39 +37,65 @@ var biggerFun=function(){
 	else if(cur>=1.75) cur=4;
 	else if(cur>=1) cur+=0.5;
 	else cur=1;
-//	console.log("zoom:"+cur);
+	//	console.log("zoom:"+cur);
 	if(cur<8) zoomer.innerHTML=cur;
 	else zoomer.innerHTML="800%";
 	img.style.zoom=cur+"";
 };
-var darkFlag=false;
+var darkFlag=0;
 var darkerFun=function(){
-	if(!darkFlag){
+	if(darkFlag%4==0){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="#252030";//"rgba(2,0,5,0.999)";
+		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
 		photo_view.style.border="2px solid #424e5e";
-		photo_view.style.boxShadow="80px 10px 160px 185px #020015";
+		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
+		photo_view.style.boxShadow="100px 10px 160px 185px #020015";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
-		darkFlag=true;
-	}else{
-		body.style.backgroundColor="#fef8ff";
+	}else if(darkFlag%4==3){
+		body.style.backgroundColor="#fefdff";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
 		photo_view.style.border="2px solid #f4f4f4";
-		photo_view.style.boxShadow="100px 10px 160px 145px rgb(240, 234, 250)";
+		left_panel.style.boxShadow="";
+		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-		darkFlag=false;
+	}else if(darkFlag%4==2){
+		body.style.backgroundColor="#fefdff";
+		//photo_view.style.backgroundColor="#f8f8f8";
+		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
+		photo_view.style.border="2px solid #f4f4f4";
+		left_panel.style.boxShadow="";
+		photo_view.style.boxShadow="rgb(0,0,0) 20px 0px 150px 120px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		fbuttons.style.color="#212";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==1){
+		body.style.backgroundColor="#040009";
+		//photo_view.style.backgroundColor="#080808";
+		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
+		photo_view.style.border="2px solid #111";
+		left_panel.style.boxShadow="100px 10px 160px 185px #404849";
+		photo_view.style.boxShadow="100px 10px 160px 185px #000";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		right_panel.style.opacity="0.8";
 	}
+	darkFlag++;
 };
 var smallerFun=function(){
 	cur=img.style.zoom;
@@ -96,8 +122,8 @@ var toggleCom=function(){
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.marginLeft="7%";
 		photo_view.style.width="90%";
-		photo_view.style.height="85%";
-		photo_view.style.marginTop="0px";
+		photo_view.style.height="88%";
+		photo_view.style.marginTop="5px";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="30px";
@@ -108,19 +134,19 @@ var toggleCom=function(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="1%";
-		photo_view.style.width="98%";
-		photo_view.style.height="96%";
-		photo_view.style.marginTop="-28px";
+		photo_view.style.marginLeft="7%";
+		photo_view.style.width="89.5%";
+		photo_view.style.height="90.7%";
+		photo_view.style.marginTop="-10px";
 		right_panel.style.display="none";
-		fbuttons.style.right="2.05%";
-		photo_view.style.background="#252030";
-		photo_view.style.border="2px solid #424e5e";
-		photo_view.style.boxShadow="0px 10px 160px 645px #252030";
+		fbuttons.style.right="4.05%";
+		//		photo_view.style.background="#252030";
+		//		photo_view.style.border="2px solid #424e5e";
+		//		left_panel.style.boxShadow=photo_view.style.boxShadow="0px 10px 160px 645px #252030";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
 		img.style.minWidth="15%";
-	 	toggle_com.innerHTML="切换宽屏";
+		toggle_com.innerHTML="切换宽屏";
 	}
 };
 var allItems={};
@@ -139,11 +165,11 @@ var initDir=function(){
 	dirInited=false;
 	items=null;
 	$.get('more.php?dir='+curDir,
-			function(data){
+		function(data){
 			//console.log(data.items);
 			allItems[curDir]=items=data.items;
 			dirInited=true;
-			},'json');
+		},'json');
 };
 var loadImg=function(id){
 	img.alt=id;
@@ -174,56 +200,56 @@ var nextFun=function(){
 };
 /* *  *string:原始字符串 *substr:子字符串  *isIgnoreCase:忽略大小写  */ 
 function contains(string,substr){
-  var startChar=substr.substring(0,1); 
-  var strLen=substr.length; 
-  for(var j=0;j<string.length-strLen+1;j++) { 
-    if(string.charAt(j)==startChar)//如果匹配起始字符,开始查找  
-    {  if(string.substring(j,j+strLen)==substr)//如果从j开始的字符与str匹配，那ok 
-    {  return true; }    } }  return false; 
+	var startChar=substr.substring(0,1); 
+	var strLen=substr.length; 
+	for(var j=0;j<string.length-strLen+1;j++) { 
+		if(string.charAt(j)==startChar)//如果匹配起始字符,开始查找  
+		{  if(string.substring(j,j+strLen)==substr)//如果从j开始的字符与str匹配，那ok 
+		{  return true; }    } }  return false; 
 }
 var addCom=function(com){
-  if(contains(com,"\'")||contains(com,"$")) {
-    alert("含有不合法字符\'%或$");
-    return;
-  }
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
-    function(data){
-    },"text");
-  getCom();
+	if(contains(com,"\'")||contains(com,"$")) {
+		alert("含有不合法字符\'%或$");
+		return;
+	}
+	$.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
+		function(data){
+		},"text");
+	getCom();
 };
 var comID;
 var getCom=function(){
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"act":"get"},
-    function(data){
-     //console.log("get Comment:");
-     //console.log(data);
-      comID=img.alt;
-      comments=data.split('$');
-      comments_div.innerHTML="";
-      for(i=0;i<comments.length;i++){
-        comment=comments[i].trim();
-        if(comment=="") continue;
-	author=comment.split('%')[1];	
-	content=comment.split('%')[0];	
-	if(author==undefined||author=="") author="路人甲";
-        comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid #eee;padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:#202020;border:1px solid #333;font-size:70%;margin-top:-1px;"> 删除</a></div>';
-      }
-    },"text");
+	$.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"act":"get"},
+		function(data){
+			//console.log("get Comment:");
+			//console.log(data);
+			comID=img.alt;
+			comments=data.split('$');
+			comments_div.innerHTML="";
+			for(i=0;i<comments.length;i++){
+				comment=comments[i].trim();
+				if(comment=="") continue;
+				author=comment.split('%')[1];	
+				content=comment.split('%')[0];	
+				if(author==undefined||author=="") author="路人甲";
+				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid #eee;padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:#202020;border:1px solid #333;font-size:70%;margin-top:-1px;"> 删除</a></div>';
+			}
+		},"text");
 };
 var delCom=function(com){
 	if(!confirm("您真的要删除评论'"+com+"'吗")) return;
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"del":com},
-    function(data){
-      //console.log(data);
-      getCom();
-    },"text");
+	$.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"del":com},
+		function(data){
+			//console.log(data);
+			getCom();
+		},"text");
 };
 var clearCom=function(){ 
-  if(!confirm("您真的要删除所有人的评论吗？")) return;
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"act":"clear"},
-    function(data){
-    },"text");
-  getCom();
+	if(!confirm("您真的要删除所有人的评论吗？")) return;
+	$.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"act":"clear"},
+		function(data){
+		},"text");
+	getCom();
 }
 //the first time to this page will getcomment initially
 //init(getCom);
@@ -241,8 +267,8 @@ var clearCom=function(){
 </div>
 
 
-<div id="right_panel" style="display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:69%;margin-top:1px;z-index:10;">
-<div style="border-bottom:2px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
+<div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
 
@@ -256,17 +282,17 @@ var clearCom=function(){
 
 
 <div style="margin:15px 8px 12px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="border-top:1px solid f0fefu;background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
+<div id="comments_div" style="max-height:480px;overflow-y:scroll;width:96%;border-top:1px solid f0fefu;background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
 </div>
 </div>
 
 </div>
 <?php if(isset($_REQUEST['dir'])){?>
-	<script> 
-	curDir='<?php echo $curDir;?>';
-	initDir('<?php echo $curDir;?>');
-	photo_view.style.display="block";
-	</script>
+<script> 
+curDir='<?php echo $curDir;?>';
+initDir('<?php echo $curDir;?>');
+photo_view.style.display="block";
+</script>
 <?php }?>
 
 </div> <!--photoView-->
