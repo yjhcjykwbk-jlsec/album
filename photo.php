@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #454050;background:#fef8ff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #454050;background:#fef8ff;border:5px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -48,8 +48,8 @@ var darkerFun=function(){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
 		photo_view.style.backgroundColor="#252030";//"rgba(2,0,5,0.999)";
-		photo_view.style.border="2px solid #828e9e";
-		photo_view.style.boxShadow="80px 10px 160px 185px #222035";
+		photo_view.style.border="5px solid #424e5e";
+		photo_view.style.boxShadow="80px 10px 160px 185px #020015";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -60,7 +60,7 @@ var darkerFun=function(){
 		body.style.backgroundColor="#fef8ff";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="rgba(248,248,248,0.999)";
-		photo_view.style.border="2px solid #f4f4f4";
+		photo_view.style.border="5px solid #f4f4f4";
 		photo_view.style.boxShadow="100px 10px 160px 145px #252030";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -96,7 +96,6 @@ var toggleCom=function(){
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.marginLeft="7%";
-		photo_view.style.border="2px solid #888";
 		photo_view.style.width="90%";
 		photo_view.style.height="85%";
 		photo_view.style.marginTop="0px";
@@ -104,7 +103,7 @@ var toggleCom=function(){
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.65%";
-		img.style.minWidth="80%";
+		img.style.minWidth="10%";
 		toggle_com.innerHTML="切换大屏";
 	}else{
 		comEnabled=false;
@@ -114,11 +113,10 @@ var toggleCom=function(){
 		photo_view.style.width="98%";
 		photo_view.style.height="96%";
 		photo_view.style.marginTop="-28px";
-		photo_view.style.border="1px solid #222";
-		//photo_view.style.borderLeft="4px solid #888";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.05%";
 		photo_view.style.background="#252030";
+		photo_view.style.border="5px solid #424e5e";
 		photo_view.style.boxShadow="0px 10px 160px 645px #252030";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";

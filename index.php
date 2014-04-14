@@ -73,7 +73,7 @@ var togglePhotoView=function(id){
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
-<div id="end" style="display:none; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">(Final) Version 2.1<br/>
+<div id="end" style="display:none; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 2.4<br/>
 <hr>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
