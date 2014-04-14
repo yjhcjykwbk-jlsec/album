@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #454050;background:#fef8ff;border:3px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px rgb(240, 234, 250);background:#fef8ff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -27,7 +27,6 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <script type="text/javascript">
 var comEnabled=true;
 var biggerFun=function(){
-	img.style.width="";
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
 	else {
@@ -39,7 +38,8 @@ var biggerFun=function(){
 	else if(cur>=1) cur+=0.5;
 	else cur=1;
 //	console.log("zoom:"+cur);
-	zoomer.innerHTML=cur;
+	if(cur<8) zoomer.innerHTML=cur;
+	else zoomer.innerHTML="800%";
 	img.style.zoom=cur+"";
 };
 var darkFlag=false;
@@ -48,7 +48,7 @@ var darkerFun=function(){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
 		photo_view.style.backgroundColor="#252030";//"rgba(2,0,5,0.999)";
-		photo_view.style.border="3px solid #424e5e";
+		photo_view.style.border="2px solid #424e5e";
 		photo_view.style.boxShadow="80px 10px 160px 185px #020015";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -59,9 +59,9 @@ var darkerFun=function(){
 	}else{
 		body.style.backgroundColor="#fef8ff";
 		//photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.backgroundColor="rgba(248,248,248,0.999)";
-		photo_view.style.border="3px solid #f4f4f4";
-		photo_view.style.boxShadow="100px 10px 160px 145px #252030";
+		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
+		photo_view.style.border="2px solid #f4f4f4";
+		photo_view.style.boxShadow="100px 10px 160px 145px rgb(240, 234, 250)";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
@@ -72,7 +72,6 @@ var darkerFun=function(){
 	}
 };
 var smallerFun=function(){
-	img.style.width="";
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
 	else {
@@ -103,7 +102,7 @@ var toggleCom=function(){
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.65%";
-		img.style.minWidth="10%";
+		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 	}else{
 		comEnabled=false;
@@ -116,11 +115,11 @@ var toggleCom=function(){
 		right_panel.style.display="none";
 		fbuttons.style.right="2.05%";
 		photo_view.style.background="#252030";
-		photo_view.style.border="3px solid #424e5e";
+		photo_view.style.border="2px solid #424e5e";
 		photo_view.style.boxShadow="0px 10px 160px 645px #252030";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
-		img.style.minWidth="30%";
+		img.style.minWidth="15%";
 	 	toggle_com.innerHTML="切换宽屏";
 	}
 };
@@ -128,6 +127,10 @@ var allItems={};
 var items;
 var dirInited=false;
 var initDir=function(){
+	//restore img size
+	img.style.zoom="8";
+	zoomer.innerHTML="800%";
+
 	if(allItems[curDir]!=null) {
 		items=allItems[curDir];
 		dirInited=true;
@@ -232,7 +235,7 @@ var clearCom=function(){
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
 
 </div>
