@@ -9,14 +9,15 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#f8f8f8;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:60px 0px 0px 0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:100px 10px 160px 145px #a5a0b0;background:#fef8ff;border:7px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:88%;margin-left:9%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
-<div class="fButtons" id="fbuttons" style="height:200px;position:fixed;opacity:0.3;color:#212;right:21.05%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
-<button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%;">上张</button>
-<button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">下张</button>
-<button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">放大</button>
-<button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">缩小</button>
-<button class="fButton" id="darker" onclick="darkerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:20%; ">灯光</button>
+<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.3;color:#212;right:21.05%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
+<button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
+<button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
+<button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
+<button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">缩小</button>
+<button class="fButton" id="darker" onclick="darkerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
+<button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
 
 <style>
@@ -31,9 +32,13 @@ var biggerFun=function(){
 	else {
 		cur=parseFloat(cur);
 	}
-	if(cur>3) return; 
-	if(cur>1.5) cur+=2;
-	else cur+=1;
+	if(cur>=8) return; 
+	if(cur>=4) cur=8;
+	else if(cur>=1.75) cur+=2;
+	else if(cur>1) cur+=0.5;
+	else cur+=0.25;
+//	console.log("zoom:"+cur);
+	zoomer.innerHTML=cur;
 	img.style.zoom=cur+"";
 };
 var darkFlag=false;
@@ -41,9 +46,9 @@ var darkerFun=function(){
 	if(!darkFlag){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="rgba(8,8,8,1)";
-		photo_view.style.border="7px solid #0e0e0e";
-		photo_view.style.boxShadow="100px 10px 160px 245px #353040";
+		photo_view.style.backgroundColor="rgba(2,0,5,0.999)";
+		photo_view.style.border="2px solid #0e0e0e";
+		photo_view.style.boxShadow="110px 10px 160px 245px #020005";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -51,10 +56,10 @@ var darkerFun=function(){
 		right_panel.style.opacity="0.1";
 		darkFlag=true;
 	}else{
-		body.style.backgroundColor="#f4f0f9";
+		body.style.backgroundColor="#fef8ff";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="rgba(248,248,248,0.999)";
-		photo_view.style.border="7px solid #eee";
+		photo_view.style.border="2px solid #f4f4f4";
 		photo_view.style.boxShadow="100px 10px 160px 145px #252030";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -67,16 +72,19 @@ var darkerFun=function(){
 };
 var smallerFun=function(){
 	cur=img.style.zoom;
-	if(cur=="") img.style.zoom="0.5";
+	if(cur=="") cur=1;
 	else {
 		cur=parseFloat(cur);
-		if(cur<=0.5) return;
-		if(cur>=4) cur-=2;
-		else if(cur>=2) cur-=1;
-		else if(cur>1) cur-=0.5;
-		else cur-=0.25;
-		img.style.zoom=cur+"";
 	}
+	if(cur<=0.5) return;
+	if(cur>=6) cur-=4;
+	else if(cur>=4) cur-=2;
+	else if(cur>=2) cur-=1;
+	else if(cur>1) cur-=0.5;
+	else cur-=0.25;
+	//console.log("zoom:"+cur);
+	zoomer.innerHTML=cur;
+	img.style.zoom=cur+"";
 };
 var toggleCom=function(){
 	if(right_panel.style.display=="none"){
@@ -92,7 +100,7 @@ var toggleCom=function(){
 		fbuttons.style.opacity="0.5";
 		fbuttons.style.width="30px";
 		fbuttons.style.right="21.05%";
-		img.style.minWidth="70%";
+		img.style.minWidth="80%";
 		toggle_com.innerHTML="切换大屏";
 	}else{
 		comEnabled=false;
@@ -106,7 +114,7 @@ var toggleCom=function(){
 		fbuttons.style.right="3.40%";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
-		img.style.minWidth="30%";
+		img.style.minWidth="60%";
 	 	toggle_com.innerHTML="切换宽屏";
 	}
 };
@@ -218,7 +226,7 @@ var clearCom=function(){
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;width:91%;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:70%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="display:block;border:0px solid #eee;max-width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
 
 </div>

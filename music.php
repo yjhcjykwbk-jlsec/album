@@ -16,8 +16,11 @@ if ($handle = opendir("music")) {
 }
 ?>
 var lastSong=0;
+var interval;
 var setMusic=function(music){
 	if(music==lastSong) return;
+	clearInterval(interval);
+	interval=setInterval(randomSong,300*1000);
 	lastSong=music;
   music_div.innerHTML='<embed src="music/'+music+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
 };
@@ -29,5 +32,5 @@ var randomSong=function(){
   setEmbed(Math.ceil(Math.random()*n));
 };
 setMusic("太多.mp3");
-setInterval(randomSong,300*1000);
+interval=setInterval(randomSong,300*1000);
 </script>
