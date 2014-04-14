@@ -250,7 +250,27 @@ var clearCom=function(){
 		function(data){
 		},"text");
 	getCom();
-}
+};
+var autoPlayInterval="";
+var stopAutoPlay=function(){
+	   	clearInterval(autoPlayInterval);
+		autoPlayInterval="";
+		auto_play.innerHTML="自动播放";
+		return;
+};
+var toggleAutoPlay=function(){
+	if(autoPlayInterval!="") {
+		stopAutoPlay();
+	}
+	img.style.zoom="8";
+	autoPlayInterval=setInterval(function(){
+		if(photo_view.style.display!="block") 
+			stopAutoPlay();
+		else nextFun();
+	},3000);
+	auto_play.innerHTML="停止放映";
+};
+
 //the first time to this page will getcomment initially
 //init(getCom);
 </script>
@@ -260,6 +280,7 @@ var clearCom=function(){
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
 <a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:0px;margin-bottom:0;margin-left:100px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:80%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </a>
