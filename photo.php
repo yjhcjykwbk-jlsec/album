@@ -38,7 +38,7 @@ var biggerFun=function(){
 	else if(cur>=1) cur+=0.5;
 	else cur=1;
 	//	console.log("zoom:"+cur);
-	if(cur<8) zoomer.innerHTML=cur;
+	if(cur<8) zoomer.innerHTML=(cur*100)+"%";
 	else zoomer.innerHTML="800%";
 	img.style.zoom=cur+"";
 };
@@ -111,7 +111,8 @@ var smallerFun=function(){
 	else if(cur>0.25)cur-=0.25;
 	else cur-=0.125;
 	//console.log("zoom:"+cur);
-	zoomer.innerHTML=cur;
+	zoomer.innerHTML=(cur*100)+"%";
+	//zoomer.innerHTML=cur;
 	img.style.zoom=cur+"";
 };
 var toggleCom=function(){
@@ -273,6 +274,11 @@ var toggleAutoPlay=function(){
 document.onkeydown=function(event){
 	if(photo_view.style.display=="block"){
 		t=event.keyCode;
+		if(event.ctrlKey){
+			if(t==38) biggerFun();
+			else if(t==40) smallerFun();
+			return;
+		}
 		if(t==37) prevFun();
 		else if(t==38) photo_view.scrollTop-=350;
 		else if(t==39) nextFun();
