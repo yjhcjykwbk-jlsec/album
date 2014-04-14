@@ -75,7 +75,7 @@ var darkerFun=function(){
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
 		photo_view.style.border="2px solid #f4f4f4";
 		left_panel.style.boxShadow="";
-		photo_view.style.boxShadow="rgb(0,0,0) 20px 0px 150px 120px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(235,245,242) 20px 0px 150px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
