@@ -9,6 +9,57 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
+<div id="chengxuyuan" style="bottom:0px;left:0px;border-radius:10px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
+<img src="yuan.gif" width="200px" onclick="dubaijun();return false;"/><br/>
+helloworld!我就是程序猿@#%$!@#<br/>有什么问题？请点我吧...
+</div>
+<div id="message" onclick="endFun();" style="left:240px;bottom:190px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;height:40px;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
+</div>
+<script>
+var _left=200;
+var _top=200;
+var rand=function(s){
+	return Math.floor(Math.random()*s);
+};
+var randomMessagePos=function(){
+/*	_left+=((Math.ceil(Math.random()*9)-3)*20);
+_top+=((Math.ceil(Math.random()*9)-5)*20);
+	message.style.left=_left+"px";
+	message.style.top=_top+"px";
+ */
+	message.style.color="rgb("+rand(150)+","+rand(150)+","+rand(150)+")";
+};
+var dubaiFuns=function(){
+	s0=function(){
+		message.style.display="block";
+		randomMessagePos();
+		message.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光还能够切换不同主题效果!赶快试试吧!";
+	};
+	s1=function(){	
+		message.style.display="block";
+		randomMessagePos();
+		message.innerHTML="说完这些，本码农就要水论文去了。。代码容易，论文不易，且水且珍惜T T";
+	};
+	s2=function(){
+		message.style.display="block";
+		randomMessagePos();
+		message.innerHTML="@_@~机器学习，svm，算法，MSER..@#@#@#!@%$@#!语言乱码中，请勿扰...";
+	};
+	s3=function(){	
+		message.style.display="block";
+		randomMessagePos();
+		message.innerHTML="You disappoint,I am still alive...";
+	};
+	return [s0,s1,s2,s3];
+}();
+var endFun=function(){message.style.display="none";}	
+var dubaiFlag=0;
+var dubaijun=function(){
+	dubaiFuns[dubaiFlag]();
+	setTimeout(endFun,20000);
+	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
+};
+</script>
 <div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;border-top:4px solid #f0f0f0;border-bottom:5px solid #f0f0f0;border-left:5px solid #f0f0f0;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:88%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
@@ -255,10 +306,10 @@ var clearCom=function(){
 };
 var autoPlayInterval="";
 var stopAutoPlay=function(){
-	   	clearInterval(autoPlayInterval);
-		autoPlayInterval="";
-		auto_play.innerHTML="自动播放";
-		return;
+	clearInterval(autoPlayInterval);
+	autoPlayInterval="";
+	auto_play.innerHTML="自动播放";
+	return;
 };
 var toggleAutoPlay=function(){
 	if(autoPlayInterval!="") {
@@ -302,7 +353,6 @@ document.onkeydown=function(event){
 </a>
 
 </div>
-
 
 <div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
