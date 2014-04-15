@@ -51,6 +51,7 @@ function listDir($dir,$from,$to){
       if(is_dir($filename)) continue;
 	
       $info = getimagesize($filename);
+
 	debug($filename);
       if(isPic($info['2'])){
         $i++;

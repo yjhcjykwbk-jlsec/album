@@ -112,7 +112,6 @@ function img2thumb($src_img, $dst_img, $width = 175, $height = 175, $cut = 0, $p
     $width  = $dst_w = $src_w * $proportion;
   }
 
-  debug($createfun);
   $src = @$createfun($src_img);
   $dst = @imagecreatetruecolor($width ? $width : $dst_w, $height ? $height : $dst_h);
   $white = imagecolorallocate($dst, 255, 255, 255);

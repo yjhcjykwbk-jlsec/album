@@ -14,7 +14,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！
 </div>
-<a onclick="chengxuyuanGoDie();return false;">让程序猿去死</button>
+<a onclick="chengxuyuanGoDie();return false;">让程序猿去死</a>
 </div>
 <div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
 <div id="message_content"></div>
@@ -84,7 +84,7 @@ var dubaiFuns=function(){
 		message.style.display="block";
 		randomMessagePos();
 		message_content.innerHTML="";
-		message_pre_content.innerHTML="code.die();\ni.die();\nexit();\n//...";
+		message_pre_content.innerHTML="\ni.am.died.in.extremal.south.moutain();\nexit();\n//...";
 	};
 	return [s0,s1,s2,s3,die];
 }();
