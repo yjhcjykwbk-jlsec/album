@@ -12,8 +12,8 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
- ::-webkit-scrollbar {width:7px;background-color:#fff;border-radius:1px;}
- ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#e9e0f0;border-radius:2px;}
+::-webkit-scrollbar {width:7px;background-color:#fff;border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#e9e0f0;border-radius:2px;}
 ::-webkit-scrollbar-thumb:active {background-color:#fbb;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#fbb;border-radius:2px;}
 </style>
@@ -65,9 +65,9 @@ var setScore=function(s){
 		return;
 	}
 	$.get("com_js.php?act=score&score="+s,function(data){
-		alert("谢谢您的支持，反馈已经被记录:"+data);
-		scored=true;
-	},"text");
+			alert("谢谢您的支持，反馈已经被记录:"+data);
+			scored=true;
+			},"text");
 };
 var curDir="<?php echo $curDir;?>";
 var togglePhotoView=function(id){
@@ -93,12 +93,12 @@ var togglePhotoView=function(id){
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
-<div id="end" style="display:none; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 2.4<br/>
+<div id="end" style="display:none;padding-top:80px; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <hr>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
-<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:300px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
+<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:600px;height:400px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
 </div>
 </div>
 
@@ -128,12 +128,12 @@ function setDesp(img,desp,ref){
 	desp=encodeURIComponent(desp);
 	ref=encodeURIComponent(ref);
 	$.post("desp_js.php?name="+img+"&desp="+desp+"&ref="+ref,function(data){
-		alert("添加描述成功");
-		//items[id].desp=desp;
-		desp_form.style.display="none";
-		//刷新
-		waterfall.refresh(colNum);
-	},'text');
+			alert("添加描述成功");
+			//items[id].desp=desp;
+			desp_form.style.display="none";
+			//刷新
+			waterfall.refresh(colNum);
+			},'text');
 }
 function showDespForm(imgName){
 	img_name.value=imgName;
@@ -141,12 +141,12 @@ function showDespForm(imgName){
 }
 </script>
 <div id="desp_form" style="
-		width: 220px;
-		position: fixed;
-		z-index: 101;
-		left: 100px;
-		background: #fff;
-		top: 100px;
+width: 220px;
+position: fixed;
+z-index: 101;
+left: 100px;
+background: #fff;
+top: 100px;
 display:none;
 padding:10px;
 opacity:0.95;

@@ -35,6 +35,7 @@ function getDesp($dir,&$arrayEntry){
 }
 function writeDesp($img,$desp,$ref){
 	file_put_contents("details.txt",$img."\n".$desp."\n".$ref."\n",FILE_APPEND|LOCK_EX);
+//	myLog("writeDesp:".$img.":".$desp.":".$ref."\n");
 }
 // writeDesp("\\0旅行/1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
 // initMap();
