@@ -135,17 +135,27 @@ function setDesp(img,desp,ref){
 			waterfall.refresh(colNum);
 			},'text');
 }
-function showDespForm(imgName){
+function showDespForm(button,imgName){
+	console.log(button);
+	rect=button.getBoundingClientRect();
+	window.button=button;
+	// if(button.offsetParent!=null) {
+		// offset.top-=$(button.offsetParent).offset().top;
+	// }
 	img_name.value=imgName;
+	desp_form.style.left=rect.left+"px";
+	desp_form.style.bottom=rect.bottom+"px";
 	desp_form.style.display="block";
 }
 </script>
 <div id="desp_form" style="
 width: 220px;
+height:130px;
+box-shadow:4px 5px 10px 3px #888;
 position: fixed;
 z-index: 101;
 left: 100px;
-background: #fff;
+background: #f0f0f0;
 top: 100px;
 display:none;
 padding:10px;
@@ -153,7 +163,7 @@ opacity:0.95;
 border-radius:5px;
 ">
 <textarea id="img_id" style="display:none"></textarea><br/>
-图片<textarea id="img_name" style="display:none"></textarea><br/>
+<textarea id="img_name" style="display:none"></textarea><br/>
 描述<textarea id="desp_input"></textarea><br/>
 引用<textarea id="ref_input"></textarea>
 <button onclick="setDesp(img_name.value,desp_input.value,ref_input.value);">提交描述</button>
