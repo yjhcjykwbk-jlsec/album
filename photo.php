@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;border:2px solid #fff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:88%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;border-top:4px solid #f0f0f0;border-bottom:5px solid #f0f0f0;border-left:5px solid #f0f0f0;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:88%;width:90%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:21.65%;margin-top:16%;width:40px;border:0px solid #eee;background:#ddd;z-index:99;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -44,13 +44,14 @@ var biggerFun=function(){
 };
 var darkFlag=0;
 var darkerFun=function(){
-	if(darkFlag%4==1){
+	if(darkFlag%4==0){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
 		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
-		photo_view.style.border="2px solid #424e5e";
+		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
 		photo_view.style.boxShadow="100px 10px 160px 185px #020015";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -60,22 +61,10 @@ var darkerFun=function(){
 		body.style.backgroundColor="#f3f0f6";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		photo_view.style.border="2px solid #f4f4f4";
+		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #f0f0f0";
 		left_panel.style.boxShadow="";
 		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		fbuttons.style.color="#212";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		left_panel.style.borderRight="1px solid #eee";
-		right_panel.style.opacity="1";
-	}else if(darkFlag%4==0){
-		body.style.backgroundColor="#f3f0f6";
-		//photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		photo_view.style.border="2px solid #f4f4f4";
-		left_panel.style.boxShadow="";
-		photo_view.style.boxShadow="rgb(215,225,222) -10px 10px 100px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
@@ -83,12 +72,27 @@ var darkerFun=function(){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==2){
-		body.style.backgroundColor="#040009";
+		body.style.backgroundColor="#f3f0f6";
+		//photo_view.style.backgroundColor="#f8f8f8";
+		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
+		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #fff";
+		left_panel.style.boxShadow="";
+		photo_view.style.boxShadow="rgb(245,245,253) -10px 30px 50px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		fbuttons.style.color="#212";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==1){
+		body.style.backgroundColor="#040609";
 		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
-		photo_view.style.border="2px solid #111";
-		left_panel.style.boxShadow="100px 10px 160px 185px #102829";
-		photo_view.style.boxShadow="100px 10px 160px 285px #000";
+		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
+		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #111";
+		left_panel.style.boxShadow="100px 10px 160px 85px #242729";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
+		photo_view.style.boxShadow="-10px 10px 160px 85px #000";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -141,9 +145,6 @@ var toggleCom=function(){
 		photo_view.style.marginTop="-10px";
 		right_panel.style.display="none";
 		fbuttons.style.right="4.05%";
-		//		photo_view.style.background="#252030";
-		//		photo_view.style.border="2px solid #424e5e";
-		//		left_panel.style.boxShadow=photo_view.style.boxShadow="0px 10px 160px 645px #252030";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.width="40px";
 		img.style.minWidth="15%";
@@ -309,9 +310,9 @@ document.onkeydown=function(event){
 </div>
 
 <div style="margin:10px;margin-bottom:0px;border:0px solid #301030;float:left;border-radius:4px;"><!--806090-->
-	<textarea id="comment_area" style="font-size:7px;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
+	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
-	<textarea id="comment_author" style="font-size:7px;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
+	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
 	<button value＝"清空" style="background:#808080;color:#452;border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
 	<button value＝"提交" style="background:#707070;border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">吐槽</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>

@@ -58,6 +58,7 @@ var togglePhotoView=function(id){
 		container.style.opacity="0.2";
 		loadImg(id);
 	}else{
+		body.style.backgroundColor="#f4f0f9";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
