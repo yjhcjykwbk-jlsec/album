@@ -135,7 +135,7 @@ function setDesp(img,desp,ref){
 			waterfall.refresh(colNum);
 			},'text');
 }
-function showDespForm(button,imgName){
+function showDespForm(button,height,imgName){
 	console.log(button);
 	rect=button.getBoundingClientRect();
 	window.button=button;
@@ -144,7 +144,7 @@ function showDespForm(button,imgName){
 	// }
 	img_name.value=imgName;
 	desp_form.style.left=rect.left+"px";
-	desp_form.style.bottom=rect.bottom+"px";
+	desp_form.style.bottom=rect.bottom-150+"px";
 	desp_form.style.display="block";
 }
 </script>
@@ -155,7 +155,7 @@ box-shadow:4px 5px 10px 3px #888;
 position: fixed;
 z-index: 101;
 left: 100px;
-background: #f0f0f0;
+background: #fafafa;
 top: 100px;
 display:none;
 padding:10px;
