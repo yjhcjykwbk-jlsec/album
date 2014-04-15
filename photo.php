@@ -44,7 +44,7 @@ var biggerFun=function(){
 };
 var darkFlag=0;
 var darkerFun=function(){
-	if(darkFlag%4==0){
+	if(darkFlag%4==1){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.backgroundColor="#080808";
 		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
@@ -57,7 +57,7 @@ var darkerFun=function(){
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==3){
-		body.style.backgroundColor="#fefdff";
+		body.style.backgroundColor="#f3f0f6";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
 		photo_view.style.border="2px solid #f4f4f4";
@@ -69,26 +69,26 @@ var darkerFun=function(){
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==2){
-		body.style.backgroundColor="#fefdff";
+	}else if(darkFlag%4==0){
+		body.style.backgroundColor="#f3f0f6";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
 		photo_view.style.border="2px solid #f4f4f4";
 		left_panel.style.boxShadow="";
-		photo_view.style.boxShadow="rgb(235,245,242) 20px 0px 150px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(215,225,222) -10px 10px 100px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==1){
+	}else if(darkFlag%4==2){
 		body.style.backgroundColor="#040009";
 		//photo_view.style.backgroundColor="#080808";
 		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
 		photo_view.style.border="2px solid #111";
-		left_panel.style.boxShadow="100px 10px 160px 185px #404849";
-		photo_view.style.boxShadow="100px 10px 160px 185px #000";
+		left_panel.style.boxShadow="100px 10px 160px 185px #102829";
+		photo_view.style.boxShadow="100px 10px 160px 285px #000";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
