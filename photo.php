@@ -9,20 +9,36 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="chengxuyuan" style="max-width:180px;bottom:0px;right:0px;border-radius:10px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
-<img src="yuan.gif" width="180px" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
-<div style="margin-left:5px">helloworld!我就是程序猿@#%$!@#有什么问题？请点我吧...</div>
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:1;background:#eee;">
+<img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
+<div id="yuanIntro" style="margin-left:5px">
+程序猿来了！
+</div>
 <a onclick="chengxuyuanGoDie();return false;">让程序猿去死</button>
 </div>
-<div id="message" onclick="endFun();" style="right:220px;bottom:190px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
+<div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
 <div id="message_content"></div>
 <pre id="message_pre_content" style="font-size:13px;font-weight:bold;color:green"></pre>
 </div>
 <script>
+setTimeout(function(){
+	chengxuyuan.style.right="40%";
+	chengxuyuan.style.bottom="50%";
+	chengxuyuan.style.width="200px";
+	chengxuyuan.style.display="block";
+	chengxuyuan.style.backgroundColor="#eee";
+	setTimeout(function(){
+		chengxuyuan.style.right="0px";
+		chengxuyuan.style.bottom="-15px";
+		chengxuyuan.style.width="80px";
+		yuanIntro.innerHTML="hello world!";
+		yuanIntro.style.display="block";
+	},2000);
+},1000);
 var chengxuyuanGoDie=function(){
 	chengxuyuan.style.display="none";
 	dubaiFlag=4;
-	setTimeout(dubaijun,2000);
+	setTimeout(dubaijun,1000);
 };
 var _right=200;
 var _top=200;
