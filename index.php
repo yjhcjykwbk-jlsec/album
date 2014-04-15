@@ -26,7 +26,6 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="src/index.js"></script>
 
-
 <!-- //header -->
 <div style="background: center rgba(#807080,0.2);<!--#E8EDF1;--#303030;-->
 display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
@@ -101,17 +100,15 @@ var togglePhotoView=function(id){
 <h6>or email to zgxu2008@gmail.com</h6><br/>
 <iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:300px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
 </div>
+</div>
 
 <script>
 function submitAdvise(){
 	alert("您的意见已经被收录，谢谢您的支持");
 	return;
 }
-</script>
-
-<script type="text/javascript">
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=4;
+var colNum=5;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){
@@ -126,10 +123,42 @@ selects.onclick=function(){
 	colNum=3+this.selectedIndex;
 	waterfall.refresh(3+this.selectedIndex);
 }
+function setDesp(img,desp,ref){
+	img=encodeURIComponent(img);
+	desp=encodeURIComponent(desp);
+	ref=encodeURIComponent(ref);
+	$.post("desp_js.php?name="+img+"&desp="+desp+"&ref="+ref,function(data){
+		alert("添加描述成功");
+		//items[id].desp=desp;
+		desp_form.style.display="none";
+		//刷新
+		waterfall.refresh(colNum);
+	},'text');
+}
+function showDespForm(imgName){
+	img_name.value=imgName;
+	desp_form.style.display="block";
+}
 </script>
+<div id="desp_form" style="
+		width: 220px;
+		position: fixed;
+		z-index: 101;
+		left: 100px;
+		background: #fff;
+		top: 100px;
+display:none;
+padding:10px;
+opacity:0.95;
+border-radius:5px;
+">
+<textarea id="img_id" style="display:none"></textarea><br/>
+图片<textarea id="img_name" style="display:none"></textarea><br/>
+描述<textarea id="desp_input"></textarea><br/>
+引用<textarea id="ref_input"></textarea>
+<button onclick="setDesp(img_name.value,desp_input.value,ref_input.value);">提交描述</button>
+<button onclick="desp_form.style.display='none';">取消</button>
 </div>
-
-
 
 
 
