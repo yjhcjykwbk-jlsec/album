@@ -1,4 +1,10 @@
 <?php
+function score($score){
+	$file="txt/collection.txt";
+	if(!file_exists($file)) touch($file);
+	file_put_contents($file," ".$score,FILE_APPEND);
+	return "scored:".$score*20;
+}
 function unique($str){
   $n="";
   for($i=0;$i<count($str);$i++){
@@ -8,17 +14,25 @@ function unique($str){
   }
   return $n;
 }
+
+
+$act=isset($_REQUEST['act'])?$_REQUEST['act']:"none";
+if($act=="score"){
+	$score=isset($_REQUEST['score'])?$_REQUEST['score']:0;
+	echo	score($score);
+	return;
+}
+
+
 if(!isset($_REQUEST['dir'])||!isset($_REQUEST['img'])) {
   return;
 }
+
 $dir=$_REQUEST['dir'];
 $img=$_REQUEST['img'];
-$act=isset($_REQUEST['act'])?$_REQUEST['act']:"none";
-
 $file="txt/$dir/$img.txt";
 if(!file_exists("txt/$dir")) mkdir("txt/$dir");
 if(!file_exists($file)) touch($file);
-
 
 if($act=="clear"){
   file_put_contents($file,"$");

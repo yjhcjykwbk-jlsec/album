@@ -42,6 +42,14 @@ display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
 <option value="0">请选择背景音乐</option>
 <option value="stop">关闭音乐</option>
 </select>
+<select onclick="setScore(this.value);"style="float:right;opacity:0.2">
+<option value="0">请给本网站打分</option>
+<option value="1">1星</option>
+<option value="2">2星</option>
+<option value="3">3星</option>
+<option value="4">4星</option>
+<option value="5">5星</option>
+</select>
 <div align="center"><font color="white" style="font-family:'微软雅黑,宋体';font-size:8px;">信息安全实验室影集   请使用<font color="yellow"> google浏览器</font>查看</font>  <a href="albums.php" style="font-size:110%;font-weight:bold;color:#8af;text-decoration:underline;">相册首页从此进入</a></div>
 <?php include "music.php";?>
 </p>
@@ -50,6 +58,18 @@ display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
 <?php include "menu.php";?>
 
 <script>
+var scored=false;
+var setScore=function(s){
+	if(s=="0") return;
+	if(scored){
+		alert("您已经评价过了，谢谢！");
+		return;
+	}
+	$.get("com_js.php?act=score&score="+s,function(data){
+		alert("谢谢您的支持，反馈已经被记录:"+data);
+		scored=true;
+	},"text");
+};
 var curDir="<?php echo $curDir;?>";
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
