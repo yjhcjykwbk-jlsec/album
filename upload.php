@@ -46,7 +46,7 @@ $uploadedFiles=array();
 function upload($file,$desp,$ref){
 	$max_file_size=20000000;     //上传文件大小限制, 单位BYTE
 	global $destination_folder;
-	print_r($file);
+	//print_r($file);
 	if($file['size']==""||$file['tmp_name']=="") return;
 	if($max_file_size < $file["size"])
 		//检查文件大小
@@ -88,7 +88,7 @@ function upload($file,$desp,$ref){
 		exit;
 	}
 	//写入文件的描述和reference website
-	echo "记录描述和地址...<br/>";
+	//echo "记录描述和地址...<br/>";
 	global $class;
 	writeDesp($class."/".$filename,$desp,$ref);
 
