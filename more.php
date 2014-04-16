@@ -54,8 +54,8 @@ function listDir($dir,$from,$to){
 			$info = getimagesize($filename);
 
 			debug($filename);
-			$pi=strtolower(pathinfo($filename));
-			if(!in_array($pi['extension'],$types)) continue;
+			$pi=pathinfo($filename);
+			if(!in_array(strtolower($pi['extension']),$types)) continue;
 			if(isPic($info['2'])){
 				$i++;
 				if($i==$from) $prev=$entry;
