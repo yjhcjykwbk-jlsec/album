@@ -9,14 +9,120 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <link rel="stylesheet" type="text/css" href="css/container.css" />
 <link rel="stylesheet" type="text/css" href="css/item.css" />
 <link rel="stylesheet" type="text/css" href="css/contextMenu.css" />
+
+<!-- style related codes -->
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
-::-webkit-scrollbar {width:7px;background-color:#fff;border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#e9e0f0;border-radius:2px;}
-::-webkit-scrollbar-thumb:active {background-color:#fbb;border-radius:2px;}
-::-webkit-scrollbar-thumb:hover {background-color:#fbb;border-radius:2px;}
+::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#6f207f;border-radius:2px;}
+#photo_view{border:2px solid rgba(200,200,200,0.01);border-right:3px solid rgba(200,200,200,0.01);border-left:3px solid rgba(200,200,200,0.01);}
+::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
+::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 </style>
+<script>
+var toggleCom=function(){
+	if(right_panel.style.display=="none"){
+		comEnabled=true;
+		if(img.alt!=comID) getCom();
+		left_panel.style.width="79%";
+		right_panel.style.display="block";//width="20%";
+		photo_view.style.marginLeft="7%";
+		photo_view.style.width="89%";
+		photo_view.style.height="87%";
+		photo_view.style.marginTop="0px";
+		right_panel.style.display="block";
+		fbuttons.style.opacity="0.7";
+		//fbuttons.style.width="30px";
+		fbuttons.style.right="22.25%";
+		img.style.minWidth="13%";
+		toggle_com.innerHTML="切换大屏";
+	}else{
+		comEnabled=false;
+		left_panel.style.width="100%";
+		right_panel.style.display="none";//width="20%";
+		photo_view.style.marginLeft="7%";
+		photo_view.style.width="87%";
+		photo_view.style.height="87%";
+		photo_view.style.marginTop="0px";
+		right_panel.style.display="none";
+		fbuttons.style.right="2.50%";
+		fbuttons.style.opacity="0.7";
+		//fbuttons.style.width="40px";
+		img.style.minWidth="15%";
+		toggle_com.innerHTML="切换宽屏";
+	}
+};
+var togglePhotoView=function(id){
+	if(id>=0&&dirInited){
+		body.style.overflowY="hidden";
+		photo_view.style.display="block";
+		container.style.opacity="0.05";
+		loadImg(id);
+	}else{
+		body.style.backgroundColor="#f4f0f9";
+		body.style.overflowY="scroll";
+		photo_view.style.display="none";
+		container.style.opacity="1";
+	}
+}
+var darkerFun=function(){
+	if(darkFlag%4==3){
+		left_panel.style.backgroundColor="#fff";
+		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#f3f0f6";
+		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		fbuttons.style.color="#212";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==2){
+		left_panel.style.backgroundColor="#fff";
+		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#f3f0f6";
+		body.style.backgroundColor="#f3f0f6";
+		photo_view.style.boxShadow="rgb(25,25,33) -10px 20px 150px 40px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		fbuttons.style.color="#212";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==0){
+		left_panel.style.backgroundColor="#050010";
+		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
+		body.style.backgroundColor="#141019";
+		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
+		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
+		photo_view.style.boxShadow="100px 10px 160px 185px #020015";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		right_panel.style.opacity="0.8";
+	}else if(darkFlag%4==1){
+		left_panel.style.backgroundColor="#080808";
+		left_panel.style.boxShadow="100px 10px 160px 85px #242729";
+		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
+		body.style.backgroundColor="#040609";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
+		photo_view.style.boxShadow="-10px 10px 160px 85px #000";
+		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		right_panel.style.opacity="0.8";
+	}
+	darkFlag++;
+};
+</script>
 
 </head>
 <body id="body" style="height:130%;overflow-x:hidden;">
@@ -70,19 +176,6 @@ var setScore=function(s){
 			},"text");
 };
 var curDir="<?php echo $curDir;?>";
-var togglePhotoView=function(id){
-	if(id>=0&&dirInited){
-		body.style.overflowY="hidden";
-		photo_view.style.display="block";
-		container.style.opacity="0.2";
-		loadImg(id);
-	}else{
-		body.style.backgroundColor="#f4f0f9";
-		body.style.overflowY="scroll";
-		photo_view.style.display="none";
-		container.style.opacity="1";
-	}
-}
 </script>
 
 

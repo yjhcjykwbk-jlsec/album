@@ -139,66 +139,6 @@ var biggerFun=function(){
 	img.style.zoom=cur+"";
 };
 var darkFlag=0;
-var darkerFun=function(){
-	if(darkFlag%4==0){
-		body.style.backgroundColor="#141019";
-		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
-		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
-		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
-		photo_view.style.boxShadow="100px 10px 160px 185px #020015";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
-		left_panel.style.borderRight="1px solid #111";
-		right_panel.style.opacity="0.8";
-	}else if(darkFlag%4==3){
-		body.style.backgroundColor="#f3f0f6";
-		//photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #f0f0f0";
-		photo_view.style.border="0";
-		left_panel.style.boxShadow="";
-		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
-		fbuttons.style.color="#212";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		left_panel.style.borderRight="1px solid #eee";
-		right_panel.style.opacity="1";
-	}else if(darkFlag%4==2){
-		body.style.backgroundColor="#f3f0f6";
-		//photo_view.style.backgroundColor="#f8f8f8";
-		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #fff";
-		photo_view.style.border="0";
-		left_panel.style.boxShadow="";
-		photo_view.style.boxShadow="rgb(25,25,33) -10px 20px 150px 40px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
-		fbuttons.style.color="#212";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		left_panel.style.borderRight="1px solid #eee";
-		right_panel.style.opacity="1";
-	}else if(darkFlag%4==1){
-		body.style.backgroundColor="#040609";
-		//photo_view.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
-		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #111";
-		left_panel.style.boxShadow="100px 10px 160px 85px #242729";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
-		photo_view.style.boxShadow="-10px 10px 160px 85px #000";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
-		left_panel.style.borderRight="1px solid #111";
-		right_panel.style.opacity="0.8";
-	}
-	darkFlag++;
-};
 var smallerFun=function(){
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
@@ -216,38 +156,6 @@ var smallerFun=function(){
 	zoomer.innerHTML=(cur*100)+"%";
 	//zoomer.innerHTML=cur;
 	img.style.zoom=cur+"";
-};
-var toggleCom=function(){
-	if(right_panel.style.display=="none"){
-		comEnabled=true;
-		if(img.alt!=comID) getCom();
-		left_panel.style.width="79%";
-		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="7%";
-		photo_view.style.width="89%";
-		photo_view.style.height="87%";
-		photo_view.style.marginTop="0px";
-		right_panel.style.display="block";
-		fbuttons.style.opacity="0.7";
-		//fbuttons.style.width="30px";
-		fbuttons.style.right="22.25%";
-		img.style.minWidth="13%";
-		toggle_com.innerHTML="切换大屏";
-	}else{
-		comEnabled=false;
-		left_panel.style.width="100%";
-		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="7%";
-		photo_view.style.width="86%";
-		photo_view.style.height="87%";
-		photo_view.style.marginTop="0px";
-		right_panel.style.display="none";
-		fbuttons.style.right="3.65%";
-		fbuttons.style.opacity="0.7";
-		//fbuttons.style.width="40px";
-		img.style.minWidth="15%";
-		toggle_com.innerHTML="切换宽屏";
-	}
 };
 var allItems={};
 var items;
@@ -412,9 +320,9 @@ document.onkeydown=function(event){
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
-<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-15px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-15px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-15px;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
+<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
@@ -423,7 +331,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:16%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
