@@ -119,7 +119,7 @@ var dubaijun=function(){
 
 <style>
 .fButton:hover{ color:red; }
-#comment_span{color:white;} body{background:#e9ece0; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
+#comment_span{color:white;} body{background:rgb(244, 240, 249); margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <script type="text/javascript">
 var comEnabled=true;
