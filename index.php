@@ -200,6 +200,7 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:block;width:100%;height:20px;margin-top:0px;z-index:100;"></div>
 
+<div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
 <div id="container" class="container" style="opacity:0.9">
 </div>
