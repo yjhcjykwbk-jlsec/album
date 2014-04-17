@@ -48,7 +48,7 @@ function hideCom(){
 		photo_view.style.height="87%";
 		photo_view.style.marginTop="0.1%";
 		right_panel.style.display="none";
-		fbuttons.style.right="2.50%";
+		fbuttons.style.right="2.70%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
