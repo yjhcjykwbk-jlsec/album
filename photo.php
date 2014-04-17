@@ -333,7 +333,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:16%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:16%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
@@ -348,7 +348,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 
 <div style="margin:15px 8px 12px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="max-width:200px;max-height:480px;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+<div id="comments_div" style="width:98%;max-width:100%;max-height:450px;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
 </div>
 </div>

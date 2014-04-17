@@ -21,8 +21,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 </style>
 <script>
-var toggleCom=function(){
-	if(right_panel.style.display=="none"){
+function showCom(){
 		comEnabled=true;
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
@@ -37,7 +36,8 @@ var toggleCom=function(){
 		fbuttons.style.right="22.25%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
-	}else{
+}
+function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
@@ -53,6 +53,12 @@ var toggleCom=function(){
 		//fbuttons.style.width="40px";
 		img.style.minWidth="15%";
 		toggle_com.innerHTML="切换宽屏";
+}
+var toggleCom=function(){
+	if(right_panel.style.display=="none"){
+		showCom();
+	}else{
+		hideCom();
 	}
 };
 var togglePhotoView=function(id){
