@@ -1,7 +1,7 @@
 <meta charset="utf-8">
-<h4 style="display:block;float:left;"><font style="display:block;position:fixed;font-weight:normal;color:white;margin-top:-25px;z-index:90;margin-left:10px;">推荐您关注</font></h4>
-<div style="max-height:85%;overflow-y:scroll;position:fixed;border-radius: 0px 0px 0px 0px;background:transparent;float:left;margin-top:2px;margin-left:-1px;margin-right:0;z-index:99;">
-<div style="display:block;padding-top:8px;padding-bottom:20px;border:1px solid #f0f0f0;">
+<h4 style="display:block;float:left;"><font style="display:block;position:fixed;font-weight:normal;color:white;margin-top:-15px;z-index:90;margin-left:10px;">推荐您关注</font></h4>
+<div style="max-height:85%;height:85%;overflow-y:scroll;position:fixed;border:1px solid rgba(255,255,255,0.4);border-radius: 0px 0px 0px 0px;background:transparent;float:left;margin-top:13px;margin-left:-1px;margin-right:0;z-index:99;">
+<div style="display:block;padding-top:8px;padding-bottom:20px;">
 <ul style="list-styles:none" style="">
 <?php
 include_once "util.php";

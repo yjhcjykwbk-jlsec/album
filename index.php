@@ -68,6 +68,7 @@ var togglePhotoView=function(id){
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		showCom();
+		darkerFun(0);
 		container.style.opacity="0.05";
 		loadImg(id);
 	}else{
@@ -80,14 +81,16 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
+var darkFlag=3;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
+	console.log("darkerFun:"+darkFlag);
 	if(darkFlag%4==3){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#f3f0f6";
-		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 50px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -100,7 +103,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#f3f0f6";
-		photo_view.style.boxShadow="rgb(25,25,33) -10px 20px 150px 40px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(25,25,33) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -114,7 +117,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#343039";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
-		photo_view.style.boxShadow="100px 10px 160px 185px #121015";
+		photo_view.style.boxShadow="100px 10px 160px 85px #323035";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -125,7 +128,7 @@ var darkerFun=function(c){
 		left_panel.style.backgroundColor="#080808";
 		left_panel.style.boxShadow="100px 10px 160px 85px #343739";
 		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
-		photo_view.style.boxShadow="-10px 10px 160px 85px #444049";
+		photo_view.style.boxShadow="-10px 10px 160px 85px #040009";
 		body.style.backgroundColor="#242029";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
@@ -197,7 +200,7 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:block;width:100%;height:20px;margin-top:0px;z-index:100;"></div>
 
-<div style="position:relative;margin-left:0px;margin-top:0px;">
+<div style="position:relative;margin-left:60px;margin-top:0px;">
 <div id="container" class="container" style="opacity:0.9">
 </div>
 

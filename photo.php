@@ -138,7 +138,6 @@ var biggerFun=function(){
 	else zoomer.innerHTML="800%";
 	img.style.zoom=cur+"";
 };
-var darkFlag=0;
 var smallerFun=function(){
 	cur=img.style.zoom;
 	if(cur=="") cur=1;
