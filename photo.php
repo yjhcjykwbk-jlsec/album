@@ -189,6 +189,7 @@ else
 return true;
 }
 var loadImg=function(id){
+	if(id<0||id>=items.length) return;
 	img.alt=id;
 	item=items[img.alt];
 	//console.log(item.ref);
@@ -207,6 +208,8 @@ var loadImg=function(id){
 
 	//since get comment must be called when comEnabled and img.alt changed
 	if(comEnabled) getCom();
+
+	loadLst(id);
 };
 function prevFun(){
 	if(img.alt==0) {
@@ -327,9 +330,9 @@ document.onkeydown=function(event){
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
-<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
+<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-0%;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-0%;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-0%;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
@@ -359,6 +362,11 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 </div>
+</div> <!--photoView-->
+
+<?php include "photolst.php";?>
+
+
 <?php if(isset($_REQUEST['id'])){?>
 <script> 
 curDir='<?php echo $curDir;?>';
@@ -366,5 +374,3 @@ initDir('<?php echo $curDir;?>');
 photo_view.style.display="block";
 </script>
 <?php }?>
-
-</div> <!--photoView-->

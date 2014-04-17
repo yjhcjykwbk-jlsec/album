@@ -19,8 +19,8 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 #photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:5px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
-select {
-	background:fff;border:0;border-left:1px solid #eee;height:40px;text-align:center;
+#header,select {
+	background:fff;border:0;border-left:1px solid #eee;height:100%;text-align:center;
 }
 </style>
 <script>
@@ -29,13 +29,13 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="7%";
+		photo_view.style.marginLeft="7.5%";
 		photo_view.style.width="91%";
-		photo_view.style.height="84%";
+		photo_view.style.height="80%";
 		photo_view.style.marginTop="0.80%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		fbuttons.style.right="21.00%";
+		fbuttons.style.right="20.40%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -43,12 +43,12 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="7%";
+		photo_view.style.marginLeft="7.5%";
 		photo_view.style.width="87%";
-		photo_view.style.height="87%";
+		photo_view.style.height="82%";
 		photo_view.style.marginTop="0.1%";
 		right_panel.style.display="none";
-		fbuttons.style.right="2.70%";
+		fbuttons.style.right="1.95%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
@@ -73,6 +73,7 @@ var togglePhotoView=function(id){
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.05";
 		loadImg(id);
+		showPhLst();
 	}else{
 		body.style.backgroundColor="#f4f0f9";
 		body.style.overflowY="scroll";
@@ -80,6 +81,7 @@ var togglePhotoView=function(id){
 		container.style.opacity="1";
     chengxuyuan.style.opacity="0.9";
     end.style.opacity="0.5";
+		hidePhLst();
 	}
 }
 
@@ -153,8 +155,12 @@ var darkerFun=function(c){
 <script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
-<div style="background:rgba(250,250,250,1);opacity:0.5; <!--#E8EDF1;--#303030;-->
-margin-left:auto;margin-right:auto;display:block;width:100%;margin-left:auto;border-corner-shape:scoop;box-shadow: 0 1px 3px rgba(0,0,0,0.2);margin-right:auto;height:40px;margin-top:0px;z-index:100;">
+<div style="display:block;width:100%;height:5%;margin-top:0px;z-index:101;"></div>
+<?php include "photo.php";?>
+<?php include "menu.php";?>
+
+<div class="header" style="background:rgba(1,1,1,1);opacity:1; <!--#E8EDF1;--#303030;-->
+display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.2);height:5%;z-index:100;">
 <p>
 <select style="float:right;opacity:0.2;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -175,12 +181,12 @@ margin-left:auto;margin-right:auto;display:block;width:100%;margin-left:auto;bor
 <option value="4">4星</option>
 <option value="5">5星</option>
 </select>
-<div align="center"><font color="white" style="font-family:'微软雅黑,宋体';font-size:8px;">信息安全实验室影集   请使用<font color="yellow"> google浏览器</font>查看</font>  <a href="albums.php" style="font-size:110%;font-weight:bold;color:#8af;text-decoration:underline;">相册首页从此进入</a></div>
+<div align="center"><a href="albums.php" 
+style="font-size:110%;font-weight:bold;text-align:center;color:#8af;">
+....</a></div>
 <?php include "music.php";?>
 </p>
 </div>
-<?php include "photo.php";?>
-<?php include "menu.php";?>
 
 <script>
 var scored=false;
@@ -202,7 +208,6 @@ var curDir="<?php echo $curDir;?>";
 <!-- left-panel -->
 
 
-<div style="display:block;width:100%;height:20px;margin-top:0px;z-index:100;"></div>
 
 <div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
