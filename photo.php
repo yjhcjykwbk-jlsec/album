@@ -346,7 +346,8 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 
 <div style="margin:15px 8px 12px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="max-height:480px;overflow-y:scroll;width:96%;border-top:1px solid f0fefu;background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
+<div id="comments_div" style="max-width:200px;max-height:480px;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
 </div>
 </div>
 

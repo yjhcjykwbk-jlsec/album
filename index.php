@@ -15,7 +15,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#6f207f;border-radius:2px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
 #photo_view{border:2px solid rgba(200,200,200,0.01);border-right:3px solid rgba(200,200,200,0.01);border-left:3px solid rgba(200,200,200,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
@@ -47,6 +47,8 @@ var toggleCom=function(){
 		photo_view.style.marginTop="0px";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.50%";
+		//photo_view.style.width="88%";
+		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
 		//fbuttons.style.width="40px";
 		img.style.minWidth="15%";
