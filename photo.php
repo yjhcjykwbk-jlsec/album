@@ -12,7 +12,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:1;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
-程序猿来了！
+程序猿来了！大家快跑！
 </div>
 <a onclick="chengxuyuanGoDie();return false;">让程序猿去死</a>
 </div>
