@@ -105,7 +105,7 @@ var dubaijun=function(){
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };
 </script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:89%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;;z-index:100;position:fixed;height:87%;width:89%;margin-left:7%;margin-right:auto;margin-top:0px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:22.25%;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -118,7 +118,7 @@ var dubaijun=function(){
 
 <style>
 .fButton:hover{ color:red; }
-#comment_span{color:white;} body{background:#f4f0f9; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
+#comment_span{color:white;} body{background:#e9ece0; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <script type="text/javascript">
 var comEnabled=true;

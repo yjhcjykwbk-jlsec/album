@@ -16,9 +16,12 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{border:2px solid rgba(5,5,5,0.4);border-right:3px solid rgba(5,5,5,0.4);} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border:5px solid rgba(5,5,5,0.26);border-right:5px solid rgba(5,5,5,0.26);border-radius:5px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
+select {
+	background:fff;border:0;border-left:1px solid #eee;height:40px;text-align:center;
+}
 </style>
 <script>
 function showCom(){
@@ -143,8 +146,8 @@ var darkerFun=function(c){
 <script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
-<div style="background: center rgba(#807080,0.2);<!--#E8EDF1;--#303030;-->
-display:block;width:100%;height:40px;margin-top:0px;z-index:100;">
+<div style="background:rgba(250,250,250,1); <!--#E8EDF1;--#303030;-->
+margin-left:auto;margin-right:auto;display:block;width:80%;margin-left:auto;padding:0 40px 0 40px;border:5px transparent dashed;margin-right:auto;height:40px;margin-top:0px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.2;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -192,16 +195,17 @@ var curDir="<?php echo $curDir;?>";
 <!-- left-panel -->
 
 
-<div style="position:relative;margin-left:100px;margin-top:0px;">
+<div style="display:block;width:100%;height:20px;margin-top:0px;z-index:100;"></div>
+
+<div style="position:relative;margin-left:0px;margin-top:0px;">
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
 <div id="end" style="display:none;padding-top:80px; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
-<hr>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
-<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:600px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
+<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:300px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
 </div>
 </div>
 
@@ -211,7 +215,7 @@ function submitAdvise(){
 	return;
 }
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=5;
+var colNum=4;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){
