@@ -112,7 +112,7 @@ var dubaijun=function(){
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
 <button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">缩小</button>
-<button class="fButton" id="darker" onclick="darkerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
+<button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
 <button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
 
@@ -310,6 +310,8 @@ document.onkeydown=function(event){
 		else if(t==38) photo_view.scrollTop-=350;
 		else if(t==39) nextFun();
 		else if(t==40) photo_view.scrollTop+=350;
+		else if(t==33) darkerFun(-1);
+		else if(t==34) darkerFun(1);
 	}
 };
 

@@ -68,7 +68,8 @@ var togglePhotoView=function(id){
 		container.style.opacity="1";
 	}
 }
-var darkerFun=function(){
+var darkerFun=function(c){
+	darkFlag+=c;
 	if(darkFlag%4==3){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
@@ -122,7 +123,6 @@ var darkerFun=function(){
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}
-	darkFlag++;
 };
 </script>
 
