@@ -55,7 +55,7 @@ var dubaiFuns=function(){
 	s0=function(){
 		message.style.display="block";
 		randomMessagePos();
-		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光还能够切换不同主题效果!赶快试试吧!";
+		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光或pageup/pagedown能够切换不同主题效果!回车键参与评论。赶快试试吧!";
 		message_pre_content.innerHTML="";
 	};
 	s1=function(){	
