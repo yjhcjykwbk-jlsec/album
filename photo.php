@@ -310,8 +310,11 @@ document.onkeydown=function(event){
 		else if(t==38) photo_view.scrollTop-=350;
 		else if(t==39) nextFun();
 		else if(t==40) photo_view.scrollTop+=350;
+		//pageup pagedown
 		else if(t==33) darkerFun(-1);
 		else if(t==34) darkerFun(1);
+		//enter
+		else if(t==13) toggleCom();
 	}
 };
 

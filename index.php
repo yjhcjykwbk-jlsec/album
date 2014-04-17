@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{border:2px solid rgba(200,200,200,0.01);border-right:3px solid rgba(200,200,200,0.01);border-left:3px solid rgba(200,200,200,0.01);}
+#photo_view{border:2px solid rgba(200,200,200,0.3);border-right:3px solid rgba(200,200,200,0.3);} //border-left:3px solid rgba(200,200,200,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 </style>
@@ -94,7 +94,6 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#f3f0f6";
-		body.style.backgroundColor="#f3f0f6";
 		photo_view.style.boxShadow="rgb(25,25,33) -10px 20px 150px 40px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -109,7 +108,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#141019";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
-		photo_view.style.boxShadow="100px 10px 160px 185px #020015";
+		photo_view.style.boxShadow="100px 10px 160px 185px #121015";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -118,11 +117,11 @@ var darkerFun=function(c){
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#080808";
-		left_panel.style.boxShadow="100px 10px 160px 85px #242729";
+		left_panel.style.boxShadow="100px 10px 160px 85px #343739";
 		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
-		body.style.backgroundColor="#040609";
+		photo_view.style.boxShadow="-10px 10px 160px 85px #444049";
+		body.style.backgroundColor="#242029";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
-		photo_view.style.boxShadow="-10px 10px 160px 85px #000";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
