@@ -1,7 +1,7 @@
 <div class="video_src_wrapper" style="margin-left:auto;margin-right:auto;">
 <embed id="movie" type="application/x-shockwave-flash" 
 class="BDE_Flash" 
-src="http://player.yinyuetai.com/video/swf/373455/42/a.swf" 
+src="" 
 width="100%" height="100%" scale="noborder" 
 allowscriptaccess="never" menu="true" loop="loop" 
 play="false" womode="transparent" 

@@ -34,6 +34,20 @@ function getDesp($dir,&$arrayEntry){
 	// myLog(print_r($arrayEntry,true));
 }
 function writeDesp($dir,$img,$desp,$ref){
+	$str=file_get_contents("DATASET/".$dir."/details.txt");
+	$arr=explode("\n",$str);
+	for($i=0;$i+2<count($arr);$i+=3){
+		if(strcmp($arr[i],$img)==0){
+			$arr[$i+1]=$desp;
+			$arr[$i+2]=$ref;
+			$str="";
+			foreach($arr as $i=>$txt){
+				$str.=$txt."\n";
+			}
+			file_put_contents("DATASET/".$dir."/details.txt",$str);
+			return;
+		}
+	}
 	file_put_contents("DATASET/".$dir."/details.txt",$img."\n".$desp."\n".$ref."\n",FILE_APPEND|LOCK_EX);
 //	myLog("writeDesp:".$img.":".$desp.":".$ref."\n");
 }
