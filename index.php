@@ -78,7 +78,7 @@ var togglePhotoView=function(id){
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
-    chengxuyuan.style.opacity="0.5";
+    chengxuyuan.style.opacity="0.9";
     end.style.opacity="0.5";
 	}
 }
@@ -209,11 +209,11 @@ var curDir="<?php echo $curDir;?>";
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
-<div id="end" style="display:none;padding-top:80px; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:none;padding-top:80px;padding-bottom:50px; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
-<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:300px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.5;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
+<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
 </div>
 </div>
 

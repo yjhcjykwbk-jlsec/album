@@ -22,8 +22,9 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
 						item.desp=decodeURIComponent(item.desp);
 						item.ref=decodeURIComponent(item.ref);
 						if(inserted.hasOwnProperty(''+item.id)) return;
+            isMovie=item.ref.endWith(".swf");
 						res.push(
-							'<div class="item masonry_brick masonry-brick" style="background:'+(item.ref.endWith(".swf")?'#000':'#fff')+'";position: absolute; top: 0px; left: 0px;">'+
+							'<div class="item masonry_brick masonry-brick" style="background:'+(isMovie?'#000':'#fff')+'";position: absolute; top: 0px; left: 0px;">'+
 							'<div class="item_t">'+ 
 							// '<div class="img">'+// style="background:#000"> '+
 							'<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
@@ -31,7 +32,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
 							'</a> '+
 							'<div class="class" style="color:#fff;opacity:0.2;padding:7px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
 							'</div> '+
-							'<div class="desp" style="color:#444;padding:7px;border-bottom:1px solid #eee;">'+(item.desp!=""?item.desp:'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:#fefefe;border:1px solid #eee;color:#444">添加描述</button>')+'</div>'+
+							'<div class="desp" style="color:#444;padding:7px;border-bottom:1px solid '+(isMovie?'#111':'#eee')+';">'+(item.desp!=""?item.desp:'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:#fefefe;border:1px solid #eee;color:#444">添加描述</button>')+'</div>'+
 							'<div class="ref" style="color:#9E7E6B;padding:7px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
 							//   '</div> '+
 							//						'<div class="item_b clearfix"> '+

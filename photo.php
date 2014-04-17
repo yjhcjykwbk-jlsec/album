@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.5;background:#eee;">
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -18,7 +18,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
 <div id="message_content"></div>
-<pre id="message_pre_content" style="font-size:13px;font-weight:bold;color:green"></pre>
+<pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>
 <script>
 setTimeout(function(){
@@ -31,7 +31,7 @@ setTimeout(function(){
 		chengxuyuan.style.right="0px";
 		chengxuyuan.style.bottom="-15px";
 		chengxuyuan.style.width="80px";
-		yuanIntro.innerHTML="hello world!";
+		yuanIntro.innerHTML="hello world!<br/>any question<br/>click me!";
 		yuanIntro.style.display="block";
 	},2000);
 },1000);
@@ -55,7 +55,8 @@ var dubaiFuns=function(){
 	s0=function(){
 		message.style.display="block";
 		randomMessagePos();
-		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光或pageup/pagedown能够切换不同主题效果!回车键参与评论。赶快试试吧!";
+		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光或pageup/down切换不同显示效果,enter留言!赶快试试吧!";
+    end.style.opacity="0.05";
 		message_pre_content.innerHTML="";
 	};
 	s1=function(){	

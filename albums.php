@@ -40,7 +40,7 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:840px;height:600px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:205px;border-radius:7px;">
+<div class="folders" style="display:block;width:840px;height:600px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:295px;margin-bottom:50px;border-radius:7px;">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
