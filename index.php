@@ -118,12 +118,12 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==0){
-		left_panel.style.backgroundColor="#050010";
-		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
-		body.style.backgroundColor="#343039";
+		left_panel.style.backgroundColor="#050505";
+		photo_view.style.backgroundColor="#050505";//"rgba(2,0,5,0.999)";
+		body.style.backgroundColor="#050505";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
-		photo_view.style.boxShadow="100px 10px 160px 85px #323035";
+		photo_view.style.boxShadow="100px 10px 160px 85px #111";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -133,7 +133,7 @@ var darkerFun=function(c){
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#080808";
 		left_panel.style.boxShadow="100px 10px 160px 85px #343739";
-		photo_view.style.backgroundColor="#050709";//"rgba(2,0,5,0.999)";
+		photo_view.style.backgroundColor="#050505";//"rgba(2,0,5,0.999)";
 		photo_view.style.boxShadow="-10px 10px 160px 85px #040009";
 		body.style.backgroundColor="#242029";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";

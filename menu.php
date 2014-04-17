@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <h4 style="display:block;float:left;"><font style="display:block;position:fixed;font-weight:normal;color:white;margin-top:-15px;z-index:90;margin-left:10px;"></font></h4>
-<div style="max-height:80%;height:80%;overflow-y:scroll;position:fixed;border:0px solid rgba(255,255,255,0.1);border-radius: 0px 0px 0px 0px;background:transparent;float:left;margin-top:0%;margin-left:-1px;margin-right:0;z-index:99;">
+<div style="max-height:80%;height:80%;overflow-y:scroll;position:fixed;border:0px solid rgba(255,255,255,0.1);border-radius: 0px 0px 0px 0px;float:left;margin-top:0%;margin-left:-1px;margin-right:0;z-index:99;">
 <div style="display:block;padding-top:8px;padding-bottom:8px;">
 <ul style="list-styles:none" style="">
 <?php
