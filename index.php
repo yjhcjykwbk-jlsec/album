@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.26);border-right:1px solid rgba(5,5,5,0.26);border-radius:5px;} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:1px solid rgba(5,5,5,0.16);border-radius:5px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 select {
@@ -30,13 +30,12 @@ function showCom(){
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.marginLeft="7%";
-		photo_view.style.width="89%";
-		photo_view.style.height="87%";
-		photo_view.style.marginTop="0px";
+		photo_view.style.width="91%";
+		photo_view.style.height="84%";
+		photo_view.style.marginTop="0.80%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		//fbuttons.style.width="30px";
-		fbuttons.style.right="22.25%";
+		fbuttons.style.right="21.00%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -47,7 +46,7 @@ function hideCom(){
 		photo_view.style.marginLeft="7%";
 		photo_view.style.width="87%";
 		photo_view.style.height="87%";
-		photo_view.style.marginTop="0px";
+		photo_view.style.marginTop="0.5%";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.50%";
 		//photo_view.style.width="88%";
@@ -68,6 +67,7 @@ var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
+		showCom();
 		container.style.opacity="0.05";
 		loadImg(id);
 	}else{
@@ -146,7 +146,7 @@ var darkerFun=function(c){
 <script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
-<div style="background:rgba(250,250,250,1); <!--#E8EDF1;--#303030;-->
+<div style="background:rgba(250,250,250,1);opacity:0.5; <!--#E8EDF1;--#303030;-->
 margin-left:auto;margin-right:auto;display:block;width:100%;margin-left:auto;border-corner-shape:scoop;box-shadow: 0 1px 3px rgba(0,0,0,0.2);margin-right:auto;height:40px;margin-top:0px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.2;margin-top:0px;" align="left" id="selects" onclick="">
@@ -291,9 +291,5 @@ border-radius:5px;
 <!-- font-size: 14px;background-color:rgb(222,222,222,0.1);opacity:0.6;border:0;padding:10px;border-radius:2px; -->
 <!-- line-height: 1;"> -->
 <!-- </iframe> -->
-<script>
-togglePhotoView(1);
-//darkerFun();
-</script>
 </body>
 </html>

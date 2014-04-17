@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:1;background:#eee;">
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.5;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -105,9 +105,9 @@ var dubaijun=function(){
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };
 </script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;;z-index:100;position:fixed;height:87%;width:89%;margin-left:7%;margin-right:auto;margin-top:0px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
 
-<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:22.25%;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -359,7 +359,7 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 </div>
-<?php if(isset($_REQUEST['dir'])){?>
+<?php if(isset($_REQUEST['id'])){?>
 <script> 
 curDir='<?php echo $curDir;?>';
 initDir('<?php echo $curDir;?>');
