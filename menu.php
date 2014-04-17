@@ -13,7 +13,8 @@ foreach($dirs as $i=>$dir){
 		<li> <div style="border-radius:0px 5px 5px 0px;padding:3px 12px 20px 16px;float:bottom;font-size:10px;color:#944;font-family:'微软雅黑,宋体';">
 		<a  style="display:block;float:bottom;padding-bottom:-15px;"  
 		href="index.php?dir=<?php echo $dir;?>" onclick="setDir('<?php echo $dir?>');return false;">
-		<img width="60px" height="50px"src="DATASET/<?php echo $dir;?>/front.jpg" style="padding-top:0px;"/>
+		<img width="60px" height="50px"src="<?php if(file_exists($dir."/front.jpg")) echo "DATASET/".$dir."/front.jpg";else echo "default.jpg";?>"
+	 	style="padding-top:0px;"/>
 		</a>
 		<?php echo mb_substr($dir,0,5,$ENCODE).".";?>
 		</div></li>
