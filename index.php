@@ -67,15 +67,19 @@ var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
-		showCom();
+		hideCom();
 		darkerFun(0);
 		container.style.opacity="0.05";
+    chengxuyuan.style.opacity="0.0";
+    end.style.opacity="0.05";
 		loadImg(id);
 	}else{
 		body.style.backgroundColor="#f4f0f9";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
+    chengxuyuan.style.opacity="0.5";
+    end.style.opacity="0.5";
 	}
 }
 
@@ -256,7 +260,7 @@ function showDespForm(button,dir,imgName){
 	img_dir.value=dir;
 	img_name.value=imgName;
 	desp_form.style.left=rect.left+"px";
-	desp_form.style.bottom=rect.bottom-150+"px";
+	desp_form.style.top=rect.bottom-150+"px";
 	desp_form.style.display="block";
 }
 </script>
