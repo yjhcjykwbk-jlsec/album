@@ -14,7 +14,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
-::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
+::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
 #photo_view{border:2px solid rgba(200,200,200,0.01);border-right:3px solid rgba(200,200,200,0.01);border-left:3px solid rgba(200,200,200,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
