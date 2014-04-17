@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{border:2px solid rgba(200,200,200,0.3);border-right:3px solid rgba(200,200,200,0.3);} //border-left:3px solid rgba(200,200,200,0.01);}
+#photo_view{border:2px solid rgba(5,5,5,0.3);border-right:3px solid rgba(5,5,5,0.3);} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 </style>
@@ -74,6 +74,9 @@ var togglePhotoView=function(id){
 		container.style.opacity="1";
 	}
 }
+
+//box-shadow is darker than body
+//photo_view.border color is darker than body, and should be close to photo_view.box-shadow
 var darkerFun=function(c){
 	darkFlag+=c;
 	if(darkFlag%4==3){
@@ -105,7 +108,7 @@ var darkerFun=function(c){
 	}else if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#050010";
 		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
-		body.style.backgroundColor="#141019";
+		body.style.backgroundColor="#343039";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
 		photo_view.style.boxShadow="100px 10px 160px 185px #121015";
