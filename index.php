@@ -147,7 +147,7 @@ var darkerFun=function(c){
 
 <!-- //header -->
 <div style="background:rgba(250,250,250,1); <!--#E8EDF1;--#303030;-->
-margin-left:auto;margin-right:auto;display:block;width:80%;margin-left:auto;padding:0 40px 0 40px;border:5px transparent dashed;margin-right:auto;height:40px;margin-top:0px;z-index:100;">
+margin-left:auto;margin-right:auto;display:block;width:100%;margin-left:auto;border-corner-shape:scoop;box-shadow: 0 1px 3px rgba(0,0,0,0.2);margin-right:auto;height:40px;margin-top:0px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.2;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
