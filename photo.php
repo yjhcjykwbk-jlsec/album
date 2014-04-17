@@ -315,6 +315,8 @@ document.onkeydown=function(event){
 		else if(t==34) darkerFun(1);
 		//enter
 		else if(t==13) toggleCom();
+		//esc
+		else if(t==27) togglePhotoView();
 	}
 };
 
