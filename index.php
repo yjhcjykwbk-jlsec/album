@@ -5,7 +5,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <html>
 <head>
 <meta charset="<?php echo $ENCODE;?>">
-<title>实验室相集</title>
+<title>知识库</title>
 <link rel="stylesheet" type="text/css" href="css/container.css" />
 <link rel="stylesheet" type="text/css" href="css/item.css" />
 <link rel="stylesheet" type="text/css" href="css/contextMenu.css" />
@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{border:2px solid rgba(5,5,5,0.3);border-right:3px solid rgba(5,5,5,0.3);} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{border:2px solid rgba(5,5,5,0.4);border-right:3px solid rgba(5,5,5,0.4);} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 </style>
@@ -78,7 +78,7 @@ var togglePhotoView=function(id){
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
 var darkerFun=function(c){
-	darkFlag+=c;
+	darkFlag=(darkFlag+c+4)%4;
 	if(darkFlag%4==3){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
