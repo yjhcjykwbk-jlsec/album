@@ -23,7 +23,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
 						item.ref=decodeURIComponent(item.ref);
 						if(inserted.hasOwnProperty(''+item.id)) return;
 						res.push(
-							'<div class="item masonry_brick masonry-brick" style="background:#fff;position: absolute; top: 0px; left: 0px;">'+
+							'<div class="item masonry_brick masonry-brick" style="background:'+(item.ref.endWith(".swf")?'#000':'#fff')+'";position: absolute; top: 0px; left: 0px;">'+
 							'<div class="item_t">'+ 
 							// '<div class="img">'+// style="background:#000"> '+
 							'<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
