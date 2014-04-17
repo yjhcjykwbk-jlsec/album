@@ -105,7 +105,7 @@ var dubaijun=function(){
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };
 </script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;border-top:4px solid #f0f0f0;border-bottom:5px solid #f0f0f0;border-left:5px solid #f0f0f0;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:89%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;padding-left:0px;padding-right:0px;z-index:100;position:fixed;height:87%;width:89%;margin-left:7%;margin-right:auto;margin-top:0px;border-radius:1px 1px 1px 1px;">
 
 <div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;right:22.25%;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
@@ -157,7 +157,8 @@ var darkerFun=function(){
 		body.style.backgroundColor="#f3f0f6";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #f0f0f0";
+		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #f0f0f0";
+		photo_view.style.border="0";
 		left_panel.style.boxShadow="";
 		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
@@ -171,7 +172,8 @@ var darkerFun=function(){
 		body.style.backgroundColor="#f3f0f6";
 		//photo_view.style.backgroundColor="#f8f8f8";
 		photo_view.style.backgroundColor="#fff";//"rgba(248,248,248,0.999)";
-		photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #fff";
+		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #fff";
+		photo_view.style.border="0";
 		left_panel.style.boxShadow="";
 		photo_view.style.boxShadow="rgb(25,25,33) -10px 20px 150px 40px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";

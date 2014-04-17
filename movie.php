@@ -3,12 +3,12 @@
 class="BDE_Flash" 
 src="http://player.yinyuetai.com/video/swf/373455/42/a.swf" 
 width="100%" height="100%" scale="noborder" 
-allowscriptaccess="never" menu="false" loop="loop" 
-play="true" womode="transparent" 
+allowscriptaccess="never" menu="true" loop="loop" 
+play="false" womode="transparent" 
 pluginspage="http://www.macromedia.com/go/getflashplayer" 
 allowfullscreen="true" 
-flashvars="playMovie=true&amp;auto=1&amp;adss=0&amp;
-isAutoPlay=true" 
+flashvars="playMovie=false&amp;auto=0&amp;adss=0&amp;
+isAutoPlay=false" 
 style="visibility: visible; display: block;">
 </div>
 

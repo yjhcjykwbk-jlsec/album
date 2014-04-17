@@ -123,11 +123,12 @@ selects.onclick=function(){
 	colNum=3+this.selectedIndex;
 	waterfall.refresh(3+this.selectedIndex);
 }
-function setDesp(img,desp,ref){
+function setDesp(dir,img,desp,ref){
+	dir=encodeURIComponent(dir);
 	img=encodeURIComponent(img);
 	desp=encodeURIComponent(desp);
 	ref=encodeURIComponent(ref);
-	$.post("desp_js.php?name="+img+"&desp="+desp+"&ref="+ref,function(data){
+	$.post("desp_js.php?dir="+curDir+"&name="+img+"&desp="+desp+"&ref="+ref,function(data){
 			alert("添加描述成功");
 			//items[id].desp=desp;
 			desp_form.style.display="none";
@@ -135,13 +136,13 @@ function setDesp(img,desp,ref){
 			waterfall.refresh(colNum);
 			},'text');
 }
-function showDespForm(button,height,imgName){
-	console.log(button);
+function showDespForm(button,dir,imgName){
 	rect=button.getBoundingClientRect();
 	window.button=button;
 	// if(button.offsetParent!=null) {
 		// offset.top-=$(button.offsetParent).offset().top;
 	// }
+	img_dir.value=dir;
 	img_name.value=imgName;
 	desp_form.style.left=rect.left+"px";
 	desp_form.style.bottom=rect.bottom-150+"px";
@@ -162,11 +163,11 @@ padding:10px;
 opacity:0.95;
 border-radius:5px;
 ">
-<textarea id="img_id" style="display:none"></textarea><br/>
+<textarea id="img_dir" style="display:none"></textarea><br/>
 <textarea id="img_name" style="display:none"></textarea><br/>
 描述<textarea id="desp_input"></textarea><br/>
 引用<textarea id="ref_input"></textarea>
-<button onclick="setDesp(img_name.value,desp_input.value,ref_input.value);">提交描述</button>
+<button onclick="setDesp(img_dir.value,img_name.value,desp_input.value,ref_input.value);">提交描述</button>
 <button onclick="desp_form.style.display='none';">取消</button>
 </div>
 
