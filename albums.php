@@ -40,14 +40,15 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:840px;height:600px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:295px;margin-bottom:50px;border-radius:7px;">
+<div class="folders" style="display:block;width:840px;height:700px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:355px;margin-bottom:50px;border-radius:7px;">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
     if(is_dir("DATASET/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
       <div class="li" style="display:block;float:left;margin:15px;margin-bottom:0;margin-top:25px;">
         <a href="index.php?dir=<?php echo $entry ?>"><?php echo $entry ?>/<br/>
-        <img src="DATASET/<?php echo $entry?>/front.jpg" width="170" height="125" style="">
+        <?php $front=file_exists("DATASET/".$entry."/front.jpg")?"DATASET/".$entry."/front.jpg":"default.jpg";?>
+        <img src="<?php echo $front;?>" width="170" height="125" style="">
         </img></a>
         <div class="li_border">..</div>
         </div>

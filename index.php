@@ -177,7 +177,6 @@ display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0
 </select>
 <select onclick="setScore(this.value);"style="float:right;opacity:0.5">
 <option value="0">请给本网站打分</option>
-<option value="-1">如果您觉得本网站不错，请推荐给好友</option>
 <option value="1">1星 20分</option>
 <option value="2">2星 40分</option>
 <option value="3">3星 60分</option>
@@ -191,7 +190,7 @@ color:#8fa;">
 </div>
 <div align="center">
 <a id="index_href" href="albums.php" 
-style="font-size:110%;margin-top:8px;height:30px;font-weight:bold;
+style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 <?php include "music.php";?>
@@ -207,7 +206,7 @@ var setScore=function(s){
 		return;
 	}
 	$.get("com_js.php?act=score&score="+s,function(data){
-			alert("谢谢您的支持，反馈已经被记录:"+data);
+			alert("收到您的评分("+data+")如果觉得本站不错，请推荐给其他好友");
 			scored=true;
 			},"text");
 };
