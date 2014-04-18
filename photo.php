@@ -198,11 +198,11 @@ var loadImg=function(id){
 		img.style.display="none";
     setTimeout(function(){
 			movie.style.display="none";
-		},1000);
-    setTimeout(function(){
+			setTimeout(function(){
       movie.style.display="block";
-    },
-    3000);
+			},
+    100);
+		},10);
 		//movie.style.display="block";
 	}else{
 		img.src="view/"+curDir+"/"+item.href;
