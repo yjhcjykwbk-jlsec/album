@@ -86,7 +86,7 @@ var dubaiFuns=function(){
 		randomMessagePos();
 		message_content.innerHTML="";
     message_pre_content.innerHTML=""+
-      "//我已葬身终南山下，有事烧纸...\n"+
+      "//本人已葬身终南山下，有事烧纸...\n"+
       "i.am.died.in.extremal.south.moutain();\n"+
       "exit();\n"+
       "\n"

@@ -184,7 +184,7 @@ display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0
 <option value="5">5星 100分</option>
 </select>
 <div align="center">
-<a href="albums.php" 
+<a id="index_href" href="albums.php" 
 style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
 color:#8af;">一夕一绽一缕芳,一生一叹一痕沙</a></div>
 <?php include "music.php";?>
