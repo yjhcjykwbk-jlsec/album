@@ -1,6 +1,6 @@
 <?php
 function score($score){
-	$file="txt/collection.txt";
+	$file="star.txt";
 	if(!file_exists($file)) touch($file);
 	file_put_contents($file," ".$score,FILE_APPEND);
 	return "scored:".$score*20;
