@@ -19,7 +19,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 #photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
-#header,select {
+#header select {
 	background:#fff;border:0;border-left:1px solid #eee;height:100%;text-align:center;
 }
 </style>
