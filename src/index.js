@@ -30,13 +30,13 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
               '<img  width="'+230+'" height="'+item.height/item.width*230+'" src="'+item.src+'" data-pinit="registered">'+
               '</a> '+
-              '<div class="class" style="color:#fff;opacity:0.2;padding:7px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
+              '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
-              '<div class="desp" style="color:#444;padding:7px;border-bottom:1px solid '+(isMovie?'red':'#eee')+';">'+
+              '<div class="desp" style="background:#fafafa;color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'red':'#eee')+';">'+
               (item.desp!=""?item.desp+
-                '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:#fff;border:0;color:#aaa">修改</button>'
-                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:#fefefe;border:1px solid #eee;color:#444">添加描述</button>')+'</div>'+
-              '<div class="ref" style="color:#9E7E6B;padding:7px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
+                '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
+                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:0px solid rgba(220,220,220,0.3);color:#444">添加描述</button>')+'</div>'+
+              '<div class="ref" style="color:#9E7E6B;background:#f8f8f8;padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
               //   '</div> '+
               //						'<div class="item_b clearfix"> '+
               //						'<div class="items_likes fl" style="height:0px"> '+

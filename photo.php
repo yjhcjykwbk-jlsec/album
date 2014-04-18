@@ -111,9 +111,9 @@ var dubaijun=function(){
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };
 </script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
 
-<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -167,7 +167,7 @@ var items;
 var dirInited=false;
 var initDir=function(){
 	//restore img size
-	img.style.zoom="8";
+	img.style.zoom="2";
 	zoomer.innerHTML="800%";
 
 	if(allItems[curDir]!=null) {
@@ -341,11 +341,11 @@ document.onkeydown=function(event){
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
-<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
-<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
+<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:0;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:50px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:110px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
+<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
+<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
