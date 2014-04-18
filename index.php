@@ -75,7 +75,7 @@ var togglePhotoView=function(id){
 		loadImg(id);
 		showPhLst();
 	}else{
-		body.style.backgroundColor="#f4f0f9";
+		body.style.backgroundColor="#faf9ff";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
@@ -87,15 +87,15 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
+var darkFlag=0;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
-	if(darkFlag%4==3){
+	if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#f3f0f6";
+		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
 		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 50px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -104,11 +104,11 @@ var darkerFun=function(c){
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==2){
+	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#f3f0f6";
+		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
 		photo_view.style.boxShadow="rgb(15,15,15) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -117,7 +117,7 @@ var darkerFun=function(c){
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==0){
+	}else if(darkFlag%4==2){
 		left_panel.style.backgroundColor="#000";
 		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#343039";
@@ -130,7 +130,7 @@ var darkerFun=function(c){
 		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
-	}else if(darkFlag%4==1){
+	}else if(darkFlag%4==3){
 		left_panel.style.backgroundColor="#080808";
 		left_panel.style.boxShadow="100px 10px 100px 55px #343739";
 		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
@@ -162,28 +162,28 @@ var darkerFun=function(c){
 <div class="header" style="background:rgba(1,1,1,1);opacity:1; <!--#E8EDF1;--#303030;-->
 display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.2);height:5%;z-index:100;">
 <p>
-<select style="float:right;opacity:0.2;margin-top:0px;" align="left" id="selects" onclick="">
+<select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
 <option value="4">每页四列</option>
 <option value="5">每页五列</option>
 <option value="6">每页六列</option>
 <option value="7">每页七列</option>
 </select>
-<select id="music_select" onclick="setMusic(this.value);"style="float:right;opacity:0.2">
+<select id="music_select" onclick="setMusic(this.value);"style="float:right;opacity:0.5">
 <option value="0">请选择背景音乐</option>
 <option value="stop">关闭音乐</option>
 </select>
-<select onclick="setScore(this.value);"style="float:right;opacity:0.2">
+<select onclick="setScore(this.value);"style="float:right;opacity:0.5">
 <option value="0">请给本网站打分</option>
-<option value="1">1星</option>
-<option value="2">2星</option>
-<option value="3">3星</option>
-<option value="4">4星</option>
-<option value="5">5星</option>
+<option value="1">1星 20分</option>
+<option value="2">2星 40分</option>
+<option value="3">3星 60分</option>
+<option value="4">4星 80分</option>
+<option value="5">5星 100分</option>
 </select>
 <div align="center"><a href="albums.php" 
 style="font-size:110%;font-weight:bold;text-align:center;color:#8af;">
-....</a></div>
+author:xzg index page goes here</a></div>
 <?php include "music.php";?>
 </p>
 </div>
@@ -211,7 +211,7 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="opacity:0.9">
+<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.05);border:20px solid rgba(255,255,255,0.5);border-top:20px solid rgba(255,255,255,0.5);border-bottom:20px solid rgba(255,255,255,0.5);border-radius:5px;box-shadow:0px 0px 220px 10px rgba(30,0,20,0.2)">
 </div>
 
 <div id="end" style="display:none;padding-top:300px;padding-bottom:50px; opacity:0.2; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
@@ -268,7 +268,7 @@ function showDespForm(button,dir,imgName){
 	img_dir.value=dir;
 	img_name.value=imgName;
 	desp_form.style.left=rect.left+"px";
-	desp_form.style.top=rect.bottom-150+"px";
+	desp_form.style.top=rect.bottom-150-20+"px";
 	desp_form.style.display="block";
 }
 </script>

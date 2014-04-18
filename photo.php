@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -119,7 +119,7 @@ var dubaijun=function(){
 
 <style>
 .fButton:hover{ color:red; }
-#comment_span{color:white;} body{background:#e9ece0; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
+#comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <script type="text/javascript">
 var comEnabled=true;
@@ -269,7 +269,7 @@ var getCom=function(){
 				author=comment.split('%')[1];	
 				content=comment.split('%')[0];	
 				if(author==undefined||author=="") author="路人甲";
-				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid #eee;padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:#202020;border:1px solid #333;font-size:70%;margin-top:-1px;"> 删除</a></div>';
+				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
 			}
 		},"text");
 };
@@ -347,7 +347,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:16%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:73%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
@@ -356,14 +356,14 @@ style="margin-left:auto;margin-right:auto;display:block;">
 	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
 	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="background:#808080;color:#452;border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="background:#707070;border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">吐槽</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+	<button value＝"清空" style="background:rgba(128,128,128,0.2);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="background:rgba(128,128,128,0.3);color:rgba(150,100,200,0.7);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
 
 
-<div style="margin:15px 8px 12px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="width:98%;max-width:100%;max-height:450px;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
-background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
+<div style="margin:15px 8px 22px 11px;border-radius:25px;"><!--508090-->
+<div id="comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:400px;">
 </div>
 </div>
 
