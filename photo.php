@@ -85,7 +85,12 @@ var dubaiFuns=function(){
 		message.style.display="block";
 		randomMessagePos();
 		message_content.innerHTML="";
-		message_pre_content.innerHTML="\ni.am.died.in.extremal.south.moutain();\nexit();\n//...";
+    message_pre_content.innerHTML=""+
+      "//我已葬身终南山下，有事烧纸...\n"+
+      "i.am.died.in.extremal.south.moutain();\n"+
+      "exit();\n"+
+      "\n"
+      ;
 	};
 	return [s0,s1,s2,s3,die];
 }();
