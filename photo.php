@@ -197,14 +197,9 @@ var loadImg=function(id){
 		movie.src=item.ref;
 		img.style.display="none";
     setTimeout(function(){
-      console.log("movie show");
-      movie.style.display="block";
-      movie.src=item.ref;
-    },
-    1000);
+			movie.style.display="none";
+		},1000);
     setTimeout(function(){
-      console.log("movie show");
-      movie.src=item.ref;
       movie.style.display="block";
     },
     3000);
