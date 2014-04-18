@@ -20,7 +20,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
-	background:#fff;border:0;border-left:1px solid #eee;height:100%;text-align:center;
+  background:transparent;color:#888;border:0;border-left:1px solid rgba(255,255,255,0.1);height:100%;text-align:center;
 }
 </style>
 <script>
@@ -191,7 +191,7 @@ color:#8fa;">
 </div>
 <div align="center">
 <a id="index_href" href="albums.php" 
-style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
+style="font-size:110%;margin-top:8px;height:30px;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 <?php include "music.php";?>
