@@ -20,7 +20,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header,select {
-	background:fff;border:0;border-left:1px solid #eee;height:100%;text-align:center;
+	background:#fff;border:0;border-left:1px solid #eee;height:100%;text-align:center;
 }
 </style>
 <script>
@@ -66,6 +66,7 @@ var toggleCom=function(){
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		body.style.overflowY="hidden";
+    header.style.background="#000";
 		photo_view.style.display="block";
 		hideCom();
 		darkerFun(0);
@@ -76,6 +77,7 @@ var togglePhotoView=function(id){
 		showPhLst();
 	}else{
 		body.style.backgroundColor="#faf9ff";
+    header.style.background="#fff";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
@@ -159,7 +161,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" style="background:rgba(1,1,1,1);opacity:1; <!--#E8EDF1;--#303030;-->
+<div class="header" id="header" style="background:rgba(250,250,250,1);opacity:1; <!--#E8EDF1;--#303030;-->
 display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.2);height:5%;z-index:100;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
@@ -181,9 +183,10 @@ display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0
 <option value="4">4星 80分</option>
 <option value="5">5星 100分</option>
 </select>
-<div align="center"><a href="albums.php" 
-style="font-size:110%;font-weight:bold;text-align:center;color:#8af;">
-author:xzg index page goes here</a></div>
+<div align="center">
+<a href="albums.php" 
+style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
+color:#8af;">一夕一绽一缕芳,一生一叹一痕沙</a></div>
 <?php include "music.php";?>
 </p>
 </div>
