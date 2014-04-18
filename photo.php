@@ -195,9 +195,20 @@ var loadImg=function(id){
 	//console.log(item.ref);
 	if(item.ref.endWith(".swf")){
 		movie.src=item.ref;
-
 		img.style.display="none";
-		movie.style.display="block";
+    setTimeout(function(){
+      console.log("movie show");
+      movie.style.display="block";
+      movie.src=item.ref;
+    },
+    1000);
+    setTimeout(function(){
+      console.log("movie show");
+      movie.src=item.ref;
+      movie.style.display="block";
+    },
+    3000);
+		//movie.style.display="block";
 	}else{
 		img.src="view/"+curDir+"/"+item.href;
 		oImg.href="DATASET/"+curDir+"/"+item.href;

@@ -215,20 +215,23 @@ var curDir="<?php echo $curDir;?>";
 </div>
 
 <div id="end" style="display:none;padding-top:300px;padding-bottom:50px; opacity:0.2; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
-<input type="text" id="advise" value="输入建议"/>
-<button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
+<input type="text" id="advice" value="输入建议"/>
+<button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
 <iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
 </div>
 </div>
 
 <script>
-function submitAdvise(){
-	alert("您的意见已经被收录，谢谢您的支持");
+function submitAdvice(advice){
+  advice=encodeURIComponent(advice);
+  $.post("advice.php?advice="+advice,function(data){
+    alert("您的意见已经被收录，谢谢您的支持:"+data);
+  },"text");
 	return;
 }
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=4;
+var colNum=3;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){
