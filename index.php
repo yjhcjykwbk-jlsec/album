@@ -177,6 +177,7 @@ display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0
 </select>
 <select onclick="setScore(this.value);"style="float:right;opacity:0.5">
 <option value="0">请给本网站打分</option>
+<option value="-1">如果您觉得本网站不错，请推荐给好友</option>
 <option value="1">1星 20分</option>
 <option value="2">2星 40分</option>
 <option value="3">3星 60分</option>
@@ -252,8 +253,9 @@ var setDir=function(dir){
 	waterfall=new MyWaterfall(dir,colNum);
 };
 selects.onclick=function(){
-	colNum=3+this.selectedIndex;
-	waterfall.refresh(3+this.selectedIndex);
+  if(colNum==this.value) return;
+	colNum=this.value;
+	waterfall.refresh(colNum);
 }
 function setDesp(dir,img,desp,ref){
 	dir=encodeURIComponent(dir);
