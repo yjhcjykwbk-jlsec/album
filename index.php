@@ -269,6 +269,17 @@ function setDesp(dir,img,desp,ref){
 			waterfall.refresh(colNum);
 			},'text');
 }
+function changeDespForm(button,dir,imgName,desp,ref){
+	rect=button.getBoundingClientRect();
+	window.button=button;
+	img_dir.value=dir;
+	img_name.value=imgName;
+  desp_input.value=desp;
+  ref_input.value=ref;
+	desp_form.style.left=rect.left+"px";
+	desp_form.style.top=rect.bottom-150-20+"px";
+	desp_form.style.display="block";
+}
 function showDespForm(button,dir,imgName){
 	rect=button.getBoundingClientRect();
 	window.button=button;
