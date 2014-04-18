@@ -11,7 +11,7 @@
 	margin-right:auto;
 }
 </style>
-<div id="ph_lst" style="background:rgba(0,0,0,0.9);width:100%;z-index:101;position:fixed;bottom:0px;height:8%;">
+<div id="ph_lst" style="display:none;background:rgba(0,0,0,0.9);width:100%;z-index:101;position:fixed;bottom:0px;height:8%;">
 			<div style="height:70%;width:5%;">
 <img alt="-8" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div><div style="height:70%;width:5%;">
@@ -57,7 +57,7 @@ function loadLst(id){
 	for(var i=id-8;i<=id-(-9);i++){
 		var img=imgs[i-id-(-8)];
 		img.setAttribute("alt",i);
-		if(i<0||i>=items.length) {img.setAttribute("src","");continue;}
+		if(i<0||i>=items.length) {img.setAttribute("src","black.jpg");continue;}
 		var item=items[i];
 		img.setAttribute("src","thumb/"+curDir+"/"+item.href);
 		if(i==id) img.style.backgroundColor="red";

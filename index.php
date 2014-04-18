@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
-#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:5px;} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header,select {
@@ -69,7 +69,7 @@ var togglePhotoView=function(id){
 		photo_view.style.display="block";
 		hideCom();
 		darkerFun(0);
-		container.style.opacity="0.05";
+		container.style.opacity="0.02";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.05";
 		loadImg(id);
@@ -80,14 +80,14 @@ var togglePhotoView=function(id){
 		photo_view.style.display="none";
 		container.style.opacity="1";
     chengxuyuan.style.opacity="0.9";
-    end.style.opacity="0.5";
+    end.style.opacity="0.3";
 		hidePhLst();
 	}
 }
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=3;
+var darkFlag=1;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
@@ -109,7 +109,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#f3f0f6";
-		photo_view.style.boxShadow="rgb(25,25,33) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(15,15,15) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -118,12 +118,12 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==0){
-		left_panel.style.backgroundColor="#050505";
-		photo_view.style.backgroundColor="#050505";//"rgba(2,0,5,0.999)";
-		body.style.backgroundColor="#050505";
+		left_panel.style.backgroundColor="#050010";
+		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
+		body.style.backgroundColor="#343039";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
-		photo_view.style.boxShadow="100px 10px 160px 85px #111";
+		photo_view.style.boxShadow="100px 10px 160px 85px #323035";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -132,10 +132,10 @@ var darkerFun=function(c){
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#080808";
-		left_panel.style.boxShadow="100px 10px 160px 85px #343739";
-		photo_view.style.backgroundColor="#050505";//"rgba(2,0,5,0.999)";
-		photo_view.style.boxShadow="-10px 10px 160px 85px #040009";
-		body.style.backgroundColor="#242029";
+		left_panel.style.boxShadow="100px 10px 100px 55px #343739";
+		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
+		photo_view.style.boxShadow="0px 7px 30px 2px #222";
+		body.style.backgroundColor="#000";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -214,7 +214,7 @@ var curDir="<?php echo $curDir;?>";
 <div id="container" class="container" style="opacity:0.9">
 </div>
 
-<div id="end" style="display:none;padding-top:80px;padding-bottom:50px; opacity:0.7; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:none;padding-top:300px;padding-bottom:50px; opacity:0.2; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advise" value="输入建议"/>
 <button type="submit" id="submit_advise" onclick="submitAdvise();">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
