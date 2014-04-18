@@ -354,7 +354,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:73%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:69%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
@@ -363,8 +363,8 @@ style="margin-left:auto;margin-right:auto;display:block;">
 	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
 	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="background:rgba(128,128,128,0.2);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="background:rgba(128,128,128,0.3);color:rgba(150,100,200,0.7);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+	<button value＝"清空" style="background:rgba(0,0,0,0.8);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="background:rgba(0,0,0,0.7);color:rgba(150,100,200,1);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
 
 

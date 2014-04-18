@@ -90,7 +90,7 @@ function upload($file,$desp,$ref){
 	//写入文件的描述和reference website
 	//echo "记录描述和地址...<br/>";
 	global $class;
-	writeDesp($class."/".$filename,$desp,$ref);
+	writeDesp($class,$filename,$desp,$ref);
 
 	echo "上传成功:".$tmpFileName;
 

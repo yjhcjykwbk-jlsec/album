@@ -15,7 +15,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#89809f;border-radius:2px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#a9a6af;border-radius:1px;}
 #photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
@@ -29,13 +29,13 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="7.5%";
-		photo_view.style.width="91%";
+		photo_view.style.marginLeft="10.0%";
+		photo_view.style.width="86.5%";
 		photo_view.style.height="80%";
-		photo_view.style.marginTop="0.80%";
+		photo_view.style.marginTop="0.75%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		fbuttons.style.right="20.40%";
+		fbuttons.style.right="21.40%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -43,10 +43,10 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="7.5%";
-		photo_view.style.width="87%";
+		photo_view.style.marginLeft="10.0%";
+		photo_view.style.width="82.5%";
 		photo_view.style.height="82%";
-		photo_view.style.marginTop="0.30%";
+		photo_view.style.marginTop="0.75%";
 		right_panel.style.display="none";
 		fbuttons.style.right="1.95%";
 		//photo_view.style.width="88%";
@@ -66,7 +66,6 @@ var toggleCom=function(){
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		body.style.overflowY="hidden";
-    header.style.background="#000";
 		photo_view.style.display="block";
 		hideCom();
 		darkerFun(0);
@@ -89,16 +88,25 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=1;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
+  darkFlag=darkFlag%4;
+  if(darkFlag<2){
+    ph_lst.style.backgroundColor="#ccc";
+    header.style.background="#fff";
+  }
+  else{
+    ph_lst.style.backgroundColor="#000";
+    header.style.background="#000";
+  }
 	if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 0px 50px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(130, 126, 135, 1) 0px 30px 50px 10px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -111,7 +119,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgb(15,15,15) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(15,15,15) -10px 30px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -125,7 +133,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#343039";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #000";
-		photo_view.style.boxShadow="100px 10px 160px 85px #323035";
+		photo_view.style.boxShadow="0px 10px 160px 100px #000";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -220,10 +228,10 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.05);border:25px solid rgba(255,255,255,0.55);border-top:15px solid rgba(255,255,255,0.55);border-bottom:15px solid rgba(255,255,255,0.55);border-radius:1px;box-shadow:0px 0px 220px 10px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.05);border:25px solid rgba(255,255,255,0.55);border-top:15px solid rgba(255,255,255,0.55);border-bottom:15px solid rgba(255,255,255,0.55);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
 </div>
 
-<div id="end" style="display:none;padding-top:300px;padding-bottom:50px; opacity:0.2; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
@@ -240,7 +248,7 @@ function submitAdvice(advice){
 	return;
 }
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=3;
+var colNum=4;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){
