@@ -3,7 +3,13 @@ function score($score){
 	$file="star.txt";
 	if(!file_exists($file)) touch($file);
 	file_put_contents($file," ".$score,FILE_APPEND);
-	return "scored:".$score*20;
+	if($score>4){
+		return "给这么高分,谢谢您的支持！";
+	}else if($score>3){
+		return "竟然及格了哈...";
+	}else {
+		return "没及格@@,".$score*20;
+	}
 }
 function unique($str){
   $n="";
