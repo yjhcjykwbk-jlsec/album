@@ -118,11 +118,11 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==0){
-		left_panel.style.backgroundColor="#050010";
-		photo_view.style.backgroundColor="#050010";//"rgba(2,0,5,0.999)";
+		left_panel.style.backgroundColor="#000";
+		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#343039";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
-		left_panel.style.boxShadow="100px 10px 160px 185px #626075";
+		left_panel.style.boxShadow="100px 10px 160px 185px #000";
 		photo_view.style.boxShadow="100px 10px 160px 85px #323035";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
