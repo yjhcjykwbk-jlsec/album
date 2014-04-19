@@ -32,7 +32,7 @@ function showCom(){
 		photo_view.style.marginLeft="11%";
 		photo_view.style.width="80.5%";
 		photo_view.style.height="78%";
-		photo_view.style.marginTop="1.25%";
+		photo_view.style.marginTop="1.85%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.right="2.05%";
@@ -46,7 +46,7 @@ function hideCom(){
 		photo_view.style.marginLeft="12.0%";
 		photo_view.style.width="78.5%";
 		photo_view.style.height="80%";
-		photo_view.style.marginTop="0.95%";
+		photo_view.style.marginTop="1.15%";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.95%";
 		//photo_view.style.width="88%";
