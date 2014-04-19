@@ -29,13 +29,13 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="11%";
-		photo_view.style.width="80.5%";
-		photo_view.style.height="78%";
-		photo_view.style.marginTop="1.85%";
+		photo_view.style.marginLeft="13%";
+		photo_view.style.width="84.5%";
+		photo_view.style.height="84%";
+		photo_view.style.marginTop="0.50%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		fbuttons.style.right="2.05%";
+		fbuttons.style.right="2.35%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -43,10 +43,10 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="12.0%";
+		photo_view.style.marginLeft="14.0%";
 		photo_view.style.width="78.5%";
-		photo_view.style.height="80%";
-		photo_view.style.marginTop="1.15%";
+		photo_view.style.height="86%";
+		photo_view.style.marginTop="-0.30%";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.95%";
 		//photo_view.style.width="88%";
@@ -88,13 +88,13 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=3;
+var darkFlag=0;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
   darkFlag=darkFlag%4;
   if(darkFlag<2){
-    ph_lst.style.background="rgba(253,255,254,0.5)";
+    ph_lst.style.background="rgba(253,255,254,0.1)";
     header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
   }
   else{
@@ -106,7 +106,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgba(130, 136, 135, 1) 0px 6px 12px 7px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(150, 156, 155, 1) -2px 6px 5px 2px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -115,11 +115,11 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
-		left_panel.style.backgroundColor="#fff";
+		left_panel.style.backgroundColor="#444";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgb(15,18,15) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		body.style.backgroundColor="#888";//"#f3f0f6";
+		photo_view.style.boxShadow="rgb(15,18,15) -5px 5px 10px 5px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -128,12 +128,12 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==2){
-		left_panel.style.backgroundColor="#000";
+		left_panel.style.backgroundColor="#111";
 		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
-		body.style.backgroundColor="#000";
+		body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #000";
-		photo_view.style.boxShadow="0px 10px 260px 200px #000";
+		photo_view.style.boxShadow="";//0px 10px 260px 200px #000";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -144,7 +144,7 @@ var darkerFun=function(c){
 		left_panel.style.backgroundColor="#080808";
 		left_panel.style.boxShadow="100px 10px 100px 55px #343739";
 		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
-		photo_view.style.boxShadow="0px -2px 20px 2px #222";
+		photo_view.style.boxShadow="-3px -2px 20px 2px #222";
 		body.style.backgroundColor="#000";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";

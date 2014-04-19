@@ -1,7 +1,7 @@
 <style>
 #ph_lst div{
   //background:#000;
-  margin-left:0.50%;
+  margin-left:0.25%;
   float:left;
   // margin-top:0.9%;
 }
@@ -11,58 +11,70 @@
   margin-right:auto;
 }
 </style>
-<div id="ph_lst" style="display:none;box-shadow:0px -5px 10px 3px rgba(255,255,255,0.4);background:rgba(0,0,0,0.9);width:70%;left:16.5%;z-index:101;position:fixed;bottom:0px;height:8%;">
+<div id="ph_lst" style="opacity:0.7;display:none;box-shadow:0px -5px 10px 3px rgba(128,128,128,0.1);background:rgba(0,0,0,0.08);width:70%;left:18.5%;z-index:101;position:fixed;bottom:0px;height:5.5%;">
       <div style="height:90%;width:4%;">
+<img alt="-10" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="-9" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="-8" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
 <img alt="-7" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:4.5%;">
+</div><div style="height:90%;width:4%;">
 <img alt="-6" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div><div style="height:90%;width:5%;">
 <img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:6%;">
+</div><div style="height:90%;width:5%;">
 <img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:7%;">
+</div><div style="height:90%;width:5%;">
 <img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:7%;">
-<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:7.5%;">
+</div><div style="height:90%;width:5%;">
 <img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 
-</div><div style="height:90%;width:9%;">
+</div><div style="height:90%;width:6%;">
 <img alt="0" style="border:1px solid red;max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 
-</div><div style="height:90%;width:7.5%;">
-<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:7%;">
-<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:7%;">
-<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:6%;">
-<img alt="4" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div><div style="height:90%;width:5%;">
-<img alt="" style="max-height:100%;max-width:100%;min-width:40%;" src="" onclick="s=this.alt;loadImg(s);"></img>
-</div><div style="height:90%;width:4.5%;">
-<img alt="6" style="max-height:100%;max-width:100%;min-width:40%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:5%;">
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:5%;">
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:5%;">
+<img alt="4" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div><div style="height:90%;width:4%;">
-<img alt="7" style="max-height:100%;max-width:100%;min-width:40%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="7" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="9" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
+</div><div style="height:90%;width:4%;">
+<img alt="10" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div>
 </div>
 <script>
 function temp(){
   var imgs=$('#ph_lst img');
-  for(var i=-7;i<=7;i++){
-    var s=5*i;
+  for(var i=-10;i<=10;i++){
+    var s=2*i;
     s=s<0?0-s:s;
-    imgs[i+7].style.marginTop=""+s+'%';
-    imgs[i+7].style.height=""+(100-2*s)+'%';
+    imgs[i+7].style.marginTop=""+(s+5)+'%';
+    imgs[i+7].style.height=""+(88-2*s)+'%';
     console.log('"'+s+'%"');
   }
 }
-temp();
+// temp();
 function loadLst(id){
   console.log(id);
   var imgs=$('#ph_lst img');
-  for(var i=id-7;i<=id-(-7);i++){
-    var img=imgs[i-id-(-7)];
+  for(var i=id-10;i<=id-(-10);i++){
+    var img=imgs[i-id-(-10)];
     img.setAttribute("alt",i);
     if(i<0||i>=items.length) {
       img.setAttribute("src","black.jpg");
