@@ -361,7 +361,7 @@ document.onkeydown=function(event){
 
 <div  href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
-<table id="img_table" style="width:100%;height:80%">  <tr valign=middle align=center>  <td>
+<table id="img_table" style="width:100%;height:100%">  <tr valign=middle align=center>  <td>
 <img id="img" onclick="togglePhotoView(0-1);return false;" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="padding:4%;padding-top:1.5%;zoom:8;display:block;border:0px solid #eee;max-width:92%;min-width:20%;min-height:10%;margin:auto auto;vertical-align:middle;top:-50%;"/>
 </td>  </tr>  </table>  
 <?php include_once "movie.php";?>
