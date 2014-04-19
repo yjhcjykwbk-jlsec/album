@@ -11,7 +11,7 @@
   margin-right:auto;
 }
 </style>
-<div id="ph_lst" style="display:none;box-shadow:0px -5px 10px 3px rgba(255,255,255,0.4);background:rgba(0,0,0,0.9);width:70%;left:16%;z-index:101;position:fixed;bottom:0px;height:8%;">
+<div id="ph_lst" style="display:none;box-shadow:0px -5px 10px 3px rgba(255,255,255,0.4);background:rgba(0,0,0,0.9);width:70%;left:16.5%;z-index:101;position:fixed;bottom:0px;height:8%;">
       <div style="height:90%;width:4%;">
 <img alt="-7" style="max-height:100%;min-height:50%;max-width:100%;min-width:50%;" src="" onclick="s=this.alt;loadImg(s);"></img>
 </div><div style="height:90%;width:4.5%;">

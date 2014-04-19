@@ -29,8 +29,8 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="8%";
-		photo_view.style.width="86.5%";
+		photo_view.style.marginLeft="11%";
+		photo_view.style.width="80.5%";
 		photo_view.style.height="78%";
 		photo_view.style.marginTop="1.25%";
 		right_panel.style.display="block";
@@ -43,8 +43,8 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="10.0%";
-		photo_view.style.width="82.5%";
+		photo_view.style.marginLeft="12.0%";
+		photo_view.style.width="78.5%";
 		photo_view.style.height="80%";
 		photo_view.style.marginTop="0.95%";
 		right_panel.style.display="none";

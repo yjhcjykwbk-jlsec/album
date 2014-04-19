@@ -354,7 +354,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:69%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:64%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 </div>
 
