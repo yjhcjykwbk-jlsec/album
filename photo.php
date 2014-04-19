@@ -9,7 +9,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 ?>
 <meta charset="utf-8">
 <script src="src/jquery.min.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:5px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.5;background:#eee;">
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -18,7 +18,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
 <div id="message_content"></div>
-<pre id="message_pre_content" style="font-size:13px;font-weight:bold;color:green"></pre>
+<pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>
 <script>
 setTimeout(function(){
@@ -31,7 +31,7 @@ setTimeout(function(){
 		chengxuyuan.style.right="0px";
 		chengxuyuan.style.bottom="-15px";
 		chengxuyuan.style.width="80px";
-		yuanIntro.innerHTML="hello world!";
+		yuanIntro.innerHTML="hello world!<br/>any question<br/>click me!";
 		yuanIntro.style.display="block";
 	},2000);
 },1000);
@@ -55,7 +55,8 @@ var dubaiFuns=function(){
 	s0=function(){
 		message.style.display="block";
 		randomMessagePos();
-		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光还能够切换不同主题效果!赶快试试吧!";
+		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光或pageup/down切换不同显示效果,enter留言!赶快试试吧!";
+    end.style.opacity="0.05";
 		message_pre_content.innerHTML="";
 	};
 	s1=function(){	
@@ -84,7 +85,12 @@ var dubaiFuns=function(){
 		message.style.display="block";
 		randomMessagePos();
 		message_content.innerHTML="";
-		message_pre_content.innerHTML="\ni.am.died.in.extremal.south.moutain();\nexit();\n//...";
+    message_pre_content.innerHTML=""+
+      "//本人已葬身终南山下，有事烧纸...\n"+
+      "i.am.died.in.extremal.south.moutain();\n"+
+      "exit();\n"+
+      "\n"
+      ;
 	};
 	return [s0,s1,s2,s3,die];
 }();
@@ -105,9 +111,9 @@ var dubaijun=function(){
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };
 </script>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;box-shadow:rgba(130, 126, 135, 1) 0px 0px 100px 20px;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
 
-<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;margin-top:20%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="height:240px;position:fixed;opacity:0.7;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -118,7 +124,7 @@ var dubaijun=function(){
 
 <style>
 .fButton:hover{ color:red; }
-#comment_span{color:white;} body{background:#e9ece0; margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
+#comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <script type="text/javascript">
 var comEnabled=true;
@@ -161,7 +167,7 @@ var items;
 var dirInited=false;
 var initDir=function(){
 	//restore img size
-	img.style.zoom="8";
+	img.style.zoom="2";
 	zoomer.innerHTML="800%";
 
 	if(allItems[curDir]!=null) {
@@ -188,14 +194,21 @@ else
 return true;
 }
 var loadImg=function(id){
+	if(id<0||id>=items.length) return;
 	img.alt=id;
 	item=items[img.alt];
 	//console.log(item.ref);
 	if(item.ref.endWith(".swf")){
 		movie.src=item.ref;
-
 		img.style.display="none";
-		movie.style.display="block";
+    setTimeout(function(){
+			movie.style.display="none";
+			setTimeout(function(){
+      movie.style.display="block";
+			},
+    100);
+		},10);
+		//movie.style.display="block";
 	}else{
 		img.src="view/"+curDir+"/"+item.href;
 		oImg.href="DATASET/"+curDir+"/"+item.href;
@@ -206,6 +219,8 @@ var loadImg=function(id){
 
 	//since get comment must be called when comEnabled and img.alt changed
 	if(comEnabled) getCom();
+
+	loadLst(id);
 };
 function prevFun(){
 	if(img.alt==0) {
@@ -259,7 +274,7 @@ var getCom=function(){
 				author=comment.split('%')[1];	
 				content=comment.split('%')[0];	
 				if(author==undefined||author=="") author="路人甲";
-				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid #eee;padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:#202020;border:1px solid #333;font-size:70%;margin-top:-1px;"> 删除</a></div>';
+				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
 			}
 		},"text");
 };
@@ -326,9 +341,11 @@ document.onkeydown=function(event){
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
-<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:0;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:6px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:50px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-18px;margin-bottom:0;margin-left:110px;position:fixed;background:#a9a;border:0px;font-family: '微软雅黑,宋体';font-size:9px;">自动播放</button>
+<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:0;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:50px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:110px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
+<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
+<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 <a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
@@ -337,7 +354,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 </div>
 
-<div id="right_panel" style="width:16%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:72%;position:fixed;margin-top:1px;z-index:10;">
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:69%;position:fixed;margin-top:1px;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 生命不止，吐槽不息 
 </div>
@@ -346,18 +363,23 @@ style="margin-left:auto;margin-right:auto;display:block;">
 	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
 	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="background:#808080;color:#452;border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="background:#707070;border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">吐槽</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+	<button value＝"清空" style="background:rgba(0,0,0,0.8);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="background:rgba(0,0,0,0.7);color:rgba(150,100,200,1);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
 
 
-<div style="margin:15px 8px 12px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="width:98%;max-width:100%;max-height:450px;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
-background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:80%;">
+<div style="margin:15px 8px 22px 11px;border-radius:25px;"><!--508090-->
+<div id="comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:400px;">
 </div>
 </div>
 
 </div>
+</div> <!--photoView-->
+
+<?php include "photolst.php";?>
+
+
 <?php if(isset($_REQUEST['id'])){?>
 <script> 
 curDir='<?php echo $curDir;?>';
@@ -365,5 +387,3 @@ initDir('<?php echo $curDir;?>');
 photo_view.style.display="block";
 </script>
 <?php }?>
-
-</div> <!--photoView-->

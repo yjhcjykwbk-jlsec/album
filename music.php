@@ -46,9 +46,15 @@ var setMusic=function(music){
 	if(music!="stop") interval=setInterval(randomSong,300*1000);
 	lastSong=music;
 	music_div.innerHTML='<embed src="music/'+music+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
+  if(index_href!=undefined){
+    index_href.innerText=" "+music.split('.')[0]+" 播放中";
+  }
 };
 var setEmbed=function(i){
 	music_div.innerHTML='<embed src="music/'+musics[i]+'" align="center" border="0" width="1" height="1" autostart="true" loop="true"> </embed>';
+  if(index_href!=undefined){
+    index_href.innerText=" "+musics[i].split('.')[0]+" 播放中";
+  }
 };
 var randomSong=function(){
 	n=musics.length;

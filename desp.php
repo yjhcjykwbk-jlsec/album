@@ -36,6 +36,7 @@ function getDesp($dir,&$arrayEntry){
 function writeDesp($dir,$img,$desp,$ref){
 	$str=file_get_contents("DATASET/".$dir."/details.txt");
 	$arr=explode("\n",$str);
+  $desp=str_replace("\n"," ",$desp);
 	for($i=0;$i+2<count($arr);$i+=3){
 		if(strcmp($arr[i],$img)==0){
 			$arr[$i+1]=$desp;
