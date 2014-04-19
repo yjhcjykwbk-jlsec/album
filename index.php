@@ -45,8 +45,8 @@ function hideCom(){
 		right_panel.style.display="none";//width="20%";
 		photo_view.style.marginLeft="10.0%";
 		photo_view.style.width="82.5%";
-		photo_view.style.height="80%";
-		photo_view.style.marginTop="1.25%";
+		photo_view.style.height="83%";
+		photo_view.style.marginTop="0%";
 		right_panel.style.display="none";
 		fbuttons.style.right="2.95%";
 		//photo_view.style.width="88%";
