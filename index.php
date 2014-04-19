@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#a9a6af;border-radius:1px;}
-#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border:0px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
@@ -29,31 +29,29 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="8%";
-		photo_view.style.width="86.5%";
-		photo_view.style.height="78%";
-		photo_view.style.marginTop="1.75%";
+		photo_view.style.marginLeft="7%";
+		photo_view.style.width="85.5%";
+		photo_view.style.height="99.5%";
+		photo_view.style.marginTop="-3.00%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		fbuttons.style.right="2.05%";
-		img.style.minWidth="13%";
+		fbuttons.style.right="8.95%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="10.0%";
-		photo_view.style.width="82.5%";
-		photo_view.style.height="83%";
-		photo_view.style.marginTop="0%";
+		photo_view.style.marginLeft="8.0%";
+		photo_view.style.width="83.5%";
+		photo_view.style.height="99%";
+		photo_view.style.marginTop="-3.00%";
 		right_panel.style.display="none";
-		fbuttons.style.right="2.95%";
+		fbuttons.style.right="8.95%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
 		//fbuttons.style.width="40px";
-		img.style.minWidth="15%";
 		toggle_com.innerHTML="切换宽屏";
 }
 var toggleCom=function(){
@@ -65,18 +63,20 @@ var toggleCom=function(){
 };
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
+		header.style.display="none";
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		hideCom();
 		darkerFun(0);
-		container.style.opacity="0.02";
+		container.style.opacity="0";
     chengxuyuan.style.opacity="0.0";
-    end.style.opacity="0.05";
+    end.style.opacity="0";
 		loadImg(id);
 		showPhLst();
 	}else{
+		header.style.display="block";
 		body.style.backgroundColor="#faf9ff";
-    header.style.background="#fff";
+    header.style.background="#04b1cc";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
@@ -88,20 +88,19 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=1;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
   darkFlag=darkFlag%4;
   if(darkFlag<2){
     ph_lst.style.background="rgba(253,255,254,0.5)";
-    header.style.background="rgba(253,255,254,0.5)";
   }
   else{
     ph_lst.style.backgroundColor="#111";
-    header.style.background="#181818";
   }
 	if(darkFlag%4==0){
+    header.style.background="#04b1cc";//rgba(253,255,254,0.5)";
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
@@ -115,11 +114,12 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
+    header.style.background="#fff";
 		left_panel.style.backgroundColor="#fff";
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgb(15,18,15) -10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(15,18,15) 0px 0px 1px 0px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -128,6 +128,7 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==2){
+    header.style.background="#181818";
 		left_panel.style.backgroundColor="#000";
 		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#000";
@@ -141,6 +142,7 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==3){
+    header.style.background="#181818";
 		left_panel.style.backgroundColor="#080808";
 		left_panel.style.boxShadow="100px 10px 100px 55px #343739";
 		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
@@ -169,7 +171,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgba(250,250,250,1);opacity:1; <!--#E8EDF1;--#303030;-->
+<div class="header" id="header" style="background:#04b1cc;opacity:1; <!--#E8EDF1;--#303030;-->
 display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.05);height:5%;z-index:99;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
@@ -228,7 +230,7 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.03);border:25px solid rgba(255,255,255,0.05);border-top:15px solid rgba(255,255,255,0.05);border-bottom:15px solid rgba(255,255,255,0.05);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.05);border-top:15px solid rgba(255,255,255,0.05);border-bottom:15px solid rgba(255,255,255,0.05);border-radius:0px;box-shadow:0px 0px 5px 2px rgba(30,0,20,0.2)">
 </div>
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
@@ -247,7 +249,7 @@ function submitAdvice(advice){
 	return;
 }
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=3;
+var colNum=4;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){

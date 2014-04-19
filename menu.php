@@ -1,6 +1,7 @@
 <meta charset="utf-8">
-<h4 style="display:block;float:left;"><font style="display:block;font-size:90%;position:fixed;font-weight:italic;color:#423;margin-top:-6px;z-index:90;margin-left:35px;">推荐您关注</font></h4>
-<div style="max-height:80%;height:80%;overflow-y:scroll;position:fixed;border:1px solid rgba(0,0,0,0.03);border-radius: 0px 2px 2px 0px;background:rgba(160,250,200,0.0);float:left;margin-top:1.8%;margin-left:2%;margin-right:0;z-index:99;">
+<h4 style="display:block;float:left;"><font style="display:block;font-size:90%;position:fixed;font-weight:italic;color:#423;margin-top:-6px;z-index:90;margin-left:5px;">推荐您关注</font></h4>
+<div style="max-height:90%;overflow-y:scroll;position:fixed;padding-right:5px;border:1px solid rgba(0,0,0,0.03);
+border-radius: 0px 2px 2px 0px;background:rgba(255,255,255,0.9);float:left;margin-top:0.6%;margin-left:0.1%;margin-right:0;z-index:99;">
 <div style="display:block;padding-top:8px;padding-bottom:8px;">
 <ul style="list-styles:none" style="">
 <?php

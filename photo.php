@@ -56,7 +56,7 @@ var dubaiFuns=function(){
 		message.style.display="block";
 		randomMessagePos();
 		message_content.innerHTML="您造吗？鼠标快捷键ctrl+(上下左右)可以快速浏览滚动以及缩放，点击灯光或pageup/down切换不同显示效果,enter留言!赶快试试吧!";
-    end.style.opacity="0.05";
+		end.style.opacity="0.05";
 		message_pre_content.innerHTML="";
 	};
 	s1=function(){	
@@ -85,12 +85,12 @@ var dubaiFuns=function(){
 		message.style.display="block";
 		randomMessagePos();
 		message_content.innerHTML="";
-    message_pre_content.innerHTML=""+
-      "//本人已葬身终南山下，有事烧纸...\n"+
-      "i.am.died.in.extremal.south.moutain();\n"+
-      "exit();\n"+
-      "\n"
-      ;
+		message_pre_content.innerHTML=""+
+			"//本人已葬身终南山下，有事烧纸...\n"+
+			"i.am.died.in.extremal.south.moutain();\n"+
+			"exit();\n"+
+			"\n"
+			;
 	};
 	return [s0,s1,s2,s3,die];
 }();
@@ -173,6 +173,7 @@ var initDir=function(){
 	if(allItems[curDir]!=null) {
 		items=allItems[curDir];
 		dirInited=true;
+		loadLst();
 		return;
 	}
 	dirInited=false;
@@ -181,17 +182,18 @@ var initDir=function(){
 		function(data){
 			//console.log(data.items);
 			allItems[curDir]=items=data.items;
+			loadLst();
 			dirInited=true;
 		},'json');
 };
 String.prototype.endWith=function(str){
-if(str==null||str==""||this.length==0||str.length>this.length)
-  return false;
-if(this.substring(this.length-str.length)==str)
-  return true;
-else
-  return false;
-return true;
+	if(str==null||str==""||this.length==0||str.length>this.length)
+		return false;
+	if(this.substring(this.length-str.length)==str)
+		return true;
+	else
+		return false;
+	return true;
 }
 var loadImg=function(id){
 	if(id<0||id>=items.length) return;
@@ -200,27 +202,35 @@ var loadImg=function(id){
 	//console.log(item.ref);
 	if(item.ref.endWith(".swf")){
 		movie.src=item.ref;
-		img.style.display="none";
-    setTimeout(function(){
+		img_table.style.display="none";
+		setTimeout(function(){
 			movie.style.display="none";
 			setTimeout(function(){
-      movie.style.display="block";
+				movie.style.display="block";
 			},
-    100);
+				100);
 		},10);
 		//movie.style.display="block";
 	}else{
-		img.src="view/"+curDir+"/"+item.href;
 		oImg.href="DATASET/"+curDir+"/"+item.href;
-
-		img.style.display="block";
+		// img.style.display="none";
+		img.src="view/"+curDir+"/"+item.href;
+		// var h=80;
+		// var n=item.height/item.width;
+		// var m=item.height/1000;
+		// if(m>1000||n>1){
+			// if(n>4){h=10*n+110;}
+			// else if(n>2){h=20*n+70;}
+			// else if(n>1) {h=40*n+30;}
+		// }
+		// img_table.style.maxHeight=""+(h)+"%";
+		img_table.style.display="block";
 		movie.style.display="none";
 	}
-
+	photo_view.scrollTop=0;
 	//since get comment must be called when comEnabled and img.alt changed
 	if(comEnabled) getCom();
-
-	loadLst(id);
+	updateLst(id);
 };
 function prevFun(){
 	if(img.alt==0) {
@@ -341,28 +351,25 @@ document.onkeydown=function(event){
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="width:79%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;float:left;">
-<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:0;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:50px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:110px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
-<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(180,220,255,0.2);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
-<a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
+<div style="position:fixed;margin-top:1.2%;color:#888;">
+<a id="oImg" target="__blank" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:0;position:fixed;background:rgba(50,90,125,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:50px;position:fixed;background:rgba(50,90,125,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:110px;position:fixed;background:rgba(50,90,125,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
+<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(50,90,125,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
+<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
+</div>
+
+<div  href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<table id="img_table" style="width:100%;height:80%">  <tr valign=middle align=center>  <td>
+<img id="img" onclick="togglePhotoView(0-1);return false;" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="padding:4%;padding-top:1.5%;zoom:8;display:block;border:0px solid #eee;max-width:92%;min-width:20%;min-height:10%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+</td>  </tr>  </table>  
 <?php include_once "movie.php";?>
-</a>
-
-</div>
-
-<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:69%;position:fixed;margin-top:1px;z-index:10;">
-<div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
-生命不止，吐槽不息 
-</div>
-
-<div style="margin:10px;margin-bottom:0px;border:0px solid #301030;float:left;border-radius:4px;"><!--806090-->
-	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
+<div style="width:85%;margin-left:5%;padding-top:10%;">
+<div style="margin:10px;margin-bottom:0px;border:0px solid #301030;float:left;width:60%;border-radius:4px;"><!--806090-->
+	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:20px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
-	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
+	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:20px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
 	<button value＝"清空" style="background:rgba(0,0,0,0.8);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
 	<button value＝"提交" style="background:rgba(0,0,0,0.7);color:rgba(150,100,200,1);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
@@ -370,11 +377,17 @@ style="margin-left:auto;margin-right:auto;display:block;">
 
 <div style="margin:15px 8px 22px 11px;border-radius:25px;"><!--508090-->
 <div id="comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
-background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:400px;">
+background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;">
+</div>
+</div>
 </div>
 </div>
 
 </div>
+
+<div id="right_panel" style="width:17%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:69%;position:fixed;margin-top:1px;z-index:10;">
+</div>
+
 </div> <!--photoView-->
 
 <?php include "photolst.php";?>
