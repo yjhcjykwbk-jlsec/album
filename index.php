@@ -76,7 +76,7 @@ var togglePhotoView=function(id){
 		showPhLst();
 	}else{
 		body.style.backgroundColor="#faf9ff";
-    header.style.background="#fff";
+    header.style.background="rgb(4,177,204)";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
@@ -88,7 +88,7 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=3;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
 	console.log("darkerFun:"+darkFlag);
@@ -169,7 +169,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgba(250,250,250,1);opacity:1; <!--#E8EDF1;--#303030;-->
+<div class="header" id="header" style="background:rgb(4, 177, 204);opacity:1; <!--#E8EDF1;--#303030;-->
 display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.05);height:4.0%;z-index:99;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
