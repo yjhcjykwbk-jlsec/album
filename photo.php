@@ -173,6 +173,7 @@ var initDir=function(){
 	if(allItems[curDir]!=null) {
 		items=allItems[curDir];
 		dirInited=true;
+    loadLst();
 		return;
 	}
 	dirInited=false;
@@ -182,6 +183,7 @@ var initDir=function(){
 			//console.log(data.items);
 			allItems[curDir]=items=data.items;
 			dirInited=true;
+      loadLst();
 		},'json');
 };
 String.prototype.endWith=function(str){
@@ -218,9 +220,10 @@ var loadImg=function(id){
 	}
 
 	//since get comment must be called when comEnabled and img.alt changed
-	if(comEnabled) getCom();
+  //if(comEnabled) 
+  getCom();
+  updateLst(id);
 
-	loadLst(id);
 };
 function prevFun(){
 	if(img.alt==0) {
@@ -274,7 +277,7 @@ var getCom=function(){
 				author=comment.split('%')[1];	
 				content=comment.split('%')[0];	
 				if(author==undefined||author=="") author="路人甲";
-				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#888;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
+				comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:110%;color:#111;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
 			}
 		},"text");
 };
@@ -348,11 +351,22 @@ document.onkeydown=function(event){
 <button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<a onclick="togglePhotoView(0-1);return false;" href="index.php?dir=<?php echo $curDir;?>" title="" class="img x" 
+<div onclick="togglePhotoView(0-1);return false;" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:8;display:block;border:0px solid #eee;max-width:100%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;padding-left:1.5%;padding-right:1.5%;padding-top:1%;padding-bottom:3%;display:block;max-width:96%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+</div>
+<div style="width:96%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
+<div style="margin-left:1.6%;width:30%;margin-top:2%:margin-bottom:1%;border:0px solid #301030;border-radius:4px;"><!--806090-->
+	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
+<br/>
+	<textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;height:15px;padding-bottom:10px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
+	<button value＝"清空" style="background:rgba(0,0,0,0.8);color:rgba(250,10,10,0.7);border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="background:rgba(0,0,0,0.7);color:rgba(150,100,200,1);border:0px;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+</div>
+<div id="comments_div" style="float:left;margin-left:1.6%;width:95%;padding-bottom:7%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
+</div>
 <?php include_once "movie.php";?>
-</a>
 
 </div>
 
@@ -360,17 +374,9 @@ style="margin-left:auto;margin-right:auto;display:block;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 </div>
 
-<div style="margin:10px;margin-bottom:0px;border:0px solid #301030;float:left;border-radius:4px;"><!--806090-->
-	<textarea id="comment_area" style="font-size:50%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
-<br/>
-	<textarea id="comment_author" style="font-size:50%;width:99%;margin-top:2px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="background:rgba(0,0,0,0.8);color:rgba(250,10,10,0.7);border:0px;float:right;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="background:rgba(0,0,0,0.7);color:rgba(150,100,200,1);border:0px;float:right;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
-</div>
-
 
 <div style="margin:15px 8px 22px 11px;border-radius:25px;"><!--508090-->
-<div id="comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+<div id="old_comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:400px;">
 </div>
 </div>

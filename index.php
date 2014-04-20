@@ -29,13 +29,13 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="13%";
+		photo_view.style.marginLeft="10%";
 		photo_view.style.width="84.5%";
-		photo_view.style.height="84%";
-		photo_view.style.marginTop="0.50%";
+		photo_view.style.height="90%";
+		photo_view.style.marginTop="0.00%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
-		fbuttons.style.right="2.35%";
+		fbuttons.style.right="4.35%";
 		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -43,12 +43,12 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="14.0%";
+		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
-		photo_view.style.height="86%";
-		photo_view.style.marginTop="-0.30%";
+		photo_view.style.height="92%";
+		photo_view.style.marginTop="-0.70%";
 		right_panel.style.display="none";
-		fbuttons.style.right="2.95%";
+		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
