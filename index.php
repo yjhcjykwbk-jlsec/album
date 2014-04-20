@@ -29,7 +29,7 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="10%";
+		photo_view.style.marginLeft="8.5%";
 		photo_view.style.width="84.5%";
 		photo_view.style.height="90%";
 		photo_view.style.marginTop="0.00%";
@@ -43,10 +43,10 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="11.0%";
+		photo_view.style.marginLeft="10.2%";
 		photo_view.style.width="78.5%";
-		photo_view.style.height="92%";
-		photo_view.style.marginTop="-0.70%";
+		photo_view.style.height="92.7%";
+		photo_view.style.marginTop="-0.90%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
