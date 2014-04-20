@@ -16,7 +16,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 //::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#a9a6af;border-radius:1px;}
-#photo_view{padding:0px;border:2px solid rgba(5,5,5,0.16);border-right:3px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border-top:1px solid rgba(5,5,5,0.06);border-left:2px solid rgba(5,5,5,0.16);border-right:2px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
@@ -43,10 +43,10 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="10.2%";
+		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
-		photo_view.style.height="92.7%";
-		photo_view.style.marginTop="-0.90%";
+		photo_view.style.height="94.2%";
+		photo_view.style.marginTop="-1.00%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -106,7 +106,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgba(150, 156, 155, 1) -2px 6px 5px 2px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(150, 156, 155, 1) -1px 4px 3px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -228,7 +228,7 @@ var curDir="<?php echo $curDir;?>";
 
 <div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.03);border:25px solid rgba(255,255,255,0.05);border-top:15px solid rgba(255,255,255,0.05);border-bottom:15px solid rgba(255,255,255,0.05);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
 </div>
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
