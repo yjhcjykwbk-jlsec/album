@@ -182,18 +182,19 @@ var initDir=function(){
 		function(data){
 			//console.log(data.items);
 			allItems[curDir]=items=data.items;
+			loadLst();
 			dirInited=true;
       loadLst();
 		},'json');
 };
 String.prototype.endWith=function(str){
-if(str==null||str==""||this.length==0||str.length>this.length)
-  return false;
-if(this.substring(this.length-str.length)==str)
-  return true;
-else
-  return false;
-return true;
+	if(str==null||str==""||this.length==0||str.length>this.length)
+		return false;
+	if(this.substring(this.length-str.length)==str)
+		return true;
+	else
+		return false;
+	return true;
 }
 var loadImg=function(id){
 	if(id<0||id>=items.length) return;
@@ -212,13 +213,22 @@ var loadImg=function(id){
 		},10);
 		//movie.style.display="block";
 	}else{
-		img.src="view/"+curDir+"/"+item.href;
 		oImg.href="DATASET/"+curDir+"/"+item.href;
-
+		// img.style.display="none";
+		img.src="view/"+curDir+"/"+item.href;
+		// var h=80;
+		// var n=item.height/item.width;
+		// var m=item.height/1000;
+		// if(m>1000||n>1){
+			// if(n>4){h=10*n+110;}
+			// else if(n>2){h=20*n+70;}
+			// else if(n>1) {h=40*n+30;}
+		// }
+		// img_table.style.maxHeight=""+(h)+"%";
 		img.style.display="block";
 		movie.style.display="none";
 	}
-
+	photo_view.scrollTop=0;
 	//since get comment must be called when comEnabled and img.alt changed
   //if(comEnabled) 
   getCom();
@@ -354,6 +364,7 @@ document.onkeydown=function(event){
 <div onclick="togglePhotoView(0-1);return false;" title="" class="img x" 
 style="margin-left:auto;margin-right:auto;display:block;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;padding-left:1.5%;padding-right:1.5%;padding-top:1%;padding-bottom:3%;display:block;max-width:96%;min-width:20%;min-height:100%;margin:auto auto;vertical-align:middle;top:-50%;"/>
+<?php include_once "movie.php";?>
 </div>
 <div style="width:96%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
 <div style="margin-left:1.6%;width:30%;margin-top:2%:margin-bottom:1%;border:0px solid #301030;border-radius:4px;"><!--806090-->
@@ -366,7 +377,7 @@ style="margin-left:auto;margin-right:auto;display:block;">
 <div id="comments_div" style="float:left;margin-left:1.6%;width:95%;padding-bottom:7%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
 </div>
-<?php include_once "movie.php";?>
+</div>
 
 </div>
 
@@ -374,15 +385,10 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 </div>
 
-
-<div style="margin:15px 8px 22px 11px;border-radius:25px;"><!--508090-->
-<div id="old_comments_div" style="width:100%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
-background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;height:400px;">
-</div>
-</div>
-
-</div>
 </div> <!--photoView-->
+
+
+</div>
 
 <?php include "photolst.php";?>
 

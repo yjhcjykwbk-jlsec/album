@@ -53,7 +53,6 @@ function hideCom(){
 		//fbuttons.style.right="5.65%";
 		fbuttons.style.opacity="0.7";
 		//fbuttons.style.width="40px";
-		img.style.minWidth="15%";
 		toggle_com.innerHTML="切换宽屏";
 }
 var toggleCom=function(){
@@ -65,6 +64,7 @@ var toggleCom=function(){
 };
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
+		// header.style.display="none";
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		hideCom();
