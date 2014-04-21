@@ -43,7 +43,7 @@ function hideCom(){
 		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
 		photo_view.style.height="94.2%";
-		photo_view.style.marginTop="-1.90%";
+		photo_view.style.marginTop="-1.00%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
