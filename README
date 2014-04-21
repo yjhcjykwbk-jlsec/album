@@ -14,6 +14,8 @@ support image comment
 
 UI:
 The UI is designed and you may modify if you like
+UI has write a table named img_table , use this to place img in the center of left_panel of photo_view
+UI has many other functions that is useful
 
 Code:
 Jquery and Jquery waterfall plugin is used
