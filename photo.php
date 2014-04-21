@@ -24,7 +24,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
 
-<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:102;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>

@@ -82,6 +82,8 @@ var loadImg=function(id){
   if(item.ref.endWith(".swf")){
     photo_view.style.width="80%";
     photo_view.style.marginLeft="10%";
+    /* photo_view.style.height="90%"; */
+    /* photo_view.style.marginTop="0%"; */ 
     movie.src=item.ref;
     img_table.style.display="none";
     setTimeout(function(){
@@ -117,6 +119,8 @@ var loadImg=function(id){
     console.log("display  width:"+w+"%,height:"+h+"%");
     photo_view.style.width=""+(w/1.1)+"%";
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
+    /* photo_view.style.marginTop="-1.00%"; */
+    /* photo_view.style.height="94.2%"; */
     // img.style.minHeight=""+(h/1.1)+"%";
     //
     // @changed

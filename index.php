@@ -133,7 +133,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		left_panel.style.boxShadow="100px 10px 160px 185px #000";
-		photo_view.style.boxShadow="";//0px 10px 260px 200px #000";
+		photo_view.style.boxShadow="100px 10px 160px 485px #111";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
