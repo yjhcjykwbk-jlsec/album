@@ -70,9 +70,8 @@ String.prototype.endWith=function(str){
   return true;
 }
 function guiyi(w){
-  if(w>70) return 80;
-  if(w>40) return 70;
-  return 50;
+  if(w>70) return 90;
+   return 75;
 }
 var loadImg=function(id){
   if(id<0||id>=items.length) return;
@@ -101,10 +100,10 @@ var loadImg=function(id){
     var h,w;
     var n=item.height/item.width;
     //adjust size
-    if(item.width<screen.width/2&&item.height<screen.height/2){
-      item.width=screen.width/2;
-      item.height=n*item.width;
-    }
+    // if(item.width<screen.width/2&&item.height<screen.height/2){
+      // item.width=screen.width/2;
+      // item.height=n*item.width;
+    // }
     if(item.width>screen.width){//w<=90
       w=90;
       h=(n*k)*90;
@@ -119,8 +118,15 @@ var loadImg=function(id){
     // console.log("display  width:"+w+"%,height:"+h+"%");
     photo_view.style.width=""+(w/1.1)+"%";
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
-    // photo_view.style.height="94.2%"; 
-    // photo_view.style.marginTop="-1.9%"; 
+
+    if(h<70){
+        photo_view.style.height=""+h+"%"; 
+        photo_view.style.marginTop=""+(94-h)/4+"%"; 
+    }
+    else{
+        photo_view.style.height="94%"; 
+        photo_view.style.marginTop="-0.2%";
+    }
     // img.style.minHeight=""+(h/1.1)+"%";
     //
     // @changed
@@ -194,7 +200,7 @@ var getCom=function(){
           author=comment.split('%')[1]; 
           content=comment.split('%')[0];  
           if(author==undefined||author=="") author="路人甲";
-          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:#111;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
+          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:#444;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
         }
       },"text");
 };

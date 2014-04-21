@@ -22,8 +22,6 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="message_content"></div>
 <pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
-
 <div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
@@ -32,7 +30,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
 <button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
-
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:fixed;height:84%;margin-left:7%;margin-right:auto;">
 <style>
 .fButton:hover{ color:red; }
 #comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
@@ -50,19 +48,19 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <table id="img_table" width="100%" height="102%" align="center" valign="middle"><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;max-width:94%;padding-left:3%;padding-right:3%;padding-bottom:3%;padding-top:0%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;width:96%;padding-left:2%;padding-right:2%;padding-bottom:3%;padding-top:0.5%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </a>
 </td></tr></table>
 <?php include_once "movie.php";?>
-<div style="width:96%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
-<div style="margin-left:1.6%;width:30%;margin-top:2%:margin-bottom:1%;border:0px solid #301030;border-radius:4px;"><!--806090-->
-	<textarea id="comment_area" style="font-size:100%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
+<div style="width:100%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
+<div style="margin-left:1.6%;width:83%;margin-top:2%:margin-bottom:1%;border:0px solid #301030;border-radius:4px;"><!--806090-->
+	<textarea id="comment_area" style="font-size:100%;margin-top:5px;width:99%;height:15px;border:0px;" onclick="" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
 <br/>
-	<textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;margin-bottom:5px;height:15px;float:left;background:#eee;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="width:30px;background:rgba(0,0,0,0.1);color:rgba(10,10,10,0.7);border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="width:30px;background:rgba(0,0,0,0.1);color:rgba(10,10,10,0.7);border:0px;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+	<textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;margin-bottom:5px;height:15px;float:left;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
+	<button value＝"清空" style="width:30px;float:right;background:#eee;color:#555;border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="width:30px;float:right;background:#eee;color:#555;border:0px;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
-<div id="comments_div" style="border-bottom:0px solid #888;margin-left:1.6%;width:90%;padding-bottom:7%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+<div id="comments_div" style="border-bottom:0px solid #888;margin-left:1.6%;width:92%;padding-bottom:7%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
 </div>
 </div>

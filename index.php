@@ -13,7 +13,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <!-- style related codes -->
 <style>
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#a9a6af;border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.3); background-color:#a9a6af;border-radius:1px;}
 #photo_view{padding:0px;border-top:1px solid rgba(5,5,5,0.06);border-left:2px solid rgba(5,5,5,0.16);border-right:2px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 #header select {
@@ -43,7 +43,7 @@ function hideCom(){
 		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
 		photo_view.style.height="94.2%";
-		photo_view.style.marginTop="-1.00%";
+		photo_view.style.marginTop="-0.20%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -153,7 +153,7 @@ var darkerFun=function(c){
 </script>
 
 </head>
-<body id="body" style="height:130%;overflow-x:hidden;">
+<body id="body" style="height:110%;overflow-x:hidden;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
