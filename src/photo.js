@@ -78,7 +78,7 @@ var loadImg=function(id){
     photo_view.style.width="80%";
     photo_view.style.marginLeft="10%";
     movie.src=item.ref;
-    img.style.display="none";
+    img_table.style.display="none";
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){
@@ -112,13 +112,15 @@ var loadImg=function(id){
     photo_view.style.width=""+(w/1.1)+"%";
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
     // img.style.minHeight=""+(h/1.1)+"%";
-    img.style.marginTop=h/1.1>86?"0%":""+(86-h/1.1)/2+"%";
+    if(h>70)
+    img.style.marginTop=h/1.1>86?"0.2%":""+(86-h/1.1)/2+"%";
+    else img.style.marginTop="";
     // if(h<75)
       // img.style.marginTop=""+(100-h)/2.5-10+"%";
     // else 
       // img.style.marginTop="0.5%";
     img.src="view/"+curDir+"/"+item.href;
-    img.style.display="block";
+    img_table.style.display="block";
     movie.style.display="none";
   }
   photo_view.scrollTop=0;

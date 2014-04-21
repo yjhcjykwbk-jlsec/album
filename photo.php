@@ -48,10 +48,12 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<a onclick="togglePhotoView(0-1);return false;" title="" style="margin-left:auto;margin-right:auto;display:block;">
+<table id="img_table" width="100%" height="98%" align="center" valign="middle"><tr><td>
+<a onclick="togglePhotoView(0-1);return false;" title="" style="">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;max-width:94%;padding-left:3%;padding-right:3%;padding-bottom:3%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
-<?php include_once "movie.php";?>
 </a>
+</td></tr></table>
+<?php include_once "movie.php";?>
 <div style="width:96%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
 <div style="margin-left:1.6%;width:30%;margin-top:2%:margin-bottom:1%;border:0px solid #301030;border-radius:4px;"><!--806090-->
 	<textarea id="comment_area" style="font-size:100%;margin-top:5px;width:99%;height:15px;background:#eee;border:0px;" onclick="this.value='';" placeholder="评论" class="clear-input" autocomplete="off"></textarea>
