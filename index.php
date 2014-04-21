@@ -71,7 +71,7 @@ var togglePhotoView=function(id){
 		darkerFun(0);
 		container.style.opacity="0.02";
     chengxuyuan.style.opacity="0.0";
-    end.style.opacity="0.05";
+    end.style.opacity="0.0";
 		loadImg(id);
 		showPhLst();
 	}else{

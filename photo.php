@@ -49,7 +49,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="margin-left:auto;margin-right:auto;display:block;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;padding-left:3%;padding-right:3%;padding-top:2%;padding-bottom:3%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;max-width:94%;padding-left:3%;padding-right:3%;padding-bottom:3%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 <?php include_once "movie.php";?>
 </a>
 <div style="width:96%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">

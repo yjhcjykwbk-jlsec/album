@@ -75,6 +75,8 @@ var loadImg=function(id){
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
+    photo_view.style.width="80%";
+    photo_view.style.marginLeft="10%";
     movie.src=item.ref;
     img.style.display="none";
     setTimeout(function(){
@@ -86,24 +88,35 @@ var loadImg=function(id){
     },10);
     //movie.style.display="block";
   }else{
+    var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
     // img.style.display="none";
-    var h=80;
+    var h,w;
     var n=item.height/item.width;
-    var m=item.height;
-    var width=0;
-    if(item.width>1000){
-      h=(n*4/3)*90;
+    //adjust size
+    if(item.width<screen.width/2&&item.height<screen.height/2){
+      item.width=screen.width/2;
+      item.height=n*item.width;
+    }
+    if(item.width>screen.width){//w<=90
+      w=90;
+      h=(n*k)*90;
     }
     else{
       //cal width
-      h=(n*4/3)*(100*item.width/1000); 
+      w=90*item.width/screen.width;
+      h=(n*k)*w; 
     }
-    img.style.height=""+(h)+"%";
-    if(h<75)
-      img.style.marginTop=""+(100-h)/2.5-10+"%";
-    else 
-      img.style.marginTop="0.5%";
+    console.log("original width:"+item.width+",height:"+item.height);
+    console.log("display  width:"+w+"%,height:"+h+"%");
+    photo_view.style.width=""+(w/1.1)+"%";
+    photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
+    // img.style.minHeight=""+(h/1.1)+"%";
+    img.style.marginTop=h/1.1>86?"0%":""+(86-h/1.1)/2+"%";
+    // if(h<75)
+      // img.style.marginTop=""+(100-h)/2.5-10+"%";
+    // else 
+      // img.style.marginTop="0.5%";
     img.src="view/"+curDir+"/"+item.href;
     img.style.display="block";
     movie.style.display="none";

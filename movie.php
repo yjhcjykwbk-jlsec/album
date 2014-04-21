@@ -2,7 +2,7 @@
 <embed id="movie" type="application/x-shockwave-flash" 
 class="BDE_Flash" 
 src="" 
-width="100%" height="95%" scale="noborder" margin-top="5%";
+width="100%" height="100%" scale="noborder" margin-top="5%";
 allowscriptaccess="never" menu="true" loop="loop" 
 play="false" womode="transparent" 
 pluginspage="http://www.macromedia.com/go/getflashplayer" 
