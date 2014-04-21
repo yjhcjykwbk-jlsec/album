@@ -29,8 +29,8 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </div>
 <style>
   .folders .li{
-	float:middle;
-	margin-left:auto;margin-right:auto;margin-top:50px;
+  float:middle;
+  margin-left:auto;margin-right:auto;margin-top:50px;
     border:17px;padding:5px;border-color:#0f0f0f;padding-color:#202020;
     box-shadow: 0 1px 4px rgba(0,0,0,.15)
 }
@@ -40,17 +40,18 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:840px;height:700px;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:355px;margin-bottom:50px;border-radius:7px;">
+<div class="folders" style="display:block;width:840px;height:;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:315px;padding-bottom:20px;border-radius:7px;">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
     if(is_dir("DATASET/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
-      <div class="li" style="display:block;float:left;margin:15px;margin-bottom:0;margin-top:25px;">
-        <a href="index.php?dir=<?php echo $entry ?>"><?php echo $entry ?>/<br/>
+      <div class="li" style="display:block;float:left;margin:13px;margin-bottom:0;margin-top:25px;">
+        <a href="index.php?dir=<?php echo $entry ?>">
         <?php $front=file_exists("DATASET/".$entry."/front.jpg")?"DATASET/".$entry."/front.jpg":"default.jpg";?>
         <img src="<?php echo $front;?>" width="170" height="125" style="">
-        </img></a>
-        <div class="li_border">..</div>
+        </img><br/>
+        <?php echo $entry ?>/
+        </a>
         </div>
 <?php
     }
@@ -59,9 +60,11 @@ if ($handle = opendir("DATASET")) {
 closedir($handle);
 ?>
 
+
+<div style="clear:both;"></div>
 </div>
 
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="600" height="600">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="0" height="0">
 <param name="movie" value="music/huakai.swf">
 <param name="quality" value="high">
 <param name="wmode" value="transparent">
