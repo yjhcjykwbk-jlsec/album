@@ -48,9 +48,9 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<table id="img_table" width="100%" height="98%" align="center" valign="middle"><tr><td>
+<table id="img_table" width="100%" height="102%" align="center" valign="middle"><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;max-width:94%;padding-left:3%;padding-right:3%;padding-bottom:3%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="zoom:2;max-width:94%;padding-left:3%;padding-right:3%;padding-bottom:3%;padding-top:0%;display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </a>
 </td></tr></table>
 <?php include_once "movie.php";?>
