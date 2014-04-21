@@ -70,8 +70,8 @@ String.prototype.endWith=function(str){
   return true;
 }
 function guiyi(w){
-  if(w>80) return 80;
-  if(w>60) return 60;
+  if(w>80) return 90;
+  if(w>50) return 70;
   return 50;
 }
 var loadImg=function(id){
