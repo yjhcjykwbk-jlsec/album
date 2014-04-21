@@ -12,13 +12,10 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 
 <!-- style related codes -->
 <style>
-//::-webkit-scrollbar { background-color:#444;border-right:2px solid #555 }
-//::-webkit-scrollbar-thumb {background-color:#111;border:2px solid #333;box-shadow:0px 0px 3px #fff;border-radius:2px;}
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px #393040; background-color:#a9a6af;border-radius:1px;}
-#photo_view{padding:0px;border-top:1px solid rgba(5,5,5,0.06);border-left:2px solid rgba(5,5,5,0.16);border-right:2px solid rgba(5,5,5,0.16);border-radius:0px;} //border-left:3px solid rgba(5,5,5,0.01);}
+#photo_view{padding:0px;border-top:1px solid rgba(5,5,5,0.06);border-left:2px solid rgba(5,5,5,0.16);border-right:2px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
-::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
   background:transparent;color:#8fa;font-size:110%;font-weight:bold;border:0;border-left:1px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
@@ -32,7 +29,7 @@ function showCom(){
 		photo_view.style.marginLeft="8.5%";
 		photo_view.style.width="84.5%";
 		photo_view.style.height="90%";
-		photo_view.style.marginTop="0.00%";
+		photo_view.style.marginTop="-0.1%";
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.right="4.35%";
@@ -46,7 +43,7 @@ function hideCom(){
 		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
 		photo_view.style.height="94.2%";
-		photo_view.style.marginTop="-1.00%";
+		photo_view.style.marginTop="-1.90%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -91,7 +88,6 @@ var togglePhotoView=function(id){
 var darkFlag=0;
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
-	console.log("darkerFun:"+darkFlag);
   darkFlag=darkFlag%4;
   if(darkFlag<2){
     ph_lst.style.background="rgba(253,255,254,0.1)";
@@ -115,11 +111,11 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
-		left_panel.style.backgroundColor="#444";
-		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
-		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#888";//"#f3f0f6";
-		photo_view.style.boxShadow="rgb(15,18,15) -5px 5px 10px 5px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		left_panel.style.backgroundColor="#222";
+		left_panel.style.boxShadow="";//100px 0px 20px 150px #fff";
+		photo_view.style.backgroundColor="#222";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#222";//"#f3f0f6";
+		photo_view.style.boxShadow="rgb(5,8,5) -5px 5px 10px 5px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";

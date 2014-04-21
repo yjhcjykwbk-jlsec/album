@@ -25,7 +25,7 @@ function temp(){
   }
 }
 function loadLst(id){
-  console.log(id);
+  //console.log(id);
   var j=id-10>0?id-10:0;
   var img_div=$("#ph_lst");
   img_div.empty();

@@ -70,8 +70,8 @@ String.prototype.endWith=function(str){
   return true;
 }
 function guiyi(w){
-  if(w>80) return 90;
-  if(w>50) return 70;
+  if(w>70) return 80;
+  if(w>40) return 70;
   return 50;
 }
 var loadImg=function(id){
@@ -82,8 +82,8 @@ var loadImg=function(id){
   if(item.ref.endWith(".swf")){
     photo_view.style.width="80%";
     photo_view.style.marginLeft="10%";
-    /* photo_view.style.height="90%"; */
-    /* photo_view.style.marginTop="0%"; */ 
+    // photo_view.style.height="90%";
+    // photo_view.style.marginTop="0.3%";
     movie.src=item.ref;
     img_table.style.display="none";
     setTimeout(function(){
@@ -115,12 +115,12 @@ var loadImg=function(id){
       w=guiyi(w);
       h=(n*k)*w; 
     }
-    console.log("original width:"+item.width+",height:"+item.height);
-    console.log("display  width:"+w+"%,height:"+h+"%");
+    // console.log("original width:"+item.width+",height:"+item.height);
+    // console.log("display  width:"+w+"%,height:"+h+"%");
     photo_view.style.width=""+(w/1.1)+"%";
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
-    /* photo_view.style.marginTop="-1.00%"; */
-    /* photo_view.style.height="94.2%"; */
+    // photo_view.style.height="94.2%"; 
+    // photo_view.style.marginTop="-1.9%"; 
     // img.style.minHeight=""+(h/1.1)+"%";
     //
     // @changed
