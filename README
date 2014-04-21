@@ -1,5 +1,6 @@
-This is a album website built with no database, 
-which means once you put it on the web server folder, it will works
+Usage;
+This is a album website built with no database, which means once you put it on the web server folder, it will works
+You may need to mkdir txt,thumb,view and chmod them to 777
 
 Features:
 support Music,flash,swf
