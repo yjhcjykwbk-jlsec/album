@@ -69,6 +69,11 @@ String.prototype.endWith=function(str){
     return false;
   return true;
 }
+function guiyi(w){
+  if(w>80) return 80;
+  if(w>60) return 60;
+  return 50;
+}
 var loadImg=function(id){
   if(id<0||id>=items.length) return;
   img.alt=id;
@@ -105,6 +110,7 @@ var loadImg=function(id){
     else{
       //cal width
       w=90*item.width/screen.width;
+      w=guiyi(w);
       h=(n*k)*w; 
     }
     console.log("original width:"+item.width+",height:"+item.height);
@@ -112,9 +118,11 @@ var loadImg=function(id){
     photo_view.style.width=""+(w/1.1)+"%";
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
     // img.style.minHeight=""+(h/1.1)+"%";
-    if(h>70)
-    img.style.marginTop=h/1.1>86?"0.2%":""+(86-h/1.1)/2+"%";
-    else img.style.marginTop="";
+    //
+    // @changed
+    // if(h>70)
+    // img.style.marginTop=h/1.1>86?"0.2%":""+(86-h/1.1)/2+"%";
+    // else img.style.marginTop="";
     // if(h<75)
       // img.style.marginTop=""+(100-h)/2.5-10+"%";
     // else 
