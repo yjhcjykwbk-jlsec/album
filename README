@@ -1,0 +1,15 @@
+This is a album website built with no database, 
+which means once you put it on the web server folder, it will works
+
+Features:
+support Music,flash,swf
+support image uploading and the mark of images
+support image comment
+...
+
+UI:
+The UI is designed and you may modify if you like
+
+Code:
+Jquery and Jquery waterfall plugin is used
+css, Js and php is mixed, you may disapart them if you like
