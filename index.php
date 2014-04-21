@@ -69,7 +69,7 @@ var togglePhotoView=function(id){
 		photo_view.style.display="block";
 		hideCom();
 		darkerFun(0);
-		container.style.opacity="0.02";
+		container.style.opacity="0.0";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.0";
 		loadImg(id);
