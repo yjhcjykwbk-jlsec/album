@@ -13,7 +13,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <!-- style related codes -->
 <style>
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.1); background-color:#a9a6af;border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.3);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
@@ -103,7 +103,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 4px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -129,8 +129,8 @@ var darkerFun=function(c){
 		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
-		left_panel.style.boxShadow="100px 10px 160px 185px #000";
-		photo_view.style.boxShadow="100px 10px 160px 485px #111";
+		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
+		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
