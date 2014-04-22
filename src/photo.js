@@ -125,7 +125,7 @@ var loadImg=function(id){
     }
     else{
         photo_view.style.height="94%"; 
-        photo_view.style.marginTop="-0.2%";
+        photo_view.style.marginTop="-0.5%";
     }
     // img.style.minHeight=""+(h/1.1)+"%";
     //

@@ -13,9 +13,10 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <!-- style related codes -->
 <style>
 ::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.3); background-color:#a9a6af;border-radius:1px;}
-#photo_view{padding:0px;border-top:1px solid rgba(5,5,5,0.06);border-left:2px solid rgba(5,5,5,0.16);border-right:2px solid rgba(5,5,5,0.16);border-radius:0px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.1); background-color:#a9a6af;border-radius:1px;}
+#photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
+::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
   background:transparent;color:#8fa;font-size:110%;font-weight:bold;border:0;border-left:1px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
@@ -43,7 +44,7 @@ function hideCom(){
 		photo_view.style.marginLeft="11.0%";
 		photo_view.style.width="78.5%";
 		photo_view.style.height="94.2%";
-		photo_view.style.marginTop="-0.20%";
+		photo_view.style.marginTop="-0.5%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -102,7 +103,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
-		photo_view.style.boxShadow="rgba(150, 156, 155, 1) -1px 4px 3px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 4px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -115,7 +116,7 @@ var darkerFun=function(c){
 		left_panel.style.boxShadow="";//100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="#222";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#222";//"#f3f0f6";
-		photo_view.style.boxShadow="rgb(5,8,5) -5px 5px 10px 5px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		photo_view.style.boxShadow="rgb(5,8,5) -5px 5px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
