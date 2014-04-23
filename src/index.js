@@ -24,7 +24,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
             if(inserted.hasOwnProperty(''+item.id)) return;
             isMovie=item.ref.endWith(".swf");
             res.push(
-              '<div class="item masonry_brick masonry-brick" style="background:'+(isMovie?'#fff':'#fff')+'";position: absolute; top: 0px; left: 0px;">'+
+              '<div class="item masonry_brick masonry-brick" style="background:rgba(255,255,255,0.1);position: absolute; top: 0px; left: 0px;">'+
               '<div class="item_t">'+ 
               // '<div class="img">'+// style="background:#000"> '+
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
@@ -32,11 +32,11 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '</a> '+
               '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
-              '<div class="desp" style="background:#fafafa;color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'red':'#eee')+';">'+
+              '<div class="desp" style="background:rgba(240,240,240,0.25);color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'red':'rgba(100,100,100,0.1)')+';">'+
               (item.desp!=""?item.desp+
                 '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
-                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:0px solid rgba(220,220,220,0.3);color:#444">添加描述</button>')+'</div>'+
-              '<div class="ref" style="color:#9E7E6B;background:#f8f8f8;padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
+                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述</button>')+'</div>'+
+              '<div class="ref" style="color:#9E7E6B;background:rgba(200,200,200,0.1);padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
               //   '</div> '+
               //						'<div class="item_b clearfix"> '+
               //						'<div class="items_likes fl" style="height:0px"> '+
