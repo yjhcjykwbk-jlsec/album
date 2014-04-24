@@ -5,7 +5,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <html>
 <head>
 <meta charset="<?php echo $ENCODE;?>">
-<title>知识库</title>
+<title>红尘，一场漫天的尘埃</title>
 <link rel="stylesheet" type="text/css" href="css/container.css" />
 <link rel="stylesheet" type="text/css" href="css/item.css" />
 <link rel="stylesheet" type="text/css" href="css/contextMenu.css" />
