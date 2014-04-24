@@ -121,8 +121,8 @@ var loadImg=function(id){
     photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
 
     if(h<70){
-        photo_view.style.height=""+h+"%"; 
-        photo_view.style.marginTop=""+(94-h)/4+"%"; 
+        photo_view.style.height=""+guiyi(h)+"%"; 
+        photo_view.style.marginTop=""+(94-guiyi(h))/4+"%"; 
     }
     else{
         photo_view.style.height="94%"; 
