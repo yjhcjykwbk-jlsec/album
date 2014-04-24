@@ -34,7 +34,6 @@ function showCom(){
 		right_panel.style.display="block";
 		fbuttons.style.opacity="0.7";
 		fbuttons.style.right="4.35%";
-		img.style.minWidth="13%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
@@ -100,9 +99,10 @@ var darkerFun=function(c){
   }
 	if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#fff";
-		left_panel.style.boxShadow="100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
+
+    img.style.boxShadow="";
 		photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -113,9 +113,9 @@ var darkerFun=function(c){
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#222";
-		left_panel.style.boxShadow="";//100px 0px 20px 150px #fff";
 		photo_view.style.backgroundColor="#222";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#222";//"#f3f0f6";
+	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
 		photo_view.style.boxShadow="rgb(5,8,5) 0px 5px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -139,7 +139,7 @@ var darkerFun=function(c){
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==3){
 		left_panel.style.backgroundColor="#080808";
-		left_panel.style.boxShadow="100px 10px 100px 55px #343739";
+		img.style.boxShadow="100px 10px 100px 55px #343739";
 		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
 		photo_view.style.boxShadow="-1px -2px 20px 2px #222";
 		body.style.backgroundColor="#000";

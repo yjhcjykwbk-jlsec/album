@@ -28,11 +28,11 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '<div class="item_t">'+ 
               // '<div class="img">'+// style="background:#000"> '+
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
-              '<img  width="'+230+'" height="'+item.height/item.width*230+'" src="'+item.src+'" data-pinit="registered">'+
+              '<img  width="'+240+'" height="'+item.height/item.width*240+'" src="'+item.src+'" data-pinit="registered">'+
               '</a> '+
               '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
-              '<div class="desp" style="background:rgba(240,240,240,0.25);color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'red':'rgba(100,100,100,0.1)')+';">'+
+              '<div class="desp" style="background:rgba(255,255,255,0.7);color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'red':'rgba(100,100,100,0.1)')+';">'+
               (item.desp!=""?item.desp+
                 '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
                 :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述</button>')+'</div>'+
@@ -54,7 +54,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
     waterfall.success(res);
   };
   this.wf = new Waterfall(
-      { container: $('#container'), colWidth: 230, maxCol: colNum,preDistance: 0,
+      { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
         load: function(){
           // 触发滚动加载时的具体操作
           // 当前作用域下，this指向正创建的对象

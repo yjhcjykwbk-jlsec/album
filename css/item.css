@@ -16,7 +16,7 @@ body{background:center top #fff;font-family:Arial;font-size:12px;}
 /* item_list */
 .item_list{position:relative;padding:0 0 50px;}
 .item{
-	width:230px;background:#fff;overflow:hidden;margin:15px 0 0 0;
+	width:240px;background:#fff;overflow:hidden;margin:15px 0 0 0;
 	border-radius:0px 0px 0px 0px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.3);
 	//box-shadow:0px 1px 5px rgba(233, 222, 255, 0.6);	

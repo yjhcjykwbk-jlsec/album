@@ -181,6 +181,8 @@ var addCom=function(com){
     alert("含有不合法字符\'%或$");
     return;
   }
+  com.replace("\n","     ");
+  com=encodeURIComponent(com);
   $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
       function(data){
       },"text");
