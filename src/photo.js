@@ -1,46 +1,33 @@
 
 var comEnabled=true;
+var zoom=1;
 var biggerFun=function(){
-  cur=img.style.zoom;
-  if(cur=="") cur=1;
-  else {
-    cur=parseFloat(cur);
-  }
-  if(cur>=8) return; 
-  if(cur>=4) cur=8;
-  else if(cur>=1.75) cur=4;
-  else if(cur>=1) cur+=0.5;
-  else cur=1;
-  //	console.log("zoom:"+cur);
-  if(cur<8) zoomer.innerHTML=(cur*100)+"%";
-  else zoomer.innerHTML="800%";
-  img.style.zoom=cur+"";
+  cur=zoom;
+  if(cur==""||cur==undefined) cur=1;
+  if(cur>=5) return; 
+  else cur+=0.5;
+  zoom=cur;
+  zoomer.innerHTML=""+zoom*100+"%";
+  loadImg(img.alt);
 };
 var smallerFun=function(){
-  cur=img.style.zoom;
-  if(cur=="") cur=1;
-  else {
-    cur=parseFloat(cur);
-  }
-  if(cur<=0.125) return;
-  if(cur>=6) cur-=4;
-  else if(cur>=4) cur-=2;
-  else if(cur>=2) cur-=1;
-  else if(cur>1) cur-=0.5;
-  else if(cur>0.25)cur-=0.25;
-  else cur-=0.125;
-  //console.log("zoom:"+cur);
-  zoomer.innerHTML=(cur*100)+"%";
-  //zoomer.innerHTML=cur;
-  img.style.zoom=cur+"";
+  cur=zoom;
+  if(cur==""||cur==undefined) cur=1;
+  if(cur>3) cur-=2;
+  else if(cur>1) cur=1;
+  else if(cur<=0.25) return; 
+  else cur-=0.25;
+  zoom=cur;
+  zoomer.innerHTML=""+zoom*100+"%";
+  loadImg(img.alt);
 };
 var allItems={};
 var items;
 var dirInited=false;
 var initDir=function(){
   //restore img size
-  img.style.zoom="2";
-  zoomer.innerHTML="800%";
+  zoom=1;
+  zoomer.innerHTML="100%";
 
   if(allItems[curDir]!=null) {
     items=allItems[curDir];
@@ -70,9 +57,11 @@ String.prototype.endWith=function(str){
   return true;
 }
 function guiyi(w){
-  if(w>60) return 90;
+  if(w>60) return 85;
   else if(w>40) return 75;
-  return 50;
+  else if(w>20) return 50;
+  else if(w>10) return 30;
+  return 10;
 }
 var loadImg=function(id){
   if(id<0||id>=items.length) return;
@@ -106,23 +95,25 @@ var loadImg=function(id){
       // item.height=n*item.width;
     // }
     if(item.width>screen.width){//w<=90
-      w=90;
-      h=(n*k)*90;
+      w=guiyi(zoom*90);
+      h=(n*k)*w;
+      h=guiyi(h);
     }
     else{
       //cal width
       w=90*item.width/screen.width;
-      w=guiyi(w);
+      w=guiyi(zoom*w);
       h=(n*k)*w; 
+      h=guiyi(h);
     }
     // console.log("original width:"+item.width+",height:"+item.height);
     // console.log("display  width:"+w+"%,height:"+h+"%");
-    photo_view.style.width=""+(w/1.1)+"%";
-    photo_view.style.marginLeft=""+(100-w/1.1)/2+"%";
+    photo_view.style.width=""+(w)+"%";
+    photo_view.style.marginLeft=""+(100-w)/2+"%";
 
-    if(h<70){
-        photo_view.style.height=""+guiyi(h)+"%"; 
-        photo_view.style.marginTop=""+(94-guiyi(h))/4+"%"; 
+    if(h<80){
+        photo_view.style.height=""+h+"%"; 
+        photo_view.style.marginTop=""+(94-h)/4+"%"; 
     }
     else{
         photo_view.style.height="94%"; 
@@ -177,12 +168,14 @@ function contains(string,substr){
       {  return true; }    } }  return false; 
 }
 var addCom=function(com){
+  console.log(com);
   if(contains(com,"\'")||contains(com,"$")) {
     alert("含有不合法字符\'%或$");
     return;
   }
   com.replace("\n","     ");
-  com=encodeURIComponent(com);
+  // com=encodeURIComponent(com);
+  console.log(com);
   $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
       function(data){
       },"text");
@@ -203,7 +196,7 @@ var getCom=function(){
           author=comment.split('%')[1]; 
           content=comment.split('%')[0];  
           if(author==undefined||author=="") author="路人甲";
-          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(230,230,230,0.3);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:#444;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
+          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(128,128,128,0.1);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:#444;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
         }
       },"text");
 };
@@ -233,7 +226,6 @@ var toggleAutoPlay=function(){
   if(autoPlayInterval!="") {
     stopAutoPlay();
   }
-  img.style.zoom="8";
   autoPlayInterval=setInterval(function(){
     if(photo_view.style.display!="block") 
     stopAutoPlay();
