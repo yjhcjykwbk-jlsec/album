@@ -65,7 +65,7 @@ var togglePhotoView=function(id){
 		photo_view.style.display="block";
 		hideCom();
     darkerFun(0);
-    header.style.opacity="0.5";
+    header.style.opacity="0.2";
 		container.style.opacity="0.0";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.0";
@@ -86,7 +86,7 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=3;
 var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
