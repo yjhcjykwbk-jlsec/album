@@ -18,7 +18,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
-  background:transparent;color:#8fa;font-size:110%;font-weight:bold;border:0;border-left:1px solid rgba(128,128,128,0.5);height:100%;text-align:center;
+  background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:1px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
 </style>
 <script>
@@ -65,7 +65,8 @@ var togglePhotoView=function(id){
 		photo_view.style.display="block";
 		hideCom();
     darkerFun(0);
-    header.style.opacity="0.2";
+    header.style.opacity="0.04";
+    header.style.backgroundColor="#fff";
 		container.style.opacity="0.0";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.0";
@@ -94,11 +95,11 @@ var darkerFun=function(c){
   darkFlag=darkFlag%4;
   if(darkFlag<2){
     ph_lst.style.background="rgba(253,255,254,0.1)";
-    header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
+    // header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
   }
   else{
     ph_lst.style.backgroundColor="#111";
-    header.style.background="#181818";
+    // header.style.background="#181818";
   }
 	if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#fff";
@@ -115,12 +116,13 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
-		left_panel.style.backgroundColor="#111";
-		photo_view.style.backgroundColor="#111";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#222";//"#f3f0f6";
+		left_panel.style.backgroundColor="#f8f8f8";
+		photo_view.style.backgroundColor="#f8f8f8";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
+		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		comment_area.style.color=comment_author.style.color="#444";
 		fbuttons.style.color="#212";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
@@ -128,13 +130,14 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==2){
-		left_panel.style.backgroundColor="#080808";
-		photo_view.style.backgroundColor="#080808";//"rgba(2,0,5,0.999)";
+		left_panel.style.backgroundColor="#282828";
+		photo_view.style.backgroundColor="#282828";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
 		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#080808";
+		comment_area.style.color=comment_author.style.color="#888";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -146,7 +149,8 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#000";
 		// img.style.boxShadow="100px 10px 100px 55px #343739";
     photo_view.style.boxShadow="-1px 1px 20px 2px #222";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#030303";
+		comment_area.style.color=comment_author.style.color="#888";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -170,8 +174,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgb(4, 177, 204);opacity:1; <!--#E8EDF1;--#303030;-->
-display:block;position:fixed;top:0;width:100%;box-shadow: 0 1px 3px rgba(0,0,0,0.05);height:4.0%;z-index:99;">
+<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:fixed;top:0;width:100%;height:4.0%;z-index:99;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
