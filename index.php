@@ -18,7 +18,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select {
-  background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:1px solid rgba(128,128,128,0.5);height:100%;text-align:center;
+  background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
 </style>
 <script>
@@ -65,8 +65,8 @@ var togglePhotoView=function(id){
 		photo_view.style.display="block";
 		hideCom();
     darkerFun(0);
-    header.style.opacity="0.04";
-    header.style.backgroundColor="#fff";
+    header.style.opacity="1";
+    header.style.background="transparent";
 		container.style.opacity="0.0";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.0";
@@ -88,7 +88,7 @@ var togglePhotoView=function(id){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=3;
+var darkFlag=1;
 var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
