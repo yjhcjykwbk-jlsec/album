@@ -22,7 +22,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="message_content"></div>
 <pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>
-<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;margin-top:12%;width:40px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;margin-top:12%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -48,7 +48,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <table id="img_table" width="100%" height="78%" align="center" valign="middle" style="border-bottom:1px dotted rgba(128,128,128,0.4)"><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
-<div id="movie_div" style="width:85%;margin-left:auto;margin-right:auto;">
+<div id="movie_div" style="width:95%;margin-left:auto;margin-right:auto;">
 <?php include_once "movie.php";?>
 </div>
 <div id="img_div" style="margin-left:auto;margin-right:auto;">
@@ -56,10 +56,10 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 </a>
 </td></tr></table>
-<div id="comments_panel" style="width:100%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
-<div id="comments_div" style="border-bottom:0px solid #888;margin-left:1.6%;width:92%;padding-bottom:2%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+<div id="comments_panel" style="width:100%;margin-top:2.5%;border-top:0px solid rgba(128,128,128,0.2);">
+<div id="comments_div" style="width:97%;margin-left:2%;border-bottom:0px solid #888;padding-bottom:2%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
-<div style="margin-left:2%;width:90%;margin-top:0%:margin-bottom:2%;border:0px solid #301030;border-radius:4px;"><!--806090-->
+<div style="margin-left:3%;width:95%;margin-top:0%:margin-bottom:2%;border:0px solid #301030;border-radius:4px;"><!--806090-->
 	<textarea id="comment_area" style="font-size:100%;margin-top:5px;width:99%;height:15px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
 <br/>
 	<textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;margin-bottom:5px;height:15px;float:left;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>

@@ -119,7 +119,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#222";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
 		fbuttons.style.color="#212";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
@@ -133,7 +133,7 @@ var darkerFun=function(c){
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
 		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#080808";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
@@ -152,7 +152,7 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}
-  darker.innerText="主题:"+darks[darkFlag%4];
+  darker.innerText=""+darks[darkFlag%4];
 };
 </script>
 
