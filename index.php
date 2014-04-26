@@ -81,6 +81,7 @@ var togglePhotoView=function(id){
     chengxuyuan.style.opacity="0.9";
     end.style.opacity="0.3";
 		hidePhLst();
+    fbuttons.style.right="0";
 	}
 }
 

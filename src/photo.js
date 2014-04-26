@@ -70,13 +70,13 @@ var loadImg=function(id){
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
+    img_table.style.height="95%"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
     // photo_view.style.marginTop="0.3%";
     movie.src=item.ref;
     img_div.style.display="none";
-   // img_table.style.height="100%"; 
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){
@@ -85,6 +85,7 @@ var loadImg=function(id){
       100);
     },10);
   }else{
+    img_table.style.height="80%"; 
     var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
     var h,w;
@@ -173,7 +174,7 @@ var getCom=function(){
           author=comment.split('%')[1]; 
           content=comment.split('%')[0];  
           if(author==undefined||author=="") author="路人甲";
-          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(128,128,128,0.1);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:#444;text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
+          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(128,128,128,0.1);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:rgba(120,120,120,0.7);text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;color:rgba(120,120,120,0.3);border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
         }
       },"text");
 };

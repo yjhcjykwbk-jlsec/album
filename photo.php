@@ -56,15 +56,15 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 </a>
 </td></tr></table>
-<div id="comments_panel" style="width:100%;margin-top:2.5%;border-top:0px solid rgba(128,128,128,0.2);">
-<div id="comments_div" style="width:97%;margin-left:2%;border-bottom:0px solid #888;padding-bottom:2%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
+<div id="comments_panel" style="width:100%;margin-top:3.5%;border-top:0px solid rgba(128,128,128,0.2);">
+<div id="comments_div" style="width:94%;margin-left:4%;border-bottom:0px solid #888;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
-<div style="margin-left:3%;width:95%;margin-top:0%:margin-bottom:2%;border:0px solid #301030;border-radius:4px;"><!--806090-->
-	<textarea id="comment_area" style="font-size:100%;margin-top:5px;width:99%;height:15px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
+<div style="margin-left:3%;width:95%;margin-top:0%:margin-bottom:3%;border:0px solid #301030;border-radius:4px;"><!--806090-->
+	<textarea id="comment_area" style="font-size:100%;margin-top:2%;width:99%;height:15px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
 <br/>
 	<textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;margin-bottom:5px;height:15px;float:left;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
-	<button value＝"清空" style="width:30px;float:right;background:#eee;color:#555;border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
-	<button value＝"提交" style="width:30px;float:right;background:#eee;color:#555;border:0px;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
+	<button value＝"清空" style="width:30px;float:right;background:rgba(120,120,120,0.2);color:rgba(120,120,120,0.4);border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
+	<button value＝"提交" style="width:30px;float:right;background:rgba(120,120,120,0.2);color:rgba(120,120,120,0.4);border:0px;" onclick="addCom(comment_area.value+'%'+comment_author.value);">评论</button><!--<button value="清空" onclick="clearCom();" >清空</button> --> 
 </div>
 </div>
 </div>
