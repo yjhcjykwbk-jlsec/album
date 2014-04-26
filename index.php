@@ -27,12 +27,11 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="8.5%";
-		photo_view.style.width="84.5%";
-		photo_view.style.height="90%";
-		photo_view.style.marginTop="-0.1%";
+		photo_view.style.marginLeft="10%";
+    photo_view.style.width="80%";
+		// photo_view.style.height="92%";
+		photo_view.style.marginTop="-1.0%";
 		right_panel.style.display="block";
-		fbuttons.style.opacity="0.7";
 		fbuttons.style.right="4.35%";
 		toggle_com.innerHTML="切换大屏";
 }
@@ -40,15 +39,14 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="8.0%";
-		photo_view.style.width="84.0%";
-		photo_view.style.height="94.0%";
-		photo_view.style.marginTop="-0.5%";
+		photo_view.style.marginLeft="10.0%";
+		photo_view.style.width="80.0%";
+    // photo_view.style.height="96.0%";
+		photo_view.style.marginTop="-1.9%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
-		fbuttons.style.opacity="0.7";
 		//fbuttons.style.width="40px";
 		toggle_com.innerHTML="切换宽屏";
 }
@@ -61,26 +59,26 @@ var toggleCom=function(){
 };
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
-		body.style.overflowY="hidden";
+		// body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		hideCom();
     darkerFun(0);
-    header.style.opacity="1";
+    header.style.opacity="0.01";
     header.style.background="transparent";
-		container.style.opacity="0.0";
-    chengxuyuan.style.opacity="0.0";
-    end.style.opacity="0.0";
+		container.style.display="none";
+    chengxuyuan.style.display="none";
+    end.style.display="none";
 		loadImg(id);
 		showPhLst();
 	}else{
+		// body.style.overflowY="scroll";
 	//body.style.backgroundColor="#faf9ff";
-    header.style.background="rgb(4,177,204)";
     header.style.opacity="1";
-		body.style.overflowY="scroll";
+    header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
-		container.style.opacity="1";
-    chengxuyuan.style.opacity="0.9";
-    end.style.opacity="0.3";
+		container.style.display="block";
+    chengxuyuan.style.display="block";
+    end.style.display="block";
 		hidePhLst();
     fbuttons.style.right="0";
 	}
@@ -104,7 +102,7 @@ var darkerFun=function(c){
 	if(darkFlag%4==0){
 		left_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
+		body.style.backgroundColor="#fefefe";//"#f3f0f6";
 
     img.style.boxShadow="";
     photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
@@ -116,7 +114,7 @@ var darkerFun=function(c){
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
-		left_panel.style.backgroundColor="#f8f8f8";
+		left_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="#f8f8f8";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
@@ -162,7 +160,7 @@ var darkerFun=function(c){
 </script>
 
 </head>
-<body id="body" style="height:110%;overflow-x:hidden;">
+<body id="body" style="height:110%;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -174,7 +172,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:fixed;top:0;width:100%;height:4.0%;z-index:99;">
+<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:fixed;top:0;width:100%;height:4.0%;z-index:9999;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -252,7 +250,7 @@ function submitAdvice(advice){
 	return;
 }
 var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=3;
+var colNum=4;
 var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){

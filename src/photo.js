@@ -27,6 +27,7 @@ var items;
 var dirInited=false;
 var initDir=function(){
   //restore img size
+  //
   zoom=1;
   zoomer.innerHTML="100%";
   album.value=curDir;
@@ -61,16 +62,19 @@ String.prototype.endWith=function(str){
 function guiyi(h){
   t=(h/10)+1;
   t=t>10?10:t;
-  t=t<9?9:t;
+  t=t<7?7:t;
   return t*10;
 }
 var loadImg=function(id){
   if(id<0||id>=items.length) return;
+  body.scrollTop=0;
   img.alt=id;
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
-    img_table.style.height="95%"; 
+    photo_view.style.width=""+85+"%";
+    photo_view.style.marginLeft="7.5%";
+    img_table.style.height="99%"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
@@ -85,7 +89,9 @@ var loadImg=function(id){
       100);
     },10);
   }else{
-    img_table.style.height="80%"; 
+    img.src="";
+    //@changed 被minHeight=screen.height*0.5取代
+    //img_table.style.height="80%"; 
     var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
     var h,w;
@@ -101,14 +107,18 @@ var loadImg=function(id){
 
     //img_table高度
     //注意img_table使得img_div竖直方向居中
-    img_div.style.height=""+h+"%"; 
+    // img_div.style.height=""+h+"%"; 
 
     //避免直接修改Img的width，否则容易画面抖动
     //img_div在img_table中水平居中
-    img_div.style.width=""+w+"%";
+    w1=guiyi(w);
+    photo_view.style.width=""+w1*0.80+"%";
+    photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
     img.src="view/"+curDir+"/"+item.href;
+    img_div.style.width=""+100*(w/w1)+"%"; 
     img_div.style.display="block";
+
     movie.style.display="none";
   }
   photo_view.scrollTop=0;

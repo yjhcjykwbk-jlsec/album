@@ -25,3 +25,12 @@ http://player.yinyuetai.com/playlist/player/1817926/a_0.swf
 apk.png
 追昔
 http://player.youku.com/player.php/sid/XMTUxNjMxNTc2/v.swf
+选区_001.png
+追昔
+http://www.tudou.com/v/6RNRjGv57oI/&resourceId=0_04_02_99/v.swf
+选区_002.png
+追昔
+http://player.youku.com/player.php/sid/XMTk1NDczMTE2/v.swf
+选区_004.png
+我不怕痛
+http://player.youku.com/player.php/sid/XMTczNjE2OTY0/v.swf
