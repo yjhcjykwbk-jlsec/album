@@ -40,9 +40,9 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="11.0%";
-		photo_view.style.width="78.5%";
-		photo_view.style.height="94.2%";
+		photo_view.style.marginLeft="8.0%";
+		photo_view.style.width="84.0%";
+		photo_view.style.height="94.0%";
 		photo_view.style.marginTop="-0.5%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
@@ -61,11 +61,11 @@ var toggleCom=function(){
 };
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
-		// header.style.display="none";
 		body.style.overflowY="hidden";
 		photo_view.style.display="block";
 		hideCom();
-		darkerFun(0);
+    darkerFun(0);
+    header.style.opacity="0.5";
 		container.style.opacity="0.0";
     chengxuyuan.style.opacity="0.0";
     end.style.opacity="0.0";
@@ -74,6 +74,7 @@ var togglePhotoView=function(id){
 	}else{
 	//body.style.backgroundColor="#faf9ff";
     header.style.background="rgb(4,177,204)";
+    header.style.opacity="1";
 		body.style.overflowY="scroll";
 		photo_view.style.display="none";
 		container.style.opacity="1";
@@ -86,6 +87,7 @@ var togglePhotoView=function(id){
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
 var darkFlag=0;
+var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
   darkFlag=darkFlag%4;
@@ -103,53 +105,54 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#faf9ff";//"#f3f0f6";
 
     img.style.boxShadow="";
-		photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+    photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+    zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
-		left_panel.style.backgroundColor="#222";
-		photo_view.style.backgroundColor="#222";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		left_panel.style.backgroundColor="#111";
+		photo_view.style.backgroundColor="#111";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#222";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
-		photo_view.style.boxShadow="rgb(5,8,5) 0px 5px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+    photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==2){
-		left_panel.style.backgroundColor="#111";
-		photo_view.style.backgroundColor="#111";//"rgba(2,0,5,0.999)";
+		left_panel.style.backgroundColor="#080808";
+		photo_view.style.backgroundColor="#080808";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
 		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#768";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}else if(darkFlag%4==3){
-		left_panel.style.backgroundColor="#080808";
-		img.style.boxShadow="100px 10px 100px 55px #343739";
-		photo_view.style.backgroundColor="#000";//"rgba(2,0,5,0.999)";
-		photo_view.style.boxShadow="-1px -2px 20px 2px #222";
+		left_panel.style.backgroundColor="#040404";
+		photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#000";
+		// img.style.boxShadow="100px 10px 100px 55px #343739";
+    photo_view.style.boxShadow="-1px 1px 20px 2px #222";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#222";
-		next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		right_panel.style.opacity="0.8";
 	}
+  darker.innerText="主题:"+darks[darkFlag%4];
 };
 </script>
 
@@ -231,7 +234,8 @@ var curDir="<?php echo $curDir;?>";
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
-<iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe> 
+ <!--iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe--> 
+<?php include_once "uploadview.php";?>
 </div>
 </div>
 

@@ -28,6 +28,7 @@ var initDir=function(){
   //restore img size
   zoom=1;
   zoomer.innerHTML="100%";
+  album.value=curDir;
 
   if(allItems[curDir]!=null) {
     items=allItems[curDir];
@@ -56,12 +57,11 @@ String.prototype.endWith=function(str){
     return false;
   return true;
 }
-function guiyi(w){
-  if(w>60) return 85;
-  else if(w>40) return 75;
-  else if(w>20) return 50;
-  else if(w>10) return 30;
-  return 10;
+function guiyi(h){
+  t=(h/10)+1;
+  t=t>10?10:t;
+  t=t<8?8:t;
+  return t*10;
 }
 var loadImg=function(id){
   if(id<0||id>=items.length) return;
@@ -82,53 +82,28 @@ var loadImg=function(id){
       },
       100);
     },10);
-    //movie.style.display="block";
   }else{
     var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
-    // img.style.display="none";
     var h,w;
     var n=item.height/item.width;
-    //adjust size
-    // if(item.width<screen.width/2&&item.height<screen.height/2){
-      // item.width=screen.width/2;
-      // item.height=n*item.width;
-    // }
-    if(item.width>screen.width){//w<=90
-      w=guiyi(zoom*90);
-      h=(n*k)*w;
-      h=guiyi(h);
-    }
-    else{
-      //cal width
-      w=90*item.width/screen.width;
-      w=guiyi(zoom*w);
-      h=(n*k)*w; 
-      h=guiyi(h);
-    }
-    // console.log("original width:"+item.width+",height:"+item.height);
-    // console.log("display  width:"+w+"%,height:"+h+"%");
-    photo_view.style.width=""+(w)+"%";
-    photo_view.style.marginLeft=""+(100-w)/2+"%";
+    w=96*item.width/screen.width;
+    w=zoom*w>96?96:zoom*w;
+    h=(n*k)*w;
+    h=guiyi(h);
 
-    if(h<80){
-        photo_view.style.height=""+h+"%"; 
-        photo_view.style.marginTop=""+(94-h)/4+"%"; 
-    }
-    else{
-        photo_view.style.height="94%"; 
-        photo_view.style.marginTop="-0.5%";
-    }
-    // img.style.minHeight=""+(h/1.1)+"%";
-    //
-    // @changed
-    // if(h>70)
-    // img.style.marginTop=h/1.1>86?"0.2%":""+(86-h/1.1)/2+"%";
-    // else img.style.marginTop="";
-    // if(h<75)
-      // img.style.marginTop=""+(100-h)/2.5-10+"%";
-    // else 
-      // img.style.marginTop="0.5%";
+    //手动调节marginTop/Left可能会画面不自然
+    //if(h<85) h=guiyi(h+4);
+    // img.style.marginLeft=""+(100-w)/2+"%";
+
+    //img_table高度
+    //注意img_table使得img_div竖直方向居中
+    img_table.style.height=""+h+"%"; 
+
+    //避免直接修改Img的width，否则容易画面抖动
+    //img_div在img_table中水平居中
+    img_div.style.width=""+w+"%";
+
     img.src="view/"+curDir+"/"+item.href;
     img_table.style.display="block";
     movie.style.display="none";
@@ -217,21 +192,22 @@ var clearCom=function(){
 };
 var autoPlayInterval="";
 var stopAutoPlay=function(){
-  clearInterval(autoPlayInterval);
+  auto_play.innerText="自动播放";
+  window.clearInterval(autoPlayInterval);
   autoPlayInterval="";
-  auto_play.innerHTML="自动播放";
   return;
 };
 var toggleAutoPlay=function(){
   if(autoPlayInterval!="") {
     stopAutoPlay();
+    return;
   }
   autoPlayInterval=setInterval(function(){
     if(photo_view.style.display!="block") 
     stopAutoPlay();
     else nextFun();
   },3000);
-  auto_play.innerHTML="停止放映";
+  auto_play.innerText="停止放映";
 };
 document.onkeydown=function(event){
   if(photo_view.style.display=="block"){

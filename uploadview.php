@@ -1,4 +1,4 @@
-<html>
+<div id="upload_div" style="margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:1;border:0;padding:5px;border-radius:1px; line-height: 1" >
 <?php 
 $ENCODE="utf-8";
 $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
@@ -9,22 +9,18 @@ $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
   <input name="upfile0" type="file" style="width:85%"><br>
   描述<input name="desp0" type="text" style="width:85%"><br>
   引用<input name="ref0" type="text" style="width:85%"><br>
-  <hr>
 
   <input name="upfile1" type="file" style="width:85%"><br>
   描述<input name="desp1" type="text" style="width:85%"><br>
   引用<input name="ref1" type="text" style="width:85%"><br>
-  <hr>
 
   <input name="upfile2" type="file" style="width:85%"><br>
   描述<input name="desp2" type="text" style="width:85%"><br>
   引用<input name="ref2" type="text" style="width:85%"><br>
-  <hr>
 
   <input name="upfile3" type="file" style="width:85%"><br>
   描述<input name="desp3" type="text" style="width:85%"><br>
   引用<input name="ref3" type="text" style="width:85%"><br>
-  <hr>
 
   <input name="upfile4" type="file" style="width:85%"><br>
   描述<input name="desp4" type="text" style="width:85%"><br>
@@ -44,4 +40,4 @@ foreach($dirs as $i=>$dir){?>
   <input type="submit" value="上传"><br>
     </form>
     <!-- <?=implode(', ',$uptypes)?> -->
-    </html>
+</div>

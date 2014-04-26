@@ -32,7 +32,7 @@ include_once "desp.php";
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
 $destination_folder="DATASET/".$class."/";
-echo "<script> setTimeout(function(){window.location.href='uploadview.php?dir=$class';},3000);</script>";
+echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class';},3000);</script>";
 
 if(!file_exists($destination_folder))
 {
