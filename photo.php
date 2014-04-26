@@ -48,12 +48,14 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <table id="img_table" width="100%" height="80%" valign="middle" style="border:0px dotted rgba(128,128,128,0.1)"><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
+<div id="movie_div" style="width:85%;margin-left:auto;margin-right:auto;">
+<?php include_once "movie.php";?>
+</div>
 <div id="img_div" style="margin-left:auto;margin-right:auto;">
 <img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:100%;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </div>
 </a>
 </td></tr></table>
-<?php include_once "movie.php";?>
 <div id="comments_panel" style="width:100%;margin-left:2%;margin-right:2%;auto;margin-top:3%;border-top:0px solid rgba(128,128,128,0.2);">
 <div id="comments_div" style="border-bottom:0px solid #888;margin-left:1.6%;width:92%;padding-bottom:2%;padding-top:0.8%;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>

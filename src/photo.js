@@ -69,12 +69,13 @@ var loadImg=function(id){
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
-    photo_view.style.width="80%";
-    photo_view.style.marginLeft="10%";
+    // photo_view.style.width="80%";
+    // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
     // photo_view.style.marginTop="0.3%";
     movie.src=item.ref;
-    img_table.style.display="none";
+    img_div.style.display="none";
+    img_table.style.height="100%"; 
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){
@@ -98,14 +99,14 @@ var loadImg=function(id){
 
     //img_table高度
     //注意img_table使得img_div竖直方向居中
-    img_table.style.height=""+h+"%"; 
+    img_div.style.height=""+h+"%"; 
 
     //避免直接修改Img的width，否则容易画面抖动
     //img_div在img_table中水平居中
     img_div.style.width=""+w+"%";
 
     img.src="view/"+curDir+"/"+item.href;
-    img_table.style.display="block";
+    img_div.style.display="block";
     movie.style.display="none";
   }
   photo_view.scrollTop=0;
