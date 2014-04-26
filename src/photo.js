@@ -5,7 +5,8 @@ var biggerFun=function(){
   cur=zoom;
   if(cur==""||cur==undefined) cur=1;
   if(cur>=5) return; 
-  else cur+=0.5;
+  if(cur>=2) cur+=0.5;
+  else cur+=0.25;
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
   loadImg(img.alt);
@@ -14,7 +15,7 @@ var smallerFun=function(){
   cur=zoom;
   if(cur==""||cur==undefined) cur=1;
   if(cur>3) cur-=2;
-  else if(cur>1) cur=1;
+  else if(cur>1) cur-=0.5;
   else if(cur<=0.25) return; 
   else cur-=0.25;
   zoom=cur;
@@ -60,7 +61,7 @@ String.prototype.endWith=function(str){
 function guiyi(h){
   t=(h/10)+1;
   t=t>10?10:t;
-  t=t<8?8:t;
+  t=t<9?9:t;
   return t*10;
 }
 var loadImg=function(id){
@@ -75,7 +76,7 @@ var loadImg=function(id){
     // photo_view.style.marginTop="0.3%";
     movie.src=item.ref;
     img_div.style.display="none";
-    img_table.style.height="100%"; 
+   // img_table.style.height="100%"; 
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){

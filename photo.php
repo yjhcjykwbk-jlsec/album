@@ -46,7 +46,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:170px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:-1.3%;margin-bottom:0;margin-left:230px;position:fixed;background:rgba(50,90,125,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<table id="img_table" width="100%" height="80%" valign="middle" style="border:0px dotted rgba(128,128,128,0.1)"><tr><td>
+<table id="img_table" width="100%" height="78%" align="center" valign="middle" style="border-bottom:1px dotted rgba(128,128,128,0.4)"><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
 <div id="movie_div" style="width:85%;margin-left:auto;margin-right:auto;">
 <?php include_once "movie.php";?>
