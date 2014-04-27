@@ -269,10 +269,13 @@ var setDir=function(dir){
 	togglePhotoView(-1);
   if(curDir==dir) return;
 	curDir=dir;
-	initDir();
 	if(waterfall!=undefined&&waterfall!=null) 
-		waterfall.clear();
-	waterfall=new MyWaterfall(dir,colNum);
+  {
+    waterfall.clear();
+    waterfall.refresh();
+  }
+	// waterfall=new MyWaterfall(dir,colNum);
+	initDir();
 };
 selects.onclick=function(){
   if(colNum==this.value) return;

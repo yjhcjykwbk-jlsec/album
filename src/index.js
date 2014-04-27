@@ -96,14 +96,15 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
 
   this.refresh=function(colNum){
     m=0;
+    console.log("refresh waterfall");
     waterfallLastID=0;
     inserted=[];
     n=0;
     this.wf.refresh({maxCol:colNum});
   };
-  this.clear=function(){
-    this.wf.clear();
-  };
+  // this.clear=function(){
+    // this.wf.clear();
+  // };
 }
 
 

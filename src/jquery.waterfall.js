@@ -98,13 +98,10 @@
     }
 
     Waterfall.prototype = {
-	clear:function(){
-	  this.options.container.empty();
-    console.log(this.options.container[0]);
-	  this.options.container[0].style['height']='0';
-	},
         refresh:function(options){
           this.options.container.empty();
+          //very important when init the container. or big null space will ..
+          this.options.container[0].style['height']='0';
           this.options = $.extend({}, this.options, options);
           this._init();
           this._bind();

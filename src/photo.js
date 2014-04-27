@@ -57,7 +57,9 @@ var initDir=function(){
   //restore img size
   //
   // zoom=1.75;
-  if(waterfallLastID!=undefined) waterfallLastID=0;
+  // if(typeof(waterfallLastID)!=undefined) 
+  console.log("init dir");
+  waterfallLastID=0;
   zoomer.innerHTML=""+zoom*100+"%";
   album.value=curDir;
   body.scrollTop=scrolltop=0;
