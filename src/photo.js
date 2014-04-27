@@ -48,7 +48,7 @@ var initDir=function(){
   if(waterfallLastID!=undefined) waterfallLastID=0;
   zoomer.innerHTML="100%";
   album.value=curDir;
-  scrolltop=0;
+  body.scrollTop=scrolltop=0;
 
   if(allItems[curDir]!=null) {
     items=allItems[curDir];
@@ -90,9 +90,9 @@ var loadImg=function(id){
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
-    photo_view.style.width=""+85+"%";
-    photo_view.style.marginLeft="7.5%";
-    img_table.style.height=""+screen.availHeight*0.8+"px"; 
+    // photo_view.style.width=""+85+"%";
+    // photo_view.style.marginLeft="7.5%";
+    img_panel.style.height=""+screen.availHeight*0.8+"px"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
@@ -107,10 +107,11 @@ var loadImg=function(id){
       100);
     },10);
   }else{
+    photo_view.style.opacity="0.05";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     //@changed 被minHeight=screen.height*0.5取代
-    img_table.style.height="90%"; 
+    img_panel.style.height="90%"; 
     var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
     var h,w;
@@ -131,13 +132,14 @@ var loadImg=function(id){
     //避免直接修改Img的width，否则容易画面抖动
     //img_div在img_table中水平居中
     w1=guiyi(w);
-    photo_view.style.width=""+w1*0.80+"%";
-    photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
+    // photo_view.style.width=""+w1*0.80+"%";
+    // photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
-    // img_div.style.width=""+100*(w/w1)+"%"; 
+    img_div.style.width=""+100*(w/w1)+"%"; 
     img_div.style.display="block";
 
     movie.style.display="none";
+    photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;
   //since get comment must be called when comEnabled and img.alt changed
@@ -179,7 +181,7 @@ var addCom=function(com){
     alert("含有不合法字符\'%或$");
     return;
   }
-  com.replace("\n","     ");
+  // com.replace("\n","     ");
   // com=encodeURIComponent(com);
   console.log(com);
   $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
@@ -201,8 +203,9 @@ var getCom=function(){
           if(comment=="") continue;
           author=comment.split('%')[1]; 
           content=comment.split('%')[0];  
+          content=content.replace(new RegExp("\n","gm"),"<br/>");
           if(author==undefined||author=="") author="路人甲";
-          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(128,128,128,0.1);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:rgba(120,120,120,0.7);text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;color:rgba(120,120,120,0.3);border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
+          comments_div.innerHTML+='<div id="comment_span" style="border:0px solid #fff;display:block;float:left;border-bottom:1px solid rgba(128,128,128,0.1);padding-top:2px;width:99%;font-size:80%;background:transparent;">'+'<span id="author">'+author+':   </span><span style="font-size:140%;color:rgba(80,80,80,0.7);text-decoration:none;">'+content+'</span><a onclick="delCom(\''+comment+'\')" style="display:block;float:right;background:transparent;color:rgba(120,120,120,0.3);border:1px solid rgba(128,128,128,0.2);font-size:70%;margin-top:-1px;"> 删除</a></div>';
         }
       },"text");
 };

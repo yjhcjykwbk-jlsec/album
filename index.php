@@ -63,14 +63,15 @@ var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
     scrolltop=body.scrollTop;
-    body.style.height="101%";
+    body.style.height="100%";
 		photo_view.style.display="block";
     hideCom();
     darkerFun(0);
     waterfallLoadable=false;
     header.style.display="none";
     header.style.background="transparent";
-		container.style.opacity="0.02";
+		container.style.display="none";
+		// container.style.opacity="0.02";
     chengxuyuan.style.opacity="0";
     end.style.opacity="0";
 		loadImg(id);
@@ -85,7 +86,8 @@ var togglePhotoView=function(id){
     header.style.display="block";
     header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
-		container.style.opacity="1";
+    container.style.display="block";
+		// container.style.opacity="1";
     chengxuyuan.style.opacity="1";
     end.style.opacity="0.6";
 		hidePhLst();
@@ -115,7 +117,7 @@ var darkerFun=function(c){
 		body.style.backgroundColor="#fefefe";//"#f3f0f6";
 
     img.style.boxShadow="";
-    photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+    // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
@@ -128,7 +130,7 @@ var darkerFun=function(c){
 		photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
-    photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+    // photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		comment_area.style.color=comment_author.style.color="#444";
 		fbuttons.style.color="#212";
@@ -156,7 +158,7 @@ var darkerFun=function(c){
 		photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
 		body.style.backgroundColor="#000";
 		// img.style.boxShadow="100px 10px 100px 55px #343739";
-    photo_view.style.boxShadow="-1px 1px 20px 2px #222";
+    // photo_view.style.boxShadow="-1px 1px 20px 2px #222";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#030303";
 		comment_area.style.color=comment_author.style.color="#888";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";

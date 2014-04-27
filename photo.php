@@ -30,7 +30,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px;font-size:70%; ">灯光</button>
 <button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:5px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;min-height:100%;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:15px;">
 <style>
 .fButton:hover{ color:red; }
 #comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
@@ -39,6 +39,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="float:left;width:79%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
+<div id="img_panel" style="width:99%;margin-bottom:10px;border:1px solid rgba(120,120,120,0.3)">
 <div style="background:white;z-index:100;margin-top:0%;position:relative;">
 <button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
@@ -46,11 +47,11 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="refresh_btn" onclick="toggleMenus();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<table id="img_table" width="100%" height="90%" align="center" valign="middle" style="
+<table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
 border: 20px solid white;
 background: url(imgbg) 0 0 repeat;
-border-top: 15px solid white;
-border-bottom: 40px solid white;
+border-top: 5px solid white;
+border-bottom: 20px solid white;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
 "><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
@@ -58,15 +59,16 @@ border-bottom: 40px solid white;
 <?php include_once "movie.php";?>
 </div>
 <div id="img_div" style="width:;border-top:0px solid transparent;border-bottom:15px solid transparent;margin-left:auto;margin-right:auto;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:100%;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </div>
 </a>
 </td></tr></table>
-<div id="comments_panel" style="width:100%;margin-top:0%;border-top:0px solid rgba(128,128,128,0.2);">
+</div>
+<div id="comments_panel" style="width:99%;margin-top:5px;border:1px solid rgba(128,128,128,0.2);">
 <div id="comments_div" style="width:94%;margin-left:4%;border-bottom:0px solid #888;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
 <div style="margin-left:3%;width:95%;margin-top:0%:height:1px;padding-bottom:50px;border:0px solid #301030;border-radius:4px;">
-  <textarea id="comment_area" style="font-size:100%;margin-top:2%;width:99%;height:15px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
+  <textarea id="comment_area" style="font-size:100%;margin-top:2%;width:99%;height:125px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
 <br/>
   <textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;height:15px;float:left;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
   <button value＝"清空" style="width:30px;float:right;background:rgba(120,120,120,0.2);color:rgba(120,120,120,0.4);border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
@@ -80,13 +82,13 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 <div id="img_desp" style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;"></div>
 </div>
 </div> <!--photoView-->
-
 </div>
 
 <?php include "photolst.php";?>
 <script>
 //调整图片框的大小
-img_table.style.minHeight=""+screen.availHeight*0.75+"px";
+img_panel.style.minHeight=""+screen.availHeight*0.75+"px";
+img_table.style.minHeight=""+screen.availHeight*0.7+"px";
 </script>
 
 <?php if(isset($_REQUEST['id'])){?>
