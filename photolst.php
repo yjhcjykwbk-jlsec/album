@@ -11,9 +11,7 @@
   margin-right:auto;
 }
 </style>
-<div id="ph_lst" style="overflow-y:overlay;opacity:0.7;display:none;box-shadow:-10px 0px 10px 2px rgba(0,0,0,0.1);
-<!-- box-shadow:0px -5px 10px 3px rgba(128,128,128,0.1); -->
-background:rgba(0,0,0,0.08);width:6%;right:0.0%;z-index:90;top:1%;padding-top:25px;position:fixed;bottom:0px;height:95%;">
+<div id="ph_lst" style="overflow-y:overlay;opacity:;display:none;box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5);border:0px solid rgba(120,120,120,0.5); background:;width:7%;right:0.0%;z-index:90;top:1.0%;padding-top:25px;position:fixed;bottom:0px;height:95%;">
 </div>
 <script>
 function temp(){

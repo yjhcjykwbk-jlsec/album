@@ -68,7 +68,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
             data=[];
             console.log("pushing:"+m+":"+items.length);
             num=2;
-            if(waterfallLastID==0)  num=10;
+            if(waterfallLastID==0)  num=20;
             for(i=m;i<m+num&&i<items.length;i++){
               data.push(items[i]); 
             }
