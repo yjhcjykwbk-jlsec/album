@@ -62,6 +62,7 @@ if(isset($_REQUEST['del'])){//delete id
   echo $txt;
 }else if($act=="set"){
   $com=$_REQUEST['com'];
+  $com=str_replace("\n","<br>",$com);
   file_put_contents($file,$com.'$',FILE_APPEND);
 }
 ?>

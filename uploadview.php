@@ -1,4 +1,4 @@
-<div id="upload_div" style="margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:1;border:0;padding:5px;border-radius:1px; line-height: 1" >
+<div id="upload_div" style="text-align:left;margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:1;border:0;padding:5px;border-radius:1px; line-height: 1" >
 <?php 
 $ENCODE="utf-8";
 $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
