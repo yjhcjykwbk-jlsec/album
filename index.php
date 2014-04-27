@@ -30,7 +30,7 @@ function showCom(){
 		photo_view.style.marginLeft="10%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="-1.0%";
+		photo_view.style.marginTop="-2.0%";
 		right_panel.style.display="block";
 		fbuttons.style.right="4.35%";
 		toggle_com.innerHTML="切换大屏";
@@ -61,9 +61,9 @@ var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
 		photo_view.style.display="block";
-		hideCom();
+		showCom();
     darkerFun(0);
-    header.style.opacity="0.01";
+    header.style.display="none";
     header.style.background="transparent";
 		container.style.display="none";
     chengxuyuan.style.display="none";
@@ -74,6 +74,7 @@ var togglePhotoView=function(id){
 		// body.style.overflowY="scroll";
 	//body.style.backgroundColor="#faf9ff";
     header.style.opacity="1";
+    header.style.display="block";
     header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
 		container.style.display="block";
@@ -115,7 +116,7 @@ var darkerFun=function(c){
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#fff";
-		photo_view.style.backgroundColor="#f8f8f8";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
+		photo_view.style.backgroundColor="#fefefe";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
@@ -203,9 +204,9 @@ color:#8fa;">
 style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
-<?php include "music.php";?>
 </p>
 </div>
+<?php include "music.php";?>
 
 <script>
 var scored=false;
