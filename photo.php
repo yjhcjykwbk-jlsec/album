@@ -61,7 +61,7 @@ border-top: 5px solid white;
 </div>
 </a>
 </td></tr></table>
-<div id="comments_panel" style="width:100%;margin-top:3.5%;border-top:0px solid rgba(128,128,128,0.2);">
+<div id="comments_panel" style="width:100%;margin-top:0%;border-top:0px solid rgba(128,128,128,0.2);">
 <div id="comments_div" style="width:94%;margin-left:4%;border-bottom:0px solid #888;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
 <div style="margin-left:3%;width:95%;margin-top:0%:height:1px;padding-bottom:50px;border:0px solid #301030;border-radius:4px;">
@@ -74,12 +74,10 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 </div>
 
-</div>
 
-<div id="right_panel" style="width:18%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;margin-left:67%;position:fixed;margin-top:1px;z-index:10;">
-<div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
+<div id="right_panel" style="width:18%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;margin-top:5px;z-index:10;">
+<div id="img_desp" style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;"></div>
 </div>
-
 </div> <!--photoView-->
 
 </div>
@@ -87,7 +85,7 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 <?php include "photolst.php";?>
 <script>
 //调整图片框的大小
-img_table.style.minHeight=""+screen.height*0.6+"px";
+img_table.style.minHeight=""+screen.availHeight*0.75+"px";
 </script>
 
 <?php if(isset($_REQUEST['id'])){?>

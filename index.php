@@ -116,7 +116,7 @@ var darkerFun=function(c){
 		right_panel.style.opacity="1";
 	}else if(darkFlag%4==1){
 		left_panel.style.backgroundColor="#fff";
-		photo_view.style.backgroundColor="#fefefe";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
+		photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";

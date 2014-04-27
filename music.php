@@ -42,7 +42,7 @@ var lastSong=0;
 var interval;
 var setMusic=function(music){
 	if(music==lastSong||music=='0') return;
-  console.log(lastSong+":"+music);
+  // console.log(lastSong+":"+music);
 	clearInterval(interval);
 	if(music!="stop") interval=setInterval(randomSong,300*1000);
 	lastSong=music;

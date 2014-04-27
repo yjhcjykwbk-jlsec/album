@@ -16,7 +16,11 @@ var smallerFun=function(){
   if(cur==""||cur==undefined) cur=1;
   if(cur>3) cur-=2;
   else if(cur>1) cur-=0.5;
-  else if(cur<=0.25) return; 
+  else if(cur<=0.25){
+    if(cur<=0.125)
+      return; 
+    cur=0.125;
+  }
   else cur-=0.25;
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
@@ -90,6 +94,7 @@ var loadImg=function(id){
     },10);
   }else{
     img.src="";
+    img_desp.innerText=item.desp;
     //@changed 被minHeight=screen.height*0.5取代
     //img_table.style.height="80%"; 
     var k=screen.width/screen.height;
