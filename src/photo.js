@@ -99,6 +99,7 @@ var loadImg=function(id){
     // photo_view.style.marginTop="0.3%";
     movie.src=item.ref;
     img_desp.innerText=item.desp;
+    img_desp.href=item.ref;
     img_div.style.display="none";
     setTimeout(function(){
       movie.style.display="none";
@@ -111,6 +112,7 @@ var loadImg=function(id){
     photo_view.style.opacity="0.05";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
+    img_desp.href=item.ref;
     //@changed 被minHeight=screen.height*0.5取代
     img_panel.style.height="90%"; 
     var k=screen.width/screen.height;

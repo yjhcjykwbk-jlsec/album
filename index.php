@@ -242,7 +242,7 @@ var curDir="<?php echo $curDir;?>";
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="margin-top:25px;opacity:0.9;min-height:300px;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 10px 1px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="margin-top:25px;opacity:0.9;min-height:500px;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 10px 1px rgba(30,0,20,0.2)">
 </div>
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>

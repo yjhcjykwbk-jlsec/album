@@ -79,7 +79,9 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 
 
 <div id="right_panel" style="width:18%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;margin-top:5px;z-index:10;">
-<div id="img_desp" style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;"></div>
+<div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
+<a target="__blank" id="img_desp" href=''></a>
+</div>
 </div>
 </div> <!--photoView-->
 </div>
