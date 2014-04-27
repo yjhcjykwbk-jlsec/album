@@ -1,6 +1,6 @@
 
 var comEnabled=true;
-var zoom=1.75;
+var zoom=1.25;
 var biggerFun=function(){
   cur=zoom;
   if(cur==""||cur==undefined) cur=1;
@@ -15,12 +15,24 @@ var menusHided=false;
 var toggleMenus=function(){
   if(menusHided==true){
     album_menu.style.display="block";
-    ph_lst.style.display="block";
+    // ph_lst.style.display="block";
     menusHided=false;
   }else{
     album_menu.style.display="none";
-    ph_lst.style.display="none";
+    // ph_lst.style.display="none";
     menusHided=true;
+  }
+};
+var phlstHided=false;
+var togglePhlst=function(){
+  if(phlstHided==true){
+    ph_lst.style.display="block";
+    // ph_lst.style.display="block";
+    phlstHided=false;
+  }else{
+    ph_lst.style.display="none";
+    // ph_lst.style.display="none";
+    phlstHided=true;
   }
 };
 var smallerFun=function(){
@@ -46,7 +58,7 @@ var initDir=function(){
   //
   // zoom=1.75;
   if(waterfallLastID!=undefined) waterfallLastID=0;
-  zoomer.innerHTML="100%";
+  zoomer.innerHTML=""+zoom*100+"%";
   album.value=curDir;
   body.scrollTop=scrolltop=0;
 

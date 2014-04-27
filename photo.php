@@ -11,7 +11,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <script src="src/jquery.min.js"></script>
 <script src="src/photo.js"></script>
 <script src="src/dubai.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:100;position:fixed;opacity:0.9;background:#eee;">
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:1;position:fixed;opacity:0.9;background:#eee;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -28,6 +28,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
 <button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">缩小</button>
 <button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px;font-size:70%; ">灯光</button>
+<button class="fButton" id="menus" onclick="toggleMenus();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px;font-size:70%; ">nav</button>
 <button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
 <div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;min-height:100%;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:15px;">
@@ -44,7 +45,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
 <button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="toggleMenus();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
+<button id="refresh_btn" onclick="togglePhlst();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="

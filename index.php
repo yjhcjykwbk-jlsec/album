@@ -30,9 +30,9 @@ function showCom(){
 		photo_view.style.marginLeft="10%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="1.5%";
+		photo_view.style.marginTop="0.4%";
 		right_panel.style.display="block";
-		fbuttons.style.right="4.35%";
+		fbuttons.style.right="6.35%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
@@ -42,9 +42,9 @@ function hideCom(){
 		photo_view.style.marginLeft="10.0%";
 		photo_view.style.width="80.0%";
     // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="1.3%";
+		photo_view.style.marginTop="0.5%";
 		right_panel.style.display="none";
-		fbuttons.style.right="5.95%";
+		fbuttons.style.right="6.35%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		//fbuttons.style.width="40px";
@@ -65,7 +65,7 @@ var togglePhotoView=function(id){
     scrolltop=body.scrollTop;
     body.style.height="100%";
 		photo_view.style.display="block";
-    hideCom();
+    showCom();
     darkerFun(0);
     waterfallLoadable=false;
     header.style.display="none";
@@ -184,7 +184,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;height:2.0%;z-index:9999;">
+<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;height:3.0%;z-index:9999;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
