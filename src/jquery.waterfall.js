@@ -100,6 +100,7 @@
     Waterfall.prototype = {
 	clear:function(){
 	  this.options.container.empty();
+    console.log(this.options.container[0]);
 	  this.options.container[0].style['height']='0';
 	},
         refresh:function(options){
