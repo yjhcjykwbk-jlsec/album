@@ -22,7 +22,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="message_content"></div>
 <pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>
-<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:12%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
+<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:22%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>

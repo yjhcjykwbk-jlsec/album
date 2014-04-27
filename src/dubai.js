@@ -10,6 +10,9 @@ setTimeout(function(){
 		chengxuyuan.style.width="80px";
 		yuanIntro.innerHTML="hello world!<br/>any question<br/>click me!";
 		yuanIntro.style.display="block";
+    setTimeout(function(){
+      chengxuyuanGoDie();
+    },4000);
 	},2000);
 },1000);
 var chengxuyuanGoDie=function(){

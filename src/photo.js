@@ -53,7 +53,7 @@ var smallerFun=function(){
 var allItems={};
 var items;
 var dirInited=false;
-var initDir=function(){
+var initDir=function(callback){
   //restore img size
   //
   // zoom=1.75;
@@ -68,6 +68,7 @@ var initDir=function(){
     items=allItems[curDir];
     dirInited=true;
     loadLst();
+    callback();
     return;
   }
   dirInited=false;
@@ -77,9 +78,9 @@ var initDir=function(){
       function(data){
         //console.log(data.items);
         allItems[curDir]=items=data.items;
-        loadLst();
         dirInited=true;
         loadLst();
+        callback();
       },'json');
 };
 String.prototype.endWith=function(str){

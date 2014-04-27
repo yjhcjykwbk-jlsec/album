@@ -12,8 +12,8 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 
 <!-- style related codes -->
 <style>
-::-webkit-scrollbar {width:5px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.3);border-radius:1px;}
+::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.1);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
@@ -27,24 +27,24 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="79%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="10%";
+		photo_view.style.marginLeft="12%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="0.4%";
+		photo_view.style.marginTop="0.45%";
 		right_panel.style.display="block";
-		fbuttons.style.right="6.35%";
+		fbuttons.style.right="24.85%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="10.0%";
+		photo_view.style.marginLeft="12.0%";
 		photo_view.style.width="80.0%";
     // photo_view.style.height="96.0%";
 		photo_view.style.marginTop="0.5%";
 		right_panel.style.display="none";
-		fbuttons.style.right="6.35%";
+		fbuttons.style.right="8.90%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		//fbuttons.style.width="40px";
@@ -80,7 +80,6 @@ var togglePhotoView=function(id){
 		// body.style.overflowY="scroll";
 	//body.style.backgroundColor="#faf9ff";
     body.style.height="200%";
-    console.log(scrolltop);
     waterfallLoadable=true;
     header.style.opacity="1";
     header.style.display="block";
@@ -88,8 +87,8 @@ var togglePhotoView=function(id){
 		photo_view.style.display="none";
     container.style.display="block";
 		// container.style.opacity="1";
-    chengxuyuan.style.opacity="1";
-    end.style.opacity="0.6";
+    chengxuyuan.style.opacity="0.21";
+    end.style.opacity="0.1";
 		hidePhLst();
     fbuttons.style.right="0";
     body.scrollTop=scrolltop;
@@ -184,7 +183,7 @@ var darkerFun=function(c){
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;height:3.0%;z-index:9999;">
+<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;opacity:1;left:0%;height:4.0%;z-index:9999;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -241,10 +240,10 @@ var curDir="<?php echo $curDir;?>";
 
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="margin-top:25px;opacity:0.9;min-height:;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 10px 1px rgba(30,0,20,0.2)">
+<div style="position:relative;margin-left:120px;margin-top:0px;">
+<div id="container" class="container" style="margin-top:45px;opacity:0.9;min-height:;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 0px 0px rgba(30,0,20,0.2)">
 </div>
-<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.1; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
@@ -269,13 +268,13 @@ var setDir=function(dir){
 	togglePhotoView(-1);
   if(curDir==dir) return;
 	curDir=dir;
+	// waterfall=new MyWaterfall(dir,colNum);
+  initDir(function(){
 	if(waterfall!=undefined&&waterfall!=null) 
   {
-    waterfall.clear();
     waterfall.refresh();
   }
-	// waterfall=new MyWaterfall(dir,colNum);
-	initDir();
+  });
 };
 selects.onclick=function(){
   if(colNum==this.value) return;

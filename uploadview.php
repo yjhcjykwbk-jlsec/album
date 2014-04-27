@@ -1,10 +1,16 @@
-<div id="upload_div" style="text-align:left;margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:1;border:0;padding:5px;border-radius:1px; line-height: 1" >
+<div id="upload_div" style="text-align:left;margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;box-shadow: 0px 0px 1px 0px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:1;border:0;padding:5px;border-radius:1px; line-height: 1" >
 <?php 
 $ENCODE="utf-8";
 $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
 ?>
+<style>
+#upload_form input{
+background:transparent;
+border:1px solid rgba(120,120,120,0.3);
+}
+</style>
 <meta charset="utf-8">
-  <form enctype="multipart/form-data" action="upload.php" method="post" name="upform" style="font-size:70%">
+  <form id="upload_form" enctype="multipart/form-data" action="upload.php" method="post" name="upform" style="background:transparent;font-size:70%">
     <b>上传图片(所有输入都不是必填,引用可填为为图片来源，或视频地址):</b><br>
   <input name="upfile0" type="file" style="width:85%"><br>
   描述<input name="desp0" type="text" style="width:85%"><br>
