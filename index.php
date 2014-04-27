@@ -30,7 +30,7 @@ function showCom(){
 		photo_view.style.marginLeft="10%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="-2.0%";
+		photo_view.style.marginTop="0.8%";
 		right_panel.style.display="block";
 		fbuttons.style.right="4.35%";
 		toggle_com.innerHTML="切换大屏";
@@ -42,7 +42,7 @@ function hideCom(){
 		photo_view.style.marginLeft="10.0%";
 		photo_view.style.width="80.0%";
     // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="-1.9%";
+		photo_view.style.marginTop="0.8%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -57,37 +57,46 @@ var toggleCom=function(){
 		hideCom();
 	}
 };
+var scrolltop=0;
+var waterfallLoadable=true;
 var togglePhotoView=function(id){
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
+    scrolltop=body.scrollTop;
+    body.style.height="101%";
 		photo_view.style.display="block";
 		showCom();
     darkerFun(0);
+    waterfallLoadable=false;
     header.style.display="none";
     header.style.background="transparent";
 		container.style.display="none";
-    chengxuyuan.style.display="none";
-    end.style.display="none";
+    chengxuyuan.style.opacity="0";
+    end.style.opacity="0";
 		loadImg(id);
 		showPhLst();
 	}else{
 		// body.style.overflowY="scroll";
 	//body.style.backgroundColor="#faf9ff";
+    body.style.height="200%";
+    console.log(scrolltop);
+    waterfallLoadable=true;
     header.style.opacity="1";
     header.style.display="block";
     header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
 		container.style.display="block";
-    chengxuyuan.style.display="block";
-    end.style.display="block";
+    chengxuyuan.style.opacity="1";
+    end.style.opacity="0.6";
 		hidePhLst();
     fbuttons.style.right="0";
+    body.scrollTop=scrolltop;
 	}
 }
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
+var darkFlag=0;
 var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
@@ -161,7 +170,7 @@ var darkerFun=function(c){
 </script>
 
 </head>
-<body id="body" style="height:110%;overflow-y:scroll;">
+<body id="body" style="height:200%;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -169,11 +178,11 @@ var darkerFun=function(c){
 <script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
-<div style="display:block;width:100%;height:5%;margin-top:0px;z-index:101;"></div>
+<!--<div style="display:block;width:100%;height:2%;margin-top:0px;z-index:101;"></div> -->
 <?php include "photo.php";?>
 <?php include "menu.php";?>
 
-<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:fixed;top:0;width:100%;height:4.0%;z-index:9999;">
+<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;height:2.0%;z-index:9999;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -195,13 +204,13 @@ var darkerFun=function(c){
 <option value="5">5星 100分</option>
 </select>
 <div 
-style="float:left;font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
+style="float:left;display:;height:;font-weight:bold;
 color:#8fa;">
 时光静美，光影沉默.刹那韶华，留存感动>>>>>>>>>>>>>>
 </div>
 <div align="center">
 <a id="index_href" href="albums.php" 
-style="font-size:110%;display:block;margin-top:8px;height:30px;font-weight:bold;
+style="font-size:110%;display:;margin-top:8px;height:;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 </p>
@@ -229,9 +238,9 @@ var curDir="<?php echo $curDir;?>";
 
 
 
-<div style="display:none;position:fixed;bottom:0;width:100%;height:40px;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>
+<!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
 <div style="position:relative;margin-left:60px;margin-top:0px;">
-<div id="container" class="container" style="opacity:0.9;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="margin-top:25px;opacity:0.9;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 20px 5px rgba(30,0,20,0.2)">
 </div>
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.6; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
@@ -256,6 +265,7 @@ var waterfall=new MyWaterfall(dir,colNum);
 initDir();
 var setDir=function(dir){
 	togglePhotoView(-1);
+  if(curDir==dir) return;
 	curDir=dir;
 	initDir();
 	if(waterfall!=undefined&&waterfall!=null) 

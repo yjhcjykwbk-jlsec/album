@@ -56,6 +56,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
   this.wf = new Waterfall(
       { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
         load: function(){
+          if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
           // 触发滚动加载时的具体操作
           // 当前作用域下，this指向正创建的对象
           // console.log('..load');

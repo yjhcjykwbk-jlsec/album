@@ -30,7 +30,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px;font-size:70%; ">灯光</button>
 <button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
 </div>
-<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:80px;">
+<div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:5px;">
 <style>
 .fButton:hover{ color:red; }
 #comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
@@ -43,13 +43,14 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
 <button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="loadImg(img.alt);" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">刷新显示</button>
+<button id="refresh_btn" onclick="toggleMenus();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <table id="img_table" width="100%" height="78%" align="center" valign="middle" style="
 border: 20px solid white;
 background: url(imgbg) 0 0 repeat;
-border-top: 5px solid white;
+border-top: 15px solid white;
+border-bottom: 40px solid white;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
 "><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">

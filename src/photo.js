@@ -1,6 +1,6 @@
 
 var comEnabled=true;
-var zoom=1;
+var zoom=1.75;
 var biggerFun=function(){
   cur=zoom;
   if(cur==""||cur==undefined) cur=1;
@@ -10,6 +10,18 @@ var biggerFun=function(){
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
   loadImg(img.alt);
+};
+var menusHided=false;
+var toggleMenus=function(){
+  if(menusHided==true){
+    album_menu.style.display="block";
+    ph_lst.style.display="block";
+    menusHided=false;
+  }else{
+    album_menu.style.display="none";
+    ph_lst.style.display="none";
+    menusHided=true;
+  }
 };
 var smallerFun=function(){
   cur=zoom;
@@ -32,9 +44,10 @@ var dirInited=false;
 var initDir=function(){
   //restore img size
   //
-  zoom=1;
+  // zoom=1.75;
   zoomer.innerHTML="100%";
   album.value=curDir;
+  scrolltop=0;
 
   if(allItems[curDir]!=null) {
     items=allItems[curDir];
