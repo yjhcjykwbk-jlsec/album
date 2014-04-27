@@ -401,6 +401,7 @@
          * @private
          */
         _load: function() {
+            if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
             var self = this,
                 op = self.options;
 

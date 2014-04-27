@@ -1,7 +1,7 @@
 function getRandom(min,max){//return [min,max)
   return Math.floor(Math.random()*(max-min)+min);
 }
-
+var waterfallLastID=0;
 function MyWaterfall(dir,colNum){ // console.log("waterfall:"); 
   // 测试用技术器 // 调用瀑布流 
   var n = 0; var m = 0; 
@@ -56,14 +56,26 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
   this.wf = new Waterfall(
       { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
         load: function(){
-          if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
+          // if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
           // 触发滚动加载时的具体操作
           // 当前作用域下，this指向正创建的对象
           // console.log('..load');
           //m is the start of image num
           var self = this;
           var imgItems=[];
-
+          if(m<waterfallLastID) return;
+          if(items!=null){
+            data=[];
+            console.log("pushing:"+m+":"+items.length);
+            num=2;
+            if(waterfallLastID==0)  num=10;
+            for(i=m;i<m+num&&i<items.length;i++){
+              data.push(items[i]); 
+            }
+            m=i;
+            mwf.insertImgs(self,data);
+          }
+          else
           $.get('more.php?m='+m+"&dir="+dir, function(data) {
             //console.log("get imgs from m:"+m+" to..");
             //记录刷新次数
@@ -78,11 +90,13 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
             //				     $(this).contextMenu('menu',menuAdapter);
             //				     });
           }, 'json');
+          waterfallLastID=m;
         }
       });
 
   this.refresh=function(colNum){
     m=0;
+    waterfallLastID=0;
     inserted=[];
     n=0;
     this.wf.refresh({maxCol:colNum});

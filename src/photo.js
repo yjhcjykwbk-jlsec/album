@@ -45,6 +45,7 @@ var initDir=function(){
   //restore img size
   //
   // zoom=1.75;
+  if(waterfallLastID!=undefined) waterfallLastID=0;
   zoomer.innerHTML="100%";
   album.value=curDir;
   scrolltop=0;
@@ -91,7 +92,7 @@ var loadImg=function(id){
   if(item.ref.endWith(".swf")){
     photo_view.style.width=""+85+"%";
     photo_view.style.marginLeft="7.5%";
-    img_table.style.height="99%"; 
+    img_table.style.height=""+screen.availHeight*0.8+"px"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
@@ -106,10 +107,10 @@ var loadImg=function(id){
       100);
     },10);
   }else{
-    img.src="";
+    img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     //@changed 被minHeight=screen.height*0.5取代
-    //img_table.style.height="80%"; 
+    img_table.style.height="90%"; 
     var k=screen.width/screen.height;
     oImg.href="DATASET/"+curDir+"/"+item.href;
     var h,w;
@@ -133,13 +134,12 @@ var loadImg=function(id){
     photo_view.style.width=""+w1*0.80+"%";
     photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
-    img.src="view/"+curDir+"/"+item.href;
-    img_div.style.width=""+100*(w/w1)+"%"; 
+    // img_div.style.width=""+100*(w/w1)+"%"; 
     img_div.style.display="block";
 
     movie.style.display="none";
   }
-  photo_view.scrollTop=0;
+  // photo_view.scrollTop=0;
   //since get comment must be called when comEnabled and img.alt changed
   //if(comEnabled) 
   getCom();

@@ -1,4 +1,4 @@
-<div class="video_src_wrapper" style="height:30%;width:100%:margin-left:auto;margin-right:auto;">
+<div class="video_src_wrapper" style="height:100%;width:100%:margin-left:auto;margin-right:auto;">
 <embed id="movie" type="application/x-shockwave-flash" 
 class="BDE_Flash" 
 src="" 

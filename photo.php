@@ -46,7 +46,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="refresh_btn" onclick="toggleMenus();" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;margin-left:;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
-<table id="img_table" width="100%" height="78%" align="center" valign="middle" style="
+<table id="img_table" width="100%" height="90%" align="center" valign="middle" style="
 border: 20px solid white;
 background: url(imgbg) 0 0 repeat;
 border-top: 15px solid white;
@@ -54,11 +54,11 @@ border-bottom: 40px solid white;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
 "><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
-<div id="movie_div" style="width:95%;margin-left:auto;margin-right:auto;">
+<div id="movie_div" style="width:95%;height:100%;margin-left:auto;margin-right:auto;">
 <?php include_once "movie.php";?>
 </div>
-<div id="img_div" style="border-top:0px solid transparent;border-bottom:15px solid transparent;margin-left:auto;margin-right:auto;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:100%;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<div id="img_div" style="width:;border-top:0px solid transparent;border-bottom:15px solid transparent;margin-left:auto;margin-right:auto;">
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </div>
 </a>
 </td></tr></table>

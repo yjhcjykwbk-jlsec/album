@@ -30,7 +30,7 @@ function showCom(){
 		photo_view.style.marginLeft="10%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="0.8%";
+		photo_view.style.marginTop="1.5%";
 		right_panel.style.display="block";
 		fbuttons.style.right="4.35%";
 		toggle_com.innerHTML="切换大屏";
@@ -42,7 +42,7 @@ function hideCom(){
 		photo_view.style.marginLeft="10.0%";
 		photo_view.style.width="80.0%";
     // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="0.8%";
+		photo_view.style.marginTop="1.3%";
 		right_panel.style.display="none";
 		fbuttons.style.right="5.95%";
 		//photo_view.style.width="88%";
@@ -65,12 +65,12 @@ var togglePhotoView=function(id){
     scrolltop=body.scrollTop;
     body.style.height="101%";
 		photo_view.style.display="block";
-		showCom();
+    hideCom();
     darkerFun(0);
     waterfallLoadable=false;
     header.style.display="none";
     header.style.background="transparent";
-		container.style.display="none";
+		container.style.opacity="0.02";
     chengxuyuan.style.opacity="0";
     end.style.opacity="0";
 		loadImg(id);
@@ -85,7 +85,7 @@ var togglePhotoView=function(id){
     header.style.display="block";
     header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
-		container.style.display="block";
+		container.style.opacity="1";
     chengxuyuan.style.opacity="1";
     end.style.opacity="0.6";
 		hidePhLst();
