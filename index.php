@@ -12,6 +12,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 
 <!-- style related codes -->
 <style>
+.fButton{text-align:center;align:center;}
 ::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.1);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
@@ -97,7 +98,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:;margin-top:3%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border:65px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:215px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 12px 1px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="margin-left:;margin-top:3%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border:65px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:355px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 12px 1px rgba(30,0,20,0.2)">
 </div>
 
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.7;  margin:0 auto; text-align:center;">Final Version 3.0<br/>

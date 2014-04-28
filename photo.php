@@ -11,7 +11,6 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;min-height:100%;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:15px;">
 <style>
 .fButton:hover{ color:red; }
-.fButton{text-align:center;align:center;}
 #comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <!--header-->
