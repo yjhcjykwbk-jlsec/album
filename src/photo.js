@@ -12,7 +12,7 @@ var togglePhotoView=function(id){
 		loadImg(id);
 		photo_view.style.display="block";
 
-    showCom();
+    hideCom();
 
     waterfallLoadable=false;
 
@@ -58,12 +58,12 @@ function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="100%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="7.5%";
-		photo_view.style.width="85.5%";
+		photo_view.style.marginLeft="10%";
+		photo_view.style.width="80.5%";
     // photo_view.style.height="96.0%";
 		photo_view.style.marginTop="0.55%";
 		right_panel.style.display="none";
-		fbuttons.style.right="5.90%";
+		fbuttons.style.right="7.90%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.65%";
 		//fbuttons.style.width="40px";
