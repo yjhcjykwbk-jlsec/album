@@ -149,7 +149,7 @@ border-radius:5px;
 <script> 
   s=0;
 <?php if(isset($_REQUEST['id'])) {?> s=<?php echo $_REQUEST['id']?>; <?php }?>
-  setTimeout(function(){togglePhotoView(s)},2000);
+  setTimeout(function(){togglePhotoView(s);toggleAutoPlay();},2000);
   </script>
 </body>
 </html>
