@@ -1,4 +1,5 @@
-<div id="music_div" style=""><embed src="" align="center" border="0" width="1" height="1" width="100" autostart="true" loop="true"> </embed></div>
+<div id="music_div" style="width:200px;height:100px;">
+<embed src="" align="center" border="0" width="100px" height="50px" width="100" autostart="true" loop="true"> </embed></div>
 <script>
 var musics=[];
 <?php

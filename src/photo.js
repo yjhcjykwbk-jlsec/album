@@ -79,7 +79,7 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
+var darkFlag=0;
 var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
@@ -96,9 +96,10 @@ var darkerFun=function(c){
     // header.style.background="#181818";
   }
 	if(darkFlag%4==0){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
+    right_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#fefefe";//"#f3f0f6";
+		body.style.backgroundColor="#f8f8f8";//"#f3f0f6";
 
     img.style.boxShadow="";
     // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";

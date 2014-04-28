@@ -63,7 +63,6 @@ style="font-size:110%;display:;margin-top:8px;height:;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 </p>
-<?php include "music.php";?>
 </div>
 
 
@@ -98,10 +97,11 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:;margin-top:3%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border:65px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:355px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 12px 1px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="margin-left:;margin-top:3%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 65px;border-color:transparent;border-style:solid;padding-bottom:325px;border-radius:1px;box-shadow:0px 0px 12px 1px rgba(30,0,20,0.2)">
 </div>
 
 <div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.7;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<?php include "music.php";?>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
