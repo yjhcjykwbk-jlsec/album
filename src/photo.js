@@ -46,24 +46,24 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="70%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="9%";
+		photo_view.style.marginLeft="9.5%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="0.55%";
+		photo_view.style.marginTop="1.05%";
 		right_panel.style.display="block";
-		fbuttons.style.right="9.85%";
+		fbuttons.style.right="8.55%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
 		comEnabled=false;
 		left_panel.style.width="99%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="14.5%";
-		photo_view.style.width="77.5%";
+		photo_view.style.marginLeft="12.0%";
+		photo_view.style.width="78.5%";
     // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="0.55%";
+		photo_view.style.marginTop="1.05%";
 		right_panel.style.display="none";
-		fbuttons.style.right="6.70%";
+		fbuttons.style.right="8.5%";
 		//photo_view.style.width="88%";
 		//fbuttons.style.right="5.35%";
 		//fbuttons.style.width="40px";
@@ -85,7 +85,7 @@ function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
     right_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
+		body.style.backgroundColor="#eee";//"#f3f0f6";
 
     img.style.boxShadow="";
     // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
@@ -101,7 +101,7 @@ function darker1(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
 		// photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#eee";//"#f3f0f6";
+		body.style.backgroundColor="#aaa";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     // photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
@@ -403,8 +403,8 @@ var loadImg=function(id){
   //since get comment must be called when comEnabled and img.alt changed
   //if(comEnabled) 
   getCom();
-  // updateLst(id);
   updateRightLst(id);
+  updatePhLst(id);
 
 };
 function prevFun(){

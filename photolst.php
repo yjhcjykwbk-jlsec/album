@@ -48,7 +48,7 @@ function loadLst(){
   }
 }
 var old=-1;
-function updateLst(id){
+function updatePhLst(id){
   loadLst();
   var imgs=$('#ph_lst img');
   if(imgs[old]!=undefined) imgs[old].style.border="0";
