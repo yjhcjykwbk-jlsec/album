@@ -384,7 +384,8 @@ var loadImg=function(id){
   //since get comment must be called when comEnabled and img.alt changed
   //if(comEnabled) 
   getCom();
-  updateLst(id);
+  // updateLst(id);
+  updateRightLst(id);
 
 };
 function prevFun(){

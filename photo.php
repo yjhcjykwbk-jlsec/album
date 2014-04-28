@@ -67,15 +67,18 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 
 <script>
 //调整图片框的大小
-img_panel.style.minHeight=""+screen.availHeight*0.75+"px";
+img_panel.style.minHeight=""+screen.availHeight*0.55+"px";
 right_panel.style.height=""+screen.availHeight*0.75+"px";
-img_table.style.minHeight=""+screen.availHeight*0.7+"px";
+img_table.style.minHeight=""+screen.availHeight*0.5+"px";
+var rightLstFlag="";
 function loadRightLst(){
+  if(curDir==rightLstFlag) return;
+  rightLstFlag=curDir;
   var img_div=$("#right_lst");
   img_div.empty();
   if(items==undefined) return;
   for(i=0;i<items.length;i++){
-    var img=$('<div style="margin:5px;min-height:3%;max-height:20%;max-width:20%;float:left;border:2px solid rgba(200,100,120,0.3);padding:3px;"><img alt="" style="height:100%;" src="" onclick="s=this.alt;loadImg(s);"></img></div>');
+    var img=$('<div style="min-height:3%;max-height:20%;max-width:25%;overflow-x:;float:left;border:2px solid rgba(200,100,120,0.3);padding:3px;"><img alt="" style="height:100%;" src="" onclick="s=this.alt;loadImg(s);"></img></div>');
     img_div.append(img);
   }
   var imgs=$('#right_lst img');
@@ -89,6 +92,17 @@ function loadRightLst(){
     var item=items[i];
     img.setAttribute("src",item.src);
   }
+}
+var old=-1;
+function updateRightLst(id){
+  loadRightLst();
+  var imgs=$('#right_lst img');
+  if(imgs[old]!=undefined) imgs[old].style.border="0";
+  if(imgs[id]!=undefined) {
+    imgs[id].style.border="1px solid red";
+    right_lst.scrollTop=imgs[id].offsetTop-150;
+  }
+  old=id;
 }
 </script>
 
