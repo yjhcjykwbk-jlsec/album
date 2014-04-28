@@ -17,7 +17,7 @@ var togglePhotoView=function(id){
     waterfallLoadable=false;
 
     header.style.display="none";
-    header.style.background="transparent";
+    // header.style.background="transparent";
 
 		container.style.display="none";
     
@@ -31,7 +31,7 @@ var togglePhotoView=function(id){
     waterfallLoadable=true;
     header.style.opacity="1";
     header.style.display="block";
-    header.style.background="rgb(4,177,204)";
+    // header.style.background="rgb(4,177,204)";
 		photo_view.style.display="none";
     container.style.display="block";
     end.style.opacity="1";
