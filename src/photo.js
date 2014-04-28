@@ -79,7 +79,7 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
+var darkFlag=3;
 var darks=['白色','灰色','灰黑','黑色'];
 var darkerFun=function(c){
 	darkFlag=(darkFlag+c+4)%4;
@@ -328,7 +328,9 @@ var loadImg=function(id){
   if(item.ref.endWith(".swf")){
     // photo_view.style.width=""+85+"%";
     // photo_view.style.marginLeft="7.5%";
-    img_panel.style.height=""+screen.availHeight*0.8+"px"; 
+    img_panel.style.height=""+screen.availHeight*0.5+"px"; 
+    img_table.style.height=""+screen.availHeight*0.60+"px"; 
+    img_panel.style.height=""+screen.availHeight*0.65+"px"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
