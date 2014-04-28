@@ -24,9 +24,10 @@ function temp(){
     console.log('"'+s+'%"');
   }
 }
-function loadLst(id){
-  //console.log(id);
-  var j=id-10>0?id-10:0;
+var lstFlag="";
+function loadLst(){
+  if(curDir==lstFlag) return;
+  lsgFlag=curDir;
   var img_div=$("#ph_lst");
   img_div.empty();
   if(items==undefined) return;
@@ -48,6 +49,7 @@ function loadLst(id){
 }
 var old=-1;
 function updateLst(id){
+  loadLst();
   var imgs=$('#ph_lst img');
   if(imgs[old]!=undefined) imgs[old].style.border="0";
   if(imgs[id]!=undefined) {
@@ -57,6 +59,7 @@ function updateLst(id){
   old=id;
 }
 function showPhLst(){
+  loadLst();
   ph_lst.style.display="block";
 }
 function hidePhLst(){

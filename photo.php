@@ -56,10 +56,11 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 
-<div id="right_panel" style="float:right;margin-right:1%;width:14%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
+<div id="right_panel" style="float:right;margin-right:1%;width:25%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 <a target="__blank" id="img_desp" href=''style="display:block;margin:10px;"></a>
 </div>
+<div id="right_lst" style="height:100%;overflow-y:overlay;margin:10px;"></div>
 </div>
 </div> <!--photoView-->
 </div>
@@ -69,6 +70,26 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 img_panel.style.minHeight=""+screen.availHeight*0.75+"px";
 right_panel.style.height=""+screen.availHeight*0.75+"px";
 img_table.style.minHeight=""+screen.availHeight*0.7+"px";
+function loadRightLst(){
+  var img_div=$("#right_lst");
+  img_div.empty();
+  if(items==undefined) return;
+  for(i=0;i<items.length;i++){
+    var img=$('<div style="margin:5px;min-height:3%;max-height:20%;max-width:20%;float:left;border:2px solid rgba(200,100,120,0.3);padding:3px;"><img alt="" style="height:100%;" src="" onclick="s=this.alt;loadImg(s);"></img></div>');
+    img_div.append(img);
+  }
+  var imgs=$('#right_lst img');
+  for(i=0;i<=items.length;i++){
+    var img=imgs[i];
+    if(img==undefined||img==null) {
+      continue;
+    }
+    img.setAttribute("alt",i);
+    // img.style.display="block";
+    var item=items[i];
+    img.setAttribute("src",item.src);
+  }
+}
 </script>
 
 <?php if(isset($_REQUEST['id'])){?>

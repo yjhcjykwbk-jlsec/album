@@ -12,7 +12,7 @@ var togglePhotoView=function(id){
 		loadImg(id);
 		photo_view.style.display="block";
 
-    hideCom();
+    showCom();
 
     waterfallLoadable=false;
 
@@ -23,7 +23,7 @@ var togglePhotoView=function(id){
     
     chengxuyuan.style.display="none";
     end.style.opacity="0.1";
-		showPhLst();
+		// showPhLst();
     showMenus();
 	}else{
     //hide
@@ -44,14 +44,14 @@ var togglePhotoView=function(id){
 function showCom(){
 		comEnabled=true;
 		if(img.alt!=comID) getCom();
-		left_panel.style.width="84%";
+		left_panel.style.width="70%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="7%";
-    photo_view.style.width="86%";
+		photo_view.style.marginLeft="9%";
+    photo_view.style.width="80%";
 		// photo_view.style.height="92%";
 		photo_view.style.marginTop="0.55%";
 		right_panel.style.display="block";
-		fbuttons.style.right="5.85%";
+		fbuttons.style.right="9.85%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
@@ -283,7 +283,8 @@ var initDir=function(callback){
   if(allItems[curDir]!=null) {
     items=allItems[curDir];
     dirInited=true;
-    loadLst();
+    // loadLst();
+    loadRightLst();
     callback();
     return;
   }
@@ -296,6 +297,7 @@ var initDir=function(callback){
         allItems[curDir]=items=data.items;
         dirInited=true;
         loadLst();
+        loadRightLst();
         callback();
       },'json');
 };
@@ -373,10 +375,10 @@ var loadImg=function(id){
     // photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
     img_div.style.width=""+100*(w/w1)+"%"; 
-    img_div.style.display="block";
 
     movie.style.display="none";
-    photo_view.style.opacity="1";
+    setTimeout(function(){img_div.style.display="block"},0);
+    // photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;
   //since get comment must be called when comEnabled and img.alt changed
