@@ -46,12 +46,12 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="70%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="9.5%";
+		photo_view.style.marginLeft="10.0%";
     photo_view.style.width="80%";
 		// photo_view.style.height="92%";
 		photo_view.style.marginTop="1.05%";
 		right_panel.style.display="block";
-		fbuttons.style.right="8.55%";
+		fbuttons.style.right="8.15%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
