@@ -24,14 +24,14 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 </style>
 
 </head>
-<body id="body" style="height:200%;overflow-y:scroll;">
+<body id="body" style="height:200%;overflow-x:hidden;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
 
 <!-- //header -->
 <!--<div style="display:block;width:100%;height:2%;margin-top:0px;z-index:101;"></div> -->
-<div class="header" id="header" style="position:absolute;top:0;font:10px;background:rgb(4, 177, 204);border:1px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:25px;z-index:100;">
+<div class="header" id="header" style="position:absolute;top:0;font:10px;background:rgb(4, 77, 104);border:1px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:25px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -103,7 +103,7 @@ box-shadow: rgba(200, 200, 200, 0.901961) 0px 0px 22px 1px;
 >
 </div>
 
-<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.7;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:block;padding-top:100px;padding-bottom:50px; opacity:0.5;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <?php include "music.php";?>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>

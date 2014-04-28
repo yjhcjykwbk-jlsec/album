@@ -5,14 +5,15 @@ var waterfallLastID=0;
 function MyWaterfall(dir,colNum){ // console.log("waterfall:"); 
   // 测试用技术器 // 调用瀑布流 
   var n = 0; var m = 0; 
-  $('#end').hide();
+  $('#end').css("opacity","0.01");//hide();
   var mwf=this;
   var inserted=[];
   this.insertImgs=function(waterfall,imgItems){
     var res = [];
     if(imgItems.length==0){
       waterfall.end();		 // 终止滚动load
-      $('#end').show();
+      $('#end').css("opacity","1");
+      // $('#end').show();
     }
     else{
       $.each(imgItems, 
