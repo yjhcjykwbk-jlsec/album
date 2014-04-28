@@ -3,6 +3,7 @@
 var scrolltop=0;
 var waterfallLoadable=true;
 var togglePhotoView=function(id){
+  console.log("togglePhotoView:"+id+":"+dirInited);
   //show
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
@@ -22,9 +23,8 @@ var togglePhotoView=function(id){
 		container.style.display="none";
     
     chengxuyuan.style.display="none";
-    end.style.opacity="0.1";
+    end.style.opacity="0.01";
 		// showPhLst();
-    showMenus();
 	}else{
     //hide
     body.style.height="200%";
@@ -56,16 +56,16 @@ function showCom(){
 }
 function hideCom(){
 		comEnabled=false;
-		left_panel.style.width="100%";
+		left_panel.style.width="99%";
 		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="10%";
-		photo_view.style.width="80.5%";
+		photo_view.style.marginLeft="14.5%";
+		photo_view.style.width="77.5%";
     // photo_view.style.height="96.0%";
 		photo_view.style.marginTop="0.55%";
 		right_panel.style.display="none";
-		fbuttons.style.right="7.90%";
+		fbuttons.style.right="6.70%";
 		//photo_view.style.width="88%";
-		//fbuttons.style.right="5.65%";
+		//fbuttons.style.right="5.35%";
 		//fbuttons.style.width="40px";
 		toggle_com.innerHTML="切换宽屏";
 }
@@ -81,25 +81,11 @@ var toggleCom=function(){
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
 var darkFlag=3;
 var darks=['白色','灰色','灰黑','黑色'];
-var darkerFun=function(c){
-	darkFlag=(darkFlag+c+4)%4;
-  darkFlag=darkFlag%4;
-  if(darkFlag<2){
-    ph_lst.style.background="rgba(255,255,255,1)";
-    // ph_lst.style.background="rgba(253,255,254,0.1)";
-    // header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
-  }
-  else{
-    // ph_lst.style.backgroundColor="#111";
-    // ph_lst.style.background="rgba(253,255,254,0.1)";
-    ph_lst.style.background="rgba(0,0,0,0.5)";//rgba(255,254,255,0.5)";
-    // header.style.background="#181818";
-  }
-	if(darkFlag%4==0){
+function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
     right_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#f8f8f8";//"#f3f0f6";
+		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
 
     img.style.boxShadow="";
     // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
@@ -110,7 +96,8 @@ var darkerFun=function(c){
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==1){
+};
+function darker1(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
 		// photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
@@ -125,7 +112,8 @@ var darkerFun=function(c){
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
 		left_panel.style.borderRight="1px solid #eee";
 		right_panel.style.opacity="1";
-	}else if(darkFlag%4==2){
+};
+function darker2(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#282828";
 		// photo_view.style.backgroundColor="#282828";//"rgba(2,0,5,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
@@ -140,20 +128,49 @@ var darkerFun=function(c){
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		// right_panel.style.opacity="0.8";
-	}else if(darkFlag%4==3){
+  };
+function darker3(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
 		// photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
 		body.style.backgroundColor="#000";
 		// img.style.boxShadow="100px 10px 100px 55px #343739";
     // photo_view.style.boxShadow="-1px 1px 20px 2px #222";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#030303";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(3,4,3,0.01)";
 		comment_area.style.color=comment_author.style.color="#888";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
 		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
 		left_panel.style.borderRight="1px solid #111";
 		// right_panel.style.opacity="0.8";
+  }
+
+var darkerFun=function(c){
+	darkFlag=(darkFlag+c+4)%4;
+  darkFlag=darkFlag%4;
+  if(darkFlag<2){
+    ph_lst.style.background="rgba(255,255,255,1)";
+    img_table.style.backgroundImage="url(imgbg)";
+    img_table.style.borderColor="white";
+    // ph_lst.style.background="rgba(253,255,254,0.1)";
+    // header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
+  }
+  else{
+    // ph_lst.style.backgroundColor="#111";
+    // ph_lst.style.background="rgba(253,255,254,0.1)";
+    ph_lst.style.background="rgba(0,0,0,0.5)";//rgba(255,254,255,0.5)";
+    img_table.style.backgroundImage="";
+    img_table.style.borderColor="rgba(0,0,0,0.3)";
+    // header.style.background="#181818";
+  }
+	if(darkFlag%4==0){
+    darker0();
+	}else if(darkFlag%4==1){
+    darker1();
+	}else if(darkFlag%4==2){
+    darker2();
+	}else if(darkFlag%4==3){
+    darker3();
 	}
   darker.innerText=""+darks[darkFlag%4];
 };
@@ -270,11 +287,11 @@ var allItems={};
 var items;
 var dirInited=false;
 var initDir=function(callback){
+  console.log("initDir:"+dirInited);
   //restore img size
   //
   // zoom=1.75;
   // if(typeof(waterfallLastID)!=undefined) 
-  console.log("init dir");
   waterfallLastID=0;
   zoomer.innerHTML=""+zoom*100+"%";
   album.value=curDir;
@@ -296,6 +313,7 @@ var initDir=function(callback){
         //console.log(data.items);
         allItems[curDir]=items=data.items;
         dirInited=true;
+        console.log("dir inited");
         loadLst();
         loadRightLst();
         callback();
@@ -328,9 +346,8 @@ var loadImg=function(id){
   if(item.ref.endWith(".swf")){
     // photo_view.style.width=""+85+"%";
     // photo_view.style.marginLeft="7.5%";
-    img_panel.style.height=""+screen.availHeight*0.5+"px"; 
-    img_table.style.height=""+screen.availHeight*0.60+"px"; 
-    img_panel.style.height=""+screen.availHeight*0.65+"px"; 
+    img_table.style.height=""+screen.availHeight*0.80+"px"; 
+    img_panel.style.height=""+screen.availHeight*0.85+"px"; 
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
@@ -347,7 +364,7 @@ var loadImg=function(id){
       100);
     },10);
   }else{
-    img_div.style.display="none";
+    img.style.display="none";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
@@ -379,7 +396,7 @@ var loadImg=function(id){
     img_div.style.width=""+100*(w/w1)+"%"; 
 
     movie.style.display="none";
-    setTimeout(function(){img_div.style.display="block"},0);
+    setTimeout(function(){img.style.display="block"},0);
     // photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;

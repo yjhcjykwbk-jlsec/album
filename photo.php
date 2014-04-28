@@ -18,18 +18,19 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
 <div id="left_panel" style="float:right;width:85%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
 <div id="img_panel" style="width:99%;margin-bottom:10px;border:1px solid rgba(120,120,120,0.3)">
-<div style="background:white;z-index:100;height:20px;top:0;right:0;position:relative;">
-<button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="togglePhlst();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
-<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
+<div id="top_buttons" style="z-index:100;top:0px;right:0;position:relative;">
+<button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.5);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.5);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.5);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
+<button id="refresh_btn" onclick="togglePhlst();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.5);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
+<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.5);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
 border: 20px solid white;
 background: url(imgbg) 0 0 repeat;
-border-top: 5px solid white;
-border-bottom: 20px solid white;
+border:0px 20px 20px 20px;
+border-color:rgba(255,255,255,0.3);
+border-style:solid;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
 "><tr><td>
 <a onclick="togglePhotoView(0-1);return false;" title="" style="">
@@ -46,7 +47,7 @@ border-bottom: 20px solid white;
 <div id="comments_div" style="width:94%;margin-left:4%;border-bottom:0px solid #888;max-width:100%;overflow-y:scroll;overflow-x:hidden;border-top:1px solid f0fefu;margin-top:20px;margin-bottom:10px;
 background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #508090;color:#eee;"></div>
 <div style="margin-left:3%;width:95%;margin-top:0%:height:1px;padding-bottom:50px;border:0px solid #301030;border-radius:4px;">
-  <textarea id="comment_area" style="font-size:100%;margin-top:2%;width:99%;height:125px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
+  <textarea id="comment_area" style="font-size:100%;margin-top:2%;width:99%;height:55px;border:0px;" onclick="" placeholder="评论" class="clear-input"></textarea>
 <br/>
   <textarea id="comment_author" style="font-size:100%;width:99%;margin-top:2px;height:15px;float:left;border:0px;" onclick="this.value='';" placeholder="昵称" class="clear-input" autocomplete="off"></textarea>
   <button value＝"清空" style="width:30px;float:right;background:rgba(120,120,120,0.2);color:rgba(120,120,120,0.4);border:0px;" onclick="clearCom();">清空</button><!--<button value="清空" onclick="clearCom();" >清空</button> -->
@@ -56,7 +57,7 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 
-<div id="right_panel" style="float:right;margin-right:1%;width:25%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
+<div id="right_panel" style="float:right;margin-right:1.5%;width:25%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 <a target="__blank" id="img_desp" href=''style="display:block;margin:10px;"></a>
 </div>
@@ -108,8 +109,8 @@ function updateRightLst(id){
 
 <?php if(isset($_REQUEST['id'])){?>
 <script> 
-curDir='<?php echo $curDir;?>';
-initDir('<?php echo $curDir;?>');
-photo_view.style.display="block";
+// curDir='<?php echo $curDir;?>';
+// setDir('<?php echo $curDir;?>');
+// photo_view.style.display="block";
 </script>
 <?php }?>

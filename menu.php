@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <!--<h4 style="display:none;float:left;"><font style="display:block;font-size:60%;position:fixed;font-weight:italic;color:#423;margin-top:-16px;margin-left:0;">推荐您关注</font></h4> -->
-<div id="album_menu" style="display:none;width:7.6%;overflow-y:scroll;position:fixed;padding-top:20px;top:0;opacity:1;border:1px solid rgba(0,0,0,0.03);border-radius: 0px 2px 2px 0px;background:rgba(0,0,0,0.9);box-shadow:0px 0px 1px 1px rgba(0,0,0,0.5);bottom:0;left:0;margin-right:0;z-index:99;">
+<div id="album_menu" style="display:block;width:9.6%;overflow-y:scroll;position:fixed;padding-top:20px;top:0;opacity:1;border:1px solid rgba(120,120,120,0.3);border-radius: 0px 2px 2px 0px;background:rgba(0,0,0,0.9);box-shadow:0px 0px 1px 1px rgba(0,0,0,0.5);bottom:0;left:0;margin-right:0;z-index:99;">
 <div style="display:block;padding-top:8px;padding-bottom:8px;">
 <ul style="list-styles:none" style="">
 <?php

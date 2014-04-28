@@ -97,7 +97,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:;margin-top:4%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:solid;padding-bottom:325px;border-radius:1px;
+<div id="container" class="container" style="margin-left:13%;margin-top:4%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:solid;padding-bottom:325px;border-radius:1px;
 box-shadow: rgba(200, 200, 200, 0.901961) 0px 0px 22px 1px;
 "
 >
@@ -142,9 +142,14 @@ border-radius:5px;
 </div> 
 
 
-<script> var dir=<?php echo "\"".$curDir."\"";?>; var curDir=dir;</script>
+<script> var dir=<?php echo "\"".$curDir."\"";?>;var id; var curDir=dir;</script>
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="src/index.js"></script>
 <script type="text/javascript" src="src/photo.js"></script>
+<script> 
+  s=0;
+<?php if(isset($_REQUEST['id'])) {?> s=<?php echo $_REQUEST['id']?>; <?php }?>
+  setTimeout(function(){togglePhotoView(s)},2000);
+  </script>
 </body>
 </html>
