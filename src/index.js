@@ -36,7 +36,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               (item.desp!=""?item.desp+
                 '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
                 :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述</button>')+'</div>'+
-              '<div class="ref" style="color:#9E7E6B;background:rgba(230,230,230,0.4);padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
+              '<div class="ref" style="color:#9E7E6B;background:rgba(250,250,250,0.4);padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
               //   '</div> '+
               //						'<div class="item_b clearfix"> '+
               //						'<div class="items_likes fl" style="height:0px"> '+

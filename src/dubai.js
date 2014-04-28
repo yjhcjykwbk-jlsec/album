@@ -12,11 +12,11 @@ setTimeout(function(){
 		yuanIntro.style.display="block";
     setTimeout(function(){
       chengxuyuanGoDie();
-    },4000);
+    },10000);
 	},2000);
 },1000);
 var chengxuyuanGoDie=function(){
-	chengxuyuan.style.display="none";
+  chengxuyuan.style.display="none";
 	dubaiFlag=4;
 	setTimeout(dubaijun,1000);
 };

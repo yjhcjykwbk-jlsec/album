@@ -21,174 +21,16 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
   background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
 </style>
-<script>
-function showCom(){
-		comEnabled=true;
-		if(img.alt!=comID) getCom();
-		left_panel.style.width="79%";
-		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="9%";
-    photo_view.style.width="84%";
-		// photo_view.style.height="92%";
-		photo_view.style.marginTop="0.55%";
-		right_panel.style.display="block";
-		fbuttons.style.right="22.85%";
-		toggle_com.innerHTML="切换大屏";
-}
-function hideCom(){
-		comEnabled=false;
-		left_panel.style.width="100%";
-		right_panel.style.display="none";//width="20%";
-		photo_view.style.marginLeft="9.5%";
-		photo_view.style.width="83%";
-    // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="0.55%";
-		right_panel.style.display="none";
-		fbuttons.style.right="8.90%";
-		//photo_view.style.width="88%";
-		//fbuttons.style.right="5.65%";
-		//fbuttons.style.width="40px";
-		toggle_com.innerHTML="切换宽屏";
-}
-var toggleCom=function(){
-	if(right_panel.style.display=="none"){
-		showCom();
-	}else{
-		hideCom();
-	}
-};
-var scrolltop=0;
-var waterfallLoadable=true;
-var togglePhotoView=function(id){
-	if(id>=0&&dirInited){
-		// body.style.overflowY="hidden";
-    scrolltop=body.scrollTop;
-    body.style.height="100%";
-		photo_view.style.display="block";
-    showCom();
-    darkerFun(0);
-    waterfallLoadable=false;
-    header.style.display="none";
-    header.style.background="transparent";
-		container.style.display="none";
-		// container.style.opacity="0.02";
-    chengxuyuan.style.opacity="0";
-    end.style.opacity="0";
-		loadImg(id);
-		showPhLst();
-	}else{
-		// body.style.overflowY="scroll";
-	//body.style.backgroundColor="#faf9ff";
-    body.style.height="200%";
-    waterfallLoadable=true;
-    header.style.opacity="1";
-    header.style.display="block";
-    header.style.background="rgb(4,177,204)";
-		photo_view.style.display="none";
-    container.style.display="block";
-		// container.style.opacity="1";
-    chengxuyuan.style.opacity="0.21";
-    end.style.opacity="0.1";
-		hidePhLst();
-    fbuttons.style.right="0";
-    body.scrollTop=scrolltop;
-	}
-}
-
-//box-shadow is darker than body
-//photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
-var darks=['白色','灰色','灰黑','黑色'];
-var darkerFun=function(c){
-	darkFlag=(darkFlag+c+4)%4;
-  darkFlag=darkFlag%4;
-  ph_lst.style.background="rgba(255,254,255,0.5)";
-  // if(darkFlag<2){
-    // ph_lst.style.background="rgba(253,255,254,0.1)";
-    // // header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
-  // }
-  // else{
-    // // ph_lst.style.backgroundColor="#111";
-    // ph_lst.style.background="rgba(253,255,254,0.1)";
-    // // header.style.background="#181818";
-  // }
-	if(darkFlag%4==0){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
-		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#fefefe";//"#f3f0f6";
-
-    img.style.boxShadow="";
-    // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
-		fbuttons.style.color="#212";
-		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-    zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		left_panel.style.borderRight="1px solid #eee";
-		right_panel.style.opacity="1";
-	}else if(darkFlag%4==1){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
-		// photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
-		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
-	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
-    // photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
-		comment_area.style.color=comment_author.style.color="#444";
-		fbuttons.style.color="#212";
-		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
-		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
-		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
-		left_panel.style.borderRight="1px solid #eee";
-		right_panel.style.opacity="1";
-	}else if(darkFlag%4==2){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#282828";
-		// photo_view.style.backgroundColor="#282828";//"rgba(2,0,5,0.999)";
-		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#111";
-		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
-		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
-		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#080808";
-		comment_area.style.color=comment_author.style.color="#888";
-		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
-		left_panel.style.borderRight="1px solid #111";
-		// right_panel.style.opacity="0.8";
-	}else if(darkFlag%4==3){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
-		// photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
-		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#000";
-		// img.style.boxShadow="100px 10px 100px 55px #343739";
-    // photo_view.style.boxShadow="-1px 1px 20px 2px #222";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#030303";
-		comment_area.style.color=comment_author.style.color="#888";
-		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
-		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
-		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
-		left_panel.style.borderRight="1px solid #111";
-		// right_panel.style.opacity="0.8";
-	}
-  darker.innerText=""+darks[darkFlag%4];
-};
-</script>
 
 </head>
 <body id="body" style="height:200%;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
-<script type="text/javascript" src="src/jquery.waterfall.js"></script>
-<script type="text/javascript" src="src/index.js"></script>
 
 <!-- //header -->
 <!--<div style="display:block;width:100%;height:2%;margin-top:0px;z-index:101;"></div> -->
-<?php include "photo.php";?>
-<?php include "menu.php";?>
-
-<div class="header" id="header" style="background:rgb(4, 177, 204);display:block;position:absolute;top:0;width:100%;opacity:1;left:0%;height:4.0%;z-index:9999;">
+<div class="header" id="header" style="position:absolute;top:0;font:10px;background:rgb(4, 177, 204);border:1px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:25px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -209,120 +51,63 @@ var darkerFun=function(c){
 <option value="4">4星 80分</option>
 <option value="5">5星 100分</option>
 </select>
-<div 
+<!--div 
 style="float:left;display:;height:;font-weight:bold;
 color:#8fa;">
 时光静美，光影沉默.刹那韶华，留存感动>>>>>>>>>>>>>>
-</div>
+</div-->
 <div align="center">
 <a id="index_href" href="albums.php" 
 style="font-size:110%;display:;margin-top:8px;height:;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 </p>
-</div>
 <?php include "music.php";?>
-
-<script>
-var scored=false;
-var setScore=function(s){
-	if(s=="0") return;
-	if(scored){
-		alert("您已经评价过了，谢谢！");
-		return;
-	}
-	$.get("com_js.php?act=score&score="+s,function(data){
-			alert("收到您的评分("+data+")如果觉得本站不错，请推荐给其他好友");
-			scored=true;
-			},"text");
-};
-var curDir="<?php echo $curDir;?>";
-</script>
+</div>
 
 
-<!-- left-panel -->
+<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:1;position:fixed;opacity:0.9;background:#eee;">
+<img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
+<div id="yuanIntro" style="margin-left:5px">
+程序猿来了！大家快跑！
+</div>
+<a onclick="chengxuyuanGoDie();return false;">让程序猿去死</a>
+</div>
+<div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
+<div id="message_content"></div>
+<pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
+</div>
 
 
+<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:22%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
+<a href="#header" class="fButton" style="display:block;border:1px solid #eee;background:#ddd;width:100%;height:40px;">home</a>
+<a href="#end" class="fButton" style="display:block;border:1px solid #eee;background:#ddd;width:100%;height:40px;">end</a>
+<button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
+<button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
+<button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
+<button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">缩小</button>
+<button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
+<button class="fButton" id="menus" onclick="toggleMenus();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:50px; ">左导航</button>
+<button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
+</div>
+
+
+<?php include "photo.php";?>
+<?php include "menu.php";?>
+<?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div style="position:relative;margin-left:120px;margin-top:0px;">
-<div id="container" class="container" style="margin-top:45px;opacity:0.9;min-height:;background:rgba(21,20,23,0.01);border:25px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:15px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 0px 0px rgba(30,0,20,0.2)">
+<div id="container" class="container" style="margin-left:;margin-top:3%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border:65px solid rgba(255,255,255,0.02);border-top:15px solid rgba(255,255,255,0.02);border-bottom:215px solid rgba(255,255,255,0.02);border-radius:1px;box-shadow:0px 0px 12px 1px rgba(30,0,20,0.2)">
 </div>
-<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.1; font:20px bold; margin:0 auto; text-align:center;">Final Version 3.0<br/>
+
+<div id="end" style="display:none;padding-top:100px;padding-bottom:50px; opacity:0.7;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
  <!--iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe--> 
 <?php include_once "uploadview.php";?>
 </div>
-</div>
 
-<script>
-function submitAdvice(advice){
-  advice=encodeURIComponent(advice);
-  $.post("advice.php?advice="+advice,function(data){
-    alert("您的意见已经被收录，谢谢您的支持:"+data);
-  },"text");
-	return;
-}
-var dir=<?php echo "\"".$curDir."\"";?>;
-var colNum=4;
-var waterfall=new MyWaterfall(dir,colNum);
-var setDir=function(dir){
-	togglePhotoView(-1);
-  if(curDir==dir) return;
-	curDir=dir;
-	// waterfall=new MyWaterfall(dir,colNum);
-  initDir(function(){
-	if(waterfall!=undefined&&waterfall!=null) 
-  {
-    waterfall.refresh();
-  }
-  });
-};
-initDir(function(){});
-selects.onclick=function(){
-  if(colNum==this.value) return;
-	colNum=this.value;
-	waterfall.refresh(colNum);
-}
-function setDesp(dir,img,desp,ref){
-	dir=encodeURIComponent(dir);
-	img=encodeURIComponent(img);
-	desp=encodeURIComponent(desp);
-	ref=encodeURIComponent(ref);
-	$.post("desp_js.php?dir="+curDir+"&name="+img+"&desp="+desp+"&ref="+ref,function(data){
-			alert("添加描述成功");
-			//items[id].desp=desp;
-			desp_form.style.display="none";
-			//刷新
-			waterfall.refresh(colNum);
-			},'text');
-}
-function changeDespForm(button,dir,imgName,desp,ref){
-	rect=button.getBoundingClientRect();
-	window.button=button;
-	img_dir.value=dir;
-	img_name.value=imgName;
-  desp_input.value=desp;
-  ref_input.value=ref;
-	desp_form.style.left=rect.left+"px";
-	desp_form.style.top=rect.bottom-150-20+"px";
-	desp_form.style.display="block";
-}
-function showDespForm(button,dir,imgName){
-	rect=button.getBoundingClientRect();
-	window.button=button;
-	// if(button.offsetParent!=null) {
-		// offset.top-=$(button.offsetParent).offset().top;
-	// }
-	img_dir.value=dir;
-	img_name.value=imgName;
-	desp_form.style.left=rect.left+"px";
-	desp_form.style.top=rect.bottom-150-20+"px";
-	desp_form.style.display="block";
-}
-</script>
 <div id="desp_form" style="
 width: 220px;
 height:130px;
@@ -346,17 +131,16 @@ border-radius:5px;
 </div>
 
 
-
 <!-- 下面是右键菜单1 -->
 <div class="contextMenu" id="menu"> 
 <ul> 
 <li id="del">删除</li><ul> 
 </div> 
 
-<!-- <iframe src="uploadpage.html" -->
-<!-- style="position:fixed;top:200px;right:20px;width:300px;height:200px;box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.3); -->
-<!-- font-size: 14px;background-color:rgb(222,222,222,0.1);opacity:0.6;border:0;padding:10px;border-radius:2px; -->
-<!-- line-height: 1;"> -->
-<!-- </iframe> -->
+
+<script> var dir=<?php echo "\"".$curDir."\"";?>; var curDir=dir;</script>
+<script type="text/javascript" src="src/jquery.waterfall.js"></script>
+<script type="text/javascript" src="src/index.js"></script>
+<script type="text/javascript" src="src/photo.js"></script>
 </body>
 </html>

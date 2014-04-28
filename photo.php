@@ -8,40 +8,18 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 //$id=0;
 ?>
 <meta charset="utf-8">
-<script src="src/jquery.min.js"></script>
-<script src="src/photo.js"></script>
-<script src="src/dubai.js"></script>
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:1;position:fixed;opacity:0.9;background:#eee;">
-<img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
-<div id="yuanIntro" style="margin-left:5px">
-程序猿来了！大家快跑！
-</div>
-<a onclick="chengxuyuanGoDie();return false;">让程序猿去死</a>
-</div>
-<div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
-<div id="message_content"></div>
-<pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
-</div>
-<div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:22%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
-<button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
-<button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
-<button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
-<button class="fButton" id="smaller" onclick="smallerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">缩小</button>
-<button class="fButton" id="darker" onclick="darkerFun(1);" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">灯光</button>
-<button class="fButton" id="menus" onclick="toggleMenus();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:50px; ">左导航</button>
-<button class="fButton" id="zoomer" style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">zoom</button>
-</div>
 <div id="photo_view" style="display:none;overflow-x:hidden;overflow-y:overlay;min-height:100%;background:#fefdff;;z-index:100;position:absolute;padding-bottom:5px;margin-left:7%;margin-right:auto;margin-bottom:15px;">
 <style>
 .fButton:hover{ color:red; }
+.fButton{text-align:center;align:center;}
 #comment_span{color:white;} body{ margin:0px;margin-top:0px; } #author{ width:20px;font-weight:bold; color:#369;}
 </style>
 <!--header-->
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
-<div id="left_panel" style="float:left;width:79%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
+<div id="left_panel" style="float:right;width:85%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
 <div id="img_panel" style="width:99%;margin-bottom:10px;border:1px solid rgba(120,120,120,0.3)">
-<div style="background:white;z-index:100;top:0;right:0;position:relative;">
+<div style="background:white;z-index:100;height:20px;top:0;right:0;position:relative;">
 <button id="oImg" target="__blank" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</button>
 <button id="toggle_com" onclick="toggleCom();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
 <button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:20px;margin-top:0;float:right;position:;background:rgba(50,50,50,0.05);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
@@ -79,19 +57,18 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 
-<div id="right_panel" style="width:20%;display:block;border:0px dotted #fbfbfb;border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
+<div id="right_panel" style="float:right;margin-right:1%;width:14%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
-<a target="__blank" id="img_desp" href=''></a>
+<a target="__blank" id="img_desp" href=''style="display:block;margin:10px;"></a>
 </div>
 </div>
 </div> <!--photoView-->
 </div>
 
-<?php include "photolst.php";?>
 <script>
 //调整图片框的大小
 img_panel.style.minHeight=""+screen.availHeight*0.75+"px";
-right_panel.style.height=""+screen.availHeight*0.95+"px";
+right_panel.style.height=""+screen.availHeight*0.75+"px";
 img_table.style.minHeight=""+screen.availHeight*0.7+"px";
 </script>
 

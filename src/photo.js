@@ -1,4 +1,240 @@
+//index.php  control views;
+////////////////////////////
+var scrolltop=0;
+var waterfallLoadable=true;
+var togglePhotoView=function(id){
+  //show
+	if(id>=0&&dirInited){
+		// body.style.overflowY="hidden";
+    scrolltop=body.scrollTop;
+    body.style.height="100%";
 
+		loadImg(id);
+		photo_view.style.display="block";
+
+    showCom();
+
+    waterfallLoadable=false;
+
+    header.style.display="none";
+    header.style.background="transparent";
+
+		container.style.display="none";
+    
+    chengxuyuan.style.display="none";
+    end.style.opacity="0.1";
+		showPhLst();
+    showMenus();
+	}else{
+    //hide
+    body.style.height="200%";
+    waterfallLoadable=true;
+    header.style.opacity="1";
+    header.style.display="block";
+    header.style.background="rgb(4,177,204)";
+		photo_view.style.display="none";
+    container.style.display="block";
+    end.style.opacity="1";
+		hidePhLst();
+    // hideMenus();
+    fbuttons.style.right="0";
+    body.scrollTop=scrolltop;
+	}
+}
+function showCom(){
+		comEnabled=true;
+		if(img.alt!=comID) getCom();
+		left_panel.style.width="84%";
+		right_panel.style.display="block";//width="20%";
+		photo_view.style.marginLeft="7%";
+    photo_view.style.width="86%";
+		// photo_view.style.height="92%";
+		photo_view.style.marginTop="0.55%";
+		right_panel.style.display="block";
+		fbuttons.style.right="5.85%";
+		toggle_com.innerHTML="切换大屏";
+}
+function hideCom(){
+		comEnabled=false;
+		left_panel.style.width="100%";
+		right_panel.style.display="none";//width="20%";
+		photo_view.style.marginLeft="7.5%";
+		photo_view.style.width="85.5%";
+    // photo_view.style.height="96.0%";
+		photo_view.style.marginTop="0.55%";
+		right_panel.style.display="none";
+		fbuttons.style.right="5.90%";
+		//photo_view.style.width="88%";
+		//fbuttons.style.right="5.65%";
+		//fbuttons.style.width="40px";
+		toggle_com.innerHTML="切换宽屏";
+}
+var toggleCom=function(){
+	if(right_panel.style.display=="none"){
+		showCom();
+	}else{
+		hideCom();
+	}
+};
+
+//box-shadow is darker than body
+//photo_view.border color is darker than body, and should be close to photo_view.box-shadow
+var darkFlag=1;
+var darks=['白色','灰色','灰黑','黑色'];
+var darkerFun=function(c){
+	darkFlag=(darkFlag+c+4)%4;
+  darkFlag=darkFlag%4;
+  if(darkFlag<2){
+    ph_lst.style.background="rgba(255,255,255,1)";
+    // ph_lst.style.background="rgba(253,255,254,0.1)";
+    // header.style.background="rgb(4, 177, 204)";//rgba(253,255,254,0.5)";
+  }
+  else{
+    // ph_lst.style.backgroundColor="#111";
+    // ph_lst.style.background="rgba(253,255,254,0.1)";
+    ph_lst.style.background="rgba(0,0,0,0.5)";//rgba(255,254,255,0.5)";
+    // header.style.background="#181818";
+  }
+	if(darkFlag%4==0){
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#fefefe";//"#f3f0f6";
+
+    img.style.boxShadow="";
+    // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		fbuttons.style.color="#212";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+    zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==1){
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
+		// photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#f0f0f0";//"#f3f0f6";
+	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
+    // photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
+		comment_area.style.color=comment_author.style.color="#444";
+		fbuttons.style.color="#212";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#212";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#ddd";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #eee";
+		left_panel.style.borderRight="1px solid #eee";
+		right_panel.style.opacity="1";
+	}else if(darkFlag%4==2){
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#282828";
+		// photo_view.style.backgroundColor="#282828";//"rgba(2,0,5,0.999)";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#111";
+		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
+		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
+		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#080808";
+		comment_area.style.color=comment_author.style.color="#888";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		// right_panel.style.opacity="0.8";
+	}else if(darkFlag%4==3){
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
+		// photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
+		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+		body.style.backgroundColor="#000";
+		// img.style.boxShadow="100px 10px 100px 55px #343739";
+    // photo_view.style.boxShadow="-1px 1px 20px 2px #222";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#030303";
+		comment_area.style.color=comment_author.style.color="#888";
+		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
+		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
+		zoomer.style.border=next.style.border= prev.style.border= darker.style.border= bigger.style.border= smaller.style.border="1px solid #222";
+		left_panel.style.borderRight="1px solid #111";
+		// right_panel.style.opacity="0.8";
+	}
+  darker.innerText=""+darks[darkFlag%4];
+};
+darkerFun(0);
+
+var toggleMenus=function(){
+  s=album_menu.style.display;
+  if(s=="none"){
+    album_menu.style.display="block";
+  }else{
+    album_menu.style.display="none";
+  }
+};
+var togglePhlst=function(){
+  s=ph_lst.style.display;
+  if(s=="none"){
+    ph_lst.style.display="block";
+  }else{
+    ph_lst.style.display="none";
+  }
+};
+//////////////////////////////////////////////////////////////
+//score
+var scored=false;
+var setScore=function(s){
+	if(s=="0") return;
+	if(scored){
+		alert("您已经评价过了，谢谢！");
+		return;
+	}
+	$.get("com_js.php?act=score&score="+s,function(data){
+			alert("收到您的评分("+data+")如果觉得本站不错，请推荐给其他好友");
+			scored=true;
+			},"text");
+};
+function submitAdvice(advice){
+  advice=encodeURIComponent(advice);
+  $.post("advice.php?advice="+advice,function(data){
+    alert("您的意见已经被收录，谢谢您的支持:"+data);
+  },"text");
+	return;
+}
+///////////////////////////////////////////////////////////////////
+//descripttion of img
+function setDesp(dir,img,desp,ref){
+	dir=encodeURIComponent(dir);
+	img=encodeURIComponent(img);
+	desp=encodeURIComponent(desp);
+	ref=encodeURIComponent(ref);
+	$.post("desp_js.php?dir="+curDir+"&name="+img+"&desp="+desp+"&ref="+ref,function(data){
+			alert("添加描述成功");
+			//items[id].desp=desp;
+			desp_form.style.display="none";
+			//刷新
+			waterfall.refresh(colNum);
+			},'text');
+}
+function changeDespForm(button,dir,imgName,desp,ref){
+	rect=button.getBoundingClientRect();
+	window.button=button;
+	img_dir.value=dir;
+	img_name.value=imgName;
+  desp_input.value=desp;
+  ref_input.value=ref;
+	desp_form.style.left=rect.left+"px";
+	desp_form.style.top=rect.bottom-150-20+"px";
+	desp_form.style.display="block";
+}
+function showDespForm(button,dir,imgName){
+	rect=button.getBoundingClientRect();
+	window.button=button;
+	// if(button.offsetParent!=null) {
+		// offset.top-=$(button.offsetParent).offset().top;
+	// }
+	img_dir.value=dir;
+	img_name.value=imgName;
+	desp_form.style.left=rect.left+"px";
+	desp_form.style.top=rect.bottom-150-20+"px";
+	desp_form.style.display="block";
+}
+
+///////////////////////////////////////////////////////////
 var comEnabled=true;
 var zoom=1.25;
 var biggerFun=function(){
@@ -10,30 +246,6 @@ var biggerFun=function(){
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
   loadImg(img.alt);
-};
-var menusHided=false;
-var toggleMenus=function(){
-  if(menusHided==true){
-    album_menu.style.display="block";
-    // ph_lst.style.display="block";
-    menusHided=false;
-  }else{
-    album_menu.style.display="none";
-    // ph_lst.style.display="none";
-    menusHided=true;
-  }
-};
-var phlstHided=false;
-var togglePhlst=function(){
-  if(phlstHided==true){
-    ph_lst.style.display="block";
-    // ph_lst.style.display="block";
-    phlstHided=false;
-  }else{
-    ph_lst.style.display="none";
-    // ph_lst.style.display="none";
-    phlstHided=true;
-  }
 };
 var smallerFun=function(){
   cur=zoom;
@@ -50,6 +262,9 @@ var smallerFun=function(){
   zoomer.innerHTML=""+zoom*100+"%";
   loadImg(img.alt);
 };
+
+////////////////////////////////////////////////////
+//init dir
 var allItems={};
 var items;
 var dirInited=false;
@@ -83,6 +298,9 @@ var initDir=function(callback){
         callback();
       },'json');
 };
+
+/////////////////////////////////////////////////////////////////////
+//load img
 String.prototype.endWith=function(str){
   if(str==null||str==""||this.length==0||str.length>this.length)
     return false;
@@ -124,7 +342,7 @@ var loadImg=function(id){
       100);
     },10);
   }else{
-    photo_view.style.opacity="0.05";
+    img_div.style.display="none";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
@@ -282,6 +500,30 @@ document.onkeydown=function(event){
     else if(t==27) togglePhotoView();
   }
 };
-
 //the first time to this page will getcomment initially
 //init(getCom);
+
+////////////////////////////////////////////////////////////////
+//init waterfall
+var colNum=4;
+var waterfall=new MyWaterfall(dir,colNum);
+var setDir=function(dir){
+	togglePhotoView(-1);
+  if(curDir==dir) return;
+	curDir=dir;
+	// waterfall=new MyWaterfall(dir,colNum);
+  initDir(function(){
+	if(waterfall!=undefined&&waterfall!=null) 
+  {
+    waterfall.refresh();
+  }
+  });
+};
+initDir(function(){});
+//////////////////////////////////////////////////////////////
+//init colNum select DomElement
+selects.onclick=function(){
+  if(colNum==this.value) return;
+	colNum=this.value;
+	waterfall.refresh(colNum);
+}
