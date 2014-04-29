@@ -7,6 +7,7 @@ var togglePhotoView=function(id){
   //show
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
+    darkerFun(0);
     scrolltop=body.scrollTop;
     body.style.height="100%";
 
@@ -27,6 +28,8 @@ var togglePhotoView=function(id){
     end.style.opacity="0.01";
 	}else{
     //hide
+    if(darkFlag<2) body.style.background="#fafafa";
+    else  body.style.background="#111";
     body.style.height="200%";
     waterfallLoadable=true;
     header.style.opacity="1";
@@ -79,7 +82,7 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=3;
+var darkFlag=0;
 var darks=['白色','灰色','灰黑','黑色'];
 function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
@@ -355,7 +358,7 @@ var loadImg=function(id){
     movie.src=item.ref;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
-    img_div.style.display="none";
+    img.style.display="none";
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){
@@ -364,7 +367,8 @@ var loadImg=function(id){
       100);
     },10);
   }else{
-    img.style.display="none";
+    img.style.opacity="0.1";
+    img.style.display="block";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
@@ -393,10 +397,10 @@ var loadImg=function(id){
     // photo_view.style.width=""+w1*0.80+"%";
     // photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
-    img_div.style.width=""+100*(w/w1)+"%"; 
+    img.style.width=""+100*(w/w1)+"%"; 
 
     movie.style.display="none";
-    setTimeout(function(){img.style.display="block"},0);
+    setTimeout(function(){img.style.opacity="1"},0);
     // photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;

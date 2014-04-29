@@ -13,7 +13,7 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 <style>
 </style>
 </head>
-<body style="background:url(body_bg) no-repeat center top #245a70">
+<body style="background:url(DATASET/6597088458353679775.jpg) repeat-y center top #245a70">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -22,16 +22,16 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 
 <!-- //header -->
 <div style="background: center #f060f0;<!--#E8EDF1;--#303030;-->
-display:block;width:100%;height:30px;margin-top:0px;">
+display:block;width:100%;height:40px;margin-top:0px;
+background:url(http://l.bst.126.net/rsc/img/x.png) repeat-x 999px 9999px;
+">
 <p>
 <h1 align="center"><font color="#072" style="font-family:'微软雅黑,宋体';font-size:12px;">信 息 安 全 实 验 室 在 线 影 集</font></h1>
 </p>
 </div>
 <style>
   .folders .li{
-  float:middle;
-  margin-left:auto;margin-right:auto;margin-top:50px;
-    border:17px;padding:5px;border-color:#0f0f0f;padding-color:#202020;
+ display:block; margin-left:auto;margin-right:auto;margin-top:50px;
     box-shadow: 0 1px 4px rgba(0,0,0,.15)
 }
     .folders .li_border{
@@ -40,15 +40,15 @@ display:block;width:100%;height:30px;margin-top:0px;">
 </style>
 
 
-<div class="folders" style="display:block;width:840px;height:;background:#74aac0;margin-left:auto;margin-right:auto;margin-top:315px;padding-bottom:20px;border-radius:7px;">
+<div class="folders" style="display:block;width:540px;height:;background:#222;margin-left:auto;margin-right:auto;margin-top:115px;padding-bottom:20px;border-radius:0px;border:3px solid #333">
 <?php
 if ($handle = opendir("DATASET")) {
   while (false !== ($entry = readdir($handle))) {
     if(is_dir("DATASET/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
-      <div class="li" style="display:block;float:left;margin:13px;margin-bottom:0;margin-top:25px;">
+      <div class="li" style="display:block;margin-left:3%;width:94%;margin-right:auto;margin-top:25px;">
         <a href="index.php?dir=<?php echo $entry ?>">
         <?php $front=file_exists("DATASET/".$entry."/front.jpg")?"DATASET/".$entry."/front.jpg":"default.jpg";?>
-        <img src="<?php echo $front;?>" width="170" height="125" style="">
+        <img src="<?php echo $front;?>" width="100%" style="margin:auto auto;overflow:hidden">
         </img><br/>
         <?php echo $entry ?>/
         </a>
