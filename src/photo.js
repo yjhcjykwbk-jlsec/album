@@ -357,9 +357,9 @@ var loadImg=function(id){
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
     setTimeout(function(){
-      movie.style.display="none";
+      movie_div.style.display="none";
       setTimeout(function(){
-        movie.style.display="block";
+        movie_div.style.display="block";
       },
       100);
     },10);
@@ -398,7 +398,7 @@ var loadImg=function(id){
 
     img.style.width=""+100*(w/w1)+"%"; 
 
-    movie.style.display="none";
+    movie_div.style.display="none";
     setTimeout(function(){img.style.opacity="1"},0);
     // photo_view.style.opacity="1";
   }
