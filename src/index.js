@@ -33,7 +33,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '<div class="item_t">'+ 
               // '<div class="img">'+// style="background:#000"> '+
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
-              '<img  width="'+255+'" height="'+item.height/item.width*255+'" src="'+item.src+'" data-pinit="registered">'+
+              '<img  width="'+240+'" height="'+item.height/item.width*240+'" src="'+item.src+'" data-pinit="registered">'+
               '</a> '+
               '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
@@ -59,7 +59,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
     waterfall.success(res);
   };
   this.wf = new Waterfall(
-      { container: $('#container'), colWidth: 255, maxCol: colNum,preDistance: 0,
+      { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
         load: function(){
           // if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
           // 触发滚动加载时的具体操作
