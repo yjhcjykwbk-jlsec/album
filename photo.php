@@ -19,11 +19,11 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <div id="left_panel" style="float:right;width:85%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
 <div id="img_panel" style="width:99%;margin-bottom:10px;border:1px solid rgba(120,120,120,0.3)">
 <div id="top_buttons" style="z-index:100;top:0px;right:0;position:relative;">
-<a id="oImg" target="__blank" style="display:block;width:60px;height:10px;margin-top:2px;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
-<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
-<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
-<button id="refresh_btn" onclick="togglePhlst();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
-<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.4);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
+<a id="oImg" target="__blank" style="display:block;width:60px;height:10px;margin-top:2px;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
+<button id="toggle_com" onclick="toggleCom();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">切换大屏</button>
+<button id="auto_play" onclick="toggleAutoPlay();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">自动播放</button>
+<button id="refresh_btn" onclick="togglePhlst();" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">导航</button>
+<button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(150,150,150,0.7);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
 background: url(imgbg) 0 0 repeat;

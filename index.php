@@ -66,7 +66,7 @@ color:#8af;">
 </div>
 
 
-<div id="chengxuyuan" style="display:none;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:1;position:fixed;opacity:0.9;background:#eee;">
+<div id="chengxuyuan" style="display:block;width:180px;bottom:46%;right:46%;border-radius:1px;padding:20px;box-shadow:5px 10px 10px 2px #222;z-index:1;position:fixed;opacity:0.9;background:#444;">
 <img src="yuan.gif" width="100%" style="margin-left:auto;margin-right:auto" onclick="dubaijun();return false;"/><br/>
 <div id="yuanIntro" style="margin-left:5px">
 程序猿来了！大家快跑！
@@ -80,8 +80,8 @@ color:#8af;">
 
 
 <div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:22%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
-<a href="#header" class="fButton" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">up</a>
-<a href="#end" class="fButton" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">down</a>
+<button href="#header" onclick="location.href='#header';" class="fButton" id="goheader" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">up</button>
+<button href="#end" onclick="location.href='#end'" class="fButton" id="goend" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">down</button>
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -97,7 +97,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;border-color:rgba(245,245,245,0.3);border-width:15px 25px;background-color:rgba(200,200,200,0.1);border-style:solid;padding-bottom:125px;border-radius:1px;
+<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;border-color:rgba(245,245,245,0.3);border-width:15px 25px;background-color:rgba(200,200,200,0.4);border-style:solid;padding-bottom:125px;border-radius:1px;
 box-shadow: rgba(250, 250, 250, 0.901961) 0px 0px 28px 1px;
 "
 >
@@ -146,10 +146,46 @@ border-radius:5px;
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="src/index.js"></script>
 <script type="text/javascript" src="src/photo.js"></script>
+<script type="text/javascript" src="src/dubai.js"></script>
 <script> 
+function flash(s,color,l){
+  var t="";
+  var i=0;
+  t=setInterval(function(){
+    if(i==0){
+    s.style.backgroundColor=color;
+    }else{
+    s.style.backgroundColor="";
+    }
+    i=1-i;
+  },300);
+  setTimeout(function(){clearInterval(t);},l);
+}
+
+//initial demonstration
   s=0;
+  var initialInter="";
 <?php if(isset($_REQUEST['id'])) {?> s=<?php echo $_REQUEST['id']?>; <?php }?>
-  setTimeout(function(){togglePhotoView(s);toggleAutoPlay();},2000);
+  initialInter=setInterval(function(){
+    if(!dirInited) return;
+    clearInterval(initialInter);
+    initialInter="";
+    togglePhotoView(s);
+    toggleAutoPlay();
+    // menus.style.backgroundColor="red";
+    // refresh_btn.style.backgroundColor="red";
+    flash(menus,"red",7000);
+    flash(refresh_btn,"green",7000);
+    flash(toggle_com,"yellow",7000);
+    setTimeout(function(){
+      menus.style.backgroundColor="#222";
+      menus.click();
+      toggle_com.style.backgroundColor="transparent";
+      hideCom();
+      refresh_btn.style.backgroundColor="transparent";
+      hidePhLst();
+    },7000);
+  },1000);
   </script>
 </body>
 </html>

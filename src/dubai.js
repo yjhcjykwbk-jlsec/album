@@ -3,7 +3,6 @@ setTimeout(function(){
 	chengxuyuan.style.bottom="50%";
 	chengxuyuan.style.width="200px";
 	chengxuyuan.style.display="block";
-	chengxuyuan.style.backgroundColor="#eee";
 	setTimeout(function(){
 		chengxuyuan.style.right="0px";
 		chengxuyuan.style.bottom="-15px";
@@ -12,7 +11,7 @@ setTimeout(function(){
 		yuanIntro.style.display="block";
     setTimeout(function(){
       chengxuyuanGoDie();
-    },10000);
+    },20000);
 	},2000);
 },1000);
 var chengxuyuanGoDie=function(){
@@ -66,7 +65,7 @@ var dubaiFuns=function(){
 		randomMessagePos();
 		message_content.innerHTML="";
     message_pre_content.innerHTML=""+
-      "//本人已葬身终南山下，有事烧纸...\n"+
+      "//exit 有事烧纸...\n"+
       "i.am.died.in.extremal.south.moutain();\n"+
       "exit();\n"+
       "\n"
