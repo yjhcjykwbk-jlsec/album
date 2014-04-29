@@ -148,7 +148,7 @@ border-radius:5px;
 <script type="text/javascript" src="src/photo.js"></script>
 <script type="text/javascript" src="src/dubai.js"></script>
 <script> 
-function flash(s,color,l){
+function flashFun(s,color,l){
   var t="";
   var i=0;
   t=setInterval(function(){
@@ -163,29 +163,46 @@ function flash(s,color,l){
 }
 
 //initial demonstration
-  s=0;
-  var initialInter="";
-<?php if(isset($_REQUEST['id'])) {?> s=<?php echo $_REQUEST['id']?>; <?php }?>
-  initialInter=setInterval(function(){
-    if(!dirInited) return;
-    clearInterval(initialInter);
-    initialInter="";
-    togglePhotoView(s);
-    toggleAutoPlay();
-    // menus.style.backgroundColor="red";
-    // refresh_btn.style.backgroundColor="red";
-    flash(menus,"red",7000);
-    flash(refresh_btn,"green",7000);
-    flash(toggle_com,"yellow",7000);
-    setTimeout(function(){
-      menus.style.backgroundColor="#222";
-      menus.click();
-      toggle_com.style.backgroundColor="transparent";
-      hideCom();
-      refresh_btn.style.backgroundColor="transparent";
-      hidePhLst();
-    },7000);
-  },1000);
+  setTimeout(function(){
+  if(confirm("do you want to accept the album usage guide, which is highly recommended ?")) {
+    s=0;
+    //event 0
+    var initialInter="";
+    <?php if(isset($_REQUEST['id'])) {?> s=<?php echo $_REQUEST['id']?>; <?php }?>
+    initialInter=setInterval(function(){
+      if(!dirInited) return;
+      clearInterval(initialInter);
+      initialInter="";
+      //event 1
+      flashFun($('.item')[s],"red",4000);
+      setTimeout(function(){
+        togglePhotoView(s);
+        toggleAutoPlay();
+        style($('.item')[s],"backgroundColor","transparent");
+        //event 2 
+        flashFun(menus,"red",4000);
+        flashFun(refresh_btn,"green",4000);
+        flashFun(toggle_com,"yellow",4000);
+        setTimeout(function(){
+          menus.style.backgroundColor="#222";
+          menus.click();
+          toggle_com.style.backgroundColor="transparent";
+          hideCom();
+          refresh_btn.style.backgroundColor="transparent";
+          hidePhLst();
+          //event 3
+          setTimeout(function(){
+            togglePhotoView(-1);
+            alert("guidance is over, thank you! now enjoy it!");
+          },4000);
+        //delay of event 2
+        },4000);
+        //delay of event 1
+      },4000);
+      //delay of event 0
+    },2000);
+    //delay of this 
+  }},2000);
   </script>
 </body>
 </html>

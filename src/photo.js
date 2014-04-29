@@ -341,11 +341,19 @@ var loadImg=function(id){
     img_table.style.height=""+screen.availHeight*0.80+"px"; 
     img_panel.style.height="";//+screen.availHeight*0.85+"px"; 
     img.style.display="none";
-    // photo_view.style.width="80%";
-    // photo_view.style.marginLeft="10%";
-    // photo_view.style.height="90%";
-    // photo_view.style.marginTop="0.3%";
-    movie.src=item.ref;
+    
+    if(contains(item.ref,"http")){
+      movie.style.height="95%";
+      movie.src=item.ref;
+      flash.style.height="0%";
+      flash.src="";
+    }
+    else{
+      movie.style.height="0%";
+      movie.src="";
+      flash.style.height="95%";
+      flash.src=item.ref;
+    }
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
     setTimeout(function(){
