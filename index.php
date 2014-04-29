@@ -14,7 +14,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <style>
 .fButton{text-align:center;align:center;}
 ::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.1);border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.6);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
@@ -97,7 +97,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;background:rgba(255,255,255,0.5);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:solid;padding-bottom:125px;border-radius:1px;
+<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;border-color:rgba(245,245,245,0.3);border-width:15px 25px;background-color:rgba(200,200,200,0.1);border-style:solid;padding-bottom:125px;border-radius:1px;
 box-shadow: rgba(250, 250, 250, 0.901961) 0px 0px 28px 1px;
 "
 >

@@ -8,6 +8,9 @@ $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
 background:transparent;
 border:1px solid rgba(120,120,120,0.3);
 }
+#upload_form button{
+background:transparent;
+}
 </style>
 <meta charset="utf-8">
   <form id="upload_form" enctype="multipart/form-data" action="upload.php" method="post" name="upform" style="background:transparent;font-size:70%">
