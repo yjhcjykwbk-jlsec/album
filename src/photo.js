@@ -28,8 +28,8 @@ var togglePhotoView=function(id){
     end.style.opacity="0.01";
 	}else{
     //hide
-    if(darkFlag<2) body.style.background="#fafafa";
-    else  body.style.background="#111";
+    if(darkFlag<2) body.style.background="#fff";
+    else  body.style.background="#333";
     body.style.height="200%";
     waterfallLoadable=true;
     header.style.opacity="1";
@@ -347,10 +347,9 @@ var loadImg=function(id){
   item=items[img.alt];
   //console.log(item.ref);
   if(item.ref.endWith(".swf")){
-    // photo_view.style.width=""+85+"%";
-    // photo_view.style.marginLeft="7.5%";
     img_table.style.height=""+screen.availHeight*0.80+"px"; 
-    img_panel.style.height=""+screen.availHeight*0.85+"px"; 
+    img_panel.style.height="";//+screen.availHeight*0.85+"px"; 
+    img.style.display="none";
     // photo_view.style.width="80%";
     // photo_view.style.marginLeft="10%";
     // photo_view.style.height="90%";
@@ -358,7 +357,6 @@ var loadImg=function(id){
     movie.src=item.ref;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
-    img.style.display="none";
     setTimeout(function(){
       movie.style.display="none";
       setTimeout(function(){
@@ -367,6 +365,8 @@ var loadImg=function(id){
       100);
     },10);
   }else{
+    img_table.style.height="100%";
+    img_panel.style.height="";
     img.style.opacity="0.1";
     img.style.display="block";
     img.src="view/"+curDir+"/"+item.href;

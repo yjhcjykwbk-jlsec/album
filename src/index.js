@@ -33,15 +33,15 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '<div class="item_t">'+ 
               // '<div class="img">'+// style="background:#000"> '+
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
-              '<img  width="'+240+'" height="'+item.height/item.width*240+'" src="'+item.src+'" data-pinit="registered">'+
+              '<img  width="'+255+'" height="'+item.height/item.width*255+'" src="'+item.src+'" data-pinit="registered">'+
               '</a> '+
               '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
-              '<div class="desp" style="background:rgba(255,255,255,0.8);color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'rgba(200,10,100,0.2)':'rgba(50,50,50,0.1)')+';">'+
+              '<div class="desp" style="background:rgba(255,255,255,0.01);color:#444;padding:3px;border-bottom:1px solid '+(isMovie?'rgba(200,10,100,0.2)':'rgba(50,50,50,0.1)')+';">'+
               (item.desp!=""?item.desp+
                 '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
                 :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述</button>')+'</div>'+
-              '<div class="ref" style="color:#9E7E6B;background:rgba(250,250,250,0.1);padding:5px;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
+              '<div class="ref" style="color:#9E7E6B;background:rgba(250,250,250,0.1);padding-left:4px;font-size:80%;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
               //   '</div> '+
               //						'<div class="item_b clearfix"> '+
               //						'<div class="items_likes fl" style="height:0px"> '+
@@ -59,7 +59,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
     waterfall.success(res);
   };
   this.wf = new Waterfall(
-      { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
+      { container: $('#container'), colWidth: 255, maxCol: colNum,preDistance: 0,
         load: function(){
           // if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
           // 触发滚动加载时的具体操作

@@ -80,8 +80,8 @@ color:#8af;">
 
 
 <div class="fButtons" id="fbuttons" style="position:fixed;opacity:0.7;right:0;color:#212;top:22%;width:25px;border:0px solid #eee;background:#ddd;z-index:103;border-radius:0px">
-<a href="#header" class="fButton" style="display:block;border:1px solid #eee;background:#ddd;width:100%;height:40px;">home</a>
-<a href="#end" class="fButton" style="display:block;border:1px solid #eee;background:#ddd;width:100%;height:40px;">end</a>
+<a href="#header" class="fButton" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">up</a>
+<a href="#end" class="fButton" style="display:block;border:1px solid #eee;background:transparent;width:100%;height:40px;">down</a>
 <button class="fButton" id="prev" onclick="prevFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px;">上张</button>
 <button class="fButton" id="next" onclick="nextFun();" 		style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">下张</button>
 <button class="fButton" id="bigger" onclick="biggerFun();" 	style="border:1px solid #eee;background:#ddd;width:100%;height:40px; ">放大</button>
@@ -97,8 +97,8 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:solid;padding-bottom:325px;border-radius:1px;
-box-shadow: rgba(200, 200, 200, 0.901961) 0px 0px 22px 1px;
+<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:;padding-bottom:325px;border-radius:1px;
+box-shadow: rgba(200, 200, 200, 0.0901961) 0px 0px 22px 1px;
 "
 >
 </div>
