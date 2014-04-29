@@ -32,7 +32,7 @@ include_once "desp.php";
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
 $destination_folder="DATASET/".$class."/";
-echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class';},3000);</script>";
+echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class';},4000);</script>";
 
 if(!file_exists($destination_folder))
 {
@@ -90,6 +90,9 @@ function upload($file,$desp,$ref){
   //写入文件的描述和reference website
   //echo "记录描述和地址...<br/>";
   global $class;
+  echo $class;
+  echo $filename;
+  echo $desp."<br>";
   writeDesp($class,$filename,$desp,$ref);
 
   echo "上传成功:".$tmpFileName;
@@ -104,7 +107,6 @@ function upload($file,$desp,$ref){
 
 }
 function uploadLink($url,$desp,$ref){
-  include_once "mark.php";
   global $uploadedFiles;
   if(in_array($url,$uploadedFiles)){
     echo "重复上传的文件已经被过滤:".$url."<hr>";
@@ -113,12 +115,17 @@ function uploadLink($url,$desp,$ref){
   else $uploadedFiles[]=$url;
 
   global $class;
+  include_once "mark.php";
   $filename=getimg($url,$class);
   if($filename==false) {
     echo "上传失败，".$url." 下载出错<hr>";
     return;
   }
   $destination="DATASET/".$class."/".$filename;
+  echo $class;
+  echo $filename;
+  echo $desp."<br>";
+ //test writeDesp(".","1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
   writeDesp($class,$filename,$desp,$ref);
 
   echo "上传成功:".$url;
@@ -130,22 +137,30 @@ function uploadLink($url,$desp,$ref){
 
 if (isset($_SERVER)&&isset($_SERVER['REQUEST_METHOD'])&&$_SERVER['REQUEST_METHOD'] == 'POST')
 {
+  echo "scanning upload image list...<hr>";
   for($i=0;$i<5;$i++){
-    if(isset($_FILES["upfile".$i])){//&&isset($_FILES["upfile".$i]['tmp_file'])){
-      $file=$_FILES["upfile".$i];
+    if(!isset($_FILES["upfile".$i])) break;//&&isset($_FILES["upfile".$i]['tmp_file'])){
+
+    $file=$_FILES["upfile".$i];
+
+    if($file['tmp_name']!=""){
+      echo "handling with :".$file['tmp_name']."<br>";
       $desp=$_REQUEST["desp".$i];
       $ref=$_REQUEST["ref".$i];
       upload($file,$desp,$ref);
     }
-    else if(isset($_REQUEST["uplink".$i])){
+
+    else{
       $url=$_REQUEST["uplink".$i];
+      if($url=="") continue;
       $desp=$_REQUEST["desp".$i];
       $ref=$_REQUEST["ref".$i];
+      echo $desp.":".$ref."<br>";
       uploadLink($url,$desp,$ref);
     }
+
   }
 }
-uploadLink("http://ww1.sinaimg.cn/bmiddle/49e31ec8jw1efwkgidl7cj20c80igacj.jpg","","");
 ?>
 </body>
 </html>
