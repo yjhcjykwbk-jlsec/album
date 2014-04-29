@@ -24,7 +24,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 </style>
 
 </head>
-<body id="body" style="height:200%;overflow-x:hidden;overflow-y:scroll;">
+<body id="body" style="background:url(DATASET/6597088458353679775.jpg) repeat-y center top #245a70;height:200%;overflow-x:hidden;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -97,7 +97,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;background:rgba(255,255,255,0.01);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:;padding-bottom:325px;border-radius:1px;
+<div id="container" class="container" style="margin-left:13%;margin-top:2.5%;opacity:0.9;min-height:;background:rgba(0,0,0,0.3);border-width:15px 25px;border-color:rgba(17,17,17,0.0);border-style:solid;padding-bottom:125px;border-radius:1px;
 box-shadow: rgba(200, 200, 200, 0.0901961) 0px 0px 22px 1px;
 "
 >

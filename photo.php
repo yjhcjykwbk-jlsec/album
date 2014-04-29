@@ -28,7 +28,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
 background: url(imgbg) 0 0 repeat;
 border-width:10px 20px 20px 20px;
-border-color:rgba(255,255,255,0.3);
+border-color:;
 border-style:solid;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
 "><tr><td>

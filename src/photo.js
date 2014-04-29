@@ -28,8 +28,8 @@ var togglePhotoView=function(id){
     end.style.opacity="0.01";
 	}else{
     //hide
-    if(darkFlag<2) body.style.background="#fff";
-    else  body.style.background="#333";
+    if(darkFlag<2) body.style.backgroundColor="#fff";
+    else  body.style.backgroundColor="#333";
     body.style.height="200%";
     waterfallLoadable=true;
     header.style.opacity="1";
@@ -82,13 +82,13 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=3;
 var darks=['白色','灰色','灰黑','黑色'];
 function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
     right_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#eee";//"#f3f0f6";
+		// body.style.backgroundColor="#eee";//"#f3f0f6";
 
     img.style.boxShadow="";
     // photo_view.style.boxShadow="rgba(150, 156, 155, 1) 0px 1px 1px 1px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
@@ -104,7 +104,7 @@ function darker1(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#fff";
 		// photo_view.style.backgroundColor="#fafafa";//rgba(280,286,285,1)";//"rgba(288,288,288,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#aaa";//"#f3f0f6";
+		// body.style.backgroundColor="#aaa";//"#f3f0f6";
 	  img.style.boxShadow="";//100px 0px 20px 150px #fff";
     // photo_view.style.boxShadow="rgb(5,8,5) 0px 1px 1px 1px";//-10px 10px 100px 20px";//                     50px 10px 160px 125px rgb(180, 174, 190)";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
@@ -117,14 +117,14 @@ function darker1(){
 		right_panel.style.opacity="1";
 };
 function darker2(){
-		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="rgba(255,255,255,0.1)";
+		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="rgba(255,255,255,0.2)";
 		// photo_view.style.backgroundColor="#282828";//"rgba(2,0,5,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#111";
+		// body.style.backgroundColor="#111";
 		//photo_view.style.borderBottom=photo_view.style.borderLeft=photo_view.style.borderTop="4px solid #424e5e";
 		// left_panel.style.boxShadow="100px 10px 160px 185px #000";
 		// photo_view.style.boxShadow="100px 10px 160px 485px #111";
-		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#080808";
+		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(100,100,100,0.1)";
 		comment_area.style.color=comment_author.style.color="#888";
 		zoomer.style.color=next.style.color= prev.style.color= darker.style.color= bigger.style.color= smaller.style.color="#ccc";
 		zoomer.style.backgroundColor=next.style.backgroundColor= prev.style.backgroundColor= darker.style.backgroundColor= bigger.style.backgroundColor= smaller.style.backgroundColor="#333";
@@ -136,7 +136,7 @@ function darker3(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
 		// photo_view.style.backgroundColor="#040404";//"rgba(2,0,5,0.999)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-		body.style.backgroundColor="#000";
+		// body.style.backgroundColor="#000";
 		// img.style.boxShadow="100px 10px 100px 55px #343739";
     // photo_view.style.boxShadow="-1px 1px 20px 2px #222";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(3,4,3,0.01)";
@@ -163,7 +163,7 @@ var darkerFun=function(c){
     // ph_lst.style.background="rgba(253,255,254,0.1)";
     ph_lst.style.background="rgba(0,0,0,0.5)";//rgba(255,254,255,0.5)";
     img_table.style.backgroundImage="";
-    img_table.style.borderColor="rgba(0,0,0,0.3)";
+    img_table.style.borderColor="rgba(0,0,0,0.03)";
     // header.style.background="#181818";
   }
 	if(darkFlag%4==0){
