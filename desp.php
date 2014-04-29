@@ -38,7 +38,7 @@ function writeDesp($dir,$img,$desp,$ref){
 	$arr=explode("\n",$str);
   $desp=str_replace("\n"," ",$desp);
 	for($i=0;$i+2<count($arr);$i+=3){
-		if(strcmp($arr[i],$img)==0){
+		if(strcmp($arr[$i],$img)==0){
 			$arr[$i+1]=$desp;
 			$arr[$i+2]=$ref;
 			$str="";

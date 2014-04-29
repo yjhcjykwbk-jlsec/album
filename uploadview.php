@@ -15,23 +15,28 @@ background:transparent;
 <meta charset="utf-8">
   <form id="upload_form" enctype="multipart/form-data" action="upload.php" method="post" name="upform" style="background:transparent;font-size:70%">
     <b>上传图片(所有输入都不是必填,引用可填为为图片来源，或视频地址):</b><br>
-  <input name="upfile0" type="file" style="width:85%"><br>
+  <input name="upfile0" type="file" style="width:45%">
+  地址<input name="uplink0" type="text"><br>
   描述<input name="desp0" type="text" style="width:85%"><br>
   引用<input name="ref0" type="text" style="width:85%"><br>
 
-  <input name="upfile1" type="file" style="width:85%"><br>
+  <input name="upfile1" type="file" style="width:45%">
+  地址<input name="uplink1" type="text"><br>
   描述<input name="desp1" type="text" style="width:85%"><br>
   引用<input name="ref1" type="text" style="width:85%"><br>
 
-  <input name="upfile2" type="file" style="width:85%"><br>
+  <input name="upfile2" type="file" style="width:45%">
+  地址<input name="uplink2" type="text"><br>
   描述<input name="desp2" type="text" style="width:85%"><br>
   引用<input name="ref2" type="text" style="width:85%"><br>
 
-  <input name="upfile3" type="file" style="width:85%"><br>
+  <input name="upfile3" type="file" style="width:45%">
+  地址<input name="uplink3" type="text"><br>
   描述<input name="desp3" type="text" style="width:85%"><br>
   引用<input name="ref3" type="text" style="width:85%"><br>
 
-  <input name="upfile4" type="file" style="width:85%"><br>
+  <input name="upfile4" type="file" style="width:45%">
+  地址<input name="uplink4" type="text"><br>
   描述<input name="desp4" type="text" style="width:85%"><br>
   引用<input name="ref4" type="text" style="width:85%"><br>
 
