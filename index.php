@@ -97,7 +97,7 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div style="position:relative;left:6%">
+<div style="position:relative;left:4%">
 <div id="container" class="container" style="border-color:rgba(150,40,70,0.1);margin-top:2.5%;opacity:0.9;min-height:;border-width:15px 25px;background-color:rgba(240,240,240,0.8);border-style:solid;padding-bottom:125px;border-radius:1px;
 box-shadow: rgba(150, 40, 70, 0.501961) 100px 0px 200px 100px;
 ">
