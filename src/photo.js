@@ -39,8 +39,8 @@ var togglePhotoView=function(id){
     end.style.opacity="0.01";
 	}else{
     //hide
-    if(darkFlag<2) body.style.backgroundColor="#fff";
-    else  body.style.backgroundColor="#333";
+    // if(darkFlag<2) body.style.backgroundColor="#fff";
+    // else  body.style.backgroundColor="#333";
 
     body.style.height="200%";
     waterfallLoadable=true;

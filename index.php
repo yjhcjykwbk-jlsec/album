@@ -13,25 +13,25 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <!-- style related codes -->
 <style>
 .fButton{text-align:center;align:center;}
-::-webkit-scrollbar {width:10px;background-color:rgba(200,200,200,0.01);border-radius:1px;}
-::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(127,127,127,0.6);border-radius:1px;}
+::-webkit-scrollbar {width:10px;background-color:rgba(20,20,20,0.1);border-radius:1px;}
+::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(227,227,227,1);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
 #header select|button {
-  background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
+  background:#482932;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
 </style>
 
 </head>
-<body id="body" style="background:url(DATASET/6597088458353679775.jpg) repeat-y center top #245a70;height:200%;overflow-x:hidden;overflow-y:scroll;">
+<body id="body" style="background:url(DATASET/6597088458353679775.jpg) repeat-y center top #f0f0f0;height:200%;overflow-x:hidden;overflow-y:scroll;">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
 
 <!-- //header -->
 <!--<div style="display:block;width:100%;height:2%;margin-top:0px;z-index:101;"></div> -->
-<div class="header" id="header" style="position:absolute;top:0;font:10px;background:;border:0px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:25px;z-index:100;">
+<div class="header" id="header" style="position:absolute;top:0;font:10px;background:white;border:0px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:25px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -98,13 +98,20 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div style="position:relative;left:4%">
-<div id="container" class="container" style="border-color:rgba(150,40,70,0.1);margin-top:2.5%;opacity:0.9;min-height:;border-width:15px 25px;background-color:rgba(240,240,240,0.8);border-style:solid;padding-bottom:45px;border-radius:1px;
-box-shadow: rgba(150, 40, 70, 0.501961) 100px 0px 200px 100px;
+<div style="position:relative;left:3%">
+<div id="container" class="container" style="
+border-color:rgba(150,40,70,0.01);
+margin-top:2.5%;opacity:0.9;min-height:;border-width:15px 25px;
+/* background-color:rgba(240,240,240,0.8); */
+background-color:#f0f0f0;
+/* //rgba(40,40,40,0); */
+border-style:solid;
+padding-bottom:45px;border-radius:1px;
+/* box-shadow: rgba(150, 40, 70, 0.1961) 40px 0px 200px 100px; */
 ">
 </div>
 <!--box-shadow: rgba(250, 250, 250, 0.901961) 0px 0px 28px 1px;
-border-color:rgba(245,245,245,0.3);
+/* border-color:rgba(245,245,245,0.3); */
 -->
 </div>
 
