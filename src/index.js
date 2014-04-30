@@ -91,9 +91,9 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
             mwf.insertImgs(self,data.items);
 
             //添加右键菜单
-            //		     $('div.item img').each(function(){
-            //				     $(this).contextMenu('menu',menuAdapter);
-            //				     });
+            $('div.item img').each(function(){
+              $(this).contextMenu('menu',menuAdapter);
+            });
           }, 'json');
           waterfallLastID=m;
         }
@@ -119,19 +119,16 @@ function getImg(img){
   href.location="photo.php?dir="+dir+"img="+img;
 }
 function delImg(element,img){
-  if(!confirm("您真的要删除图片"+img+"吗?")) return;
+  if(!confirm("您真的要删除图片"+curDir+"/"+img+"吗?")) return;
   $.ajax({
     url:"img_js.php", 
-    data:"action=delImg&img="+img, type:'get', dataType:'text', 
+    data:"action=del&class="+curDir+"&img="+img, type:'post', dataType:'text', 
     success:function(result){
-      if(result=="true"){
-        alert("图片已经被删除");
-        element.src="";
-      }
-      else alert(result);
+      alert(result);
+      element.src="";
     }
   });
-}
+};
 var menuAdapter={
   //菜单样式
   menuStyle: {
@@ -162,7 +159,7 @@ var menuAdapter={
           alert("解析图片地址出错");
           return;
         }
-        img=ss[5]+'/'+ss[6];
+        img=ss[6];
         delImg(t,img);
       }
   }, 

@@ -90,9 +90,9 @@ function upload($file,$desp,$ref){
   //写入文件的描述和reference website
   //echo "记录描述和地址...<br/>";
   global $class;
-  echo $class;
-  echo $filename;
-  echo $desp."<br>";
+  // echo $class;
+  // echo $filename;
+  // echo $desp."<br>";
   writeDesp($class,$filename,$desp,$ref);
 
   echo "上传成功:".$tmpFileName;
@@ -122,9 +122,9 @@ function uploadLink($url,$desp,$ref){
     return;
   }
   $destination="DATASET/".$class."/".$filename;
-  echo $class;
-  echo $filename;
-  echo $desp."<br>";
+  // echo $class;
+  // echo $filename;
+  // echo $desp."<br>";
  //test writeDesp(".","1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
   writeDesp($class,$filename,$desp,$ref);
 
@@ -144,7 +144,6 @@ if (isset($_SERVER)&&isset($_SERVER['REQUEST_METHOD'])&&$_SERVER['REQUEST_METHOD
     $file=$_FILES["upfile".$i];
 
     if($file['tmp_name']!=""){
-      echo "handling with :".$file['tmp_name']."<br>";
       $desp=$_REQUEST["desp".$i];
       $ref=$_REQUEST["ref".$i];
       upload($file,$desp,$ref);

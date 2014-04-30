@@ -34,6 +34,9 @@ function getDesp($dir,&$arrayEntry){
 	// myLog(print_r($arrayEntry,true));
 }
 function writeDesp($dir,$img,$desp,$ref){
+  $img=str_replace("\n","",$img);
+  $desp=str_replace("\n","",$desp);
+  $ref=str_replace("\n","",$ref);
 	$str=file_get_contents("DATASET/".$dir."/details.txt");
 	$arr=explode("\n",$str);
   $desp=str_replace("\n"," ",$desp);

@@ -18,7 +18,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
-#header select button {
+#header select|button {
   background:transparent;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
 </style>
@@ -52,11 +52,12 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:".";
 <option value="4">4星 80分</option>
 <option value="5">5星 100分</option>
 </select>
-<button
-style="float:right;display:;height:;font-weight:bold;opacity:0.5;
+<select
+style="float:right;display:;height:;opacity:0.5;
 color:#444;" onclick="guide();">
-时光静美，光影沉默.刹那韶华，留存感动:点击播放演示>>>>>>>>>>>>>>
-</button>
+<option>时光静美，光影沉默.刹那韶华，留存感动</option>
+<option value="">点击播放演示</option>
+</select>
 <div align="center">
 <a id="index_href" href="albums.php" 
 style="font-size:110%;display:;margin-top:8px;height:;font-weight:bold;
@@ -98,7 +99,7 @@ color:#8af;">
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
 <div style="position:relative;left:4%">
-<div id="container" class="container" style="border-color:rgba(150,40,70,0.1);margin-top:2.5%;opacity:0.9;min-height:;border-width:15px 25px;background-color:rgba(240,240,240,0.8);border-style:solid;padding-bottom:125px;border-radius:1px;
+<div id="container" class="container" style="border-color:rgba(150,40,70,0.1);margin-top:2.5%;opacity:0.9;min-height:;border-width:15px 25px;background-color:rgba(240,240,240,0.8);border-style:solid;padding-bottom:45px;border-radius:1px;
 box-shadow: rgba(150, 40, 70, 0.501961) 100px 0px 200px 100px;
 ">
 </div>
