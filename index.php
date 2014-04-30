@@ -196,16 +196,17 @@ function guide(){
           flashFun(auto_play,"orange","transparent",2000);
           setTimeout(function(){
             togglePhotoView(-1);
-            flash(goend,"red","#333",3000);
             setTimeout(function(){
-              goend.click();
-              flash(goheader,"green","#333",2000);
+              flashFun(goend,"red","#333",3000);
               setTimeout(function(){
-                goheader.click();
-                alert("guidance is over, thank you! now enjoy it!");
-              },2000);
-            },3000);
-
+                goend.click();
+                flashFun(goheader,"green","#333",2000);
+                setTimeout(function(){
+                  goheader.click();
+                  alert("guidance is over, thank you! now enjoy it!");
+                },2000);
+              },3000);
+          },2000);
         },2000);
         //delay of event 2
       },4000);
