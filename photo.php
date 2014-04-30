@@ -56,7 +56,7 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 
-<div id="right_panel" style="float:right;margin-right:2.2%;width:25%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
+<div id="right_panel" style="float:right;margin-right:1.2%;width:25%;display:block;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 <a target="__blank" id="img_desp" href=''style="display:block;margin:10px;"></a>
 </div>

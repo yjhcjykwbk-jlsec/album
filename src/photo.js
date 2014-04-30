@@ -23,6 +23,11 @@ var togglePhotoView=function(id){
 
     showCom();
     showPhLst();
+    flashFun(menus,"red",2000);
+    setTimeout(function(){
+      hideMenus();
+      menus.style.backgroundColor="#333";
+    },2000);
 
     waterfallLoadable=false;
 
@@ -60,11 +65,11 @@ function showCom(){
 		left_panel.style.width="70%";
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.marginLeft="10.0%";
-    photo_view.style.width="80%";
+    photo_view.style.width="78%";
 		// photo_view.style.height="92%";
 		photo_view.style.marginTop="1.05%";
 		right_panel.style.display="block";
-		fbuttons.style.right="8.15%";
+		fbuttons.style.right="10.15%";
 		toggle_com.innerHTML="切换大屏";
 }
 function hideCom(){
