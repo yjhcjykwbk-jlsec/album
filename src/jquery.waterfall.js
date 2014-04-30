@@ -38,7 +38,7 @@
         colWidth: 0,
         minCol: 1,
         maxCol: 10,
-        gapWidth: 15,
+        gapWidth: 14,
         gapHeight: 15,//this is the height gap between items
         resizeDelay: 0,
         loadDelay: 0,

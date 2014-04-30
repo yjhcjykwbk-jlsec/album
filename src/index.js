@@ -26,6 +26,8 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
             item.href=decodeURIComponent(item.href);
             item.desp=decodeURIComponent(item.desp);
             item.ref=decodeURIComponent(item.ref);
+            k=item.height/item.width;
+            k=k>1.5?1.5:k;
             if(inserted.hasOwnProperty(''+item.id)) return;
             isMovie=item.ref.endWith(".swf");
             res.push(
@@ -33,25 +35,25 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
               '<div class="item_t">'+ 
               // '<div class="img">'+// style="background:#000"> '+
               '<a onclick="togglePhotoView('+item.id+');return false;" href="photo.php?dir='+dir+'&id='+item.id+'&img='+item.href+'">'+  //target="__blank'+i
-              '<img  width="'+240+'" height="'+item.height/item.width*240+'" oncontextmenu="$(this).contextMenu(\'menu\',menuAdapter);" src="'+item.src+'" data-pinit="registered">'+
+              '<img  width="'+210+'" height="'+(item.height/item.width*210+rand(30))+'" oncontextmenu="$(this).contextMenu(\'menu\',menuAdapter);" src="'+item.src+'" data-pinit="registered">'+
               '</a> '+
               '<div class="class" style="color:#fff;opacity:0.2;padding:5px;margin-bottom:1px;font-size:80%;margin-left:0px;margin-top:-25px;">'+item.href.split('.')[0].substring(0,20)+'</div> '+
               '</div> '+
-              '<div class="desp" style="background:rgba(255,255,255,0.9);color:#444;padding:3px;padding-top:10px;padding-bottom:10px;border-bottom:1px solid '+(isMovie?'rgba(200,10,100,0.2)':'rgba(50,50,50,0.1)')+';">'+
+              '<div class="desp" style="background:rgba(255,255,255,0.9);color:#444;padding:6px;padding-top:'+(k*12)+'px;padding-bottom:'+(k*2)+'px;border-bottom:'+';">'+
               (item.desp!=""?item.desp+
                 '<button onclick="changeDespForm(this,'+'\''+dir+'\',\''+item.href+'\',\''+item.desp+'\',\''+item.ref+'\');" style="background:transparent;border:0;color:#aaa">修改</button>'
-                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述</button>')+'</div>'+
-              '<div class="ref" style="color:#9E7E6B;background:rgba(250,250,250,0.1);padding-left:4px;padding-bottom:15px;padding-top:15px;font-size:80%;">引用自<a href="'+item.ref+'">'+item.ref.substring(0,25)+'..</a></div> '+
+                :'<button onclick="showDespForm(this,'+'\''+dir+'\',\''+item.href+'\');" style="background:transparent;border:1px solid rgba(220,220,220,0.05);color:rgba(160,160,160,0.5)">添加描述......</button>')+'</div>'+
+                          '<div class="item_b clearfix" style="padding-bottom:10px;border-bottom:1px dotted '+(isMovie?'rgba(200,10,100,0.2)':'rgba(50,50,50,0.1)')+';"> '+
+                          '<div class="items_likes fl" style="height:0px"> '+
+                          '<em class="bold" style="background:#ff74a1;color:white;padding:1px 14px lpx 14px;">0赞</em> '+
+                          '</div> '+
+                          '<div class="items_comment fr">'+
+                  '<a>评论</a>'+
+                  '<em class="bold">(0)</em>'+
+                  '</div> '+
+                          '</div> '+
+              '<div class="ref" style="color:#9E7E6B;background:#fcfcfc;padding-left:7px;padding-bottom:'+(k*17)+'px;padding-top:'+(k*10)+'px;font-size:80%;">引用自<br><a href="'+item.ref+'" style="padding-left:6px;color:#888">'+item.ref.substring(0,25)+'..</a></div> '+
               //   '</div> '+
-              //						'<div class="item_b clearfix"> '+
-              //						'<div class="items_likes fl" style="height:0px"> '+
-              //						'<em class="bold">0赞</em> '+
-              //						'</div> '+
-              //				//		'<div class="items_comment fr">'+
-              //		'<a>评论</a>'+
-              //		'<em class="bold">(0)</em>'+
-              //		'</div> '+
-              //						'</div> '+
               '</div>');
             inserted[item.id+'']=true;
           });
@@ -59,7 +61,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
     waterfall.success(res);
   };
   this.wf = new Waterfall(
-      { container: $('#container'), colWidth: 240, maxCol: colNum,preDistance: 0,
+      { container: $('#container'), colWidth: 210, maxCol: colNum,preDistance: 0,
         load: function(){
           // if(waterfallLoadable!=undefined&&waterfallLoadable==false) return;
           // 触发滚动加载时的具体操作
@@ -72,7 +74,7 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
           if(items!=null){
             data=[];
             console.log("pushing:"+m+":"+items.length);
-            num=2;
+            num=6;
             if(waterfallLastID==0)  num=20;
             for(i=m;i<m+num&&i<items.length;i++){
               data.push(items[i]); 
@@ -125,7 +127,7 @@ function delImg(element,img){
     url:"img_js.php", 
     data:"action=del&class="+curDir+"&img="+img, type:'post', dataType:'text', 
     success:function(result){
-      alert(result);
+      // alert(result);
       element.src="";
     }
   });
@@ -156,11 +158,14 @@ var menuAdapter={
       function(t, target) { 
         var str=t.src;
         ss=str.split('/');
-        if(ss.length<7) {
+        if(ss.length<6) {
           alert("解析图片地址出错");
           return;
         }
-        img=ss[6];
+        if(ss.length==6){
+          img=ss[5];
+        }
+        else img=ss[6];
         delImg(t,img);
       }
   }, 

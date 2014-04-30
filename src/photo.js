@@ -17,16 +17,14 @@ var togglePhotoView=function(id){
     darkerFun(0);
     scrolltop=body.scrollTop;
     body.style.height="100%";
+    body.style.backgroundImage="url(bigbg)";
 
 		loadImg(id);
 		photo_view.style.display="block";
-
     showCom();
     showPhLst();
+    hideMenus();
     flashFun(menus,"red","#333",2000);
-    setTimeout(function(){
-      hideMenus();
-    },2000);
 
     waterfallLoadable=false;
 
@@ -43,6 +41,7 @@ var togglePhotoView=function(id){
     // else  body.style.backgroundColor="#333";
 
     body.style.height="200%";
+    body.style.backgroundImage="url(whitebg)";
     waterfallLoadable=true;
 
     header.style.display="block";
@@ -54,6 +53,7 @@ var togglePhotoView=function(id){
     end.style.opacity="1";
 
 		hidePhLst();
+    showMenus();
     fbuttons.style.right="0";
     body.scrollTop=scrolltop;
 	}
@@ -535,7 +535,7 @@ document.onkeydown=function(event){
 
 ////////////////////////////////////////////////////////////////
 //init waterfall
-var colNum=4;
+var colNum=5;
 var waterfall=new MyWaterfall(dir,colNum);
 var setDir=function(dir){
 	togglePhotoView(-1);
