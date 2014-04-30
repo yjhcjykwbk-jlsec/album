@@ -248,7 +248,7 @@ function showDespForm(button,dir,imgName){
 
 ///////////////////////////////////////////////////////////
 var comEnabled=true;
-var zoom=1.25;
+var zoom=1.75;
 var biggerFun=function(){
   cur=zoom;
   if(cur==""||cur==undefined) cur=1;
