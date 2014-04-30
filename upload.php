@@ -29,6 +29,8 @@ input
 <body>
 <?php
 include_once "desp.php";
+include_once "log.php";
+myLog(print_r($_REQUEST,true));
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
 $destination_folder="DATASET/".$class."/";
@@ -125,7 +127,7 @@ function uploadLink($url,$desp,$ref){
   // echo $class;
   // echo $filename;
   // echo $desp."<br>";
- //test writeDesp(".","1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
+  //test writeDesp(".","1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
   writeDesp($class,$filename,$desp,$ref);
 
   echo "上传成功:".$url;
@@ -135,29 +137,26 @@ function uploadLink($url,$desp,$ref){
   echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\"><hr>";
 }
 
-if (isset($_SERVER)&&isset($_SERVER['REQUEST_METHOD'])&&$_SERVER['REQUEST_METHOD'] == 'POST')
-{
+if(true){// (isset($_SERVER)&&isset($_SERVER['REQUEST_METHOD'])&&$_SERVER['REQUEST_METHOD'] == 'POST'){
   echo "scanning upload image list...<hr>";
   for($i=0;$i<5;$i++){
-    if(!isset($_FILES["upfile".$i])) break;//&&isset($_FILES["upfile".$i]['tmp_file'])){
+    if(!isset($_REQUEST["uplink".$i])) break;//&&isset($_FILES["upfile".$i]['tmp_file'])){
 
-    $file=$_FILES["upfile".$i];
-
-    if($file['tmp_name']!=""){
-      $desp=$_REQUEST["desp".$i];
-      $ref=$_REQUEST["ref".$i];
-      upload($file,$desp,$ref);
+    if(isset($_FILES["upfile".$i])){
+      $file=$_FILES["upfile".$i];
+      if($file['tmp_name']!=""){
+        $desp=$_REQUEST["desp".$i];
+        $ref=$_REQUEST["ref".$i];
+        upload($file,$desp,$ref);
+        continue;
+      }
     }
-
-    else{
-      $url=$_REQUEST["uplink".$i];
-      if($url=="") continue;
-      $desp=$_REQUEST["desp".$i];
-      $ref=$_REQUEST["ref".$i];
-      echo $desp.":".$ref."<br>";
-      uploadLink($url,$desp,$ref);
-    }
-
+    $url=$_REQUEST["uplink".$i];
+    if($url=="") continue;
+    $desp=$_REQUEST["desp".$i];
+    $ref=$_REQUEST["ref".$i];
+    myLog("uploadLink:".$url."#".$desp."#".$ref);
+    uploadLink($url,$desp,$ref);
   }
 }
 ?>

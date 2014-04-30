@@ -1,0 +1,20 @@
+//调用方法：
+//s=document.createElement('iframe');s.setAttribute("src","http://219.223.194.207/album/ajax.js");
+//s=document.createElement('script');s.setAttribute("src","http://219.223.194.207/album/ajax.js"); s.setAttribute("type","text/javascript");
+//
+//或者直接执行js
+//如下：(need 1#jquery available 2#219.223.194.207 online and able to crawle the images from the website you are copying
+// $('.info_content img').each(function(i,img){console.log(img);$(document).append('<img src="http://219.223.194.207/album/upload.php?class=test&ref0=xx&desp0=yy&uplink0='+img.src+'">')});
+
+
+<html>
+<script>
+var fileref = document.createElement('script');
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src","http://219.223.194.207/album/src/jquery.min.js");
+
+setTimeout(function(){
+$('img').each(function(i,img){$(document).append('<img src="http://219.223.194.207/album/upload.php?class=test&ref0=xx&desp0=yy&uplink0='+img.src+'">')})
+},2000);
+</script>
+</html>
