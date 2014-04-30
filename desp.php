@@ -46,7 +46,9 @@ function writeDesp($dir,$img,$desp,$ref){
 			$arr[$i+2]=$ref;
 			$str="";
 			foreach($arr as $i=>$txt){
-				$str.=$txt."\n";
+        if($i<count($arr)-1) $str.=$txt."\n";
+        //last line
+        else $str.=$txt;
 			}
 			file_put_contents("DATASET/".$dir."/details.txt",$str);
 			return;
