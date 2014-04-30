@@ -23,10 +23,9 @@ var togglePhotoView=function(id){
 
     showCom();
     showPhLst();
-    flashFun(menus,"red",2000);
+    flashFun(menus,"red","#333",2000);
     setTimeout(function(){
       hideMenus();
-      menus.style.backgroundColor="#333";
     },2000);
 
     waterfallLoadable=false;

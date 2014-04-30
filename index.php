@@ -153,7 +153,7 @@ border-radius:5px;
 <script type="text/javascript" src="src/photo.js"></script>
 <script type="text/javascript" src="src/dubai.js"></script>
 <script> 
-function flashFun(s,color,l){
+function flashFun(s,color,color1,l){
   var t="";
   var i=0;
   t=setInterval(function(){
@@ -164,7 +164,10 @@ function flashFun(s,color,l){
     }
     i=1-i;
   },300);
-  setTimeout(function(){clearInterval(t);},l);
+  setTimeout(function(){
+    clearInterval(t);
+    s.style.backgroundColor=color1;
+  },l);
 }
 function guide(){
   if(confirm("do you want to accept the album usage guide, which is highly recommended ?")) {
@@ -177,27 +180,22 @@ function guide(){
       clearInterval(initialInter);
       initialInter="";
       //event 1
-      flashFun($('.item')[s],"red",4000);
+      flashFun($('.item')[s],"red","transparent",4000);
       setTimeout(function(){
         togglePhotoView(s);
         toggleAutoPlay();
-        style($('.item')[s],"backgroundColor","transparent");
         //event 2 
-        flashFun(menus,"red",4000);
-        flashFun(refresh_btn,"green",4000);
-        flashFun(toggle_com,"yellow",4000);
+        flashFun(menus,"red","#333",4000);
+        flashFun(refresh_btn,"green","transparent",4000);
+        flashFun(toggle_com,"yellow","transparent",4000);
         setTimeout(function(){
-          menus.style.backgroundColor="#222";
           menus.click();
-          toggle_com.style.backgroundColor="transparent";
           hideCom();
-          refresh_btn.style.backgroundColor="transparent";
           hidePhLst();
           //event 3
-          flashFun(auto_play,"orange",2000);
+          flashFun(auto_play,"orange","transparent",2000);
           setTimeout(function(){
             togglePhotoView(-1);
-            auto_play.style.backgroundColor="transparent";
             alert("guidance is over, thank you! now enjoy it!");
           },4000);
         //delay of event 2
