@@ -565,4 +565,31 @@ uploadLink:http://imgsrc.baidu.com/forum/w=580/sign=2a860e5818d8bc3ec60806c2b28b
     [desp0] => yy
     [uplink0] => http://imgsrc.baidu.com/forum/w=580/sign=0ce7d08d8cb1cb133e693c1bed5556da/fab77f899e510fb3376bccf5d833c895d0430cdf.jpg
 )
-uploadLink:http://imgsrc.baidu.com/forum/w=580/sign=0ce7d08d8cb1cb133e693c1bed5556da/fab77f899e510fb3376bccf5d833c895d0430cdf.jpg#yy#xx
+uploadLink:http://imgsrc.baidu.com/forum/w=580/sign=0ce7d08d8cb1cb133e693c1bed5556da/fab77f899e510fb3376bccf5d833c895d0430cdf.jpg#yy#xxArray
+(
+    [class] => test
+    [ref0] => xx
+    [desp0] => yy
+    [uplink0] => ' img.src '
+)
+uploadLink:' img.src '#yy#xxArray
+(
+    [uplink0] => http://ww2.sinaimg.cn/bmiddle/95e477abgw1efqfsath45j20b20gotb4.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+uploadLink:http://ww2.sinaimg.cn/bmiddle/95e477abgw1efqfsath45j20b20gotb4.jpg##

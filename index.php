@@ -13,7 +13,7 @@ $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:"最美中国风";
 <!-- style related codes -->
 <style>
 .fButton{text-align:center;align:center;}
-::-webkit-scrollbar {width:10px;background-color:rgba(20,20,20,0.1);border-radius:1px;}
+::-webkit-scrollbar {width:10px;background-color:transparent;border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(227,227,227,1);border-radius:1px;}
 #photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
