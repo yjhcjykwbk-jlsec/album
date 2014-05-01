@@ -1,6 +1,11 @@
 <?php 
 $ENCODE="utf-8";//应该和文件系统保持一致
 $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:"最美中国风";
+$username=isset($_REQUEST['username'])?$_REQUEST['username']:"";
+if($username!="xzg") {
+  echo "<html><h1>用户名或密码错误</h1>....<html>";
+  exit();
+}
 ?>
 <html>
 <head>

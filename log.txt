@@ -872,4 +872,24 @@ uploadLink:http://2b.zol-img.com.cn/product/64_500x2000/427/ceXLMCdEjuX4k.jpg##u
     [class] => 仙剑
     [albumname] => .
 )
-uploadLink:http://a.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=5cd32379d688d43ff4a995f34d2ee96a/d8f9d72a6059252d74fa9908349b033b5ab5b9c9.jpg##uploadLink:http://g.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=6e9e49258618367aa9897bdc1e43b0a5/a6efce1b9d16fdfa719e42e2b48f8c5495ee7bc8.jpg##uploadLink:http://f.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=961105b38c5494ee83220b181dc5db8f/8601a18b87d6277ffbe0b63428381f30e824fcc8.jpg##uploadLink:http://www.07073.com/uploads/130225/4822598_150134_5.jpg##http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&fr=ala2&pn=4&rn=1&di=19571795982&ln=1993&word=%D0%FE%CF%F6%20%CA%AB%B8%E8&objurl=http%3A%2F%2Fwenwen%2Esoso%2Ecom%2Fp%2F20100917%2F20100917214227%2D1992083972%2Ejpg
+uploadLink:http://a.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=5cd32379d688d43ff4a995f34d2ee96a/d8f9d72a6059252d74fa9908349b033b5ab5b9c9.jpg##uploadLink:http://g.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=6e9e49258618367aa9897bdc1e43b0a5/a6efce1b9d16fdfa719e42e2b48f8c5495ee7bc8.jpg##uploadLink:http://f.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=961105b38c5494ee83220b181dc5db8f/8601a18b87d6277ffbe0b63428381f30e824fcc8.jpg##uploadLink:http://www.07073.com/uploads/130225/4822598_150134_5.jpg##http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&fr=ala2&pn=4&rn=1&di=19571795982&ln=1993&word=%D0%FE%CF%F6%20%CA%AB%B8%E8&objurl=http%3A%2F%2Fwenwen%2Esoso%2Ecom%2Fp%2F20100917%2F20100917214227%2D1992083972%2EjpgArray
+(
+    [uplink0] => http://huaban.com/go/?pin_id=160355119
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => test
+    [albumname] => test
+)
+uploadLink:http://huaban.com/go/?pin_id=160355119##
