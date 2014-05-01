@@ -108,8 +108,8 @@ border-width:15px 35px;
 background-color:#fff;
 /* //rgba(40,40,40,0); */
 border-style:solid;
-padding-bottom:45px;border-radius:1px;
-box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 30px 30px;
+padding-bottom:25px;border-radius:1px;
+box-shadow: rgba(255, 255, 255, 0.951961) 30px 0px 60px 240px;
 ">
 </div>
 <!--/* border-color:rgba(245,245,245,0.3); */
@@ -117,7 +117,7 @@ box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 30px 30px;
 -->
 </div>
 
-<div id="end" style="display:block;padding-top:100px;padding-bottom:50px; opacity:0.5;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
+<div id="end" style="display:block;padding-top:10px;padding-bottom:50px; opacity:0.5;  margin:0 auto; text-align:center;">Final Version 3.0<br/>
 <?php include "music.php";?>
 <input type="text" id="advice" value="输入建议"/>
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
