@@ -33,8 +33,9 @@ include_once "log.php";
 myLog(print_r($_REQUEST,true));
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
+$username=isset($_REQUEST['username'])?$_REQUEST['username']:'';
 $destination_folder="DATASET/".$class."/";
-echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class';},4000);</script>";
+echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class&username=$username';},4000);</script>";
 
 if(!file_exists($destination_folder))
 {

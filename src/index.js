@@ -1,6 +1,9 @@
 function getRandom(min,max){//return [min,max)
   return Math.floor(Math.random()*(max-min)+min);
 }
+var rand=function(s){
+	return Math.floor(Math.random()*s);
+};
 var waterfallLastID=0;
 function MyWaterfall(dir,colNum){ // console.log("waterfall:"); 
   // 测试用技术器 // 调用瀑布流 

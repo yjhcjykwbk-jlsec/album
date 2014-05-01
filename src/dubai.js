@@ -21,9 +21,6 @@ var chengxuyuanGoDie=function(){
 };
 var _right=200;
 var _top=200;
-var rand=function(s){
-	return Math.floor(Math.random()*s);
-};
 var randomMessagePos=function(){
 /*	_left+=((Math.ceil(Math.random()*9)-3)*20);
 _top+=((Math.ceil(Math.random()*9)-5)*20);

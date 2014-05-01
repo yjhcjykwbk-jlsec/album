@@ -7,15 +7,17 @@ if($username!="brandoishero") {
 ?>
 <html><title>用户名或密码错误</title>
 <div style="margin:auto auto;text-align:center;">
-<h1>303</h1><h4>Forbidden Access</h4>
-<img id="img" style="width:50%;opacity:0.5;" src="default0.png"></img><br>
-<script>var i=0; setInterval(function(){i++;img.src="default"+(i%2)+".png";},4000);</script>
+<h1>Forbidden Access</h1>
+<form action=""><input name="username" placeholder="口令"> <input type="submit" value="登录"> </form>
+<style>img{opacity:0.5;width:50%;} img:hover{opacity:1;}</style>
+<img id="img"  src="default0.png"></img><br>
 If you like the website, please leave some message here.<br>
 and the author will assign you an ID to log in <br>
+<input type="text" id="advice" placeholder="输入建议"/>
+<button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/advice.js"></script>
-<input type="text" id="advice" value="输入建议"/>
-<button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
+<script>var i=0; setInterval(function(){i++;img.src="default"+(i%2)+".png";},4000);</script>
 </div>
 </html>
 

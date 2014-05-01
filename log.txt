@@ -899,4 +899,85 @@ uploadLink:http://huaban.com/go/?pin_id=160355119##Array
     [desp0] => yy
     [uplink0] => ' img.src '
 )
-uploadLink:' img.src '#yy#xx
+uploadLink:' img.src '#yy#xxArray
+(
+    [uplink0] => http://a4.qpic.cn/psb?/V12YfSil43mQMb/rx.2tmWBbNTqSdJy2P54AT4cI5WtyfNstCTA50BIjDk!/c/dLtIPJN9GwAA&bo=WAJtAVgCbQEBACc!&t=5&rf=0-18
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+uploadLink:http://a4.qpic.cn/psb?/V12YfSil43mQMb/rx.2tmWBbNTqSdJy2P54AT4cI5WtyfNstCTA50BIjDk!/c/dLtIPJN9GwAA&bo=WAJtAVgCbQEBACc!&t=5&rf=0-18##Array
+(
+    [uplink0] => 
+    [desp0] => 时光荏苒。假如没能和最爱的人在一起，那再次相见准备再多话又怎么说的出来，看大街小巷人来人往的，到底有多少人多少年后还惦记着没能走在一起的那个人过的怎么样？
+    [ref0] => http://user.qzone.qq.com/1321267792
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+Array
+(
+    [uplink0] => fasdf
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+uploadLink:fasdf##Array
+(
+    [username] => brandoishero
+    [uplink0] => fdsfds
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+uploadLink:fdsfds##
