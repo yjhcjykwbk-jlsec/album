@@ -56,6 +56,10 @@ var togglePhotoView=function(id){
     showMenus();
     fbuttons.style.right="0";
     body.scrollTop=scrolltop;
+    ///bug...
+    if(typeof(waterfall)!="undefined"){
+      waterfall.wf._resize();
+    }
 	}
 }
 function showCom(){
@@ -207,13 +211,6 @@ var setScore=function(s){
 			scored=true;
 			},"text");
 };
-function submitAdvice(advice){
-  advice=encodeURIComponent(advice);
-  $.post("advice.php?advice="+advice,function(data){
-    alert("您的意见已经被收录，谢谢您的支持:"+data);
-  },"text");
-	return;
-}
 ///////////////////////////////////////////////////////////////////
 //descripttion of img
 function setDesp(dir,img,desp,ref){
@@ -516,21 +513,21 @@ document.onkeydown=function(event){
   if(photo_view.style.display=="block"){
     t=event.keyCode;
     if(event.ctrlKey){
-      if(t==38) biggerFun();
-      else if(t==40) smallerFun();
+      if(t==38) darkerFun(-1);
+      else if(t==40)  darkerFun(1);
       return;
     }
     if(t==37) prevFun();
-    else if(t==38) photo_view.scrollTop-=350;
+    else if(t==38) biggerFun();
     else if(t==39) nextFun();
-    else if(t==40) photo_view.scrollTop+=350;
+    else if(t==40) smallerFun();
     //pageup pagedown
-    else if(t==33) darkerFun(-1);
-    else if(t==34) darkerFun(1);
+    else if(t==33) photo_view.scrollTop-=350;
+    else if(t==34)photo_view.scrollTop+=350;
     //enter
     else if(t==13) toggleCom();
     //esc
-    else if(t==27) togglePhotoView();
+    else if(t==27) togglePhotoView(-1);
   }
 };
 //the first time to this page will getcomment initially

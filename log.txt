@@ -892,4 +892,11 @@ uploadLink:http://a.hiphotos.bdimg.com/album/s%3D1100%3Bq%3D90/sign=5cd32379d688
     [class] => test
     [albumname] => test
 )
-uploadLink:http://huaban.com/go/?pin_id=160355119##
+uploadLink:http://huaban.com/go/?pin_id=160355119##Array
+(
+    [class] => test
+    [ref0] => xx
+    [desp0] => yy
+    [uplink0] => ' img.src '
+)
+uploadLink:' img.src '#yy#xx

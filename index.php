@@ -2,11 +2,28 @@
 $ENCODE="utf-8";//应该和文件系统保持一致
 $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:"最美中国风";
 $username=isset($_REQUEST['username'])?$_REQUEST['username']:"";
-if($username!="xzg") {
-  echo "<html><title>用户名或密码错误</title><h1>303</h1><h5>Forbidden Access</h5><html>";
-  exit();
+
+if($username!="brandoishero") {
+?>
+<html><title>用户名或密码错误</title>
+<div style="margin:auto auto;text-align:center;">
+<h1>303</h1><h4>Forbidden Access</h4>
+<img id="img" style="width:50%;opacity:0.5;" src="default0.png"></img><br>
+<script>var i=0; setInterval(function(){i++;img.src="default"+(i%2)+".png";},4000);</script>
+If you like the website, please leave some message here.<br>
+and the author will assign you an ID to log in <br>
+<script type="text/javascript" src="src/jquery.min.js"></script>
+<script type="text/javascript" src="src/advice.js"></script>
+<input type="text" id="advice" value="输入建议"/>
+<button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
+</div>
+</html>
+
+<?php 
+exit();
 }
 ?>
+
 <html>
 <head>
 <meta charset="<?php echo $ENCODE;?>">
@@ -165,6 +182,7 @@ border-radius:5px;
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="src/index.js"></script>
 <script type="text/javascript" src="src/photo.js"></script>
+<script type="text/javascript" src="src/advice.js"></script>
 <script type="text/javascript" src="src/dubai.js"></script>
 <script> 
 function flashFun(s,color,color1,l){
