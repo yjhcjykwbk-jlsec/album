@@ -1316,4 +1316,24 @@ uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=10bcb4ae342ac65c6705667bcb
     [class] => 图文心声
     [albumname] => .
 )
-uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=af22eb718d5494ee87220f111df7e0e1/4da085cb39dbb6fd0e9a8fe80824ab18952b37b0.jpg#总有一盏灯，是你心里的灯。总有一个人，是你等的人。 #http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=e973d3aa95eef01f4d1418cdd0fc99e0/9db13ddbb6fd52668dea56daaa18972bd60736b0.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=c3c8fc7cd058ccbf1bbcb53229d9bcd4/cd6977f082025aafd4192b05faedab64024f1a4a.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=1f0b8a9c8435e5dd902ca5d746c4a7f5/e0799645d688d43fd75dfb3c7c1ed21b0cf43b85.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=d7fcba23e61190ef01fb92d7fe199df7/caf2d03f8794a4c22fd78de50ff41bd5af6e3985.jpg##http://tieba.baidu.com/p/2573489007?pn=4
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=af22eb718d5494ee87220f111df7e0e1/4da085cb39dbb6fd0e9a8fe80824ab18952b37b0.jpg#总有一盏灯，是你心里的灯。总有一个人，是你等的人。 #http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=e973d3aa95eef01f4d1418cdd0fc99e0/9db13ddbb6fd52668dea56daaa18972bd60736b0.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=c3c8fc7cd058ccbf1bbcb53229d9bcd4/cd6977f082025aafd4192b05faedab64024f1a4a.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=1f0b8a9c8435e5dd902ca5d746c4a7f5/e0799645d688d43fd75dfb3c7c1ed21b0cf43b85.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=d7fcba23e61190ef01fb92d7fe199df7/caf2d03f8794a4c22fd78de50ff41bd5af6e3985.jpg##http://tieba.baidu.com/p/2573489007?pn=4Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)

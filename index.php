@@ -64,6 +64,9 @@ exit();
 <option value="6">每页六列</option>
 <option value="7">每页七列</option>
 </select>
+<select onclick="toggleUploadForm();" style="float:right;opacity:0.5">
+<option>上传</option>
+</select>
 <select id="music_select" onclick="setMusic(this.value);"style="float:right;opacity:0.5">
 <option value="0">请选择背景音乐</option>
 <option value="stop">关闭音乐</option>
@@ -88,6 +91,7 @@ style="font-size:110%;display:;margin-top:8px;height:;font-weight:bold;
 color:#8af;">
 一夕一绽一缕芳,一生一叹一痕沙</a></div>
 </p>
+<?php include_once "uploadview.php";?>
 </div>
 
 
@@ -133,7 +137,7 @@ background-color:#fff;
 /* //rgba(40,40,40,0); */
 border-style:solid;
 padding-bottom:25px;border-radius:1px;
-box-shadow: rgba(255, 255, 255, 0.951961) 30px 0px 60px 240px;
+box-shadow: rgba(255, 255, 255, 0.951961) 30px 100px 60px 140px;
 ">
 </div>
 <!--/* border-color:rgba(245,245,245,0.3); */
@@ -147,7 +151,6 @@ box-shadow: rgba(255, 255, 255, 0.951961) 30px 0px 60px 240px;
 <button type="submit" id="submit_advice" onclick="submitAdvice(advice.value);">提交</button>
 <h6>or email to zgxu2008@gmail.com</h6><br/>
  <!--iframe src="uploadview.php?dir=<?php echo $curDir;?>" style="z-index:0;position:relative;bottom:10px;width:400px;height:500px;box-shadow: 2px 2px 3px 2px rgb(0,0,0);font-size: 14px;background-color:rgb(222,222,222,0.8);opacity:0.8;border:0;padding:5px;border-radius:1px; line-height: 1;"></iframe--> 
-<?php include_once "uploadview.php";?>
 </div>
 
 <div id="desp_form" style="

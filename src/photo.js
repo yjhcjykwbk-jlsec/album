@@ -28,7 +28,8 @@ var togglePhotoView=function(id){
 
     waterfallLoadable=false;
 
-    header.style.display="none";
+    // header.style.display="none";
+    header.style.opacity="0.3";
     // header.style.background="transparent";
 
 		container.style.display="none";
@@ -44,7 +45,8 @@ var togglePhotoView=function(id){
     body.style.backgroundImage="url(whitebg)";
     waterfallLoadable=true;
 
-    header.style.display="block";
+    // header.style.display="block";
+    header.style.opacity="1";
 
 		photo_view.style.display="none";
 
@@ -207,6 +209,11 @@ var togglePhlst=function(){
   }else{
     ph_lst.style.display="none";
   }
+};
+function toggleUploadForm(){
+  s=upload_div.style.display;
+  if(s=='block') style(upload_div,'display','none'); 
+  else style(upload_div,'display','block');
 };
 //////////////////////////////////////////////////////////////
 //score

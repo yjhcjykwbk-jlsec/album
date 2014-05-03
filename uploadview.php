@@ -1,4 +1,4 @@
-<div id="upload_div" style="text-align:left;margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:400px;padding:100px;box-shadow: 0px 0px 1px 0px rgb(0,0,0);font-size: 14px;background-color:white;opacity:1;border:30px solid #f0f0f0;;border-radius:10px; line-height: 1" >
+<div id="upload_div" style="display:none;text-align:left;margin-left:auto;margin-right:auto;z-index:0;position:relative;bottom:10px;width:60%;padding:10px;box-shadow: 0px 0px 1px 0px rgb(0,0,0);font-size: 14px;background-color:white;opacity:1;border:2px solid #f0f0f0;border-radius:0px; line-height: 1" >
 <?php 
 $ENCODE="utf-8";
 $dir=$_REQUEST['dir']?$_REQUEST['dir']:'';
@@ -53,5 +53,6 @@ foreach($dirs as $i=>$dir){?>
 </select>
   <input type="submit" value="上传"><br>
     </form>
-    <!-- <?=implode(', ',$uptypes)?> -->
+<button style="background:transparent;border:0;position:relative;color:red;right:0;" onclick="toggleUploadForm()">close</button>
+    <!-- <?//=implode(', ',$uptypes)?> -->
 </div>
