@@ -272,7 +272,8 @@ var biggerFun=function(){
   else cur+=0.25;
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
-  loadImg(img.alt);
+  img.style.zoom=""+zoom;
+  // loadImg(img.alt);
 };
 var smallerFun=function(){
   cur=zoom;
@@ -287,7 +288,8 @@ var smallerFun=function(){
   else cur-=0.25;
   zoom=cur;
   zoomer.innerHTML=""+zoom*100+"%";
-  loadImg(img.alt);
+  img.style.zoom=""+zoom;
+  // loadImg(img.alt);
 };
 
 ////////////////////////////////////////////////////
@@ -380,6 +382,7 @@ var loadImg=function(id){
     },10);
   }else{
     img_table.style.height="100%";
+    img_table.style.maxHeight="100%";
     img_panel.style.height="";
     img.style.opacity="0.3";
     img.style.display="block";
@@ -411,10 +414,11 @@ var loadImg=function(id){
     // photo_view.style.width=""+w1*0.80+"%";
     // photo_view.style.marginLeft=""+(100-w1*0.80)/2+"%";
 
-    img.style.width=""+100*(w/w1)+"%"; 
+    // img.style.width=""+100*(w/w1)+"%"; 
 
     movie_div.style.display="none";
-    setTimeout(function(){img.style.opacity="1"},400);
+    img.style.opacity="1";
+    // setTimeout(function(){},0);
     // photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;

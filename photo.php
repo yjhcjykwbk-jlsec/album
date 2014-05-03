@@ -16,7 +16,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <!--header-->
 <!--a href="index.php?dir=<?php echo $dir;?>">
 <div style="background:#f060f0;display:block;width:100%;height:20px;display:block;font-size:10px;margin:auto auto;border:0px solid #505050;"> <font style="color:red;">返回相册 <?php echo $dir;?></font></div></a-->
-<div id="left_panel" style="float:right;width:85%;height:100%;border-right:1px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
+<div id="left_panel" style="float:right;width:85%;height:100%;border-right:0px solid #eee;background:transparent;margin-left:auto;margin-top:0;margin-right:auto;display:block;">
 <div id="img_panel" style="width:99%;margin-bottom:10px;border:1px solid rgba(120,120,120,0.3)">
 <div id="top_buttons" style="z-index:100;top:0px;right:0;position:relative;">
 <a id="oImg" target="__blank" style="display:block;width:60px;height:10px;margin-top:2px;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(200,200,200,0.9);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">查看原图</a>
@@ -37,7 +37,7 @@ border-style:solid;
 <?php include_once "movie.php";?>
 </div>
 <div id="img_div" style="width:;border-top:0px solid transparent;border-bottom:15px solid transparent;margin-left:auto;margin-right:auto;">
-<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="width:100%;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
+<img id="img" src="<?php echo "view/".$curDir."/$img"?>" alt="1" style="max-width:100%;width:;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </div>
 </a>
 </td></tr></table>
