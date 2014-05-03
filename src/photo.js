@@ -102,7 +102,7 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=1;
+var darkFlag=0;
 var darks=['白色','玻璃','黑色'];
 function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
