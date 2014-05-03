@@ -180,15 +180,26 @@ var darkerFun=function(c){
   darker.innerText=""+darks[darkFlag%3];
 };
 darkerFun(0);
-
+//////////////////////////////////////////////////////////////////
+//menus
+function showMenus(){
+  if(typeof(container_div)!=undefined) container_div.style.left="3%"; 
+  album_menu.style.display="block";}
+  function hideMenus(){ 
+    if(typeof(container_div)!=undefined) container_div.style.left="0%"; 
+    album_menu.style.display="none";}
 var toggleMenus=function(){
   s=album_menu.style.display;
   if(s=="none"){
-    album_menu.style.display="block";
+    showMenus();
+    // album_menu.style.display="block";
   }else{
-    album_menu.style.display="none";
+    hideMenus();
+    // album_menu.style.display="none";
   }
 };
+///////////////////////////////////////////////////////////////////
+//photolist
 var togglePhlst=function(){
   s=ph_lst.style.display;
   if(s=="none"){
@@ -370,7 +381,7 @@ var loadImg=function(id){
   }else{
     img_table.style.height="100%";
     img_panel.style.height="";
-    img.style.opacity="0.1";
+    img.style.opacity="0.3";
     img.style.display="block";
     img.src="view/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
@@ -403,7 +414,7 @@ var loadImg=function(id){
     img.style.width=""+100*(w/w1)+"%"; 
 
     movie_div.style.display="none";
-    setTimeout(function(){img.style.opacity="1"},0);
+    setTimeout(function(){img.style.opacity="1"},400);
     // photo_view.style.opacity="1";
   }
   // photo_view.scrollTop=0;
@@ -535,7 +546,7 @@ document.onkeydown=function(event){
 
 ////////////////////////////////////////////////////////////////
 //init waterfall
-var colNum=5;
+var colNum=3;
 var waterfall=new MyWaterfall(dir,colNum);
 var setDir=function(dir){
 	togglePhotoView(-1);

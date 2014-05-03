@@ -55,7 +55,7 @@ exit();
 
 <!-- //header -->
 <!--<div style="display:block;width:100%;height:2%;margin-top:0px;z-index:101;"></div> -->
-<div class="header" id="header" style="position:absolute;top:0;font:10px;background:url(header.jpg) no-repeat #444;border:0px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:39px;z-index:100;">
+<div class="header" id="header" style="position:absolute;top:0;font:10px;background:url(header.index.jpg) no-repeat #fff;border:0px solid rgba(120,120,120,0.3);width:100%;opacity:1;left:0%;height:39px;z-index:100;">
 <p>
 <select style="float:right;opacity:0.5;margin-top:0px;" align="left" id="selects" onclick="">
 <option value="3">每页三列</option>
@@ -122,11 +122,11 @@ color:#8af;">
 <?php include "photolst.php";?>
 
 <!--// <div style="display:none;position:fixed;bottom:0;width:100%;height:;background:rgba(250,250,250,0.8);z-index:100;opacity:0.5;border-top:0 1px 5px rgba(0,0,0,0.5);"></div>-->
-<div style="position:relative;left:3%">
+<div id="container_div" style="position:relative;left:3%">
 <div id="container" class="container" style="
 border-color:#fff;
 // rgba(150,40,70,0.01);
-margin-top:2.0%;opacity:1;min-height:;
+margin-top:2.8%;opacity:1;min-height:;
 border-width:15px 35px;
 /* background-color:rgba(240,240,240,0.8); */
 background-color:#fff;

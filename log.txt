@@ -980,4 +980,340 @@ uploadLink:fasdf##Array
     [class] => 最美中国风
     [albumname] => .
 )
-uploadLink:fdsfds##
+uploadLink:fdsfds##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://img4.duitang.com/uploads/item/201208/22/20120822141246_f4BBS.thumb.600_0.jpeg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 仙剑
+    [albumname] => .
+)
+uploadLink:http://img4.duitang.com/uploads/item/201208/22/20120822141246_f4BBS.thumb.600_0.jpeg##Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 新闻
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://ww1.sinaimg.cn/bmiddle/894226e3jw1eg032skai9j20c81b6dlm.jpg
+    [desp0] => 瘦金体
+    [ref0] => http://weibo.com/p/1005052302813923/weibo?from=page_100505_home&wvr=5.1&mod=weibomore#3705857445955322
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 最美中国风
+    [albumname] => .
+)
+uploadLink:http://ww1.sinaimg.cn/bmiddle/894226e3jw1eg032skai9j20c81b6dlm.jpg#瘦金体#http://weibo.com/p/1005052302813923/weibo?from=page_100505_home&wvr=5.1&mod=weibomore#3705857445955322Array
+(
+    [username] => brandoishero
+    [uplink0] => http://ww2.sinaimg.cn/bmiddle/5f320c32gw1efxrgntsbrj218g0ton3r.jpg
+    [desp0] => 
+    [ref0] => http://weibo.com/u/1597115442
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 画
+    [albumname] => .
+)
+uploadLink:http://ww2.sinaimg.cn/bmiddle/5f320c32gw1efxrgntsbrj218g0ton3r.jpg##http://weibo.com/u/1597115442Array
+(
+    [username] => brandoishero
+    [uplink0] => http://img2.bimg.126.net/photo/TBYp3mtVexLIME9ODPcYJQ==/433471464135415490.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+uploadLink:http://img2.bimg.126.net/photo/TBYp3mtVexLIME9ODPcYJQ==/433471464135415490.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=64c5ff48530fd9f9a0175561152dd42b/a8f5885494eef01fb514c8f1e2fe9925bc317d78.jpg
+    [desp0] => 我难过这世间所有，不过只是懵懂岁月里一抹不灭的缱绻。
+    [ref0] => 我难过这世间所有，不过只是懵懂岁月里一抹不灭的缱绻。
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => 图文心声
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=64c5ff48530fd9f9a0175561152dd42b/a8f5885494eef01fb514c8f1e2fe9925bc317d78.jpg#我难过这世间所有，不过只是懵懂岁月里一抹不灭的缱绻。#我难过这世间所有，不过只是懵懂岁月里一抹不灭的缱绻。Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=9a74df83eb50352ab16125006342fb1a/4a349658d109b3de3c05345ccebf6c81810a4cc2.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => http://imgsrc.baidu.com/forum/w%3D580/sign=67a13fb048ed2e73fce98624b700a16d/28e1073b5bb5c9ea4415d3d7d739b6003bf3b39e.jpg
+    [desp1] => 沉默是成长的标志，而成熟的标志，是如何去沉默。
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=9a74df83eb50352ab16125006342fb1a/4a349658d109b3de3c05345ccebf6c81810a4cc2.jpg##uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=67a13fb048ed2e73fce98624b700a16d/28e1073b5bb5c9ea4415d3d7d739b6003bf3b39e.jpg#沉默是成长的标志，而成熟的标志，是如何去沉默。#Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=bf07df05233fb80e0cd161df06d02ffb/e4a6d500baa1cd11cc65a114bb12c8fcc2ce2da9.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=bf07df05233fb80e0cd161df06d02ffb/e4a6d500baa1cd11cc65a114bb12c8fcc2ce2da9.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=5db30506ae51f3dec3b2b96ca4ecf0ec/07afa96eddc451da416ec127b7fd5266d21632d8.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=5db30506ae51f3dec3b2b96ca4ecf0ec/07afa96eddc451da416ec127b7fd5266d21632d8.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=7c9de0c69a504fc2a25fb00dd5dfe7f0/d486c7cec3fdfc03c1f68f76d53f8794a6c226ef.jpg
+    [desp0] => 此生惟愿漫步云端，不想却行走在尘世间，幻想着有朝一日能与清风明月相伴，却逃不离这城市的喧嚣与烦忧
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=7c9de0c69a504fc2a25fb00dd5dfe7f0/d486c7cec3fdfc03c1f68f76d53f8794a6c226ef.jpg#此生惟愿漫步云端，不想却行走在尘世间，幻想着有朝一日能与清风明月相伴，却逃不离这城市的喧嚣与烦忧#Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=cecb163cd462853592e0d229a0ed76f2/df87f8039245d68881a4de6aa5c27d1ed01b24d7.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=cecb163cd462853592e0d229a0ed76f2/df87f8039245d68881a4de6aa5c27d1ed01b24d7.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=7d0b1cca960a304e5222a0f2e1c9a7c3/162fb719ebc4b745c3bddfd8cefc1e178b821548.jpg
+    [desp0] => 瑞士之美，美到忘情
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=7d0b1cca960a304e5222a0f2e1c9a7c3/162fb719ebc4b745c3bddfd8cefc1e178b821548.jpg#瑞士之美，美到忘情#Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=10e888c7b7003af34dbadc68052bc619/552e0d23dd54564eb4638cf7b2de9c82d0584f77.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=10e888c7b7003af34dbadc68052bc619/552e0d23dd54564eb4638cf7b2de9c82d0584f77.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=9e3b670d3b87e9504217f3642039531b/c12e524e9258d1099be5c17cd058ccbf6d814d77.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=9e3b670d3b87e9504217f3642039531b/c12e524e9258d1099be5c17cd058ccbf6d814d77.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=10bcb4ae342ac65c6705667bcbf3b21d/8e22d509b3de9c82fb6391416d81800a18d84377.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => http://imgsrc.baidu.com/forum/w%3D580/sign=f72fdd3538dbb6fd255be52e3926aba6/727c19950a7b0208dd01562f63d9f2d3552cc8aa.jpg
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=10bcb4ae342ac65c6705667bcbf3b21d/8e22d509b3de9c82fb6391416d81800a18d84377.jpg##uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=f72fdd3538dbb6fd255be52e3926aba6/727c19950a7b0208dd01562f63d9f2d3552cc8aa.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://imgsrc.baidu.com/forum/w%3D580/sign=af22eb718d5494ee87220f111df7e0e1/4da085cb39dbb6fd0e9a8fe80824ab18952b37b0.jpg
+    [desp0] => 总有一盏灯，是你心里的灯。总有一个人，是你等的人。 
+    [ref0] => http://tieba.baidu.com/p/2573489007?pn=4
+    [uplink1] => http://imgsrc.baidu.com/forum/w%3D580/sign=e973d3aa95eef01f4d1418cdd0fc99e0/9db13ddbb6fd52668dea56daaa18972bd60736b0.jpg
+    [desp1] => 
+    [ref1] => http://tieba.baidu.com/p/2573489007?pn=4
+    [uplink2] => http://imgsrc.baidu.com/forum/w%3D580/sign=c3c8fc7cd058ccbf1bbcb53229d9bcd4/cd6977f082025aafd4192b05faedab64024f1a4a.jpg
+    [desp2] => 
+    [ref2] => http://tieba.baidu.com/p/2573489007?pn=4
+    [uplink3] => http://imgsrc.baidu.com/forum/w%3D580/sign=1f0b8a9c8435e5dd902ca5d746c4a7f5/e0799645d688d43fd75dfb3c7c1ed21b0cf43b85.jpg
+    [desp3] => 
+    [ref3] => http://tieba.baidu.com/p/2573489007?pn=4
+    [uplink4] => http://imgsrc.baidu.com/forum/w%3D580/sign=d7fcba23e61190ef01fb92d7fe199df7/caf2d03f8794a4c22fd78de50ff41bd5af6e3985.jpg
+    [desp4] => 
+    [ref4] => http://tieba.baidu.com/p/2573489007?pn=4
+    [class] => 图文心声
+    [albumname] => .
+)
+uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=af22eb718d5494ee87220f111df7e0e1/4da085cb39dbb6fd0e9a8fe80824ab18952b37b0.jpg#总有一盏灯，是你心里的灯。总有一个人，是你等的人。 #http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=e973d3aa95eef01f4d1418cdd0fc99e0/9db13ddbb6fd52668dea56daaa18972bd60736b0.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=c3c8fc7cd058ccbf1bbcb53229d9bcd4/cd6977f082025aafd4192b05faedab64024f1a4a.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=1f0b8a9c8435e5dd902ca5d746c4a7f5/e0799645d688d43fd75dfb3c7c1ed21b0cf43b85.jpg##http://tieba.baidu.com/p/2573489007?pn=4uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=d7fcba23e61190ef01fb92d7fe199df7/caf2d03f8794a4c22fd78de50ff41bd5af6e3985.jpg##http://tieba.baidu.com/p/2573489007?pn=4
