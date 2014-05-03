@@ -389,7 +389,7 @@ var loadImg=function(id){
     },10);
   }else{
     img_table.style.height="100%";
-    img_table.style.maxHeight="100%";
+    img_table.style.maxHeight="120%";
     img_panel.style.height="";
     img.style.opacity="0.3";
     img.style.display="block";
