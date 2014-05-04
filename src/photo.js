@@ -10,7 +10,7 @@ function style(s,t,e){
 var scrolltop=0;
 var waterfallLoadable=true;
 var togglePhotoView=function(id){
-  console.log("togglePhotoView:"+id+":"+dirInited);
+  // console.log("togglePhotoView:"+id+":"+dirInited);
   //show
 	if(id>=0&&dirInited){
 		// body.style.overflowY="hidden";
@@ -67,7 +67,7 @@ var togglePhotoView=function(id){
 function showCom(){
 		comEnabled=true;
 		if(img.alt!=comID) getCom();
-		left_panel.style.width="70%";
+		left_panel.style.width="68%";
 		right_panel.style.display="block";//width="20%";
 		photo_view.style.marginLeft="10.0%";
     photo_view.style.width="78%";
@@ -305,7 +305,7 @@ var allItems={};
 var items;
 var dirInited=false;
 var initDir=function(callback){
-  console.log("initDir:"+dirInited);
+  // console.log("initDir:"+dirInited);
   //restore img size
   //
   // zoom=1.75;
@@ -331,7 +331,7 @@ var initDir=function(callback){
         //console.log(data.items);
         allItems[curDir]=items=data.items;
         dirInited=true;
-        console.log("dir inited");
+        // console.log("dir inited");
         loadLst();
         loadRightLst();
         callback();
@@ -464,14 +464,14 @@ function contains(string,substr){
       {  return true; }    } }  return false; 
 }
 var addCom=function(com){
-  console.log(com);
+  // console.log(com);
   if(contains(com,"\'")||contains(com,"$")) {
     alert("含有不合法字符\'%或$");
     return;
   }
   // com.replace("\n","     ");
   // com=encodeURIComponent(com);
-  console.log(com);
+  // console.log(com);
   $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
       function(data){
       },"text");

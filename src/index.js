@@ -76,9 +76,9 @@ function MyWaterfall(dir,colNum){ // console.log("waterfall:");
           if(m<waterfallLastID) return;
           if(items!=null){
             data=[];
-            console.log("pushing:"+m+":"+items.length);
-            num=6;
-            if(waterfallLastID==0)  num=20;
+            // console.log("pushing:"+m+":"+items.length);
+            num=12;
+            if(waterfallLastID==0)  num=24;
             for(i=m;i<m+num&&i<items.length;i++){
               data.push(items[i]); 
             }

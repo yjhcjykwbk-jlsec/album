@@ -1337,3 +1337,172 @@ uploadLink:http://imgsrc.baidu.com/forum/w%3D580/sign=af22eb718d5494ee87220f111d
     [class] => 图文心声
     [albumname] => .
 )
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://g3.ykimg.com/0100401F4651F29AB9B19A11ECEF38258A2492-40C6-7521-7559-EDDF6245ABA2
+    [desp0] => 
+    [ref0] => http://player.youku.com/player.php/sid/XMzU0NjQ0ODIw/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 前世今生
+    [ref0] => http://player.youku.com/player.php/sid/XMTU1MjY5MTg4/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 青城山下白素真
+    [ref0] => http://player.youku.com/player.php/sid/XMzIxMzIzNzg4/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 西湖雨又风
+    [ref0] => http://player.youku.com/player.php/sid/XMTc4MTAyMzYw/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 渡情
+    [ref0] => http://player.youku.com/player.php/sid/XMTIzMTc3MjIw/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 田野不懂
+    [ref0] => http://player.youku.com/player.php/sid/XMjI3NjUxMTQ4/v.swf
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 音悦台
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://u.img.huxiu.com/portal/201405/02/110215pv33fp3b8lkv4lpy.jpg
+    [desp0] => 神马还没成功，就已经走在了失败的路上
+    [ref0] => http://www.huxiu.com/article/32970/1.html?odby=toauthor
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 新闻
+    [albumname] => .
+)
+uploadLink:http://u.img.huxiu.com/portal/201405/02/110215pv33fp3b8lkv4lpy.jpg#神马还没成功，就已经走在了失败的路上#http://www.huxiu.com/article/32970/1.html?odby=toauthorArray
+(
+    [username] => brandoishero
+    [uplink0] => http://219.223.194.207/album/DATASET/%E8%B5%AB%E6%9C%AC/206c058180f122fe9023d963.jpg
+    [desp0] => 神马还没成功，就已经走在了失败的路上
+    [ref0] => http://www.huxiu.com/article/32970/1.html?odby=toauthor
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 新闻
+    [albumname] => .
+)
+uploadLink:http://219.223.194.207/album/DATASET/%E8%B5%AB%E6%9C%AC/206c058180f122fe9023d963.jpg#神马还没成功，就已经走在了失败的路上#http://www.huxiu.com/article/32970/1.html?odby=toauthor

@@ -35,13 +35,15 @@ exit();
 <link rel="stylesheet" type="text/css" href="css/contextMenu.css" />
 
 <!-- style related codes -->
+<!--
+-->
 <style>
-.fButton{text-align:center;align:center;}
-::-webkit-scrollbar {width:10px;background-color:transparent;border-radius:1px;}
+ ::-webkit-scrollbar {width:10px;background-color:transparent;border-radius:1px;}
 ::-webkit-scrollbar-thumb {box-shadow: 0px 0px 0px 0px rgba(127,127,127,0.04); background-color:rgba(227,227,227,1);border-radius:1px;}
-#photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 ::-webkit-scrollbar-thumb:active {background-color:#f99;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover {background-color:#f99;border-radius:2px;}
+.fButton{text-align:center;align:center;}
+#photo_view{padding:0px;border-top:0px solid rgba(5,5,5,0.06);border-left:0px solid rgba(5,5,5,0.16);border-right:0px solid rgba(5,5,5,0.16);border-radius:0px;}
 #header select|button {
   background:#482932;color:#000;font-size:110%;font-weight:bold;border:0;border-left:0px solid rgba(128,128,128,0.5);height:100%;text-align:center;
 }
