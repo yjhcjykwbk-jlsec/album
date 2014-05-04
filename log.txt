@@ -1505,4 +1505,172 @@ uploadLink:http://u.img.huxiu.com/portal/201405/02/110215pv33fp3b8lkv4lpy.jpg#�
     [class] => 新闻
     [albumname] => .
 )
-uploadLink:http://219.223.194.207/album/DATASET/%E8%B5%AB%E6%9C%AC/206c058180f122fe9023d963.jpg#神马还没成功，就已经走在了失败的路上#http://www.huxiu.com/article/32970/1.html?odby=toauthor
+uploadLink:http://219.223.194.207/album/DATASET/%E8%B5%AB%E6%9C%AC/206c058180f122fe9023d963.jpg#神马还没成功，就已经走在了失败的路上#http://www.huxiu.com/article/32970/1.html?odby=toauthorArray
+(
+    [username] => brandoishero
+    [uplink0] => http://ww4.sinaimg.cn/mw690/53df0ac3jw1dwzpyvyreoj.jpg
+    [desp0] => 
+    [ref0] => http://photo.weibo.com/1407126211/photos/detail/photo_id/3702551982832464#3491322560413432
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+uploadLink:http://ww4.sinaimg.cn/mw690/53df0ac3jw1dwzpyvyreoj.jpg##http://photo.weibo.com/1407126211/photos/detail/photo_id/3702551982832464#3491322560413432Array
+(
+    [username] => brandoishero
+    [uplink0] => http://ww4.sinaimg.cn/mw690/53df0ac3jw1dwzpyvyreoj.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+uploadLink:http://ww4.sinaimg.cn/mw690/53df0ac3jw1dwzpyvyreoj.jpg##Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg
+    [desp0] => 
+    [ref0] => http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+uploadLink:http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg##http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpgArray
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => nature
+    [albumname] => .
+)
+uploadLink:http://ww1.sinaimg.cn/mw690/53df0ac3tw1efplbyopivj20ij0rsjy8.jpg##

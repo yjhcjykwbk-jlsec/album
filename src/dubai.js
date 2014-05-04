@@ -70,19 +70,22 @@ var dubaiFuns=function(){
 	};
 	return [s0,s1,s2,s3,die];
 }();
-var lastMsgTime=0;
+// var lastMsgTime=0;
 var curTime=function(){
 	return new Date().getSeconds();
 };
-var endFun=function(){
-	if(curTime()-lastMsgTime>1){
+var endFun=function(s){
+  if(msgTag==s){
+	// if(curTime()-lastMsgTime>1){
 		message.style.display="none";
 	}
 }	
 var dubaiFlag=0;
+var msgTag=-1;
 var dubaijun=function(){
-	lastMsgTime=curTime();
+	// lastMsgTime=curTime();
+  msgTag=rand(10000);
 	dubaiFuns[dubaiFlag]();
-	setTimeout(endFun,3000);
+	setTimeout(function(){endFun(msgTag);},3000);
 	dubaiFlag=(dubaiFlag+rand(2)+1)%4;
 };

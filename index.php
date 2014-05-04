@@ -66,9 +66,7 @@ exit();
 <option value="6">每页六列</option>
 <option value="7">每页七列</option>
 </select>
-<select onclick="toggleUploadForm();" style="float:right;opacity:0.5">
-<option>上传</option>
-</select>
+<button onclick="toggleUploadForm();" style="float:right;opacity:0.5">上传</button>
 <select id="music_select" onclick="setMusic(this.value);"style="float:right;opacity:0.5">
 <option value="0">请选择背景音乐</option>
 <option value="stop">关闭音乐</option>

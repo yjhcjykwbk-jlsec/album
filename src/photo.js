@@ -17,19 +17,20 @@ var togglePhotoView=function(id){
     darkerFun(0);
     scrolltop=body.scrollTop;
     body.style.height="100%";
-    body.style.backgroundImage="url(bigbg)";
+    // body.style.backgroundImage="url(bigbg)";
 
 		loadImg(id);
 		photo_view.style.display="block";
     showCom();
-    showPhLst();
-    hideMenus();
-    flashFun(menus,"red","#333",2000);
+    hidePhLst();
+    // showMenus();
+    flashFun(refresh_btn,"red","transparent",2000);
+    flashFun(menus,"red","transparent",2000);
 
     waterfallLoadable=false;
 
     // header.style.display="none";
-    header.style.opacity="0.3";
+    header.style.opacity="0.05";
     // header.style.background="transparent";
 
 		container.style.display="none";
@@ -42,7 +43,7 @@ var togglePhotoView=function(id){
     // else  body.style.backgroundColor="#333";
 
     body.style.height="200%";
-    body.style.backgroundImage="url(whitebg)";
+    style(body,"background","url(whitebg)");
     waterfallLoadable=true;
 
     // header.style.display="block";
@@ -54,8 +55,9 @@ var togglePhotoView=function(id){
     chengxuyuan.style.opacity="0.6";
     end.style.opacity="1";
 
+    flashFun(menus,"red","transparent",2000);
 		hidePhLst();
-    showMenus();
+    // showMenus();
     fbuttons.style.right="0";
     body.scrollTop=scrolltop;
     ///bug...
@@ -69,7 +71,7 @@ function showCom(){
 		if(img.alt!=comID) getCom();
 		left_panel.style.width="68%";
 		right_panel.style.display="block";//width="20%";
-		photo_view.style.marginLeft="10.0%";
+		photo_view.style.marginLeft="9.0%";
     photo_view.style.width="78%";
 		// photo_view.style.height="92%";
 		photo_view.style.marginTop="1.05%";
@@ -108,7 +110,7 @@ function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
     right_panel.style.backgroundColor="#fff";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-
+    style(body,"background","white");
     img.style.boxShadow="";
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="#eee";
 		fbuttons.style.color="#212";
@@ -132,6 +134,7 @@ function darker0(){
 function darker2(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="rgba(255,255,255,0.2)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+    style(body,"background","url(bigbg)");
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(100,100,100,0.1)";
 		comment_area.style.color=comment_author.style.color="#888";
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
@@ -141,6 +144,7 @@ function darker2(){
 function darker3(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
+    style(body,"background","black");
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(3,4,3,0.01)";
 		comment_area.style.color=comment_author.style.color="#888";
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
