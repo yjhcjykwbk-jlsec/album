@@ -150,7 +150,7 @@ function darker3(){
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#333");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #222");});
-		left_panel.style.borderRight="1px solid #111";
+		// left_panel.style.borderRight="1px solid #111";
   }
 
 var darkerFun=function(c){
