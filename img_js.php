@@ -9,8 +9,9 @@ if($action=="del"){
   if(!isset($_REQUEST['class'])) {echo "class not set";return;}
   $img=$_REQUEST['img'];
   $class=$_REQUEST['class'];
-  if(unlink("DATASET/".$class."/".$img)) {echo "delete true";return;}
-  echo "delete failed:DATASET/".$class."/".$img;
+  if(unlink("DATASET/".$class."/".$img)) {echo "delete true";}
+  if(is_file("view/".$class."/".$img)) {unlink("view/".$class."/".$img);}
+  if(is_file("thumb/".$class."/".$img)) {unlink("thumb/".$class."/".$img);}
   return;
 }
 echo "action not known";

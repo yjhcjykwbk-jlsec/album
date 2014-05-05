@@ -102,7 +102,7 @@ color:#8af;">
 </div>
 <a onclick="chengxuyuanGoDie();return false;">让程序猿去死</a>
 </div>
-<div id="message" onclick="endFun();" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
+<div id="message" onclick="endFun(0);" style="right:120px;bottom:90px;border-radius:20px;padding:20px;width:300px;box-shadow:6px 6px 10px 2px #312;z-index:101;position:fixed;opacity:0.9;background:#eee;color:#333;display:none;">
 <div id="message_content"></div>
 <pre id="message_pre_content" style="font-size:13px;font-weight:bold;"></pre>
 </div>

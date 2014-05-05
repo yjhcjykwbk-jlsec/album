@@ -1,7 +1,7 @@
 <!-- refered container_div -->
 <meta charset="utf-8">
 <!--<h4 style="display:none;float:left;"><font style="display:block;font-size:60%;position:fixed;font-weight:italic;color:#423;margin-top:-16px;margin-left:0;">推荐您关注</font></h4> -->
-<div id="album_menu" style="opacity:0.7;display:block;width:8.6%;overflow-y:scroll;position:fixed;padding-top:20px;top:0;border:1px solid rgba(120,120,120,0.3);border-radius: 0px 2px 2px 0px;background:#fff;box-shadow:0px 0px 0px 0px rgba(0,0,0,0.2);bottom:0;left:0;margin-right:0;z-index:10;">
+<div id="album_menu" style="opacity:0.7;display:block;width:8.5%;overflow-y:scroll;position:fixed;padding-top:20px;top:0;border:1px solid rgba(120,120,120,0.3);border-radius: 0px 2px 2px 0px;background:transparent;box-shadow:0px 0px 0px 0px rgba(0,0,0,0.2);bottom:0;left:0;margin-right:0;z-index:10;">
 <div style="display:block;padding-top:8px;padding-bottom:8px;">
 <ul style="list-styles:none" style="">
 <?php

@@ -165,11 +165,12 @@ var menuAdapter={
           alert("解析图片地址出错");
           return;
         }
+        var tmp="";
         if(ss.length==6){
-          img=ss[5];
+          tmp=ss[5];
         }
-        else img=ss[6];
-        delImg(t,img);
+        else tmp=ss[6];
+        delImg(t,tmp);
       }
   }, 
   onShowMenu: function(e, menu) { 

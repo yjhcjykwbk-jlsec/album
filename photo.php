@@ -27,7 +27,7 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 </div>
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
 background: url(imgbg) 0 0 repeat;
-border-width:10px 20px 20px 20px;
+border-width:0px 20px 10px 20px;
 border-color:;
 border-style:solid;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
@@ -56,7 +56,7 @@ background:transparent;min-height:0px;border-radius:0px;border-right:0px solid #
 </div>
 
 
-<div id="right_panel" style="float:right;margin-right:1.2%;width:25%;display:block;padding-left:1%;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
+<div id="right_panel" style="float:right;margin-right:1.2%;width:25%;display:block;padding-left:1%;padding-top:5px;border:1px solid rgba(120,120,120,0.3);border-radius:0px;overflow-y:hidden;overflow-x:hidden;position:;z-index:10;">
 <div style="border-bottom:0px solid #bab;color:#111;margin:4% 1% 10px 1%;display:block;">
 <a target="__blank" id="img_desp" href=''style="display:block;margin:10px;"></a>
 </div>

@@ -75,7 +75,7 @@ var curTime=function(){
 	return new Date().getSeconds();
 };
 var endFun=function(s){
-  if(msgTag==s){
+  if(msgTag==s||0==s){
 	// if(curTime()-lastMsgTime>1){
 		message.style.display="none";
 	}

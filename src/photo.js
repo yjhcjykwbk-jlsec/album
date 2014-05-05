@@ -18,10 +18,12 @@ var togglePhotoView=function(id){
     scrolltop=body.scrollTop;
     body.style.height="100%";
     // body.style.backgroundImage="url(bigbg)";
+    style(album_menu,"width","6.5%");
 
 		loadImg(id);
 		photo_view.style.display="block";
     showCom();
+    loadLst();
     hidePhLst();
     // showMenus();
     flashFun(refresh_btn,"red","transparent",2000);
@@ -45,6 +47,7 @@ var togglePhotoView=function(id){
     body.style.height="200%";
     style(body,"background","url(whitebg)");
     waterfallLoadable=true;
+    style(album_menu,"width","8.5%");
 
     // header.style.display="block";
     header.style.opacity="1";
@@ -74,7 +77,7 @@ function showCom(){
 		photo_view.style.marginLeft="9.0%";
     photo_view.style.width="78%";
 		// photo_view.style.height="92%";
-		photo_view.style.marginTop="1.05%";
+		photo_view.style.marginTop="0.35%";
 		right_panel.style.display="block";
 		fbuttons.style.right="10.15%";
 		toggle_com.innerHTML="切换大屏";
@@ -86,7 +89,7 @@ function hideCom(){
 		photo_view.style.marginLeft="12.0%";
 		photo_view.style.width="78.5%";
     // photo_view.style.height="96.0%";
-		photo_view.style.marginTop="1.05%";
+		photo_view.style.marginTop="0.35%";
 		right_panel.style.display="none";
 		fbuttons.style.right="8.5%";
 		//photo_view.style.width="88%";

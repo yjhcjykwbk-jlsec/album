@@ -74,8 +74,7 @@ function listDir($dir,$from,$to){
 				else if($size>3000*3000) {$n=7;$m=3;}
 				else if($size>2000*2000) {$n=6;$m=2;}
 				else if($size>1200*1200) {$n=5;$m=2;}
-				else if($size>700*700) $n=4;
-				else if($size>400*400) $n=2;
+				else if($size>600*600) $n=2;
 				if($height>=2.5*$width||$width>=2.5*$height) $n=$n/3>1?$n/3:1;
 
 				if($n>1) {
