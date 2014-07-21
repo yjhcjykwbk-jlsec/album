@@ -13,7 +13,7 @@ $ENCODE="utf-8";//应该和文件系统保持一致
 <style>
 </style>
 </head>
-<body style="background:url(DATASET/6597088458353679775.jpg) repeat-y center top #245a70">
+<body style="background:url(DATASET/bg.jpg) repeat-y center top #245a70">
 
 <script type="text/javascript" src="src/jquery.min.js"></script>
 <script type="text/javascript" src="src/jquery.contextmenu.js"></script>
@@ -42,12 +42,12 @@ background:url(http://l.bst.126.net/rsc/img/x.png) repeat-x 999px 9999px;
 
 <div class="folders" style="display:block;width:540px;height:;background:#222;margin-left:auto;margin-right:auto;margin-top:115px;padding-bottom:20px;border-radius:0px;border:3px solid #333">
 <?php
-if ($handle = opendir("DATASET")) {
+if ($handle = opendir("DATASET/$user")) {
   while (false !== ($entry = readdir($handle))) {
-    if(is_dir("DATASET/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
+    if(is_dir("DATASET/$user/".$entry)&&$entry!=".."&&$entry!=".thumb") {?>
       <div class="li" style="display:block;margin-left:3%;width:94%;margin-right:auto;margin-top:25px;">
         <a href="index.php?dir=<?php echo $entry ?>">
-        <?php $front=file_exists("DATASET/".$entry."/front.jpg")?"DATASET/".$entry."/front.jpg":"default.jpg";?>
+        <?php $front=file_exists("DATASET/$user/".$entry."/front.jpg")?"DATASET/$user/".$entry."/front.jpg":"default.jpg";?>
         <img src="<?php echo $front;?>" width="100%" style="margin:auto auto;overflow:hidden">
         </img><br/>
         <?php echo $entry ?>/

@@ -33,9 +33,9 @@ include_once "log.php";
 myLog(print_r($_REQUEST,true));
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'.';
-$username=isset($_REQUEST['username'])?$_REQUEST['username']:'';
-$destination_folder="DATASET/".$class."/";
-echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class&username=$username';},1000);</script>";
+$user=isset($_REQUEST['user'])?$_REQUEST['user']:'public';
+$destination_folder="DATASET/$user/".$class."/";
+echo "<script> setTimeout(function(){window.location.href='index.php?dir=$class&user=$user';},1000);</script>";
 
 if(!file_exists($destination_folder))
 {
@@ -92,11 +92,11 @@ function upload($file,$desp,$ref){
   }
   //写入文件的描述和reference website
   //echo "记录描述和地址...<br/>";
-  global $class;
+  global $user,$class;
   // echo $class;
   // echo $filename;
   // echo $desp."<br>";
-  writeDesp($class,$filename,$desp,$ref);
+  writeDesp($user,$class,$filename,$desp,$ref);
 
   echo "上传成功:".$tmpFileName;
 
@@ -117,19 +117,19 @@ function uploadLink($url,$desp,$ref){
   }
   else $uploadedFiles[]=$url;
 
-  global $class;
+  global $user,$class;
   include_once "mark.php";
-  $filename=getimg($url,$class);
+  $filename=getimg($url,$user,$class);
   if($filename==false) {
     echo "上传失败，".$url." 下载出错<hr>";
     return;
   }
-  $destination="DATASET/".$class."/".$filename;
+  $destination="DATASET/$user/".$class."/".$filename;
   // echo $class;
   // echo $filename;
   // echo $desp."<br>";
   //test writeDesp(".","1.jpg","发第三方发生地方 发生的发生","http://www.baidu.com");
-  writeDesp($class,$filename,$desp,$ref);
+  writeDesp($user,$class,$filename,$desp,$ref);
 
   echo "上传成功:".$url;
   echo " <font color=red>已经成功上传</font><br>";

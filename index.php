@@ -1,14 +1,16 @@
 <?php 
 $ENCODE="utf-8";//应该和文件系统保持一致
 $curDir=isset($_REQUEST['dir'])?$_REQUEST['dir']:"最美中国风";
-$username=isset($_REQUEST['username'])?$_REQUEST['username']:"";
-
-if($username!="brandoishero") {
+$user=isset($_REQUEST['user'])?$_REQUEST['user']:"";
+$users=["linhc","public",".private."];
+if(!in_array($user,$users)){
 ?>
-<html><title>用户名或密码错误</title>
+<html>
+<meta charset="<?php echo $ENCODE;?>">
+<title>用户名或密码错误</title>
 <div style="margin:auto auto;text-align:center;">
 <h1>Forbidden Access</h1>
-<form action=""><input name="username" placeholder="口令"> <input type="submit" value="登录"> </form>
+<form action=""><input name="user" placeholder="口令"> <input type="submit" value="登录"> </form>
 <style>img{opacity:0.5;width:50%;} img:hover{opacity:1;}</style>
 <img id="img"  src="default0.png"></img><br>
 If you like the website, please leave some message here.<br>
@@ -167,11 +169,12 @@ padding:10px;
 opacity:0.95;
 border-radius:5px;
 ">
+<textarea id="img_user" style="display:none"></textarea><br/>
 <textarea id="img_dir" style="display:none"></textarea><br/>
 <textarea id="img_name" style="display:none"></textarea><br/>
 描述<textarea id="desp_input"></textarea><br/>
 引用<textarea id="ref_input"></textarea>
-<button onclick="setDesp(img_dir.value,img_name.value,desp_input.value,ref_input.value);">提交描述</button>
+<button onclick="setDesp(img_user.value,img_dir.value,img_name.value,desp_input.value,ref_input.value);">提交描述</button>
 <button onclick="desp_form.style.display='none';">取消</button>
 </div>
 
@@ -183,7 +186,7 @@ border-radius:5px;
 </div> 
 
 
-<script> var dir=<?php echo "\"".$curDir."\"";?>;var id; var curDir=dir;</script>
+<script> var dir=<?php echo "\"".$curDir."\"";?>;var id; var curDir=dir;var user=<?php echo "'".$user."'";?>;</script>
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="src/index.js"></script>
 <script type="text/javascript" src="src/photo.js"></script>

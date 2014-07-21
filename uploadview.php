@@ -13,7 +13,7 @@ background:transparent;
 }
 </style>
 <meta charset="utf-8">
-<form id="upload_form" enctype="multipart/form-data" action="upload.php?username=<?php echo $username?>" method="post" name="upform" style="opacity:0.7;padding:12px;background:white;font-size:70%">
+<form id="upload_form" enctype="multipart/form-data" action="upload.php?user=<?php echo $user?>" method="post" name="upform" style="opacity:0.7;padding:12px;background:white;font-size:70%">
     <b>上传图片(所有输入都不是必填,引用可填为为图片来源，或视频地址):</b><br>
   <input name="upfile0" type="file" style="width:45%">
   地址<input name="uplink0" type="text"><br>
@@ -45,8 +45,8 @@ background:transparent;
 <?php 
 include_once "util.php";
 if($ENCODE=="utf-8") 
-  $dirs=getSubDir();
-else $dirs=getSubDirGBK();
+  $dirs=getSubDir($user);
+else $dirs=getSubDirGBK($user);
 foreach($dirs as $i=>$dir){?>
   <option value="<?php echo $dir;?>"><?php echo $dir;?></option>
   <?php }?>

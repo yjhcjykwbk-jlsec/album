@@ -1,7 +1,7 @@
 <?php
 
-function initMap($dir){
-	$str=file_get_contents("DATASET/".$dir."/details.txt");
+function initMap($user,$dir){
+	$str=file_get_contents("DATASET/$user/".$dir."/details.txt");
 	$arr=explode("\n",$str);
 	$map=array();
 	// print_r($arr);
@@ -12,12 +12,12 @@ function initMap($dir){
 	}
 	return $map;
 }
-function getDesp($dir,&$arrayEntry){
+function getDesp($user,$dir,&$arrayEntry){
 	include_once "log.php";
 	// myLog("before handling...........\n");
 	// myLog(print_r($arrayEntry,true));
 	if(count($arrayEntry)<=0) return;
-	$map=initMap($dir);
+	$map=initMap($user,$dir);
 	foreach ($arrayEntry as $i=>$entry){
 		$filename=$entry['href'];
 		if(isset($map[$filename])){
@@ -33,11 +33,11 @@ function getDesp($dir,&$arrayEntry){
 	// myLog("after handling...........\n");
 	// myLog(print_r($arrayEntry,true));
 }
-function writeDesp($dir,$img,$desp,$ref){
+function writeDesp($user,$dir,$img,$desp,$ref){
   $img=str_replace("\n","",$img);
   $desp=str_replace("\n","",$desp);
   $ref=str_replace("\n","",$ref);
-	$str=file_get_contents("DATASET/".$dir."/details.txt");
+	$str=file_get_contents("DATASET/$user/".$dir."/details.txt");
 	$arr=explode("\n",$str);
   $desp=str_replace("\n"," ",$desp);
 	for($i=0;$i+2<count($arr);$i+=3){
@@ -50,11 +50,11 @@ function writeDesp($dir,$img,$desp,$ref){
         //last line
         else $str.=$txt;
 			}
-			file_put_contents("DATASET/".$dir."/details.txt",$str);
+			file_put_contents("DATASET/$user/".$dir."/details.txt",$str);
 			return;
 		}
 	}
-	file_put_contents("DATASET/".$dir."/details.txt",$img."\n".$desp."\n".$ref."\n",FILE_APPEND|LOCK_EX);
+	file_put_contents("DATASET/$user/".$dir."/details.txt",$img."\n".$desp."\n".$ref."\n",FILE_APPEND|LOCK_EX);
 //	myLog("writeDesp:".$img.":".$desp.":".$ref."\n");
 }
 // initMap();

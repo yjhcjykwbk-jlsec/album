@@ -30,14 +30,15 @@ if($act=="score"){
 }
 
 
-if(!isset($_REQUEST['dir'])||!isset($_REQUEST['img'])) {
+if(!isset($_REQUEST['dir'])||!isset($_REQUEST['img'])||!isset($_REQUEST['user'])){
   return;
 }
 
+$user=$_REQUEST['user'];
 $dir=$_REQUEST['dir'];
 $img=$_REQUEST['img'];
-$file="txt/$dir/$img.txt";
-if(!file_exists("txt/$dir")) mkdir("txt/$dir");
+$file="txt/$user/$dir/$img.txt";
+if(!file_exists("txt/$user/$dir")) mkdir("txt/$user/$dir");
 if(!file_exists($file)) touch($file);
 
 if($act=="clear"){

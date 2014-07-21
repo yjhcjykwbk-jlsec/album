@@ -238,12 +238,13 @@ var setScore=function(s){
 };
 ///////////////////////////////////////////////////////////////////
 //descripttion of img
-function setDesp(dir,img,desp,ref){
+function setDesp(user,dir,img,desp,ref){
+	user=encodeURIComponent(user);
 	dir=encodeURIComponent(dir);
 	img=encodeURIComponent(img);
 	desp=encodeURIComponent(desp);
 	ref=encodeURIComponent(ref);
-	$.post("desp_js.php?dir="+curDir+"&name="+img+"&desp="+desp+"&ref="+ref,function(data){
+	$.post("desp_js.php?user="+user+"&dir="+curDir+"&name="+img+"&desp="+desp+"&ref="+ref,function(data){
 			alert("添加描述成功");
 			//items[id].desp=desp;
 			desp_form.style.display="none";
@@ -251,9 +252,10 @@ function setDesp(dir,img,desp,ref){
 			waterfall.refresh(colNum);
 			},'text');
 }
-function changeDespForm(button,dir,imgName,desp,ref){
+function changeDespForm(button,user,dir,imgName,desp,ref){
 	rect=button.getBoundingClientRect();
 	window.button=button;
+	img_user.value=user;
 	img_dir.value=dir;
 	img_name.value=imgName;
   desp_input.value=desp;
@@ -262,12 +264,13 @@ function changeDespForm(button,dir,imgName,desp,ref){
 	desp_form.style.top=rect.bottom-150-20+"px";
 	desp_form.style.display="block";
 }
-function showDespForm(button,dir,imgName){
+function showDespForm(button,user,dir,imgName){
 	rect=button.getBoundingClientRect();
 	window.button=button;
 	// if(button.offsetParent!=null) {
 		// offset.top-=$(button.offsetParent).offset().top;
 	// }
+	img_user.value=user;
 	img_dir.value=dir;
 	img_name.value=imgName;
 	desp_form.style.left=rect.left+"px";
@@ -333,7 +336,7 @@ var initDir=function(callback){
   dirInited=false;
 
   items=null;
-  $.get('more.php?dir='+curDir,
+  $.get('more_js.php?user='+user+'&dir='+curDir,
       function(data){
         //console.log(data.items);
         allItems[curDir]=items=data.items;
@@ -400,13 +403,13 @@ var loadImg=function(id){
     img_panel.style.height="";
     img.style.opacity="0.3";
     img.style.display="block";
-    img.src="view/"+curDir+"/"+item.href;
+    img.src="view/"+user+"/"+curDir+"/"+item.href;
     img_desp.innerText=item.desp;
     img_desp.href=item.ref;
     //@changed 被minHeight=screen.height*0.5取代
     img_panel.style.height="90%"; 
     var k=screen.width/screen.height;
-    oImg.href="DATASET/"+curDir+"/"+item.href;
+    oImg.href="DATASET/"+user+"/"+curDir+"/"+item.href;
     var h,w;
     var n=item.height/item.width;
     w=96*item.width/screen.width;
@@ -565,12 +568,12 @@ document.onkeydown=function(event){
 ////////////////////////////////////////////////////////////////
 //init waterfall
 var colNum=3;
-var waterfall=new MyWaterfall(dir,colNum);
+var waterfall=new MyWaterfall(user,dir,colNum);
 var setDir=function(dir){
 	togglePhotoView(-1);
   if(curDir==dir) return;
 	curDir=dir;
-	// waterfall=new MyWaterfall(dir,colNum);
+	// waterfall=new MyWaterfall(user,dir,colNum);
   initDir(function(){
 	if(waterfall!=undefined&&waterfall!=null) 
   {

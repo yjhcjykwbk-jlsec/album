@@ -3,13 +3,12 @@
  * $url 图片地址
  * $filepath 图片保存地址
  * return 返回下载的图片路径和名称
- */
-function getimg($url, $class) {
+function getimg($url,$user,$class) {
 
   if ($url == '') {
     return false;
   }
-  $filepath="DATASET/$class/";
+  $filepath="DATASET/$user/$class/";
   $ext = strrchr($url, '.');
 
   if ($ext != '.gif' && $ext != '.jpg') {
@@ -32,6 +31,8 @@ function getimg($url, $class) {
   fclose($fp);
   return '/'.$filepath.'/'.$filename;
 }
-if(!isset($_REQUEST['imgurl'])||!isset($_REQUEST['class'])) return;
-getimg($_REQUEST['imgurl'],$_REQUEST['class']);
+ */
+include_once "mark.php";
+if(!isset($_REQUEST['imgurl'])||!isset($_REQUEST['class'])||!isset($_REQUEST['user'])) return;
+getimg($_REQUEST['imgurl'],$_REQUEST['user'],$_REQUEST['class']);
 ?>

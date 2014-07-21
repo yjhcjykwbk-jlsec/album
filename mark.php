@@ -1,8 +1,8 @@
 <?php
-function httpcopy($url,$dir, $file="", $timeout=60) {
+function httpcopy($url,$user,$dir, $file="", $timeout=60) {
   // $file = empty($file) ? pathinfo($url,PATHINFO_BASENAME) : $file;
   // $dir = pathinfo($file,PATHINFO_DIRNAME);
-  $dir="DATASET/".$dir;
+  $dir="DATASET/$user/".$dir;
   !is_dir($dir) && @mkdir($dir,0755,true);
   $filename=$file;
   $file=$dir."/".$file;
@@ -40,12 +40,12 @@ function httpcopy($url,$dir, $file="", $timeout=60) {
  * $filepath 图片保存地址
  * return 返回下载的图片路径和名称
  */
-function getimg($url, $class) {
+function getimg($url,$user,$class) {
 
   if ($url == '') {
     return false;
   }
-  $filepath="DATASET/$class/";
+  $filepath="DATASET/$user/$class/";
   $ext = strrchr($url, '.');
 
   if ($ext != '.gif' && $ext != '.jpg') {

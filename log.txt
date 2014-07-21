@@ -1820,3 +1820,192 @@ uploadLink:http://ars.els-cdn.com/content/image/1-s2.0-S0031320313004561-gr1.jpg
     [class] => 计算机
     [albumname] => .
 )
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://r.photo.store.qq.com/psb?/3dfc8a69-bacb-4299-bd43-f57d01115d58/qBE7ZMH21x0O5Ho256.AEsB6ENyOvMYzlP7D.kJOa*U!/o/dGo5tseeDAAA&bo=AASAAkAG6AMBAAw!&t=5&rf=0-18%7C1600%7C1000
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 风景
+    [albumname] => .
+)
+uploadLink:http://r.photo.store.qq.com/psb?/3dfc8a69-bacb-4299-bd43-f57d01115d58/qBE7ZMH21x0O5Ho256.AEsB6ENyOvMYzlP7D.kJOa*U!/o/dGo5tseeDAAA&bo=AASAAkAG6AMBAAw!&t=5&rf=0-18%7C1600%7C1000##Array
+(
+    [username] => brandoishero
+    [uplink0] => http://r.photo.store.qq.com/psb?/3dfc8a69-bacb-4299-bd43-f57d01115d58/qBE7ZMH21x0O5Ho256.AEsB6ENyOvMYzlP7D.kJOa*U!/o/dGo5tseeDAAA&bo=AASAAkAG6AMBAAw!&t=5&rf=0-18%7C1600%7C1000
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 风景
+    [albumname] => .
+)
+uploadLink:http://r.photo.store.qq.com/psb?/3dfc8a69-bacb-4299-bd43-f57d01115d58/qBE7ZMH21x0O5Ho256.AEsB6ENyOvMYzlP7D.kJOa*U!/o/dGo5tseeDAAA&bo=AASAAkAG6AMBAAw!&t=5&rf=0-18%7C1600%7C1000##Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 桌面截图
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => http://image62.360doc.com/DownloadImg/2013/07/0209/33544614_4.jpg
+    [desp0] => 
+    [ref0] => http://www.360doc.com/content/13/0702/09/4249226_297047228.shtml
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 电影
+    [albumname] => .
+)
+uploadLink:http://image62.360doc.com/DownloadImg/2013/07/0209/33544614_4.jpg##http://www.360doc.com/content/13/0702/09/4249226_297047228.shtmlArray
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => http://www.360doc.com/content/13/0702/09/4249226_297047228.shtml
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 电影
+    [albumname] => .
+)
+Array
+(
+    [username] => brandoishero
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => http://baike.baidu.com/picview/341192/8553831/2852347/aec379310a55b31987e3388f43a98226cffc1735.html?fr=level2#albumindex=2&picindex=0
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 电影
+    [albumname] => .
+)
+Array
+(
+    [user] => linhc
+    [uplink0] => http://d.hiphotos.bdimg.com/album/s%3D1600%3Bq%3D90/sign=4125582a7af40ad111e4c3e5671c2aae/574e9258d109b3ded7dc8b7acdbf6c81800a4c44.jpg
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 赫本
+    [albumname] => .
+)
+uploadLink:http://d.hiphotos.bdimg.com/album/s%3D1600%3Bq%3D90/sign=4125582a7af40ad111e4c3e5671c2aae/574e9258d109b3ded7dc8b7acdbf6c81800a4c44.jpg##Array
+(
+    [user] => linhc
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 赫本
+    [albumname] => 赫本
+)
+Array
+(
+    [user] => linhc
+    [uplink0] => 
+    [desp0] => 
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => test
+    [albumname] => .
+)

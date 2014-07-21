@@ -33,10 +33,10 @@ function isPic($type){
 }
 
 //list the images under dir
-function listDir($dir,$from,$to){
-	$thumbDir="thumb/".$dir;
-	$viewDir="view/".$dir;
-	$imgDir="DATASET/".$dir;
+function listDir($user,$dir,$from,$to){
+	$thumbDir="thumb/$user/".$dir;
+	$viewDir="view/$user/".$dir;
+	$imgDir="DATASET/$user/".$dir;
 	if(!file_exists($thumbDir))
 		@mkdir($thumbDir);
 	if(!file_exists($viewDir))
@@ -117,7 +117,7 @@ function listDir($dir,$from,$to){
 
 			debug("desp:...\n");
 			include_once "desp.php";
-			getDesp($dir,$items);
+			getDesp($user,$dir,$items);
 			debug($items);
 		}
 	}
@@ -125,12 +125,18 @@ function listDir($dir,$from,$to){
 }
 
 
+$user=!isset($_REQUEST['user'])?"":$_REQUEST['user'];
+if($user==""){
+  echo "user not set";
+  return;
+}
+
 $dir=!isset($_REQUEST['dir'])?".":$_REQUEST['dir'];
 $from=isset($_GET['m'])?$_GET['m']:0;
 $num=isset($_GET['n'])?$_GET['n']:11;
 $to=isset($_GET['m'])?$from+$num:99999;
 if($from<99999)
-	$files=listDir($dir,$from,$to);
+	$files=listDir($user,$dir,$from,$to);
 // $items=array();
 // for ($i=$m; $i < count($files) && $i < $m+12; $i++) { 
 // $items[] =$files["$i"];
