@@ -120,7 +120,7 @@ function darker0(){
     $('.fButton').each(function(i,item){style(item,"color","#212");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#ddd");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #eee");});
-    style(img_td,"background","#ccc 0 0 repeat");
+    style(img_td,"background","#eee 0 0 repeat");
 		right_panel.style.opacity="1";
 };
 // function darker1(){
@@ -144,7 +144,7 @@ function darker2(){
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#333");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #111");});
-    style(img_td,"background","#888 0 0 repeat");
+    style(img_td,"background","");//#eee 0 0 repeat");
   };
 function darker3(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
@@ -485,17 +485,17 @@ var addCom=function(com){
   // com.replace("\n","     ");
   // com=encodeURIComponent(com);
   // console.log(com);
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
+  $.post("com_js.php",{"user":user,"dir":curDir,"img":items[img.alt].href,"com":com,"act":"set"},
       function(data){
       },"text");
   getCom();
 };
 var comID;
 var getCom=function(){
-  $.post("com_js.php",{"dir":curDir,"img":items[img.alt].href,"act":"get"},
+  $.post("com_js.php",{"user":user,"dir":curDir,"img":items[img.alt].href,"act":"get"},
       function(data){
-        //console.log("get Comment:");
-        //console.log(data);
+        console.log("get Comment:");
+        console.log(data);
         comID=img.alt;
         comments=data.split('$');
         comments_div.innerHTML="";

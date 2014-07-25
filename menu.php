@@ -14,7 +14,7 @@ foreach($dirs as $i=>$dir){
     <li> <div style="border-radius:0px 5px 5px 0px;padding:3px 12px 0px 16px;float:bottom;font-size:10px;color:#944;font-family:'微软雅黑,宋体';">
     <a  style="display:block;float:bottom;padding-bottom:-15px;"  
     href="index.php?dir=<?php echo $dir;?>" onclick="setDir('<?php echo $dir?>');return false;">
-    <img width="50%" height="30px" src="<?php if(file_exists("DATASET/$user/".$dir."/front.jpg")) echo "DATASET/$user/".$dir."/front.jpg";else echo "default.jpg";?>"
+    <img width="50%" height="30px" src="<?php if(file_exists("DATASET/$user/".$dir."/front.jpg")) echo "DATASET/$user/".$dir."/front.jpg";else echo "img/default.jpg";?>"
     style="padding-top:0px;"/>
     </a>
     <?php echo mb_substr($dir,0,5,$ENCODE).".";?>
