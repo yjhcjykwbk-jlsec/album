@@ -26,17 +26,17 @@ $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
 <button id="toggle_view" onclick="togglePhotoView(-1);" style="width:60px;height:15px;margin-top:0;float:right;position:;background:rgba(100,100,100,0.0);color:rgba(200,200,200,0.9);border:0px;font-family: '微软雅黑,宋体';font-size:11px;">返回页面</button>
 </div>
 <table id="img_table" width="100%" height="100%" align="center" valign="middle" style="
-background: url(imgbg) 0 0 repeat;
 border-width:0px 20px 10px 20px;
 border-color:;
 border-style:solid;
 <!--border-bottom:1px dotted rgba(128,128,128,0.4)-->
-"><tr><td>
+"><tr><td id="img_td" style="">
 <a onclick="nextFun();return false;" title="" style="">
 <div id="movie_div" style="width:95%;height:100%;margin-left:auto;margin-right:auto;">
 <?php include_once "movie.php";?>
 </div>
-<div id="img_div" style="width:;border-top:0px solid transparent;border-bottom:15px solid transparent;margin-left:auto;margin-right:auto;">
+<div id="img_div" style="width:;border-top:0px solid transparent;    border-bottom:15px solid transparent;border-top:15px solid transparent;
+    margin-left:auto;margin-right:auto;">
 <img id="img" src="<?php echo "view/$user/".$curDir."/$img"?>" alt="1" style="max-width:100%;width:;border:0px solid rgba(128,128,128,0.4);display:block;margin-left:auto;margin-right:auto;vertical-align:middle;"/>
 </div>
 </a>

@@ -2030,3 +2030,45 @@ Array
     [class] => dreamy
     [albumname] => .
 )
+Array
+(
+    [user] => .private.
+    [uplink0] => http://cms.csdnimg.cn/article/201407/23/53cf643155050.jpg
+    [desp0] => 分布式数据库
+    [ref0] => 
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 计算机
+    [albumname] => .
+)
+uploadLink:http://cms.csdnimg.cn/article/201407/23/53cf643155050.jpg#分布式数据库#Array
+(
+    [user] => .private.
+    [uplink0] => 
+    [desp0] => 分布式数据库
+    [ref0] => http://www.csdn.net/article/2014-07-23/2820811
+    [uplink1] => 
+    [desp1] => 
+    [ref1] => 
+    [uplink2] => 
+    [desp2] => 
+    [ref2] => 
+    [uplink3] => 
+    [desp3] => 
+    [ref3] => 
+    [uplink4] => 
+    [desp4] => 
+    [ref4] => 
+    [class] => 计算机
+    [albumname] => .
+)

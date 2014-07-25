@@ -107,7 +107,7 @@ var toggleCom=function(){
 
 //box-shadow is darker than body
 //photo_view.border color is darker than body, and should be close to photo_view.box-shadow
-var darkFlag=0;
+var darkFlag=1;
 var darks=['白色','玻璃','黑色'];
 function darker0(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor="#fff";
@@ -120,6 +120,7 @@ function darker0(){
     $('.fButton').each(function(i,item){style(item,"color","#212");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#ddd");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #eee");});
+    style(img_td,"background","#ccc 0 0 repeat");
 		right_panel.style.opacity="1";
 };
 // function darker1(){
@@ -137,12 +138,13 @@ function darker0(){
 function darker2(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="rgba(255,255,255,0.2)";
 		photo_view.style.backgroundColor="transparent";//rgba(240,246,245,1)";//"rgba(248,248,248,0.999)";
-    style(body,"background","url(bigbg)");
+    style(body,"background","url(img/bigbg)");
 		comment_area.style.backgroundColor=comment_author.style.backgroundColor="rgba(100,100,100,0.1)";
 		comment_area.style.color=comment_author.style.color="#888";
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#333");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #111");});
+    style(img_td,"background","#888 0 0 repeat");
   };
 function darker3(){
 		img_panel.style.backgroundColor=comments_panel.style.backgroundColor=right_panel.style.backgroundColor="#040404";
@@ -153,6 +155,7 @@ function darker3(){
     $('.fButton').each(function(i,item){style(item,"color","#ccc");});
     $('.fButton').each(function(i,item){style(item,"backgroundColor","#333");});
     $('.fButton').each(function(i,item){style(item,"border","1px solid #222");});
+    style(img_td,"background","url(img/img_table_bg) 0 0 repeat");
 		// left_panel.style.borderRight="1px solid #111";
   }
 
